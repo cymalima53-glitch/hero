@@ -11,18 +11,13 @@
 <body>
 
   <main class="page">
-    <img src="landing.png" alt="Homework Scan Landing" class="landing-img" />
+    <div class="landing-container">
+      <img src="landing.png" alt="Homework Scan Landing" class="landing-img" />
 
-    <div class="button-container">
-      <a href="login.html?role=student" class="btn">
-        <i class="fas fa-user-graduate"></i> Students
-      </a>
-      <a href="login.html?role=teacher" class="btn">
-        <i class="fas fa-chalkboard-teacher"></i> Teacher Dashboard
-      </a>
-      <a href="https://homework-helper-yrvb.onrender.com" class="btn">
-        <i class="fas fa-magic"></i> Homework Helper
-      </a>
+      <!-- Overlay Buttons -->
+      <a href="login.html?role=student" class="overlay-btn btn-student" title="Student Login"></a>
+      <a href="login.html?role=teacher" class="overlay-btn btn-teacher" title="Teacher Dashboard"></a>
+      <a href="https://homework-helper-yrvb.onrender.com" class="overlay-btn btn-helper" title="Homework Helper"></a>
     </div>
   </main>
 
