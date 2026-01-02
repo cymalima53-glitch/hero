@@ -100,4 +100,40 @@ module.exports = function (app, requireAuth) {
             res.status(500).json({ error: 'Failed to delete student' });
         }
     });
+
+    // UPDATE STUDENT (Reset Password)
+    app.put('/api/students/:id', requireAuth, async (req, res) => {
+        try {
+            const studentId = req.params.id;
+            const { password, name, username } = req.body; // Allow updating other fields too if needed
+            let students = await getStudents();
+
+            const studentIndex = students.findIndex(s => s.id === studentId);
+            if (studentIndex === -1) return res.status(404).json({ error: 'Student not found' });
+
+            const student = students[studentIndex];
+            if (student.teacherId !== req.teacherId) return res.status(403).json({ error: 'Unauthorized' });
+
+            // Update fields
+            if (name) student.name = name.trim();
+            if (username) {
+                // Check uniqueness if changing
+                if (username !== student.username && students.find(s => s.username === username.trim())) {
+                    return res.status(400).json({ error: 'Username already taken' });
+                }
+                student.username = username.trim();
+            }
+            if (password) {
+                student.passwordHash = await bcrypt.hash(password, 10);
+            }
+
+            students[studentIndex] = student;
+            await saveStudents(students);
+
+            res.json({ success: true });
+        } catch (err) {
+            console.error(err);
+            res.status(500).json({ error: 'Failed to update student' });
+        }
+    });
 };

@@ -88,15 +88,16 @@ async function loadStudents() {
     students = json.students || [];
     updateStudentSelect();
 }
-try {
-    const res = await fetch('/api/assignments/teacher');
-    const json = await res.json();
-    sessions = json.assignments || [];
-    console.log("Loaded sessions:", sessions.length, sessions); // DEBUG
-    renderAssignmentsTable(); // This is the new folder render function
-} catch (e) {
-    console.error("Failed to load sessions", e);
-}
+async function loadSessions() {
+    try {
+        const res = await fetch('/api/assignments/teacher');
+        const json = await res.json();
+        sessions = json.assignments || [];
+        console.log("Loaded sessions:", sessions.length, sessions); // DEBUG
+        renderAssignmentsTable(); // This is the new folder render function
+    } catch (e) {
+        console.error("Failed to load sessions", e);
+    }
 }
 
 // ... (create-session-form handler update)
@@ -406,6 +407,43 @@ function renderStudentDetail(studentId) {
     document.getElementById('sd-name').textContent = student.name;
     document.getElementById('sd-id').textContent = student.id;
 
+    // Reset Password Button Injection
+    const headerContainer = document.querySelector('#view-student-detail .view-header');
+    // Check if button already exists to prevent duplicate (or just clear content if we had full control, but we are modifying snippets)
+    // Actually, let's just append it to a container if it's not there, or clearer:
+    // We can add a button container in the HTML, OR injecting it dynamically here.
+    // Let's look for a place to put it. The view probably has a header.
+    // Ideally I'd replace the whole view header logic, but I don't see the HTML.
+    // I will add a button to the `sd-id` area or create a new "Student Actions" area.
+
+    // For now, let's create a visual action bar.
+    const actionContainer = document.getElementById('sd-actions') || document.createElement('div');
+    actionContainer.id = 'sd-actions';
+    actionContainer.style.marginTop = '1rem';
+
+    // Clear previous
+    actionContainer.innerHTML = '';
+
+    const resetBtn = document.createElement('button');
+    resetBtn.className = 'secondary';
+    resetBtn.innerHTML = '<i class="fas fa-key"></i> Reset Password';
+    resetBtn.onclick = () => resetStudentPassword(student.id, student.name);
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'danger';
+    deleteBtn.style.marginLeft = '10px';
+    deleteBtn.innerHTML = '<i class="fas fa-trash"></i> Delete Student';
+    deleteBtn.onclick = () => deleteStudent(student.id);
+
+    actionContainer.appendChild(resetBtn);
+    actionContainer.appendChild(deleteBtn);
+
+    // Insert after ID
+    const metaDiv = document.getElementById('sd-id').parentNode;
+    if (!document.getElementById('sd-actions')) {
+        metaDiv.parentNode.insertBefore(actionContainer, metaDiv.nextSibling);
+    }
+
     // Session List
     const studSessions = sessions.filter(s => s.studentId === studentId);
     const listContainer = document.getElementById('sd-session-list');
@@ -450,6 +488,47 @@ function renderStudentDetail(studentId) {
     });
 
     showView('student-detail');
+}
+
+window.resetStudentPassword = async function (id, name) {
+    const newPass = prompt(`Enter new password for ${name}:`);
+    if (!newPass) return;
+
+    try {
+        const res = await fetch(`/api/students/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ password: newPass })
+        });
+
+        if (res.ok) {
+            alert('Password updated successfully!');
+        } else {
+            const data = await res.json();
+            alert(data.error || 'Failed to update password');
+        }
+    } catch (e) {
+        console.error(e);
+        alert('Error updating password');
+    }
+}
+
+window.deleteStudent = async function (id) {
+    if (!confirm("Are you sure you want to delete this student? All their data will be lost.")) return;
+
+    try {
+        const res = await fetch(`/api/students/${id}`, { method: 'DELETE' });
+        if (res.ok) {
+            alert("Student deleted.");
+            await loadStudents();
+            showView('students');
+        } else {
+            alert("Failed to delete.");
+        }
+    } catch (e) {
+        console.error(e);
+        alert("Error deleting.");
+    }
 }
 
 // --- RENDER: SESSION DETAIL ---
