@@ -33,7 +33,8 @@
         </div>
 
         <!-- TEACHER FORM -->
-        <form id="teacher-form" class="auth-form" onsubmit="handleTeacherLogin(event)">
+        <form id="teacher-form" class="auth-form" onsubmit="handleTeacherAuth(event)">
+            <input type="hidden" id="teacher-mode" value="login">
             <div class="form-group">
                 <label>Email Address</label>
                 <input type="email" id="teacher-email" placeholder="admin@school.com" required>
@@ -42,8 +43,12 @@
                 <label>Password</label>
                 <input type="password" id="teacher-password" placeholder="••••••••" required>
             </div>
-            <button type="submit" class="btn-primary">Teacher Login</button>
-            <a href="/dashboard/forgot.html" class="forgot-link">Forgot Password?</a>
+            <button type="submit" class="btn-primary" id="teacher-submit-btn">Teacher Login</button>
+
+            <div class="auth-links">
+                <a href="#" id="toggle-teacher-mode" onclick="toggleTeacherMode(event)">Need an account? Register</a>
+                <a href="/dashboard/forgot.html" class="forgot-link">Forgot Password?</a>
+            </div>
         </form>
 
         <!-- STUDENT FORM -->
@@ -88,36 +93,68 @@
             document.getElementById('error-msg').style.display = 'none';
         }
 
-        async function handleTeacherLogin(e) {
+        function toggleTeacherMode(e) {
+            e.preventDefault();
+            const modeInput = document.getElementById('teacher-mode');
+            const submitBtn = document.getElementById('teacher-submit-btn');
+            const toggleLink = document.getElementById('toggle-teacher-mode');
+            const forgotLink = document.querySelector('.forgot-link');
+            const headerTitle = document.querySelector('.login-header h1');
+
+            if (modeInput.value === 'login') {
+                modeInput.value = 'register';
+                submitBtn.innerText = 'Create Account';
+                toggleLink.innerText = 'Have an account? Login';
+                forgotLink.style.display = 'none';
+                headerTitle.innerText = 'Create Account';
+            } else {
+                modeInput.value = 'login';
+                submitBtn.innerText = 'Teacher Login';
+                toggleLink.innerText = 'Need an account? Register';
+                forgotLink.style.display = 'block';
+                headerTitle.innerText = 'Welcome Back';
+            }
+        }
+
+        async function handleTeacherAuth(e) {
             e.preventDefault();
             const email = document.getElementById('teacher-email').value;
             const password = document.getElementById('teacher-password').value;
+            const mode = document.getElementById('teacher-mode').value;
             const errorEl = document.getElementById('error-msg');
-            const btn = e.target.querySelector('button');
+            const btn = document.getElementById('teacher-submit-btn');
+
+            const endpoint = mode === 'login' ? '/api/auth/login' : '/api/auth/register';
 
             try {
                 btn.disabled = true;
-                btn.innerText = 'Logging in...';
+                btn.innerText = 'Processing...';
 
-                const res = await fetch('/api/auth/login', {
+                const res = await fetch(endpoint, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email, password })
                 });
 
-                const data = await res.json();
+                const text = await res.text();
+                let json;
+                try {
+                    json = JSON.parse(text);
+                } catch (e) {
+                    json = { error: text || 'Unknown server error' };
+                }
 
                 if (res.ok) {
                     window.location.href = '/dashboard/index.html';
                 } else {
-                    throw new Error(data.error || 'Login failed');
+                    throw new Error(json.error || 'Action failed');
                 }
             } catch (err) {
                 console.error(err);
                 errorEl.innerText = err.message;
                 errorEl.style.display = 'block';
                 btn.disabled = false;
-                btn.innerText = 'Teacher Login';
+                btn.innerText = mode === 'login' ? 'Teacher Login' : 'Create Account';
             }
         }
 

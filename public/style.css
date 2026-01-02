@@ -225,3 +225,21 @@ input:focus {
 .forgot-link:hover {
     color: var(--primary);
 }
+
+.auth-links {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+}
+
+.auth-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.auth-links a:hover {
+    color: var(--primary);
+}
