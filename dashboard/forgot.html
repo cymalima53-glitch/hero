@@ -114,7 +114,8 @@
 
             // DETECT LOCAL FILE USAGE
             // If opened as file://, assume server is at localhost:3000
-            const API_BASE = window.location.protocol === 'file:' ? 'http://localhost:3000' : '';
+            const isFile = window.location.protocol.startsWith('file') || window.location.origin === 'null';
+            const API_BASE = isFile ? 'http://localhost:3000' : '';
 
             btn.disabled = true;
             btn.textContent = 'Sending...';
