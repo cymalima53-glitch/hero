@@ -1,4 +1,7 @@
 // --- AUTH & INIT ---
+const isFile = window.location.protocol.startsWith('file') || window.location.origin === 'null';
+const API_BASE = isFile ? 'http://localhost:3000' : '';
+
 let currentTeacher = null;
 let students = [];
 let sessions = [];
@@ -6,20 +9,23 @@ let currentStudentId = null;
 
 async function checkAuth() {
     try {
-        const res = await fetch('/api/auth/me');
+        const res = await fetch(`${API_BASE}/api/auth/me`);
         if (!res.ok) throw new Error('Unauthorized');
         const data = await res.json();
         currentTeacher = data.teacher;
         // document.getElementById('user-info').textContent = currentTeacher.email;
         loadData();
     } catch (e) {
-        window.location.href = 'login.html';
+        // Handle redirect for file protocol
+        if (isFile) window.location.href = '../public/login.html';
+        else window.location.href = '/login.html';
     }
 }
 
 window.logout = async function () {
-    await fetch('/api/auth/logout', { method: 'POST' });
-    window.location.href = 'login.html';
+    await fetch(`${API_BASE}/api/auth/logout`, { method: 'POST' });
+    if (isFile) window.location.href = '../public/login.html';
+    else window.location.href = '/login.html';
 }
 
 // --- NAVIGATION ---
@@ -66,7 +72,7 @@ let files = {}; // NEW
 
 async function loadFiles() {
     try {
-        const res = await fetch('/api/files/en'); // Default to EN for now
+        const res = await fetch(`${API_BASE}/api/files/en`); // Default to EN for now
         files = await res.json();
 
         const sel = document.getElementById('session-file');
@@ -83,14 +89,14 @@ async function loadFiles() {
 }
 
 async function loadStudents() {
-    const res = await fetch('/api/students');
+    const res = await fetch(`${API_BASE}/api/students`);
     const json = await res.json();
     students = json.students || [];
     updateStudentSelect();
 }
 async function loadSessions() {
     try {
-        const res = await fetch('/api/assignments/teacher');
+        const res = await fetch(`${API_BASE}/api/assignments/teacher`);
         const json = await res.json();
         sessions = json.assignments || [];
         console.log("Loaded sessions:", sessions.length, sessions); // DEBUG
@@ -129,7 +135,7 @@ async function createSessionOrAssignment(mode) {
     };
 
     if (mode === 'assign') {
-        const res = await fetch('/api/assignments', {
+        const res = await fetch(`${API_BASE}/api/assignments`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -148,7 +154,7 @@ async function createSessionOrAssignment(mode) {
         }
     } else {
         // Legacy Link Mode (Test)
-        const res = await fetch('/api/sessions', {
+        const res = await fetch(`${API_BASE}/api/sessions`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ studentId, gameId, limit, fileId })
@@ -381,7 +387,7 @@ window.deleteAssignment = async function (id) {
     if (!confirm("Are you sure you want to delete this assignment? It will be removed from the student's list.")) return;
 
     try {
-        const res = await fetch(`/api/assignments/${id}`, { method: 'DELETE' });
+        const res = await fetch(`${API_BASE}/api/assignments/${id}`, { method: 'DELETE' });
         if (res.ok) {
             // Remove local
             sessions = sessions.filter(s => s.id !== id);
@@ -495,7 +501,7 @@ window.resetStudentPassword = async function (id, name) {
     if (!newPass) return;
 
     try {
-        const res = await fetch(`/api/students/${id}`, {
+        const res = await fetch(`${API_BASE}/api/students/${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ password: newPass })
@@ -517,7 +523,7 @@ window.deleteStudent = async function (id) {
     if (!confirm("Are you sure you want to delete this student? All their data will be lost.")) return;
 
     try {
-        const res = await fetch(`/api/students/${id}`, { method: 'DELETE' });
+        const res = await fetch(`${API_BASE}/api/students/${id}`, { method: 'DELETE' });
         if (res.ok) {
             alert("Student deleted.");
             await loadStudents();
@@ -577,7 +583,7 @@ function renderSessionDetail(sessionId) {
     // Actually, we can fetch the `session.lang` file to map IDs to Words!
     // Let's do that for the "WOW" factor.
 
-    fetch(`/data/${session.lang || 'en'}`).then(r => r.json()).then(data => {
+    fetch(`${API_BASE}/data/${session.lang || 'en'}`).then(r => r.json()).then(data => {
         Object.entries(questions).forEach(([wId, stat]) => {
             const wordObj = data.words.find(w => w.id === wId);
             const wordText = wordObj ? wordObj.word : wId;
@@ -649,7 +655,7 @@ document.getElementById('add-student-form').addEventListener('submit', async (e)
     const password = document.getElementById('new-student-password').value;
 
     try {
-        const res = await fetch('/api/students', {
+        const res = await fetch(`${API_BASE}/api/students`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, username, password })

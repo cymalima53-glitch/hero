@@ -3,6 +3,10 @@ const state = {
     assignments: []
 };
 
+// CONSTANTS
+const isFile = window.location.protocol.startsWith('file') || window.location.origin === 'null';
+const API_BASE = isFile ? 'http://localhost:3000' : '';
+
 // Handle Login Page
 if (document.getElementById('login-form')) {
     document.getElementById('login-form').addEventListener('submit', async (e) => {
@@ -11,14 +15,17 @@ if (document.getElementById('login-form')) {
         const password = document.getElementById('password').value;
 
         try {
-            const res = await fetch('/api/auth/student/login', {
+            const res = await fetch(`${API_BASE}/api/auth/student/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password })
             });
 
             if (res.ok) {
-                window.location.href = 'index.html';
+                // If local file, use relative path navigation
+                if (isFile) window.location.href = 'index.html';
+                else window.location.href = 'index.html';
+                // (Actually index.html is relative so it works for both, but explicit is fine)
             } else {
                 throw new Error('Login failed');
             }
@@ -30,6 +37,7 @@ if (document.getElementById('login-form')) {
     });
 }
 
+
 // Handle Dashboard
 if (document.getElementById('student-dashboard')) {
     initializeDashboard();
@@ -38,7 +46,7 @@ if (document.getElementById('student-dashboard')) {
 async function initializeDashboard() {
     try {
         // 1. Load Assignments
-        const res = await fetch('/api/assignments/my-list');
+        const res = await fetch(`${API_BASE}/api/assignments/my-list`);
         if (res.status === 401) {
             window.location.href = 'login.html';
             return;
@@ -169,7 +177,7 @@ async function playGame(gameId, assignmentId) {
             btn.disabled = true;
         }
 
-        const res = await fetch(`/api/assignments/${assignmentId}/start`, {
+        const res = await fetch(`${API_BASE}/api/assignments/${assignmentId}/start`, {
             method: 'POST'
         });
 
