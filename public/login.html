@@ -124,13 +124,15 @@
             const errorEl = document.getElementById('error-msg');
             const btn = document.getElementById('teacher-submit-btn');
 
+            // DETECT LOCAL FILE USAGE
+            const API_BASE = window.location.protocol === 'file:' ? 'http://localhost:3000' : '';
             const endpoint = mode === 'login' ? '/api/auth/login' : '/api/auth/register';
 
             try {
                 btn.disabled = true;
                 btn.innerText = 'Processing...';
 
-                const res = await fetch(endpoint, {
+                const res = await fetch(`${API_BASE}${endpoint}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email, password })
@@ -145,7 +147,17 @@
                 }
 
                 if (res.ok) {
-                    window.location.href = '/dashboard/index.html';
+                    // If local, we can't redirect to root /dashboard/index.html easily if strict file structure isn't perfect, 
+                    // but typically ../dashboard/index.html works better for relative.
+                    // However, let's try to honor the server path if we are essentially "mocking" the server.
+                    // But wait, if we are on file://, /dashboard/index.html goes to C:/dashboard/... which fails.
+                    // We should also fix the redirection for file protocol!
+
+                    if (window.location.protocol === 'file:') {
+                        window.location.href = '../dashboard/index.html';
+                    } else {
+                        window.location.href = '/dashboard/index.html';
+                    }
                 } else {
                     throw new Error(json.error || 'Action failed');
                 }
@@ -165,11 +177,14 @@
             const errorEl = document.getElementById('error-msg');
             const btn = e.target.querySelector('button');
 
+            // DETECT LOCAL FILE USAGE
+            const API_BASE = window.location.protocol === 'file:' ? 'http://localhost:3000' : '';
+
             try {
                 btn.disabled = true;
                 btn.innerText = 'Logging in...';
 
-                const res = await fetch('/api/auth/student/login', {
+                const res = await fetch(`${API_BASE}/api/auth/student/login`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ username, password })
@@ -178,7 +193,11 @@
                 const data = await res.json();
 
                 if (res.ok) {
-                    window.location.href = '/student/index.html';
+                    if (window.location.protocol === 'file:') {
+                        window.location.href = '../student/index.html';
+                    } else {
+                        window.location.href = '/student/index.html';
+                    }
                 } else {
                     throw new Error(data.error || 'Login failed');
                 }
