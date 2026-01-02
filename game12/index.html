@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Mots Mêlés - Word Search</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../shared/result.css">
+</head>
+
+<body class="notranslate" translate="no">
+    <div id="game-container">
+        <!-- Start Screen -->
+        <div id="start-screen">
+            <h1>🔍 Mots Mêlés</h1>
+            <p>Trouve les mots cachés dans la grille!</p>
+            <p class="hint">Find the hidden words!</p>
+            <button id="start-btn">Jouer</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="hidden">
+            <!-- HUD -->
+            <div id="hud">
+                <div id="timer">⏱️ <span id="time-left">120</span>s</div>
+                <div id="score">✓ <span id="words-found">0</span>/<span id="words-total">0</span></div>
+            </div>
+
+            <!-- Word Grid -->
+            <div id="grid-container">
+                <div id="word-grid"></div>
+                <svg id="selection-overlay"></svg>
+            </div>
+
+            <!-- Clue Panel -->
+            <div id="clue-panel">
+                <h3>Mots à trouver:</h3>
+                <div id="word-list"></div>
+                <div id="current-clue">
+                    <img id="clue-image" class="hidden" alt="Hint">
+                    <button id="audio-btn" class="hidden">🔊</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../shared/result.js"></script>
+    <script src="game.js"></script>
+</body>
+
+</html>

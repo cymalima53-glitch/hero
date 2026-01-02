@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Teacher - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <aside>
+        <div class="brand">
+            <img src="/image/aurore.png" alt="Hero Teacher"
+                style="height: 90px; width: auto; margin-right: 12px; vertical-align: middle;">
+            <span style="vertical-align: middle; font-size: 1.4rem;">Hero Teacher</span>
+        </div>
+        <nav class="nav">
+            <div class="nav-item active" data-tab="students"><i class="fas fa-user-graduate"></i> Class Overview</div>
+            <div class="nav-item" data-tab="sessions"><i class="fas fa-clipboard-list"></i> Assignments</div>
+            <div class="nav-item" onclick="logout()" style="margin-top: auto; color: var(--danger-text);"><i
+                    class="fas fa-sign-out-alt"></i> Logout</div>
+        </nav>
+    </aside>
+
+    <main>
+        <header>
+            <div>
+                <h2 id="page-title">Class Overview</h2>
+                <div id="user-info" style="color: var(--text-muted); margin-top: 0.25rem;">Welcome back, Teacher</div>
+            </div>
+            <!-- Dynamic Header Actions can go here -->
+        </header>
+
+        <!-- VIEW: CLASS OVERVIEW (STUDENTS) -->
+        <div id="view-students" class="view-section">
+            <div class="card mb-2">
+                <div class="flex-row space-between">
+                    <h3>Quick Actions</h3>
+                </div>
+                <form id="add-student-form" class="flex-column" style="gap:10px;">
+                    <div class="flex-row">
+                        <input type="text" id="new-student-name" placeholder="Full Name" required style="flex:1;" />
+                        <input type="text" id="new-student-username" placeholder="Username" required style="flex:1;" />
+                        <input type="text" id="new-student-password" placeholder="Password" required style="flex:1;" />
+                    </div>
+                    <button type="submit" style="align-self: flex-end;"><i class="fas fa-plus"></i> Add Student</button>
+                </form>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="stats-grid" id="class-stats">
+                <!-- Populated by JS -->
+            </div>
+
+            <div class="card">
+                <h3>Student Performance</h3>
+                <table id="students-table">
+                    <thead>
+                        <tr>
+                            <th>Student</th>
+                            <th>Sessions</th>
+                            <th>Avg Attempts</th>
+                            <th>Pass Rate</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- VIEW: STUDENT DETAIL -->
+        <div id="view-student-detail" class="view-section hidden">
+            <div class="back-btn" onclick="showView('students')"><i class="fas fa-arrow-left"></i> Back to Class</div>
+            <div class="student-header">
+                <div>
+                    <h2 id="sd-name">Student Name</h2>
+                    <div class="text-muted" style="margin-top: 0.5rem">Student ID: <code id="sd-id">...</code></div>
+                </div>
+                <div class="flex-row" id="sd-badges">
+                    <!-- Badges -->
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Recent Activity</h3>
+                <div id="sd-session-list" class="session-list">
+                    <!-- Session Cards -->
+                </div>
+            </div>
+        </div>
+
+        <!-- VIEW: SESSION DETAIL -->
+        <div id="view-session-detail" class="view-section hidden">
+            <div class="back-btn" onclick="goBackToStudent()"><i class="fas fa-arrow-left"></i> Back to Student</div>
+
+            <div class="card mb-2" style="border-left: 5px solid var(--primary);">
+                <h2 id="sess-summary-title">Session Summary</h2>
+                <p id="sess-summary-text" style="font-size: 1.2rem; color: var(--text-main); margin-top: 0.5rem;">...
+                </p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-val" id="sess-time">0s</div>
+                    <div class="stat-label">Total Time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val" id="sess-attempts">0</div>
+                    <div class="stat-label">Total Attempts</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-val" id="sess-fails">0</div>
+                    <div class="stat-label">Failures</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Question Breakdown</h3>
+                <div id="sess-questions" class="question-breakdown"></div>
+            </div>
+        </div>
+
+        <!-- VIEW: ASSIGNMENTS (Old Sessions View) -->
+        <div id="view-sessions" class="view-section hidden">
+            <div class="card">
+                <h3>Create New Assignment</h3>
+                <form id="create-session-form">
+                    <div class="flex-row" style="flex-wrap: wrap;">
+                        <select id="session-student" required>
+                            <option value="">Select Student...</option>
+                        </select>
+                        <select id="session-file" style="min-width: 150px;">
+                            <option value="">-- All Words (Master) --</option>
+                        </select>
+                        <select id="session-game" required>
+                            <option value="memoryEcho">Memory Echo</option>
+                            <option value="multipleChoice">Multiple Choice</option>
+                            <option value="matchPairs">Match Pairs</option>
+                            <option value="fillBlank">Fill Blank</option>
+                            <option value="tapChoice">Tap Choice</option>
+                        </select>
+                        <input type="number" id="session-limit" value="5" min="1" max="20" placeholder="Q Count"
+                            style="width: 100px; flex: 0;" />
+                        <button type="submit"><i class="fas fa-paper-plane"></i> Assign</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card">
+                <div class="flex-row space-between">
+                    <h3>Student Portfolios</h3>
+                    <div class="text-muted" style="font-size: 0.9rem;">
+                        <span id="total-active">0</span> Active &bull; <span id="total-completed">0</span> Completed
+                    </div>
+                </div>
+                <div id="student-list-container" class="student-list">
+                    <!-- Dynamic Folders -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

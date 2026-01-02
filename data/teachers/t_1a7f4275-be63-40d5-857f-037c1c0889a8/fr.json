@@ -1,0 +1,49 @@
+{
+    "words": [
+        {
+            "word": "chat",
+            "audio": "assets/audio/chat.mp3",
+            "choices": [
+                "chat",
+                "chien",
+                "oiseau"
+            ]
+        },
+        {
+            "word": "chien",
+            "audio": "",
+            "choices": [
+                "chien",
+                "chat",
+                "vache"
+            ]
+        },
+        {
+            "word": "soleil",
+            "audio": "",
+            "choices": [
+                "soleil",
+                "lune",
+                "étoile"
+            ]
+        },
+        {
+            "word": "Le ___ correspond à l'image.",
+            "audio": "",
+            "choices": [
+                "chat",
+                "chien",
+                "oiseau"
+            ]
+        },
+        {
+            "word": "Le ___ brille dans le ciel.",
+            "audio": "",
+            "choices": [
+                "soleil",
+                "lune",
+                "arbre"
+            ]
+        }
+    ]
+}

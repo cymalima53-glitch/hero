@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill in the Blank</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../shared/result.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <!-- Scene hooks -->
+        <div id="scene">
+            <div id="hero" class="hero idle"></div>
+        </div>
+
+        <div id="play-area">
+            <div id="sentence-display" class="sentence"></div>
+            <div id="options-area" class="hidden"></div>
+            <div id="feedback-message"></div>
+        </div>
+
+        <div id="start-screen">
+            <h1>Fill in the Blank</h1>
+            <button id="start-btn">Play</button>
+        </div>
+
+        <div id="end-screen" class="hidden">
+            <h1>Completed!</h1>
+            <div id="trophy">🏆</div>
+            <button id="restart-btn">Play Again</button>
+        </div>
+    </div>
+
+    <script src="../shared/result.js"></script>
+    <script src="game.js"></script>
+</body>
+
+</html>

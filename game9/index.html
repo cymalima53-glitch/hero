@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move & Match (Game 9)</title>
+    <link rel="stylesheet" href="../shared/result.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        window.onerror = function (msg, url, line) {
+            alert("JS Error: " + msg + "\nLine: " + line);
+            document.querySelector('#loading-overlay p').textContent = "CRASH: " + msg;
+        };
+    </script>
+
+    <!-- TensorFlow.js dependencies (Pinned for stability) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core@4.10.0/dist/tf-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter@4.10.0/dist/tf-converter.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl@4.10.0/dist/tf-backend-webgl.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection@2.1.0/dist/pose-detection.min.js"></script>
+
+    <script src="../shared/result.js" defer></script>
+    <script src="game.js?v=2" defer></script>
+</head>
+
+<body>
+    <div id="game-container">
+        <!-- Camera Feed -->
+        <video id="video" playsinline autoplay muted></video>
+        <canvas id="output"></canvas>
+
+        <!-- UI Overlays -->
+        <div id="top-bar">
+            <h1>Poses Left: <span id="progress-text">0/0</span></h1>
+            <button id="camera-btn">Enable Camera</button>
+        </div>
+
+        <div id="game-ui" class="hidden">
+            <!-- Central Instruction -->
+            <div id="center-zone">
+                <div id="speaker-icon">🔊</div>
+                <div id="instruction-text">Listen...</div>
+            </div>
+
+            <!-- Choice Zones -->
+            <div id="left-zone" class="choice-zone">
+                <div class="zone-label">Move Left</div>
+                <img id="left-img" src="" alt="Option A">
+                <div id="left-loader" class="loader">
+                    <div class="loader-bar"></div> <!-- Inner Bar Added -->
+                </div>
+            </div>
+
+            <div id="right-zone" class="choice-zone">
+                <div class="zone-label">Move Right</div>
+                <img id="right-img" src="" alt="Option B">
+                <div id="right-loader" class="loader">
+                    <div class="loader-bar"></div> <!-- Inner Bar Added -->
+                </div>
+            </div>
+        </div>
+
+        <div id="loading-overlay">
+            <div class="spinner"></div>
+            <p>... please wait...</p>
+        </div>
+    </div>
+</body>
+
+</html>

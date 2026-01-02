@@ -1,0 +1,46 @@
+{
+  "id": "sess_65daf73b-4260-4030-a2d5-66b2dd2826df",
+  "teacherId": "t_49527818-c91f-4b31-80c9-a7b64a776451",
+  "studentId": "s_99aab946-163a-439c-bb24-ad0b53526100",
+  "gameId": "motsMeles",
+  "lang": "fr",
+  "wordIds": [
+    "w_5878036d-52f6-4e73-9f1e-1c0231d16f86",
+    "w_121b588e-eaf8-47e9-99b2-9a74c5ada38e",
+    "w_75dcc62b-5968-41b2-9bb3-bd840af55fab",
+    "w_8b430e27-dfdb-4483-b662-54f6e00f2942"
+  ],
+  "assignmentId": "as_456bbc1a-1769-43ca-85c4-4a3d99b297df",
+  "status": "completed",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 0,
+    "questions": {
+      "w_5878036d-52f6-4e73-9f1e-1c0231d16f86": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_121b588e-eaf8-47e9-99b2-9a74c5ada38e": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_75dcc62b-5968-41b2-9bb3-bd840af55fab": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_8b430e27-dfdb-4483-b662-54f6e00f2942": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      }
+    },
+    "endTime": 1767181736851,
+    "accuracy": 100,
+    "mistakes": 0
+  },
+  "createdAt": "2025-12-31T11:47:31.784Z"
+}

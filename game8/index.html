@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sound Drag | Antigravity</title>
+    <link rel="stylesheet" href="../shared/style.css">
+    <link rel="stylesheet" href="../shared/result.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="game-container">
+        <!-- HEADER -->
+        <header>
+            <div id="score-display">⭐ 0</div>
+            <div id="instruction">Drag speaker to the matching picture!</div>
+        </header>
+
+        <!-- START SCREEN -->
+        <div id="start-screen" class="overlay">
+            <div class="content">
+                <h1 class="title">Sound Drag 🤏</h1>
+                <p class="subtitle">1. Pick up the Speaker (Hold)<br>2. Listen to the word<br>3. Drag it to the matching
+                    image!</p>
+                <div class="hero-start">🧩 🎧</div>
+                <button id="start-btn" class="primary-btn pulse">Start</button>
+            </div>
+        </div>
+
+        <!-- GAME AREA -->
+        <main id="game-area" class="hidden">
+            <!-- Drop Zones (Images) -->
+            <div id="drop-zones"></div>
+
+            <!-- Draggable Source -->
+            <div id="drag-source-container">
+                <div id="draggable-speaker" class="draggable">
+                    <span>🔊</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- SHARED SCRIPTS -->
+    <script src="../shared/result.js"></script>
+    <script src="game.js?v=2"></script>
+</body>
+
+</html>

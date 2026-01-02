@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tap From Choice</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../shared/result.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="game-container">
+        <!-- Hero Hooks (Visuals handled via CSS classes if needed, but per requirements: "Hooks only, NO visuals" implies logic hooks exist but maybe invisible or minimal?) 
+             User said: "Hero Hooks only (idle / thinking / happy / celebrate) NO visuals" 
+             I will keep the element so logic doesn't break, but maybe keep it invisible or minimal. -->
+        <div id="hero" class="hero idle hidden"></div>
+
+        <div id="progress-bar">
+            <div id="progress-fill"></div>
+        </div>
+
+        <div id="play-area">
+            <div id="image-container" class="hidden">
+                <img id="question-image" src="" alt="Question Image">
+            </div>
+
+            <div id="sentence-container">
+                <p id="sentence-text"></p>
+            </div>
+
+            <div id="choices-grid">
+                <!-- Buttons injected here -->
+            </div>
+        </div>
+
+        <div id="feedback-overlay" class="hidden">
+            <div id="feedback-content">
+                <span id="feedback-icon"></span>
+            </div>
+        </div>
+
+        <div id="start-screen">
+            <h1>Tap the Word!</h1>
+            <p>Fill in the blank.</p>
+            <button id="start-btn" class="big-btn">Play</button>
+        </div>
+
+        <div id="end-screen" class="hidden">
+            <h1>Great Job!</h1>
+            <div class="trophy">🏆</div>
+            <button id="restart-btn" class="big-btn">Play Again</button>
+        </div>
+    </div>
+
+    <script src="../shared/result.js"></script>
+    <script src="game.js"></script>
+</body>
+
+</html>

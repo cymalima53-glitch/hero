@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Orbitron:wght@500;700&display=swap');
+
+:root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a29bfe;
+    --accent-warning: #fdcb6e;
+    --accent-success: #00b894;
+    --accent-error: #d63031;
+    --glass-bg: rgba(0, 0, 0, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #0f0f1a;
+    /* Darker Space Theme */
+    font-family: 'Fredoka', sans-serif;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Video & Canvas: Fullscreen Mirror */
+#video,
+#output {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleX(-1);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.6;
+    /* Dim the video slightly to focus on UI */
+}
+
+#output {
+    z-index: 2;
+}
+
+/* UI Layer */
+#top-bar,
+#game-ui,
+#loading-overlay {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+}
+
+/* Header */
+#top-bar {
+    top: 0;
+    padding: 15px 30px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 10px var(--primary-color);
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+#camera-btn {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    padding: 12px 24px;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.5);
+    transition: transform 0.2s;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#camera-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Game Interface */
+#game-ui {
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Choice Zones sidebars */
+.choice-zone {
+    width: 25%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid var(--glass-border);
+}
+
+#right-zone {
+    border-right: none;
+    border-left: 1px solid var(--glass-border);
+}
+
+.zone-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transition: background 0.3s;
+    z-index: -1;
+}
+
+.zone-label.huge {
+    color: white;
+    font-size: 4rem;
+    /* HUGE TEXT */
+    font-weight: 800;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+}
+
+/* Active State */
+.choice-zone.active .zone-bg {
+    background: rgba(108, 92, 231, 0.3);
+    /* Purple tint */
+}
+
+/* Correct/Wrong States */
+.choice-zone.correct .zone-bg {
+    background: rgba(0, 184, 148, 0.6) !important;
+}
+
+.choice-zone.wrong .zone-bg {
+    background: rgba(214, 48, 49, 0.6) !important;
+}
+
+/* Center Instruction */
+#center-zone {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    pointer-events: auto;
+    /* Enable clicks for replay button */
+}
+
+#speaker-bg {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+#speaker-bg:hover {
+    transform: scale(1.1);
+    background: rgba(108, 92, 231, 0.6);
+}
+
+#replay-hint {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-top: -10px;
+    margin-bottom: 5px;
+    font-family: 'Fredoka', sans-serif;
+    cursor: pointer;
+}
+
+#replay-hint:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+#speaker-icon {
+    font-size: 3rem;
+}
+
+#instruction-text {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px 40px;
+    border-radius: 15px;
+    border: 1px solid var(--glass-border);
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Loaders */
+#loading-overlay {
+    height: 100vh;
+    background: #0f0f1a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 40px rgba(108, 92, 231, 0.6);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+}
+
+.pulse-anim {
+    animation: pulse 1.5s infinite ease-in-out;
+    border-color: var(--secondary-color) !important;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Selection Loader */
+.loader {
+    position: absolute;
+    bottom: 50px;
+    width: 60%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.loader-bar {
+    height: 100%;
+    background: white;
+    width: 0%;
+    box-shadow: 0 0 10px white;
+    transition: width 0.1s linear;
+}

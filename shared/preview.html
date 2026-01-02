@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Result Screen Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="result.css">
+  <style>
+    body {
+      font-family: 'Fredoka', sans-serif;
+      background: #e0f7fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      gap: 20px;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    button {
+      padding: 10px 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+      background: #fff;
+      transition: all 0.2s;
+    }
+
+    button:hover {
+      background: #f0f0f0;
+    }
+
+    h2 {
+      grid-column: span 2;
+      margin-top: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="game-container"></div> <!-- Dummy Container -->
+
+  <div class="controls">
+    <h2>Preview Controls</h2>
+    <button onclick="testWinEn()">Win (EN)</button>
+    <button onclick="testWinFr()">Win (FR)</button>
+    <button onclick="testFailEn()">Fail (EN)</button>
+    <button onclick="testFailFr()">Fail (FR)</button>
+  </div>
+
+  <script src="result.js"></script>
+  <script>
+    const rs = new ResultScreen({
+      container: '#game-container',
+      onRetry: () => console.log('Retry clicked'),
+      onNext: () => console.log('Next clicked')
+    });
+
+    // Toggle random attempts to see star variations
+    function testWinEn() {
+      const attempts = Math.random() > 0.5 ? 1 : 3;
+      rs.show({ success: true, attempts, lang: 'en' });
+    }
+
+    function testWinFr() {
+      const attempts = Math.random() > 0.5 ? 1 : 3;
+      rs.show({ success: true, attempts, lang: 'fr' });
+    }
+
+    function testFailEn() {
+      rs.show({ success: false, attempts: 1, lang: 'en' });
+    }
+
+    function testFailFr() {
+      rs.show({ success: false, attempts: 2, lang: 'fr' });
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Living Homework Book</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="login-card">
+        <div class="login-header">
+            <i class="fas fa-book-reader fa-3x" style="color: var(--primary); margin-bottom: 1rem;"></i>
+            <h1>Welcome Back</h1>
+            <p>Please log in to continue</p>
+        </div>
+
+        <div class="error-msg" id="error-msg"></div>
+
+        <div class="tabs">
+            <div class="tab active" data-target="teacher" onclick="switchTab('teacher')">
+                <i class="fas fa-chalkboard-teacher"></i> Teacher
+            </div>
+            <div class="tab" data-target="student" onclick="switchTab('student')">
+                <i class="fas fa-user-graduate"></i> Student
+            </div>
+        </div>
+
+        <!-- TEACHER FORM -->
+        <form id="teacher-form" class="auth-form" onsubmit="handleTeacherLogin(event)">
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="teacher-email" placeholder="admin@school.com" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="teacher-password" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn-primary">Teacher Login</button>
+            <a href="/dashboard/forgot.html" class="forgot-link">Forgot Password?</a>
+        </form>
+
+        <!-- STUDENT FORM -->
+        <form id="student-form" class="auth-form hidden" onsubmit="handleStudentLogin(event)">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" id="student-username" placeholder="e.g. kamal123" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="student-password" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn-primary">Student Login</button>
+        </form>
+    </div>
+
+    <script>
+        // Check URL param to switch tab
+        function checkUrlParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const role = urlParams.get('role');
+            if (role === 'student') {
+                switchTab('student');
+            }
+        }
+
+        function switchTab(role) {
+            // Update UI
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelector(`.tab[data-target="${role}"]`).classList.add('active');
+
+            // Toggle Forms
+            if (role === 'teacher') {
+                document.getElementById('teacher-form').classList.remove('hidden');
+                document.getElementById('student-form').classList.add('hidden');
+            } else {
+                document.getElementById('teacher-form').classList.add('hidden');
+                document.getElementById('student-form').classList.remove('hidden');
+            }
+
+            // Clear errors
+            document.getElementById('error-msg').style.display = 'none';
+        }
+
+        async function handleTeacherLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('teacher-email').value;
+            const password = document.getElementById('teacher-password').value;
+            const errorEl = document.getElementById('error-msg');
+            const btn = e.target.querySelector('button');
+
+            try {
+                btn.disabled = true;
+                btn.innerText = 'Logging in...';
+
+                const res = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await res.json();
+
+                if (res.ok) {
+                    window.location.href = '/dashboard/index.html';
+                } else {
+                    throw new Error(data.error || 'Login failed');
+                }
+            } catch (err) {
+                console.error(err);
+                errorEl.innerText = err.message;
+                errorEl.style.display = 'block';
+                btn.disabled = false;
+                btn.innerText = 'Teacher Login';
+            }
+        }
+
+        async function handleStudentLogin(e) {
+            e.preventDefault();
+            const username = document.getElementById('student-username').value;
+            const password = document.getElementById('student-password').value;
+            const errorEl = document.getElementById('error-msg');
+            const btn = e.target.querySelector('button');
+
+            try {
+                btn.disabled = true;
+                btn.innerText = 'Logging in...';
+
+                const res = await fetch('/api/auth/student/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await res.json();
+
+                if (res.ok) {
+                    window.location.href = '/student/index.html';
+                } else {
+                    throw new Error(data.error || 'Login failed');
+                }
+            } catch (err) {
+                console.error(err);
+                errorEl.innerText = err.message;
+                errorEl.style.display = 'block';
+                btn.disabled = false;
+                btn.innerText = 'Student Login';
+            }
+        }
+
+        // Init
+        checkUrlParams();
+    </script>
+</body>
+
+</html>

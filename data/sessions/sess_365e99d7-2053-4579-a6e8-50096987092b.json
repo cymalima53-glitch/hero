@@ -1,0 +1,23 @@
+{
+  "id": "sess_365e99d7-2053-4579-a6e8-50096987092b",
+  "teacherId": "t_49527818-c91f-4b31-80c9-a7b64a776451",
+  "studentId": "s_99aab946-163a-439c-bb24-ad0b53526100",
+  "gameId": "memoryEcho",
+  "lang": "fr",
+  "wordIds": [
+    "w_f2f0eeb0-55f2-42a9-8025-8392e7eeef0e",
+    "w_26b96185-5156-451a-ae17-a13c71eca86d",
+    "w_121b588e-eaf8-47e9-99b2-9a74c5ada38e",
+    "w_5878036d-52f6-4e73-9f1e-1c0231d16f86",
+    "w_75dcc62b-5968-41b2-9bb3-bd840af55fab"
+  ],
+  "assignmentId": "as_93d344ee-27c4-417f-8dab-533dc179c73d",
+  "status": "active",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 0,
+    "questions": {}
+  },
+  "createdAt": "2025-12-31T09:35:37.762Z"
+}

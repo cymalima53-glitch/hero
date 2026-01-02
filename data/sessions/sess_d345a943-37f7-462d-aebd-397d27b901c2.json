@@ -1,0 +1,68 @@
+{
+  "id": "sess_d345a943-37f7-462d-aebd-397d27b901c2",
+  "teacherId": "t_49527818-c91f-4b31-80c9-a7b64a776451",
+  "studentId": "teacher_preview",
+  "gameId": "motsMeles",
+  "wordIds": [
+    "w_dog",
+    "w_kamal",
+    "w_cat",
+    "w_adam",
+    "w_monkey",
+    "w_b7dc1171-5761-4632-b8ba-2a5200a7705c",
+    "w_788e3ee9-20c1-422b-a03b-e7e2fec7be81",
+    "w_aurore"
+  ],
+  "gameActions": {},
+  "lang": "en",
+  "limit": 10,
+  "createdAt": "2025-12-31T11:26:22.160Z",
+  "status": "completed",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 0,
+    "questions": {
+      "w_kamal": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_b7dc1171-5761-4632-b8ba-2a5200a7705c": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_aurore": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_monkey": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_788e3ee9-20c1-422b-a03b-e7e2fec7be81": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_adam": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_dog": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      }
+    },
+    "startTime": 1767180385643,
+    "endTime": 1767180752240,
+    "totalTimeSeconds": 366.597,
+    "accuracy": 100,
+    "mistakes": 0
+  }
+}

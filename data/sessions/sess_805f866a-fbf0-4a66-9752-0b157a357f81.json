@@ -1,0 +1,22 @@
+{
+  "id": "sess_805f866a-fbf0-4a66-9752-0b157a357f81",
+  "teacherId": "t_83f77706-57cc-4b88-afd3-3a132d24d22a",
+  "studentId": "s_ec3d8a9a-35e2-4162-8417-ab136ad13fb9",
+  "gameId": "simonSquad",
+  "wordIds": [
+    "w_9fce4432-c938-4e22-b8ff-68e7bd816fa8",
+    "w_f9bf2d6b-f71c-4e7c-94f3-a2bfbee6e79c",
+    "w_992fa9fc-acfa-4610-90ac-95767284b8f9"
+  ],
+  "gameActions": {},
+  "lang": "en",
+  "limit": "10",
+  "createdAt": "2025-12-26T13:16:47.876Z",
+  "status": "pending",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 0,
+    "questions": {}
+  }
+}

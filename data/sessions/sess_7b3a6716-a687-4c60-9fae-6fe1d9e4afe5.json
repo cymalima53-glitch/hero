@@ -1,0 +1,50 @@
+{
+  "id": "sess_7b3a6716-a687-4c60-9fae-6fe1d9e4afe5",
+  "teacherId": "t_49527818-c91f-4b31-80c9-a7b64a776451",
+  "studentId": "teacher_preview",
+  "gameId": "memoryEcho",
+  "wordIds": [
+    "w_cat",
+    "w_monkey",
+    "w_aurore",
+    "w_1767008923710_jw8ds",
+    "w_dog"
+  ],
+  "gameActions": {},
+  "lang": "en",
+  "limit": 10,
+  "createdAt": "2025-12-31T09:33:27.735Z",
+  "status": "completed",
+  "analytics": {
+    "attempts": 4,
+    "failuresBeforePass": 0,
+    "timeSpent": 22.911,
+    "questions": {
+      "w_cat": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_dog": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_aurore": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_monkey": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      }
+    },
+    "startTime": 1767173607796,
+    "endTime": 1767173644094,
+    "totalTimeSeconds": 30.926,
+    "accuracy": 100,
+    "mistakes": 0
+  }
+}

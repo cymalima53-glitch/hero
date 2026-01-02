@@ -1,0 +1,266 @@
+:root {
+    --primary: #6366f1;
+    --success: #22c55e;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --cell-size: 36px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    min-height: 100vh;
+    overflow: hidden;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#game-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Start Screen */
+#start-screen {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.98);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    text-align: center;
+    padding: 2rem;
+}
+
+#start-screen h1 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+#start-screen p {
+    font-size: 1.2rem;
+    color: #64748b;
+}
+
+#start-screen .hint {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+#start-btn {
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#start-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+}
+
+/* Game Screen */
+#game-screen {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HUD */
+#hud {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
+}
+
+#timer,
+#score {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Grid Container */
+#grid-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 1rem;
+    overflow: auto;
+}
+
+#word-grid {
+    display: grid;
+    gap: 2px;
+    background: white;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.grid-cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: #f1f5f9;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: #334155;
+}
+
+.grid-cell:hover {
+    background: #e2e8f0;
+}
+
+.grid-cell.selecting {
+    background: #c7d2fe;
+    color: white;
+}
+
+.grid-cell.found {
+    background: var(--success);
+    color: white;
+    animation: foundPop 0.3s;
+}
+
+@keyframes foundPop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Selection Overlay */
+#selection-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.selection-line {
+    stroke: rgba(99, 102, 241, 0.5);
+    stroke-width: 30;
+    stroke-linecap: round;
+}
+
+/* Clue Panel */
+#clue-panel {
+    background: white;
+    padding: 1rem;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+    max-height: 35vh;
+    overflow-y: auto;
+}
+
+#clue-panel h3 {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+}
+
+#word-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.word-tag {
+    padding: 0.4rem 0.8rem;
+    background: #e2e8f0;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.word-tag:hover {
+    background: #cbd5e1;
+}
+
+.word-tag.found {
+    background: var(--success);
+    color: white;
+    text-decoration: line-through;
+}
+
+.word-tag.active {
+    background: var(--primary);
+    color: white;
+}
+
+#current-clue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+#clue-image {
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+#audio-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: var(--primary);
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#audio-btn:hover {
+    transform: scale(1.1);
+}
+
+.hidden {
+    display: none !important;
+}

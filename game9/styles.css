@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Orbitron:wght@500;700&display=swap');
+
+:root {
+    --primary-color: #4facfe;
+    --secondary-color: #00f2fe;
+    --accent-warning: #ffb142;
+    --accent-success: #2ecc71;
+    --accent-error: #e74c3c;
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.3);
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+    /* Video fallback */
+    font-family: 'Fredoka', sans-serif;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Video & Canvas: Fullscreen Mirror */
+#video,
+#output {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleX(-1);
+    /* Mirror effect */
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+}
+
+#output {
+    z-index: 2;
+    /* Canvas overlays video */
+}
+
+/* UI Layer */
+#top-bar,
+#game-ui,
+#loading-overlay {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+}
+
+/* Header */
+#top-bar {
+    top: 0;
+    padding: 20px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    /* Sci-fi font */
+    text-shadow: 0 0 10px var(--primary-color);
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+#camera-btn {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    padding: 12px 24px;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.5);
+    transition: transform 0.2s;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#camera-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Game Interface */
+#game-ui {
+    height: 100%;
+    pointer-events: none;
+    /* Let clicks pass through if needed */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Choice Zones sidebars */
+.choice-zone {
+    width: 25%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-right: 2px solid var(--glass-border);
+}
+
+#right-zone {
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 100%);
+    border-right: none;
+    border-left: 2px solid var(--glass-border);
+}
+
+.choice-zone img {
+    width: 80%;
+    max-width: 200px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border: 4px solid white;
+    transition: transform 0.3s;
+}
+
+.zone-label {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-transform: uppercase;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Active State (Hover) */
+.choice-zone.active {
+    background: rgba(79, 172, 254, 0.3);
+    /* Blue highlight */
+    box-shadow: inset 0 0 50px var(--primary-color);
+}
+
+.choice-zone.active img {
+    transform: scale(1.1);
+    border-color: var(--secondary-color);
+}
+
+/* Correct/Wrong States */
+.choice-zone.correct {
+    background: rgba(46, 204, 113, 0.5) !important;
+    box-shadow: inset 0 0 80px var(--accent-success);
+}
+
+.choice-zone.correct img {
+    border-color: var(--accent-success);
+    transform: scale(1.2) rotate(5deg);
+}
+
+.choice-zone.wrong {
+    background: rgba(231, 76, 60, 0.5) !important;
+    box-shadow: inset 0 0 80px var(--accent-error);
+}
+
+.choice-zone.wrong img {
+    border-color: var(--accent-error);
+    filter: grayscale(1);
+}
+
+/* Center Instruction */
+#center-zone {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px 30px;
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+#instruction-text {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Loaders */
+#loading-overlay {
+    height: 100vh;
+    background: radial-gradient(circle at center, #2b32b2, #1488cc);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    position: relative;
+    backdrop-filter: blur(2px);
+}
+
+.choice-zone.active {
+    background: rgba(79, 70, 229, 0.4);
+    /* Blue highlight when body enters */
+    border-color: var(--primary);
+    transform: scale(1.05);
+}
+
+.choice-zone.correct {
+    background: rgba(16, 185, 129, 0.6);
+    border-color: var(--success);
+}
+
+.choice-zone.wrong {
+    background: rgba(239, 68, 68, 0.6);
+    border-color: var(--danger);
+}
+
+.choice-zone img {
+    width: 80%;
+    height: auto;
+    max-height: 70%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.zone-label {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #333;
+    text-shadow: 0 0 10px white;
+    margin-bottom: 1rem;
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+/* Selection Loader */
+.loader {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.loader-bar {
+    height: 100%;
+    background: var(--primary);
+    width: 0%;
+    transition: width 0.1s linear;
+}

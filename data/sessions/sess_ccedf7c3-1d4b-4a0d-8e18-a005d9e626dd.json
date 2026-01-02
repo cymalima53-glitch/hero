@@ -1,0 +1,45 @@
+{
+  "id": "sess_ccedf7c3-1d4b-4a0d-8e18-a005d9e626dd",
+  "teacherId": "t_49527818-c91f-4b31-80c9-a7b64a776451",
+  "studentId": "s_99aab946-163a-439c-bb24-ad0b53526100",
+  "gameId": "beatClock",
+  "lang": "en",
+  "wordIds": [
+    "w_monkey",
+    "w_cat",
+    "w_dog",
+    "w_aurore"
+  ],
+  "assignmentId": "as_f73d29e8-d984-4281-b2c9-9e3d38b3bc8a",
+  "status": "completed",
+  "analytics": {
+    "attempts": 10,
+    "failuresBeforePass": 0,
+    "timeSpent": 12.35,
+    "questions": {
+      "w_aurore": {
+        "wrong_action": 2,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_cat": {
+        "wrong_action": 1,
+        "timeout": 0,
+        "correct": false
+      },
+      "w_dog": {
+        "wrong_action": 1,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_monkey": {
+        "wrong_action": 1,
+        "timeout": 0,
+        "correct": true
+      }
+    },
+    "endTime": 1767089307093,
+    "totalTimeSeconds": 27.768
+  },
+  "createdAt": "2025-12-30T10:06:06.953Z"
+}

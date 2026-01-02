@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Login - LMS</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f2f5;
+            margin: 0;
+        }
+
+        .login-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            margin-top: 0;
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: .5rem;
+            color: #666;
+        }
+
+        input {
+            width: 100%;
+            padding: .75rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: .75rem;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+            margin-bottom: 1rem;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-card">
+        <h1 id="form-title">Teacher Login</h1>
+        <div id="error-msg" class="error"></div>
+        <form id="login-form">
+            <input type="hidden" id="mode" value="login" />
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" required placeholder="admin" />
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password" required placeholder="password" />
+            </div>
+            <button type="submit" id="submit-btn" style="margin-bottom: 1rem;">Sign In</button>
+            <div style="text-align: center; font-size: 0.9rem;">
+                <a href="#" id="toggle-mode" style="color: #007bff; text-decoration: none;">Need an account?
+                    Register</a>
+            </div>
+            <div style="text-align: center; margin-top: 10px; font-size: 0.85rem;">
+                <a href="forgot.html" style="color: #666; text-decoration: none;">Forgot Password?</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const modeInput = document.getElementById('mode');
+        const formTitle = document.getElementById('form-title');
+        const submitBtn = document.getElementById('submit-btn');
+        const toggleLink = document.getElementById('toggle-mode');
+        const errorMsg = document.getElementById('error-msg'); // Corrected var name
+
+        toggleLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (modeInput.value === 'login') {
+                modeInput.value = 'register';
+                formTitle.textContent = 'Create Account';
+                submitBtn.textContent = 'Sign Up';
+                toggleLink.textContent = 'Have an account? Login';
+            } else {
+                modeInput.value = 'login';
+                formTitle.textContent = 'Teacher Login';
+                submitBtn.textContent = 'Sign In';
+                toggleLink.textContent = 'Need an account? Register';
+            }
+        });
+
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const mode = modeInput.value;
+
+            // Simple client-side validation
+            if (mode === 'register' && password.length < 4) {
+                errorMsg.textContent = 'Password needs to be at least 4 characters';
+                errorMsg.style.display = 'block';
+                return;
+            }
+
+            const endpoint = mode === 'login' ? '/api/auth/login' : '/api/auth/register';
+
+            try {
+                const res = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const text = await res.text();
+                let data;
+                try {
+                    data = JSON.parse(text);
+                } catch (e) {
+                    data = { error: text || res.statusText }; // Fallback for 404 HTML etc
+                }
+
+                if (res.ok) {
+                    window.location.href = '../app/index.html';
+                } else {
+                    // Extract error from HTML if 404
+                    if (data.error && data.error.includes && data.error.includes('Cannot POST')) {
+                        errorMsg.textContent = 'Registration not active. Please restart server.';
+                    } else {
+                        errorMsg.textContent = data.error || 'Action failed';
+                    }
+                    errorMsg.style.display = 'block';
+                }
+            } catch (err) {
+                console.error(err);
+                errorMsg.textContent = 'Server connection failed';
+                errorMsg.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+
+</html>

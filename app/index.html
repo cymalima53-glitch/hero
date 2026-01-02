@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Teacher - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- SIDEBAR -->
+    <aside>
+        <div class="brand">
+            <img src="/image/aurore.png" alt="Hero Teacher"
+                style="height: 90px; width: auto; margin-right: 12px; vertical-align: middle;">
+            <span style="vertical-align: middle; font-size: 1.4rem;">Hero Teacher</span>
+        </div>
+        <nav class="nav">
+            <div class="nav-item active" data-view="dashboard"><i class="fas fa-home"></i> Dashboard</div>
+            <div class="nav-item" data-view="students"><i class="fas fa-user-graduate"></i> Students</div>
+            <div class="nav-item" data-view="content"><i class="fas fa-edit"></i> Content Editor</div>
+            <div class="nav-item" data-view="assignments"><i class="fas fa-clipboard-list"></i> Assignments</div>
+            <div class="nav-item" data-view="analytics"><i class="fas fa-chart-line"></i> Analytics</div>
+        </nav>
+    </aside>
+
+    <!-- MAIN APP AREA -->
+    <main>
+        <!-- TOP BAR -->
+        <div class="top-bar">
+            <div class="user-badge" id="teacher-name">
+                <i class="fas fa-user-circle"></i> Teacher
+            </div>
+            <button class="secondary sm" onclick="logout()">Logout</button>
+        </div>
+
+        <div class="content-area" style="padding-top: 10px !important; display: block !important;">
+
+            <!-- VIEW: DASHBOARD (Welcome) -->
+            <div id="view-dashboard" class="app-view">
+                <h2>Welcome Back</h2>
+                <div class="stats-grid"
+                    style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <!-- Stats injected here -->
+                    <div class="card">
+                        <h3>Total Students</h3>
+                        <div style="font-size: 2rem; font-weight: 800;" id="dash-total-students">0</div>
+                    </div>
+                    <div class="card">
+                        <h3>Active Assignments</h3>
+                        <div style="font-size: 2rem; font-weight: 800;" id="dash-active-assignments">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Launch Section REMOVED as per user request -->
+            <div class="game-grid hidden"></div>
+
+            <!-- VIEW: STUDENTS -->
+            <div id="view-students" class="app-view hidden">
+                <div class="card">
+                    <div class="flex-row" style="justify-content: space-between;">
+                        <h2>Manage Students</h2>
+                    </div>
+                    <form id="add-student-form" class="flex-row" style="margin-bottom: 2rem; flex-wrap: wrap;">
+                        <input type="text" id="new-student-name" placeholder="Name" required
+                            style="min-width: 150px;" />
+                        <input type="text" id="new-student-username" placeholder="Username" required
+                            style="min-width: 150px;" />
+                        <input type="text" id="new-student-password" placeholder="Password" required
+                            style="min-width: 150px;" />
+                        <input type="email" id="new-student-email" placeholder="Parent Email (Opt)"
+                            style="min-width: 200px;" />
+                        <button type="submit"><i class="fas fa-plus"></i> Add</button>
+                    </form>
+
+                    <table id="students-table" style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid var(--border);">
+                                <th style="text-align:left; padding:1rem;">Name</th>
+                                <th style="text-align:left; padding:1rem;">Parent Email</th>
+                                <th style="text-align:left; padding:1rem;">ID</th>
+                                <th style="text-align:right; padding:1rem;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- VIEW: CONTENT EDITOR (Merged) -->
+            <div id="view-content" class="app-view hidden">
+                <!-- Editor Header Actions -->
+                <div class="card flex-row" style="justify-content: space-between; align-items: center; padding: 1rem;">
+                    <div class="flex-row">
+                        <select id="editor-lang-select">
+                            <option value="en">English (en)</option>
+                            <option value="fr">French (fr)</option>
+                            <option value="es">Español (es)</option>
+                        </select>
+                        <button class="secondary" id="editor-load-btn">Load Data</button>
+                    </div>
+                    <button id="editor-save-btn">💾 Save Changes</button>
+                </div>
+
+                <!-- FILE MANAGER (NEW) -->
+                <div class="card mb-2" style="background:#f8f9fa; margin-bottom: 1rem; padding: 10px;">
+                    <div class="flex-row" style="gap:10px; align-items:center; flex-wrap:wrap;">
+                        <label><strong>📁 Filter by Folder:</strong></label>
+                        <select id="editor-file-select" style="flex:1; min-width: 200px; padding: 5px;">
+                            <option value="">-- All Words --</option>
+                        </select>
+                        <button id="btn-create-file" class="sm secondary">+ New Folder</button>
+                        <button id="btn-delete-file" class="sm danger" style="display:none;">Delete Folder</button>
+                    </div>
+                </div>
+
+                <!-- Editor Tabs (Context) -->
+                <div style="margin-bottom: 1rem;">
+                    <label style="font-weight: bold; margin-right: 10px;">Editing Context:</label>
+                    <select id="editor-context-select" style="max-width: 300px; padding: 10px; font-size: 1rem;">
+                        <option value="library">📚 Master Word Library (All)</option>
+                        <optgroup label="Memory Games">
+                            <option value="memoryEcho">🧠 Memory Echo (Game 1)</option>
+                            <option value="matchPairs">🃏 Match Pairs (Game 3)</option>
+                            <option value="simonSquad">🏋️ Hero Freeze (Game 10)</option>
+                        </optgroup>
+                        <optgroup label="Quiz Games">
+                            <option value="multipleChoice">📝 Multiple Choice (Game 2)</option>
+                            <option value="tapChoice">👆 Tap Choice (Game 5)</option>
+                            <option value="soundSwipe">↔️ Sound Swipe (Game 6)</option>
+                        </optgroup>
+                        <optgroup label="Skill Games">
+                            <option value="fillBlank">✍️ Fill Blank (Game 4)</option>
+                            <option value="beatClock">⏱️ Beat The Clock (Game 7)</option>
+                            <option value="soundDrag">🧩 Sound Drag (Game 8)</option>
+                            <option value="moveMatch">🤸 Move & Match (Game 9)</option>
+                            <option value="audioDetective">🎧 Audio Detective (Game 11)</option>
+                        </optgroup>
+                        <optgroup label="Puzzle Games">
+                            <option value="motsMeles">🔍 Word Search (Game 12)</option>
+                            <option value="motsCroises">✏️ Crossword (Game 13)</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <!-- Editor Body -->
+                <div class="container">
+                    <!-- Library Sidebar -->
+                    <aside class="sidebar" id="editor-sidebar">
+                        <div
+                            style="padding: 1rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between;">
+                            <strong>Words</strong>
+                            <button class="sm" id="add-word-btn">+</button>
+                        </div>
+                        <ul id="word-list"></ul>
+                    </aside>
+
+                    <!-- Library Form -->
+                    <div id="editor-library-area" class="card editor-form-scroll" style="flex:1;">
+                        <div id="no-selection" style="text-align: center; color: var(--text-muted); margin-top: 4rem;">
+                            Select a word to edit</div>
+                        <form id="edit-form" class="hidden">
+                            <div style="margin-bottom: 1rem;">
+                                <label>Word</label>
+                                <input type="text" id="input-word" required />
+                            </div>
+                            <div style="margin-bottom: 1rem;">
+                                <label>Choices (Comma sep)</label>
+                                <input type="text" id="input-choices" />
+                            </div>
+
+                            <!-- Image Section -->
+                            <div style="margin-bottom: 1rem;">
+                                <label>Image</label>
+                                <div class="flex-row" style="margin-bottom: 0.5rem;">
+                                    <input type="text" id="input-image" placeholder="Image URL or pasted link" />
+                                    <button type="button" class="secondary" id="upload-img-btn">Upload</button>
+                                </div>
+
+                                <div class="flex-row" style="margin-bottom: 0.5rem;">
+                                    <input type="text" id="image-search-term" placeholder="Type a word to search..."
+                                        style="flex:1;" />
+                                    <button type="button" class="secondary" id="search-img-btn">Search Pixabay</button>
+                                </div>
+
+                                <div id="image-results"
+                                    style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem; overflow-x: auto;"></div>
+
+                                <img id="image-preview" src=""
+                                    style="max-height: 150px; border-radius: 6px; display: none; border: 1px solid var(--border);" />
+                                <input type="file" id="file-upload-input" class="hidden" />
+                            </div>
+
+                            <!-- DUAL AUDIO SYSTEM -->
+                            <div style="margin-bottom: 1.5rem;">
+                                <label style="font-weight: bold; margin-bottom: 0.5rem; display: block;">Audio
+                                    Source</label>
+
+                                <!-- TAB HEADERS -->
+                                <div class="flex-row" style="margin-bottom: 0.5rem; gap: 10px;">
+                                    <button type="button" class="sm secondary active-tab" id="tab-btn-tts"
+                                        onclick="switchAudioTab('tts')">🗣️ TTS</button>
+                                    <button type="button" class="sm secondary" id="tab-btn-upload"
+                                        onclick="switchAudioTab('upload')">📤 Upload</button>
+                                </div>
+
+                                <!-- TAB 1: TEXT-TO-SPEECH -->
+                                <div class="audio-tab" id="tts-tab">
+                                    <div style="margin-bottom: 0.5rem;">
+                                        <textarea id="tts-input" placeholder="Type phrase to speak..."
+                                            style="width: 100%; height: 50px; padding: 0.5rem; border-radius: 6px; border: 1px solid #eee;"></textarea>
+                                    </div>
+                                    <div class="flex-row" style="gap: 0.5rem; margin-bottom: 0.5rem;">
+                                        <select id="tts-voice" style="flex: 1;">
+                                            <option value="en-US">English (US)</option>
+                                            <option value="en-GB">English (UK)</option>
+                                            <option value="fr-FR">French</option>
+                                            <option value="es-ES">Spanish</option>
+                                        </select>
+                                        <button type="button" class="secondary" id="generate-tts-btn">🔊
+                                            Generate</button>
+                                    </div>
+                                </div>
+
+                                <!-- TAB 2: UPLOAD -->
+                                <div class="audio-tab hidden" id="upload-tab">
+                                    <div class="flex-row" style="margin-bottom: 0.5rem;">
+                                        <button type="button" class="secondary" id="upload-audio-btn"
+                                            style="width: 100%;">
+                                            📤 Choose Audio File
+                                        </button>
+                                    </div>
+                                    <input type="file" id="audio-file-input" accept="audio/*" class="hidden" />
+                                </div>
+
+                                <!-- SHARED: URL & PREVIEW -->
+                                <input type="hidden" id="input-audio" /> <!-- Hidden storage for URL -->
+
+                                <div id="audio-preview-container"
+                                    style="display: none; padding: 0.5rem; background: #f8f9fa; border-radius: 6px; margin-top: 0.5rem;">
+                                    <div
+                                        style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.25rem;">
+                                        <span style="font-size: 0.8rem; font-weight: 600;">Preview</span>
+                                        <button type="button" class="sm danger" id="clear-audio-btn"
+                                            style="padding: 2px 6px;">✕</button>
+                                    </div>
+                                    <audio id="audio-preview" controls style="width: 100%; height: 30px;"></audio>
+                                </div>
+                            </div>
+
+                            <!-- GAME 11 SPECIFIC FIELDS -->
+                            <div class="game-11-fields"
+                                style="background: rgba(108, 92, 231, 0.1); padding: 10px; border-radius: 8px; margin-bottom: 1rem; border: 1px dashed var(--primary);">
+                                <label style="color: var(--primary); font-weight:bold;">🎧 Audio Detective
+                                    Config</label>
+                                <div style="margin-top: 5px;">
+                                    <label>Instruction</label>
+                                    <input type="text" id="input-ad-instruction"
+                                        placeholder="e.g. If you hear B, go RIGHT" />
+                                </div>
+                                <div style="margin-top: 5px;">
+                                    <label>Correct Side</label>
+                                    <select id="input-ad-side">
+                                        <option value="left">Left</option>
+                                        <option value="right">Right</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- GAME 10 SPECIFIC FIELDS (Hero Freeze) -->
+                            <div class="game-10-fields"
+                                style="background: rgba(240, 147, 251, 0.1); padding: 10px; border-radius: 8px; margin-bottom: 1rem; border: 1px dashed var(--primary);">
+                                <label style="color: var(--primary); font-weight:bold;">🏋️ Hero Freeze Config</label>
+                                <div style="margin-top: 5px;">
+                                    <label>Instruction</label>
+                                    <input type="text" id="input-ss-instruction"
+                                        placeholder="e.g. If you hear this, Freeze!" />
+                                </div>
+                                <div style="margin-top: 5px;">
+                                    <label>Correct Action</label>
+                                    <select id="input-ss-action">
+                                        <option value="freeze">🛑 Freeze</option>
+                                        <option value="jump">⬆️ Jump</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="flex-row"
+                                style="justify-content:space-between; align-items:center; margin-top:2rem;">
+                                <button type="button" class="danger" id="delete-word-btn">Delete Word</button>
+                                <div class="flex-row" style="gap:5px;">
+                                    <button type="button" class="success hidden" id="copy-to-master-btn"
+                                        style="background:#2ecc71;">Copy to Master</button>
+                                    <button type="button" class="warning hidden" id="remove-from-folder-btn"
+                                        style="background:#f39c12;">Remove from Folder</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Game Config Area -->
+                    <div id="editor-game-area" class="card hidden" style="flex:1;">
+                        <h3 id="game-config-title">Game Settings</h3>
+                        <div id="game-word-list" class="game-word-checklist"></div>
+                        <p style="margin-top: 1rem;">Selected: <span id="game-selected-count">0</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIEW: ASSIGNMENTS -->
+            <div id="view-assignments" class="app-view hidden">
+                <div class="card">
+                    <h2>Create Assignment</h2>
+                    <form id="create-session-form">
+                        <div class="flex-row" style="flex-wrap: wrap;">
+                            <div style="flex: 1; min-width: 200px;">
+                                <label>Student</label>
+                                <select id="assign-student" required>
+                                    <option value="">Select Student...</option>
+                                </select>
+                            </div>
+                            <!-- NEW: File Source -->
+                            <div style="flex: 1; min-width: 200px;">
+                                <label>Use Words From</label>
+                                <select id="assign-file">
+                                    <option value="">-- Master Library (All) --</option>
+                                </select>
+                            </div>
+                            <div style="flex: 1; min-width: 200px;">
+                                <label>Game</label>
+                                <select id="assign-game" required>
+                                    <option value="memoryEcho">Memory Echo</option>
+                                    <option value="multipleChoice">Multiple Choice</option>
+                                    <option value="matchPairs">Match Pairs</option>
+                                    <option value="fillBlank">Fill Blank</option>
+                                    <option value="tapChoice">Tap Choice</option>
+                                    <option value="soundSwipe">Sound Swipe</option>
+                                    <option value="beatClock">Beat The Clock (Timer)</option>
+                                    <option value="soundDrag">Sound Drag (Drag)</option>
+                                    <option value="moveMatch">Move & Match (AR Camera)</option>
+                                    <option value="simonSquad">Hero Freeze (AR Freeze)</option>
+                                    <option value="audioDetective">Audio Detective (AR Audio)</option>
+                                    <option value="motsMeles">🔍 Word Search (Mots Mêlés)</option>
+                                    <option value="motsCroises">✏️ Crossword (Mots Croisés)</option>
+                                </select>
+                            </div>
+                            <div style="width: 100px;">
+                                <label>Limit</label>
+                                <input type="number" id="assign-limit" value="10" />
+                            </div>
+                            <div style="width: 100%; margin-top: 1rem; display: flex; gap: 10px;">
+                                <button type="button" class="secondary" onclick="tryGame()" style="flex: 1;">🎮 Try
+                                    Game</button>
+                                <button type="submit" style="flex: 2;">Assign & Email Parent</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="card">
+                    <div class="flex-row" style="justify-content:space-between; align-items:center;">
+                        <h3>Student Portfolios</h3>
+                        <div class="text-muted" style="font-size: 0.9rem;">
+                            <span id="total-active">0</span> Active &bull; <span id="total-completed">0</span> Completed
+                        </div>
+                    </div>
+                    <!-- Folder Container -->
+                    <div id="student-list-container" class="student-list" style="margin-top: 1rem;">
+                        <!-- Dynamic Folders -->
+                    </div>
+
+                    <!-- Fallback: Hidden Old Table for reference if needed, or fully removed -->
+                    <!-- Removed old table -->
+                </div>
+            </div>
+
+            <!-- VIEW: ANALYTICS -->
+            <div id="view-analytics" class="app-view hidden"
+                style="margin-top: 0 !important; padding-top: 0 !important;">
+                <div class="card" style="margin-top: 0 !important;">
+                    <h2>Analytics Overview</h2>
+                    <div class="table-container">
+                        <table id="analytics-table" style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="border-bottom: 2px solid var(--border);">
+                                    <th style="text-align:left; padding:1rem;">Student</th>
+                                    <th style="text-align:left; padding:1rem;">Assignments</th>
+                                    <th style="text-align:left; padding:1rem;">Avg Attempts</th>
+                                    <th style="text-align:left; padding:1rem;">Failures</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIEW: STUDENT DETAIL -->
+            <div id="view-student-detail" class="app-view hidden">
+                <div class="back-btn" onclick="showView('analytics')"><i class="fas fa-arrow-left"></i> Back to
+                    Analytics
+                </div>
+                <div class="card">
+                    <div class="flex-row space-between">
+                        <div>
+                            <h2 id="sd-name">Student Name</h2>
+                            <div style="color:var(--text-muted); margin-bottom:1rem;">ID: <code id="sd-id">...</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Recent Assignments</h3>
+                    <div id="sd-session-list" class="session-list">
+                        <!-- Cards -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIEW: SESSION DETAIL -->
+            <div id="view-session-detail" class="app-view hidden">
+                <div class="back-btn" onclick="goBackToStudent()"><i class="fas fa-arrow-left"></i> Back to Student
+                </div>
+
+                <div class="card" style="border-left: 5px solid var(--primary);">
+                    <h2 id="sess-summary-title">Session Summary</h2>
+                    <p id="sess-summary-text" style="font-size: 1.2rem; margin-top: 0.5rem;">...</p>
+                </div>
+
+                <div class="game-grid" style="margin-top: 1rem; margin-bottom: 1rem;">
+                    <div class="card">
+                        <div class="stat-val" id="sess-time">0s</div>
+                        <div class="stat-label">Total Time</div>
+                    </div>
+                    <div class="card">
+                        <div class="stat-val" id="sess-attempts">0</div>
+                        <div class="stat-label">Total Attempts</div>
+                    </div>
+                    <div class="card">
+                        <div class="stat-val" id="sess-fails">0</div>
+                        <div class="stat-label">Failures</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Question Breakdown</h3>
+                    <div id="sess-questions" class="question-breakdown"></div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ASSIGNMENT MODAL -->
+    <div id="assign-modal" class="modal-overlay hidden">
+        <div class="modal-box">
+            <div class="modal-header">Assign Game</div>
+            <p>Select a game to assign to <strong id="assign-modal-student-name">Student</strong>:</p>
+
+            <div class="form-group">
+                <label>Game Type</label>
+                <select id="assign-modal-game-select" class="full-width">
+                    <option value="memoryEcho">Memory Echo (Game 1)</option>
+                    <option value="multipleChoice">Multiple Choice (Game 2)</option>
+                    <option value="matchPairs">Match Pairs (Game 3)</option>
+                    <option value="fillBlank">Fill Blank (Game 4)</option>
+                    <option value="tapChoice">Tap Choice (Game 5)</option>
+                    <option value="soundSwipe">Sound Swipe (Game 6)</option>
+                    <option value="beatClock">Beat The Clock (Game 7)</option>
+                    <option value="soundDrag">Sound Drag (Game 8)</option>
+                    <option value="moveMatch">Move & Match (Game 9)</option>
+                    <option value="simonSquad">Hero Freeze (Game 10)</option>
+                    <option value="audioDetective">Audio Detective (Game 11)</option>
+                </select>
+            </div>
+
+            <div class="modal-actions">
+                <button class="secondary" onclick="closeAssignModal()">Cancel</button>
+                <button class="primary" onclick="confirmAssign()">Assign Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js?v=4"></script>
+</body>
+
+</html>

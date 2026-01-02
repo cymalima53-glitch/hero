@@ -1,0 +1,134 @@
+[
+    {
+        "id": 1,
+        "word": "cat",
+        "choices": [
+            "chat",
+            "chien",
+            "souris",
+            "oiseau"
+        ],
+        "answer": "chat"
+    },
+    {
+        "id": 2,
+        "word": "dog",
+        "choices": [
+            "chat",
+            "chien",
+            "oiseau",
+            "poisson"
+        ],
+        "answer": "chien"
+    },
+    {
+        "id": 3,
+        "word": "red",
+        "choices": [
+            "bleu",
+            "rouge",
+            "jaune",
+            "vert"
+        ],
+        "answer": "rouge"
+    },
+    {
+        "id": 4,
+        "word": "blue",
+        "choices": [
+            "rouge",
+            "bleu",
+            "vert",
+            "noir"
+        ],
+        "answer": "bleu"
+    },
+    {
+        "id": 5,
+        "word": "one",
+        "choices": [
+            "deux",
+            "un",
+            "trois",
+            "quatre"
+        ],
+        "answer": "un"
+    },
+    {
+        "id": 6,
+        "word": "two",
+        "choices": [
+            "un",
+            "deux",
+            "trois",
+            "cinq"
+        ],
+        "answer": "deux"
+    },
+    {
+        "id": 7,
+        "word": "tree",
+        "choices": [
+            "fleur",
+            "arbre",
+            "herbe",
+            "feuille"
+        ],
+        "answer": "arbre"
+    },
+    {
+        "id": 8,
+        "word": "house",
+        "choices": [
+            "école",
+            "maison",
+            "parc",
+            "rue"
+        ],
+        "answer": "maison"
+    },
+    {
+        "id": 9,
+        "word": "yellow",
+        "choices": [
+            "rouge",
+            "jaune",
+            "orange",
+            "rose"
+        ],
+        "answer": "jaune"
+    },
+    {
+        "id": 10,
+        "word": "fish",
+        "choices": [
+            "oiseau",
+            "poisson",
+            "papillon",
+            "grenouille"
+        ],
+        "answer": "poisson"
+    },
+    {
+        "id": 11,
+        "word": "five",
+        "choices": [
+            "quatre",
+            "trois",
+            "cinq",
+            "six"
+        ],
+        "answer": "cinq"
+    },
+    {
+        "id": 12,
+        "word": "apple",
+        "choices": [
+            "orange",
+            "pomme",
+            "banane",
+            "raisin"
+        ],
+        "answer": "pomme"
+    }
+]

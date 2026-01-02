@@ -1,0 +1,41 @@
+{
+  "id": "sess_1fee889d-46f8-409c-aa7c-deea1e424b21",
+  "teacherId": "t_49527818-c91f-4b31-80c9-a7b64a776451",
+  "studentId": "s_99aab946-163a-439c-bb24-ad0b53526100",
+  "gameId": "multipleChoice",
+  "lang": "fr",
+  "wordIds": [
+    "w_5878036d-52f6-4e73-9f1e-1c0231d16f86",
+    "w_75dcc62b-5968-41b2-9bb3-bd840af55fab",
+    "w_121b588e-eaf8-47e9-99b2-9a74c5ada38e"
+  ],
+  "assignmentId": "as_1417b0b9-22f9-4518-a011-aa7d5a0ccbef",
+  "status": "completed",
+  "analytics": {
+    "attempts": 5,
+    "failuresBeforePass": 2,
+    "timeSpent": 5.369999999999999,
+    "questions": {
+      "w_121b588e-eaf8-47e9-99b2-9a74c5ada38e": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_5878036d-52f6-4e73-9f1e-1c0231d16f86": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_75dcc62b-5968-41b2-9bb3-bd840af55fab": {
+        "wrong_action": 2,
+        "timeout": 0,
+        "correct": false
+      }
+    },
+    "endTime": 1767175320989,
+    "totalTimeSeconds": 8.69,
+    "accuracy": 60,
+    "mistakes": 2
+  },
+  "createdAt": "2025-12-31T10:01:51.400Z"
+}

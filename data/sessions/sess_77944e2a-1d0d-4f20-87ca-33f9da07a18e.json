@@ -1,0 +1,22 @@
+{
+  "id": "sess_77944e2a-1d0d-4f20-87ca-33f9da07a18e",
+  "teacherId": "t_49527818-c91f-4b31-80c9-a7b64a776451",
+  "studentId": "teacher_preview",
+  "gameId": "multipleChoice",
+  "wordIds": [
+    "w_75dcc62b-5968-41b2-9bb3-bd840af55fab",
+    "w_5878036d-52f6-4e73-9f1e-1c0231d16f86",
+    "w_121b588e-eaf8-47e9-99b2-9a74c5ada38e"
+  ],
+  "gameActions": {},
+  "lang": "fr",
+  "limit": 10,
+  "createdAt": "2025-12-31T09:41:52.927Z",
+  "status": "pending",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 0,
+    "questions": {}
+  }
+}

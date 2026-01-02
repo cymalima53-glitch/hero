@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Mots Croisés - Crossword</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../shared/result.css">
+</head>
+
+<body class="notranslate" translate="no">
+    <div id="game-container">
+        <!-- Start Screen -->
+        <div id="start-screen">
+            <h1>✏️ Mots Croisés</h1>
+            <p>Remplis la grille avec les mots!</p>
+            <p class="hint">Fill in the crossword puzzle!</p>
+            <button id="start-btn">Jouer</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="hidden">
+            <!-- HUD -->
+            <div id="hud">
+                <div id="timer">⏱️ <span id="time-left">180</span>s</div>
+                <div id="score">✓ <span id="words-done">0</span>/<span id="words-total">0</span></div>
+            </div>
+
+            <!-- Crossword Grid -->
+            <div id="grid-container">
+                <div id="crossword-grid"></div>
+            </div>
+
+            <!-- Clue Panel -->
+            <div id="clue-panel">
+                <div id="clue-direction"></div>
+                <div id="clue-content">
+                    <span id="clue-text" class="hidden"></span>
+                    <img id="clue-image" class="hidden" alt="Clue">
+                    <button id="audio-btn" class="hidden">🔊 Écouter</button>
+                </div>
+            </div>
+
+            <!-- On-Screen Keyboard -->
+            <div id="keyboard">
+                <div class="kb-row">
+                    <button data-key="A">A</button><button data-key="Z">Z</button><button data-key="E">E</button>
+                    <button data-key="R">R</button><button data-key="T">T</button><button data-key="Y">Y</button>
+                    <button data-key="U">U</button><button data-key="I">I</button><button data-key="O">O</button>
+                    <button data-key="P">P</button>
+                </div>
+                <div class="kb-row">
+                    <button data-key="Q">Q</button><button data-key="S">S</button><button data-key="D">D</button>
+                    <button data-key="F">F</button><button data-key="G">G</button><button data-key="H">H</button>
+                    <button data-key="J">J</button><button data-key="K">K</button><button data-key="L">L</button>
+                    <button data-key="M">M</button>
+                </div>
+                <div class="kb-row">
+                    <button data-key="W">W</button><button data-key="X">X</button><button data-key="C">C</button>
+                    <button data-key="V">V</button><button data-key="B">B</button><button data-key="N">N</button>
+                    <button data-key="⌫" class="key-delete">⌫</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../shared/result.js"></script>
+    <script src="game.js"></script>
+</body>
+
+</html>

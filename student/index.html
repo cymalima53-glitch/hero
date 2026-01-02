@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Games | Living Homework Book</title>
+    <link rel="stylesheet" href="../dashboard/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: 'Segoe UI', sans-serif;
+            background-image: url('dashboard-banner.jpg');
+            display: block !important;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow-y: auto !important;
+            /* Fix for dashboard/style.css hidden overflow */
+        }
+
+        .header {
+            background: transparent;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            color: #333;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+            border-bottom: 5px solid #ddd;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            background: #eef2ff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem auto;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .btn-play {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+
+        .btn-play:hover {
+            background: var(--primary-dark);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .tag.active {
+            background: #fee2e2;
+            color: #ef4444;
+        }
+
+        .tag.success {
+            background: #dcfce7;
+            color: #22c55e;
+        }
+
+        .dashboard-banner {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: block;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <i class="fas fa-book-open"></i> Hello, Player!
+        </div>
+        <button onclick="logout()" style="background:none; border:none; cursor:pointer; font-weight:bold; color:#666;">
+            Logout <i class="fas fa-sign-out-alt"></i>
+        </button>
+    </div>
+
+    <div class="container" id="student-dashboard">
+        <h2 class="section-title">Your Missions 🚀</h2>
+
+        <div id="assignments-grid" class="games-grid">
+            <!-- Loaded via JS -->
+            <div style="text-align:center; grid-column:1/-1;">Loading...</div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

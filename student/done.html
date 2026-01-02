@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Job!</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', 'Unknown Font', sans-serif;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            color: white;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            color: #333;
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: #e67e22;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .stars {
+            font-size: 4rem;
+            margin: 1rem 0;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="stars">🌟🌟🌟</div>
+        <h1>All Done!</h1>
+        <p>You finished all your homework!</p>
+        <p>Great job!</p>
+    </div>
+    <script>
+        // Optional: Play a sound? 
+        // For now just visual celebration.
+    </script>
+</body>
+
+</html>

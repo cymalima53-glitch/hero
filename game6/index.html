@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sound Swipe | Antigravity</title>
+    <link rel="stylesheet" href="../shared/style.css">
+    <link rel="stylesheet" href="../shared/result.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+</head>
+
+<body>
+    <div id="game-container">
+        <!-- HEADER -->
+        <header>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+            </div>
+            <button id="mute-btn" class="icon-btn">🔊</button>
+        </header>
+
+        <!-- START SCREEN -->
+        <div id="start-screen" class="overlay">
+            <div class="content">
+                <h1 class="title">Sound Swipe</h1>
+                <p class="subtitle">Listen to the word.<br>Swipe <strong>RIGHT</strong> if it matches.<br>Swipe
+                    <strong>LEFT</strong> if it's wrong.
+                </p>
+                <div class="hero-start">🎧 ↔️ 🖼️</div>
+                <button id="start-btn" class="primary-btn pulse">Play</button>
+            </div>
+        </div>
+
+        <!-- GAME AREA -->
+        <main id="game-area" class="hidden">
+            <div id="speaker-icon" class="pulse-icon">🔊</div>
+
+            <div id="card-container">
+                <div id="card">
+                    <img id="card-image" src="" alt="Word Image">
+                    <div id="card-word" class="hidden"></div> <!-- Optional text mode -->
+                    <div id="swipe-overlay"></div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="btn-no" class="swipe-btn no">❌ No (Left)</button>
+                <button id="btn-replay" class="swipe-btn replay">Start Audio</button>
+                <button id="btn-yes" class="swipe-btn yes">✅ Yes (Right)</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- SHARED SCRIPTS -->
+    <script src="../shared/result.js"></script>
+    <script src="game.js?v=2"></script>
+</body>
+
+</html>

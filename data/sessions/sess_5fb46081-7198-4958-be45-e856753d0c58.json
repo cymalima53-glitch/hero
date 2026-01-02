@@ -1,0 +1,25 @@
+{
+  "id": "sess_5fb46081-7198-4958-be45-e856753d0c58",
+  "teacherId": "t_49527818-c91f-4b31-80c9-a7b64a776451",
+  "studentId": "teacher_preview",
+  "gameId": "memoryEcho",
+  "wordIds": [
+    "w_cat",
+    "w_monkey",
+    "w_aurore",
+    "w_1767008923710_jw8ds",
+    "w_dog"
+  ],
+  "gameActions": {},
+  "lang": "en",
+  "limit": 10,
+  "createdAt": "2026-01-01T10:23:27.666Z",
+  "status": "active",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 0,
+    "questions": {},
+    "startTime": 1767263007790
+  }
+}

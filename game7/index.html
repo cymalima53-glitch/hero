@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Beat the Clock | Antigravity</title>
+    <link rel="stylesheet" href="../shared/style.css">
+    <link rel="stylesheet" href="../shared/result.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="game-container">
+        <!-- TOP BAR -->
+        <header>
+            <div id="score-display">⭐ 0</div>
+            <div id="timer-bar-container">
+                <div id="timer-bar"></div>
+            </div>
+        </header>
+
+        <!-- START SCREEN -->
+        <div id="start-screen" class="overlay">
+            <div class="content">
+                <h1 class="title">Beat the Clock ⏱️</h1>
+                <p class="subtitle">Listen to the word.<br>Tap the matching image <strong>FAST!</strong><br>Don't let
+                    time run out!</p>
+                <div class="hero-start">🏃💨</div>
+                <button id="start-btn" class="primary-btn pulse">Start Race</button>
+            </div>
+        </div>
+
+        <!-- GAME AREA -->
+        <main id="game-area" class="hidden">
+            <div id="audio-indicator" class="pulse-icon">🔊 Listen!</div>
+
+            <!-- Grid of options (Images) -->
+            <div id="grid-area"></div>
+        </main>
+    </div>
+
+    <!-- SHARED SCRIPTS -->
+    <script src="../shared/result.js"></script>
+    <script src="game.js?v=2"></script>
+</body>
+
+</html>

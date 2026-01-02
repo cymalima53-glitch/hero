@@ -1,0 +1,201 @@
+/* Mobile First Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Fredoka', sans-serif;
+    /* Kid friendly font */
+    background: #e0f7fa;
+    /* Light cyan */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#game-container {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    height: 100vh;
+    /* Full height on mobile */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Tablet/Desktop Tweaks */
+@media (min-width: 600px) {
+    #game-container {
+        height: 90vh;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Header / Progress */
+#progress-bar {
+    height: 10px;
+    background: #eee;
+    width: 100%;
+}
+
+#progress-fill {
+    height: 100%;
+    background: #00bcd4;
+    width: 0%;
+    transition: width 0.3s;
+}
+
+/* Start/End Screens */
+#start-screen,
+#end-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.big-btn {
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+    background: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px #c60055;
+    margin-top: 2rem;
+}
+
+.big-btn:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+/* Play Area */
+#play-area {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+#image-container img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#sentence-text {
+    font-size: 1.5rem;
+    margin: 1rem 0 2rem;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.blank-highlight {
+    color: #ff4081;
+    font-weight: bold;
+    border-bottom: 2px dashed #ff4081;
+    padding: 0 5px;
+}
+
+/* Choices Grid */
+#choices-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* 1 col mobile */
+    gap: 15px;
+    width: 100%;
+}
+
+@media (min-width: 480px) {
+    #choices-grid {
+        grid-template-columns: 1fr 1fr;
+        /* 2 col tablet+ */
+    }
+}
+
+.choice-btn {
+    background: #f5f5f5;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    padding: 1.5rem;
+    font-size: 1.25rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.1s;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.choice-btn:active {
+    background: #eee;
+    transform: scale(0.98);
+}
+
+/* Feedback States */
+.choice-btn.correct {
+    background: #4caf50;
+    color: white;
+    border-color: #388e3c;
+    animation: pop 0.3s;
+}
+
+.choice-btn.wrong {
+    background: #f44336;
+    color: white;
+    border-color: #d32f2f;
+    animation: shake 0.4s;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes pop {
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.trophy {
+    font-size: 4rem;
+    margin: 1rem;
+}

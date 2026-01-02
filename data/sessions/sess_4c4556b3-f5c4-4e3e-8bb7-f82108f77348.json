@@ -1,0 +1,32 @@
+{
+  "id": "sess_4c4556b3-f5c4-4e3e-8bb7-f82108f77348",
+  "teacherId": "t_49527818-c91f-4b31-80c9-a7b64a776451",
+  "studentId": "teacher_preview",
+  "gameId": "motsMeles",
+  "wordIds": [
+    "w_dog",
+    "w_kamal",
+    "w_cat",
+    "w_adam",
+    "w_monkey",
+    "w_b7dc1171-5761-4632-b8ba-2a5200a7705c",
+    "w_788e3ee9-20c1-422b-a03b-e7e2fec7be81",
+    "w_aurore"
+  ],
+  "gameActions": {},
+  "lang": "en",
+  "limit": 10,
+  "createdAt": "2025-12-31T11:14:04.401Z",
+  "status": "completed",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 0,
+    "questions": {},
+    "startTime": 1767179645607,
+    "endTime": 1767179766605,
+    "totalTimeSeconds": 120.998,
+    "accuracy": 0,
+    "mistakes": 0
+  }
+}

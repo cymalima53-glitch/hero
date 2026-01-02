@@ -1,0 +1,75 @@
+{
+  "words": [
+    {
+      "id": "w1",
+      "word": "dog",
+      "image": "https://pixabay.com/get/gdd2d4060d4671b4991a1fae8cd1f1b11a776b6dce4b53da9ab0de419ae124785552618dd99cdaa62d0099cfaa2c41abd500c7ead3404cd54ae471745e7800c8c_640.jpg",
+      "audio": "",
+      "tags": [
+        "grade1"
+      ],
+      "choices": [
+        "dog",
+        "cat",
+        "cow"
+      ]
+    },
+    {
+      "id": "w2",
+      "word": "rabbit",
+      "image": "https://pixabay.com/get/ga610a46c49b0f5af7f3b2b32b1e5486b32bfdc3439e19e9da8b58776fbc33781156530440e07d02d7d6f2b55f5e0fcf6c5915573ea49dfcff7b25b92f7653aee_640.jpg",
+      "audio": "",
+      "tags": [
+        "grade1"
+      ],
+      "choices": [
+        "rabbit",
+        "tiger",
+        "lion"
+      ]
+    },
+    {
+      "id": "w3",
+      "word": "food",
+      "image": "https://pixabay.com/get/g88fed0f7847620977b9fb44012a3db1596244a27023d0fa222732e1556a9f65b4cd6279e86f610285097d5009fa8b62a8f98f17ba44b41cec651d085d8ce80a3_640.png",
+      "audio": "",
+      "tags": [
+        "grade1"
+      ],
+      "choices": [
+        "food",
+        "eat",
+        "drink"
+      ]
+    }
+  ],
+  "gameConfig": {
+    "memoryEcho": {
+      "questions": [
+        "w1",
+        "w2"
+      ]
+    },
+    "multipleChoice": {
+      "questions": [
+        "w1",
+        "w2",
+        "w3"
+      ]
+    },
+    "matchPairs": {
+      "questions": [
+        "w1",
+        "w2",
+        "w3"
+      ]
+    },
+    "fillBlank": {
+      "questions": []
+    },
+    "tapChoice": {
+      "questions": []
+    }
+  },
+  "folders": []
+}

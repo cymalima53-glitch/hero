@@ -1,0 +1,16 @@
+{
+  "words": [
+    {
+      "id": "w_dog",
+      "word": "dog",
+      "audio": "",
+      "image": "",
+      "choices": ["dog", "cat", "cow"]
+    }
+  ],
+  "gameConfig": {
+    "memoryEcho": {
+      "questions": ["w_dog"]
+    }
+  }
+}

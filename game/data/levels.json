@@ -1,0 +1,11 @@
+{
+    "easy": {
+        "choices": 2
+    },
+    "medium": {
+        "choices": 3
+    },
+    "hard": {
+        "choices": 4
+    }
+}

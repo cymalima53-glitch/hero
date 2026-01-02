@@ -1,0 +1,28 @@
+{
+  "id": "sess_4bd77870-730f-455e-bd57-5e77577727e7",
+  "teacherId": "t_49527818-c91f-4b31-80c9-a7b64a776451",
+  "studentId": "teacher_preview",
+  "gameId": "motsCroises",
+  "wordIds": [
+    "w_dog",
+    "w_kamal",
+    "w_cat",
+    "w_adam",
+    "w_monkey",
+    "w_b7dc1171-5761-4632-b8ba-2a5200a7705c",
+    "w_788e3ee9-20c1-422b-a03b-e7e2fec7be81",
+    "w_aurore"
+  ],
+  "gameActions": {},
+  "lang": "en",
+  "limit": 10,
+  "createdAt": "2025-12-31T11:16:16.234Z",
+  "status": "active",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 0,
+    "questions": {},
+    "startTime": 1767179777319
+  }
+}

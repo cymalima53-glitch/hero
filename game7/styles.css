@@ -1,0 +1,112 @@
+/* Game 7: Beat the Clock */
+#game-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+#timer-bar-container {
+    flex: 1;
+    height: 12px;
+    background: #e9ecef;
+    border-radius: 6px;
+    margin-left: 1rem;
+    overflow: hidden;
+    max-width: 300px;
+}
+
+#timer-bar {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #4cc9f0, #4361ee);
+    transform-origin: left;
+    transition: width 0.1s linear;
+}
+
+#timer-bar.danger {
+    background: #ef233c;
+    animation: flashDanger 0.5s infinite;
+}
+
+@keyframes flashDanger {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#score-display {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+#audio-indicator {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 0.5rem 1rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* GRID */
+#grid-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+.grid-item {
+    aspect-ratio: 1;
+    background: white;
+    border-radius: 12px;
+    border: 3px solid transparent;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-item img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.grid-item:active {
+    transform: scale(0.95);
+}
+
+.grid-item.correct {
+    border-color: var(--success);
+    background: #d3f9d8;
+}
+
+.grid-item.wrong {
+    border-color: var(--danger);
+    background: #ffe3e3;
+    opacity: 0.6;
+}
+
+@media (min-width: 600px) {
+    #grid-area {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

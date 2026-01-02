@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Editor - Teacher Only</title>
+    <link rel="stylesheet" href="editor.css">
+</head>
+
+<body>
+    <header>
+        <h1>Content Editor</h1>
+        <div class="actions">
+            <select id="lang-select">
+                <option value="en">English (en)</option>
+                <option value="fr">French (fr)</option>
+            </select>
+
+            <button id="load-btn">📂 Load</button>
+            <button id="save-btn">💾 Save</button>
+        </div>
+    </header>
+
+    <!-- TABS -->
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="library">📚 Word Library</button>
+        <button class="tab-btn" data-tab="memoryEcho">🧠 Memory Echo</button>
+        <button class="tab-btn" data-tab="multipleChoice">📝 Multiple Choice</button>
+        <button class="tab-btn" data-tab="matchPairs">🃏 Match Pairs</button>
+        <button class="tab-btn" data-tab="fillBlank">✍️ Fill Blank</button>
+        <button class="tab-btn" data-tab="tapChoice">👆 Tap Choice</button>
+        <button class="tab-btn" data-tab="swipeData">↔️ Swipe</button>
+        <button class="tab-btn" data-tab="clockData">⏱️ Timer</button>
+        <button class="tab-btn" data-tab="dragData">🧩 Drag & Drop</button>
+        <button class="tab-btn" data-tab="moveMatch">🤸 Move Match</button>
+        <button class="tab-btn" data-tab="simonSquad">🏋️ Hero Freeze</button>
+        <button class="tab-btn" data-tab="motsMeles">🔍 Word Search</button>
+        <button class="tab-btn" data-tab="motsCroises">✏️ Crossword</button>
+    </div>
+
+    <!-- LIBRARY VIEW -->
+    <div id="view-library" class="tab-view">
+        <div class="container">
+            <aside class="sidebar">
+                <!-- FILE SELECTOR (NEW) -->
+                <div class="file-selector-container"
+                    style="padding: 10px; background: #f8f9fa; border-bottom: 1px solid var(--border); margin-bottom: 10px;">
+                    <label style="font-size:0.85rem; font-weight:600; color:var(--text-muted);">Current File
+                        (Folder)</label>
+                    <select id="file-selector" style="width:100%; margin: 5px 0; padding: 6px;">
+                        <option value="">-- Master Word Library (All) --</option>
+                    </select>
+                    <div class="flex-row" style="gap:5px;">
+                        <button id="create-file-btn" class="sm secondary" style="flex:1;">+ Folder</button>
+                        <button id="delete-file-btn" class="sm danger" style="flex:0 auto; display:none;"
+                            title="Delete Folder"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+
+                <div class="sidebar-header">
+                    <h2>Words</h2>
+                    <div class="actions-small">
+                        <button id="sidebar-delete-btn" class="small-btn danger" title="Delete Selected">-</button>
+                        <button id="add-word-btn" class="small-btn" title="Add New">+</button>
+                    </div>
+                </div>
+                <ul id="word-list">
+                    <!-- Word items generated here -->
+                </ul>
+            </aside>
+
+            <main class="editor-area">
+                <div id="no-selection" class="placeholder-msg">
+                    Select a word to edit or add a new one.
+                </div>
+
+                <form id="edit-form" class="hidden">
+                    <div class="form-group">
+                        <label for="input-word">Word (Required)</label>
+                        <input type="text" id="input-word" placeholder="e.g. cat" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-audio">Audio (URL or Path)</label>
+                        <input type="text" id="input-audio" placeholder="Click to Add URL..." />
+                        <small>Enter a URL or relative path (e.g. assets/cat.mp3). Leave empty for TTS.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Image (Search & Select)</label>
+                        <div class="image-search-row">
+                            <input type="text" id="image-search-term" placeholder="Search Term (e.g., cat)" />
+                            <button type="button" id="search-img-btn">Search Pixabay</button>
+                            <button type="button" id="upload-img-btn" style="background: #28a745;">Upload Ur
+                                Image</button>
+                            <input type="file" id="file-upload-input" accept="image/*" style="display: none;" />
+                        </div>
+                        <div id="image-results" class="image-grid hidden">
+                            <!-- 3 images will appear here -->
+                        </div>
+                        <input type="text" id="input-image" placeholder="Image URL will appear here" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-choices">Choices (Multiple Choice)</label>
+                        <small>Comma separated list of options (including the correct word)</small>
+                        <textarea id="input-choices" placeholder="e.g. cat, dog, sun"></textarea>
+                    </div>
+
+                    <!-- GAME 11 SPECIFIC FIELDS -->
+                    <div class="game-11-fields"
+                        style="background: rgba(108, 92, 231, 0.1); padding: 10px; border-radius: 8px; margin-bottom: 1rem; border: 1px dashed var(--primary);">
+                        <label style="color: var(--primary); font-weight:bold;">🎧 Audio Detective Config</label>
+                        <div style="margin-top: 5px;">
+                            <label>Instruction</label>
+                            <input type="text" id="input-ad-instruction" placeholder="e.g. If you hear B, go RIGHT" />
+                        </div>
+                        <div style="margin-top: 5px;">
+                            <label>Correct Side</label>
+                            <select id="input-ad-side">
+                                <option value="left">Left</option>
+                                <option value="right">Right</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- GAME 10 SPECIFIC FIELDS (Hero Freeze) -->
+                    <div class="game-10-fields"
+                        style="background: rgba(240, 147, 251, 0.1); padding: 10px; border-radius: 8px; margin-bottom: 1rem; border: 1px dashed var(--primary);">
+                        <label style="color: var(--primary); font-weight:bold;">🏋️ Hero Freeze Config</label>
+                        <div style="margin-top: 5px;">
+                            <label>Instruction</label>
+                            <input type="text" id="input-ss-instruction" placeholder="e.g. If you hear this, Freeze!" />
+                        </div>
+                        <div style="margin-top: 5px;">
+                            <label>Correct Action</label>
+                            <select id="input-ss-action">
+                                <option value="freeze">🛑 Freeze</option>
+                                <option value="jump">⬆️ Jump</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="delete-btn" class="danger">Delete Word</button>
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+
+    <!-- GAME CONFIG VIEW (Shared for all games) -->
+    <div id="view-game" class="tab-view hidden">
+        <div class="container">
+            <main class="editor-area" style="max-width: 800px; margin: 0 auto;">
+                <h2 id="game-title">Game Settings</h2>
+                <p class="hint">Select words from the master list to include in this game.</p>
+
+                <div id="game-word-list" class="game-word-checklist">
+                    <!-- Checkboxes generated here -->
+                </div>
+
+                <div class="selected-summary">
+                    <strong>Selected: <span id="selected-count">0</span></strong>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="editor.js?v=2"></script>
+</body>
+
+</html>

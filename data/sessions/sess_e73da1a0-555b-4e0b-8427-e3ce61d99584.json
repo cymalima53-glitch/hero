@@ -1,0 +1,46 @@
+{
+  "id": "sess_e73da1a0-555b-4e0b-8427-e3ce61d99584",
+  "teacherId": "t_49527818-c91f-4b31-80c9-a7b64a776451",
+  "studentId": "s_99aab946-163a-439c-bb24-ad0b53526100",
+  "gameId": "motsCroises",
+  "lang": "fr",
+  "wordIds": [
+    "w_75dcc62b-5968-41b2-9bb3-bd840af55fab",
+    "w_5878036d-52f6-4e73-9f1e-1c0231d16f86",
+    "w_121b588e-eaf8-47e9-99b2-9a74c5ada38e",
+    "w_8b430e27-dfdb-4483-b662-54f6e00f2942"
+  ],
+  "assignmentId": "as_af27ce7e-934b-4440-9b5d-3f6426a739c4",
+  "status": "completed",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 0,
+    "questions": {
+      "w_121b588e-eaf8-47e9-99b2-9a74c5ada38e": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_75dcc62b-5968-41b2-9bb3-bd840af55fab": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_5878036d-52f6-4e73-9f1e-1c0231d16f86": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_8b430e27-dfdb-4483-b662-54f6e00f2942": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      }
+    },
+    "endTime": 1767182103409,
+    "accuracy": 100,
+    "mistakes": 0
+  },
+  "createdAt": "2025-12-31T11:52:18.607Z"
+}

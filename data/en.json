@@ -1,0 +1,315 @@
+{
+  "words": [
+    {
+      "id": "w_dog",
+      "enabled": true,
+      "word": "dog",
+      "choices": [
+        "dog",
+        "cat",
+        "monkey"
+      ],
+      "image": "https://pixabay.com/get/gc37c79597bb10ae21e591c6a3023918966286565c0882b8105a0c6478d2228fed443cdb8bd7cec92ac3fc8912278adaa8e82bfdf793bf32d54392ed72fdccfa9_640.jpg",
+      "audio": "/data/uploads/audio/en/w_dog.mp3",
+      "ad_instruction": "if u hear D go left",
+      "ad_correctSide": "left",
+      "ss_instruction": "",
+      "ss_correctAction": "jump"
+    },
+    {
+      "id": "w_cat",
+      "enabled": true,
+      "word": "cat",
+      "choices": [
+        "cat",
+        "dog",
+        "camel"
+      ],
+      "image": "https://images.pexels.com/photos/1049692/pexels-photo-1049692.jpeg",
+      "audio": "/data/uploads/audio/en/w_cat.mp3",
+      "ad_instruction": "if you hear cat go left",
+      "ad_correctSide": "left",
+      "ss_instruction": "",
+      "ss_correctAction": "freeze"
+    },
+    {
+      "id": "w_monkey",
+      "enabled": true,
+      "word": "monkey",
+      "choices": [
+        "monkey",
+        "cat",
+        "dog"
+      ],
+      "image": "https://images.pexels.com/photos/733086/pexels-photo-733086.jpeg",
+      "audio": "/data/uploads/audio/en/w_monkey.mp3",
+      "ad_instruction": "if u hear M go right",
+      "ad_correctSide": "right",
+      "ss_instruction": "if you hear monkey jump",
+      "ss_correctAction": "jump"
+    },
+    {
+      "id": "w_aurore",
+      "enabled": true,
+      "word": "aurore",
+      "choices": [
+        "aurore",
+        "cat",
+        "dog"
+      ],
+      "image": "https://placehold.co/400x400?text=Aurore",
+      "audio": "/data/uploads/audio/en/w_aurore.mp3",
+      "ad_instruction": "if you hear A go right",
+      "ad_correctSide": "right",
+      "ss_instruction": "if you hear aurore jump",
+      "ss_correctAction": "jump"
+    },
+    {
+      "id": "w_kamal",
+      "enabled": true,
+      "word": "kamal",
+      "choices": [
+        "shawky",
+        "mylo",
+        "adm"
+      ],
+      "image": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg",
+      "audio": "/data/uploads/audio/en/w_kamal.mp3",
+      "ad_instruction": "if you hear K go right",
+      "ad_correctSide": "right",
+      "ss_instruction": "",
+      "ss_correctAction": "jump"
+    },
+    {
+      "id": "w_adam",
+      "enabled": true,
+      "word": "adam",
+      "choices": [
+        "spiderman",
+        "shwky",
+        "goku"
+      ],
+      "image": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
+      "audio": "/data/uploads/audio/en/w_adam.mp3",
+      "ad_instruction": "if u hear A go right",
+      "ad_correctSide": "right"
+    },
+    {
+      "id": "w_b7dc1171-5761-4632-b8ba-2a5200a7705c",
+      "word": "shawky ",
+      "choices": [
+        "shawky",
+        "cat",
+        "monkey"
+      ],
+      "image": "https://pixabay.com/get/g1f937dc0e2ad6ad39f4ec0d16fa07c3e5082952bddd79ab44c2f0cef53dc73b69b15733d2938e6368ce882c7008d1f86481ca9b872c448e4c4e4bb3e638ad297_640.png",
+      "audio": "/data/uploads/audio/en/w_b7dc1171-5761-4632-b8ba-2a5200a7705c.mp3",
+      "ad_instruction": "if you hear shwky",
+      "ad_correctSide": "left",
+      "ss_instruction": "",
+      "ss_correctAction": ""
+    },
+    {
+      "id": "w_788e3ee9-20c1-422b-a03b-e7e2fec7be81",
+      "word": " teacher",
+      "choices": [
+        "new",
+        "old",
+        "crazy"
+      ],
+      "image": "https://pixabay.com/get/ga53af71900dfb6c9b54523b7d72e8a9cffd930790e575e988137c6dcf20498efd6f4a9243fbf06e2dd447c3bc08204043dd8a5dc720c100d52e9ce3a6610dc31_640.jpg",
+      "audio": "",
+      "ad_instruction": "",
+      "ad_correctSide": "left",
+      "ss_instruction": "",
+      "ss_correctAction": ""
+    },
+    {
+      "id": "w_0210b210-2be1-489d-ad87-77e21f4daaf9",
+      "word": "boieng",
+      "choices": [
+        "boeing",
+        "airbus",
+        "md"
+      ],
+      "image": "https://pixabay.com/get/g912ee0e56de9c21e78c7002f536d6f6b5a377fae865cec095d063fc0044115ce0ddd47131605b8365f702e4320f306c5049c80864a79cdb720c7c85a053a6121_640.jpg",
+      "audio": "",
+      "ad_instruction": "if you hear boeing go left",
+      "ad_correctSide": "left",
+      "ss_instruction": "if you hear boeing freeze ",
+      "ss_correctAction": ""
+    },
+    {
+      "id": "w_e38aac4f-04e5-4e84-b702-d25d2fdefcd1",
+      "enabled": true,
+      "word": "the airplane__ flying",
+      "choices": [
+        "is",
+        "are",
+        "u"
+      ],
+      "image": "https://pixabay.com/get/g4ce6e63cb18612133c9be5dcccb3c1c6112cf20fcb0c314e75b760ebc157f060daa507c9b9bb3a53b4f8d03318e1ad6f87186157756c919f47e77777bc7295e6_640.jpg",
+      "audio": "",
+      "ad_instruction": "",
+      "ad_correctSide": "left",
+      "ss_instruction": "",
+      "ss_correctAction": ""
+    },
+    {
+      "id": "w_dca5dd16-7727-4cf3-a91a-b18c2af2dbf6",
+      "enabled": true,
+      "word": "how __ sugar",
+      "choices": [
+        "much",
+        "many",
+        "tomuch"
+      ],
+      "image": "https://pixabay.com/get/g209d5da8a5ca9c1dd26963e4c530a32ecd4f6a3a09235d487c4ff1c013d3a4bd2d94e9f46d40f20e8fa1afb19ec711dc001955f512f53d86b93d671ad841a20b_640.jpg",
+      "audio": "",
+      "ad_instruction": "",
+      "ad_correctSide": "left",
+      "ss_instruction": "",
+      "ss_correctAction": ""
+    }
+  ],
+  "gameConfig": {
+    "multipleChoice": {
+      "questions": [
+        "w_dog",
+        "w_cat",
+        "w_monkey",
+        "w_kamal",
+        "w_aurore",
+        "w_adam",
+        "w_0210b210-2be1-489d-ad87-77e21f4daaf9"
+      ],
+      "actions": {}
+    },
+    "matchPairs": {
+      "questions": [
+        "w_cat",
+        "w_monkey",
+        "w_dog",
+        "w_aurore"
+      ],
+      "actions": {}
+    },
+    "fillBlank": {
+      "questions": [
+        "w_dca5dd16-7727-4cf3-a91a-b18c2af2dbf6",
+        "w_e38aac4f-04e5-4e84-b702-d25d2fdefcd1"
+      ],
+      "actions": {}
+    },
+    "tapChoice": {
+      "questions": [
+        "w_dog",
+        "w_cat",
+        "w_monkey"
+      ]
+    },
+    "soundSwipe": {
+      "questions": [
+        "w_dog",
+        "w_cat",
+        "w_monkey",
+        "w_adam"
+      ],
+      "actions": {}
+    },
+    "beatClock": {
+      "questions": [
+        "w_dog",
+        "w_cat",
+        "w_monkey",
+        "w_aurore"
+      ]
+    },
+    "soundDrag": {
+      "questions": [
+        "w_dog",
+        "w_cat",
+        "w_monkey",
+        "w_kamal"
+      ]
+    },
+    "moveMatch": {
+      "questions": [
+        "w_cat",
+        "w_monkey",
+        "w_aurore",
+        "w_dog"
+      ],
+      "actions": {}
+    },
+    "poseMatch": {
+      "questions": [
+        "w_dog",
+        "w_cat",
+        "w_monkey"
+      ]
+    },
+    "audioDetective": {
+      "questions": [
+        "w_dog",
+        "w_cat",
+        "w_monkey",
+        "w_aurore",
+        "w_b7dc1171-5761-4632-b8ba-2a5200a7705c"
+      ],
+      "actions": {}
+    },
+    "memoryEcho": {
+      "questions": [
+        "w_cat",
+        "w_monkey",
+        "w_aurore",
+        "w_1767008923710_jw8ds",
+        "w_dog"
+      ],
+      "actions": {},
+      "background": "/data/uploads/1767262990007_idle_3.png"
+    },
+    "simonSquad": {
+      "questions": [
+        "w_adam",
+        "w_b7dc1171-5761-4632-b8ba-2a5200a7705c",
+        "w_cat",
+        "w_dog",
+        "w_monkey",
+        "w_kamal",
+        "w_aurore"
+      ],
+      "actions": {
+        "w_adam": "freeze",
+        "w_b7dc1171-5761-4632-b8ba-2a5200a7705c": "freeze",
+        "w_cat": "jump",
+        "w_dog": "jump",
+        "w_monkey": "jump",
+        "w_kamal": "freeze",
+        "w_aurore": "freeze"
+      }
+    },
+    "motsMeles": {
+      "questions": [
+        "w_dog",
+        "w_kamal",
+        "w_cat",
+        "w_adam",
+        "w_monkey",
+        "w_b7dc1171-5761-4632-b8ba-2a5200a7705c",
+        "w_788e3ee9-20c1-422b-a03b-e7e2fec7be81",
+        "w_aurore"
+      ],
+      "actions": {}
+    },
+    "motsCroises": {
+      "questions": [
+        "w_dog",
+        "w_cat",
+        "w_monkey"
+      ],
+      "actions": {}
+    }
+  }
+}

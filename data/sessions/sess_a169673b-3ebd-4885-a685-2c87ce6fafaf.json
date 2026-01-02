@@ -1,0 +1,40 @@
+{
+  "id": "sess_a169673b-3ebd-4885-a685-2c87ce6fafaf",
+  "teacherId": "t_49527818-c91f-4b31-80c9-a7b64a776451",
+  "studentId": "s_807598dd-47f5-4d9a-9555-4db7b0e65c3a",
+  "gameId": "motsCroises",
+  "lang": "en",
+  "wordIds": [
+    "w_monkey",
+    "w_cat",
+    "w_dog"
+  ],
+  "assignmentId": "as_25395c60-6f31-4e4b-aab9-d2a0241b4812",
+  "status": "completed",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 0,
+    "questions": {
+      "w_monkey": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_dog": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_cat": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      }
+    },
+    "endTime": 1767260197710,
+    "accuracy": 100,
+    "mistakes": 0
+  },
+  "createdAt": "2026-01-01T09:30:42.551Z"
+}

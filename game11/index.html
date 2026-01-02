@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Detective (Game 11)</title>
+    <link rel="stylesheet" href="../shared/result.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        window.onerror = function (msg, url, line) {
+            alert("JS Error: " + msg + "\nLine: " + line);
+            document.querySelector('#loading-overlay p').textContent = "CRASH: " + msg;
+        };
+    </script>
+
+    <!-- TensorFlow.js dependencies (Pinned for stability) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core@4.10.0/dist/tf-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter@4.10.0/dist/tf-converter.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl@4.10.0/dist/tf-backend-webgl.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection@2.1.0/dist/pose-detection.min.js"></script>
+
+    <script src="../shared/result.js" defer></script>
+    <script src="game.js" defer></script>
+</head>
+
+<body>
+    <div id="game-container">
+        <!-- Camera Feed -->
+        <video id="video" playsinline autoplay muted></video>
+        <canvas id="output"></canvas>
+
+        <!-- UI Overlays -->
+        <div id="top-bar">
+            <h1>Audio Detective <span style="font-size:0.8em; opacity:0.7">Game 11</span></h1>
+            <div id="progress-text" style="font-weight:bold; font-size:1.2rem;">0/0</div>
+            <button id="camera-btn">Enable Camera</button>
+        </div>
+
+        <div id="game-ui" class="hidden">
+            <!-- Central Instruction -->
+            <div id="center-zone">
+                <div id="speaker-bg">
+                    <div id="speaker-icon">🔊</div>
+                </div>
+                <div id="replay-hint">Can't hear? Click here</div>
+                <div id="instruction-text">Listen...</div>
+            </div>
+
+            <!-- Choice Zones (NO IMAGES, Just TEXT) -->
+            <div id="left-zone" class="choice-zone">
+                <div class="zone-bg"></div>
+                <div class="zone-label huge">LEFT</div>
+                <div id="left-loader" class="loader">
+                    <div class="loader-bar"></div>
+                </div>
+            </div>
+
+            <div id="right-zone" class="choice-zone">
+                <div class="zone-bg"></div>
+                <div class="zone-label huge">RIGHT</div>
+                <div id="right-loader" class="loader">
+                    <div class="loader-bar"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="loading-overlay">
+            <div class="spinner"></div>
+            <p>Initializing AI...</p>
+        </div>
+    </div>
+</body>
+
+</html>
