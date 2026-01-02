@@ -313,7 +313,12 @@ function renderAssignmentsTable() {
         folder.innerHTML = `
             <div class="folder-header" onclick="toggleFolder('${group.student.id}', this)">
                 <div class="folder-info">
-                    <div class="student-name">${group.student.name}</div>
+                    <div class="student-name">
+                        ${group.student.name}
+                        <button class="icon-btn tiny" title="Reset Password" onclick="event.stopPropagation(); resetStudentPassword('${group.student.id}', '${group.student.name}')" style="margin-left:8px; opacity:0.7;">
+                            <i class="fas fa-key"></i>
+                        </button>
+                    </div>
                     <div class="folder-stats">
                         <span class="stat-badge" style="color:var(--primary)">${group.stats.active} Active</span>
                         <span class="stat-badge" style="color:var(--success-text)">${group.stats.completed} Done</span>
