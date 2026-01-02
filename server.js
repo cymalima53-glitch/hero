@@ -10,7 +10,14 @@ const fileUpload = require('express-fileupload');
 const app = express();
 const PORT = 3000;
 
-app.use(cors());
+app.use(cors({
+    origin: function (origin, callback) {
+        // allow requests with no origin (like mobile apps or curl requests or local files)
+        if (!origin) return callback(null, true);
+        return callback(null, true);
+    },
+    credentials: true
+}));
 app.use(cookieParser());
 app.get('/favicon.ico', (req, res) => res.status(204).end());
 app.use(bodyParser.json({ limit: '50mb' }));
