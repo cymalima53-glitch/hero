@@ -315,8 +315,8 @@ function renderAssignmentsTable() {
                 <div class="folder-info">
                     <div class="student-name">
                         ${group.student.name}
-                        <button class="icon-btn tiny" title="Reset Password" onclick="event.stopPropagation(); resetStudentPassword('${group.student.id}', '${group.student.name}')" style="margin-left:8px; opacity:0.7;">
-                            <i class="fas fa-key"></i>
+                        <button onclick="event.stopPropagation(); resetStudentPassword('${group.student.id}', '${group.student.name}')" style="margin-left:10px; font-size: 0.75rem; padding: 6px 12px; background: var(--primary); color: white; border: none; border-radius: 4px; cursor: pointer;">
+                            <i class="fas fa-key"></i> Reset Password
                         </button>
                     </div>
                     <div class="folder-stats">
@@ -588,7 +588,7 @@ function renderSessionDetail(sessionId) {
     // Actually, we can fetch the `session.lang` file to map IDs to Words!
     // Let's do that for the "WOW" factor.
 
-    fetch(`${API_BASE}/data/${session.lang || 'en'}`).then(r => r.json()).then(data => {
+    fetch(`${API_BASE}/data/${(session.lang || 'en')}.json`).then(r => r.json()).then(data => {
         Object.entries(questions).forEach(([wId, stat]) => {
             const wordObj = data.words.find(w => w.id === wId);
             const wordText = wordObj ? wordObj.word : wId;
