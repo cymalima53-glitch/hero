@@ -38,7 +38,10 @@ async function testConfig() {
     console.log("TEST 1: Unauthorized Access to /api/students");
     const res1 = await request('/api/students', 'GET');
     if (res1.status === 401) console.log("✅ PASS: 401 Unauthorized received");
-    else console.error("❌ FAIL: Expected 401, got", res1.status);
+    else {
+        console.error("❌ FAIL: Expected 401, got", res1.status);
+        process.exit(1);
+    }
 
     // 2. Register Teacher A
     console.log("\nTEST 2: Register Teacher A");
@@ -48,7 +51,7 @@ async function testConfig() {
         console.log("✅ PASS: Teacher A registered");
     } else {
         console.error("❌ FAIL: Registration failed", res2.data);
-        return;
+        process.exit(1);
     }
     const cookieA = res2.headers['set-cookie'][0].split(';')[0];
 
@@ -58,7 +61,10 @@ async function testConfig() {
     const res3 = await request('/api/students', 'POST', { name: 'Student A1', username: usernameA1, password: 'pw' }, cookieA);
     const studentA1Id = res3.data.student.id;
     if (res3.status === 200) console.log("✅ PASS: Student A1 created:", studentA1Id);
-    else console.error("❌ FAIL: Student creation failed", res3.data);
+    else {
+        console.error("❌ FAIL: Student creation failed", res3.data);
+        process.exit(1);
+    }
 
     // 4. Register Teacher B
     console.log("\nTEST 4: Register Teacher B");
@@ -75,6 +81,7 @@ async function testConfig() {
         console.log("✅ PASS: Teacher B sees 0 students (Isolation Success)");
     } else {
         console.error("❌ FAIL: Teacher B saw students!", studentsB);
+        process.exit(1);
     }
 
     // 6. ISOLATION: Teacher B tries to delete Student A1 (Expect 404/403)
@@ -84,6 +91,7 @@ async function testConfig() {
         console.log("✅ PASS: Teacher B blocked from deleting A1 (Status:", res6.status, ")");
     } else {
         console.error("❌ FAIL: Teacher B DELETED A1!", res6.status);
+        process.exit(1);
     }
 
     // 7. ISOLATION: Teacher B tries to Assign Game to Student A1
@@ -93,6 +101,7 @@ async function testConfig() {
         console.log("✅ PASS: Assignment blocked (Status:", res7.status, ")", res7.data.error);
     } else {
         console.error("❌ FAIL: Teacher B assigned work to A1!", res7.status);
+        process.exit(1);
     }
 
     console.log("\n=== VERIFICATION COMPLETE ===");

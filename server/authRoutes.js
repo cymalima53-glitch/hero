@@ -116,6 +116,8 @@ module.exports = function (app) {
             email: email,
             passwordHash: hashedPassword,
             createdAt: new Date().toISOString(),
+            lastActiveAt: new Date().toISOString(),
+            contentGeneratorUses: 0,
             students: []
         };
 
@@ -226,11 +228,12 @@ module.exports = function (app) {
         await saveTeachers(teachers);
 
         // Send Email
-        // Construct Link (Hardcoded localhost for now, or use referer)
-        // In prod, use req.protocol + '://' + req.get('host')
-        const protocol = req.protocol;
+        // Dynamic Host Construction (Works for Localhost & Render)
+        const protocol = req.headers['x-forwarded-proto'] || req.protocol;
         const host = req.get('host');
         const resetLink = `${protocol}://${host}/dashboard/reset.html?token=${resetToken}`;
+
+        console.log(`[AUTH] Generated Reset Link: ${resetLink}`); // DEBUG LOG
 
         await emailService.sendResetLink(email, resetLink);
 
@@ -312,5 +315,109 @@ module.exports = function (app) {
         res.json({ success: true, student: { id: student.id, name: student.name } });
     });
 
+    // STUDENT PASSWORD RESET START
+    // 1. Request Reset (Student)
+    app.post('/api/auth/student/forgot-password', async (req, res) => {
+        const { username, email } = req.body;
+        if (!username || !email) return res.status(400).json({ error: 'Username and Parent Email required' });
+
+        // Read students.json
+        let students = [];
+        try {
+            const STUDENTS_FILE = path.join(__dirname, '../data/students.json');
+            const data = await fs.readFile(STUDENTS_FILE, 'utf8');
+            students = JSON.parse(data).students || [];
+        } catch (e) {
+            return res.status(500).json({ error: 'System error' });
+        }
+
+        const student = students.find(s => s.username === username);
+
+        // Security: Check matching
+        if (!student) {
+            // Fake delay
+            await new Promise(r => setTimeout(r, 500));
+            return res.json({ success: true, message: "If details match, a reset link was sent." });
+        }
+
+        const parentEmail = (student.parentEmail || '').trim();
+        const inputEmail = email.trim();
+
+        // Check Match (Case insensitive for email?)
+        // Let's do exact match first
+        if (parentEmail.toLowerCase() !== inputEmail.toLowerCase()) {
+            // Fake delay
+            await new Promise(r => setTimeout(r, 500));
+            return res.json({ success: true, message: "If details match, a reset link was sent." });
+        }
+
+        // Generate Token
+        const resetToken = crypto.randomUUID();
+        const resetExpires = Date.now() + 15 * 60 * 1000; // 15 mins
+
+        student.resetToken = resetToken;
+        student.resetExpires = resetExpires;
+
+        // Save
+        try {
+            const STUDENTS_FILE = path.join(__dirname, '../data/students.json');
+            await fs.writeFile(STUDENTS_FILE, JSON.stringify({ students }, null, 2));
+        } catch (e) {
+            return res.status(500).json({ error: 'System saving error' });
+        }
+
+        // Send Email
+        const protocol = req.headers['x-forwarded-proto'] || req.protocol;
+        const host = req.get('host');
+        // Point to student/reset.html
+        const resetLink = `${protocol}://${host}/student/reset.html?token=${resetToken}`;
+
+        console.log(`[AUTH-STUDENT] Generated Reset Link for ${username}: ${resetLink}`);
+
+        await emailService.sendResetLink(inputEmail, resetLink);
+
+        res.json({ success: true, message: "If details match, a reset link was sent." });
+    });
+
+    // 2. Perform Reset (Student)
+    app.post('/api/auth/student/reset-password', async (req, res) => {
+        const { token, password } = req.body;
+        if (!token || !password) return res.status(400).json({ error: 'Missing fields' });
+
+        // Read students.json
+        let students = [];
+        try {
+            const STUDENTS_FILE = path.join(__dirname, '../data/students.json');
+            const data = await fs.readFile(STUDENTS_FILE, 'utf8');
+            students = JSON.parse(data).students || [];
+        } catch (e) { return res.status(500).json({ error: 'System error' }); }
+
+        // Find student
+        const student = students.find(s =>
+            s.resetToken === token &&
+            s.resetExpires > Date.now()
+        );
+
+        if (!student) {
+            return res.status(400).json({ error: 'Invalid or expired token' });
+        }
+
+        // Update Password
+        student.passwordHash = await bcrypt.hash(password, 10);
+
+        // Clear Token
+        delete student.resetToken;
+        delete student.resetExpires;
+
+        // Save
+        try {
+            const STUDENTS_FILE = path.join(__dirname, '../data/students.json');
+            await fs.writeFile(STUDENTS_FILE, JSON.stringify({ students }, null, 2));
+        } catch (e) { return res.status(500).json({ error: 'System error' }); }
+
+        res.json({ success: true, message: 'Password updated' });
+    });
+    // STUDENT PASSWORD RESET END
+    // Return middleware for use in other files
     return { requireAuth, requireStudentAuth };
 };

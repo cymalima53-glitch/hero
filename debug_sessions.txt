@@ -241,3 +241,1139 @@ Found 61 sessions.
 [2026-01-01T12:30:37.526Z] Req Teacher: t_49527818-c91f-4b31-80c9-a7b64a776451
 Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
 Found 61 sessions.
+[2026-01-02T11:28:22.272Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:28:24.287Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:28:25.614Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:28:27.918Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:29:32.179Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:29:43.082Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:29:44.641Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:29:45.914Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:33:42.238Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:33:43.142Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:33:48.018Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:33:55.970Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:33:57.389Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:33:58.150Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:34:07.786Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:34:59.135Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:35:00.072Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:35:05.840Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:35:08.592Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:35:24.017Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:35:24.552Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:35:26.576Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:35:50.735Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:35:52.039Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:35:54.136Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:36:52.863Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:36:54.119Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:36:57.486Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:39:01.520Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:39:02.647Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:39:03.204Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:39:03.599Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:39:03.998Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:39:04.201Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:39:04.437Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:39:04.576Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:39:04.772Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:39:08.325Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:39:25.078Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:39:26.477Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:39:52.697Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:40:37.386Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:40:37.878Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:40:38.237Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:40:38.601Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:40:38.924Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:40:39.188Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:40:48.937Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:41:19.687Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:41:21.680Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:41:23.167Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:41:24.959Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:42:00.664Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:42:06.495Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:42:08.343Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:42:08.838Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:42:09.367Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:42:10.875Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:42:11.862Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:42:12.880Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:16.545Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:16.929Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:17.151Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:17.337Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:17.491Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:17.663Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:17.789Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:18.070Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:18.275Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:18.623Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:18.886Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:19.025Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:20.516Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:20.638Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:20.846Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:21.034Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:22.021Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:22.229Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:22.464Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:22.646Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:22.890Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:23.114Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:23.332Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:23.582Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:41.861Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:56:57.150Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:57:00.939Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:57:01.997Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T11:57:04.013Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T12:01:51.294Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T12:08:21.400Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T12:08:25.949Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T12:08:40.138Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T12:08:45.329Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T12:08:48.520Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T12:08:51.257Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T12:08:59.401Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T12:09:01.952Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T12:09:07.465Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T12:09:12.560Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T12:09:54.394Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T12:09:55.343Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T12:09:56.016Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T13:01:56.275Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T13:01:58.262Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T13:02:22.972Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T13:02:25.966Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T13:02:27.343Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T13:05:00.148Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T13:05:03.371Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T13:13:55.199Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T13:14:16.517Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T13:15:26.329Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T13:15:35.016Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T13:16:06.089Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T13:23:52.837Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T13:26:50.158Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T13:26:50.633Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T13:26:51.131Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-02T13:26:54.987Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T06:49:13.886Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T06:49:19.698Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:27:29.518Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:27:36.789Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:28:02.043Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:28:06.296Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:38:06.229Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:38:09.087Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:47:29.776Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:47:30.076Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:47:30.348Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:47:30.551Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:47:30.740Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:54:17.600Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:54:19.451Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:56:52.869Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:58:34.984Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:58:49.071Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:58:50.395Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:58:51.134Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:58:51.583Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 0 sessions.
+[2026-01-03T08:59:13.161Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 1 sessions.
+[2026-01-03T08:59:15.294Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 1 sessions.
+[2026-01-03T09:01:41.429Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 3 sessions.
+[2026-01-03T09:01:42.529Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 3 sessions.
+[2026-01-03T09:03:51.282Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 3 sessions.
+[2026-01-03T09:03:52.991Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 3 sessions.
+[2026-01-03T09:04:44.678Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 3 sessions.
+[2026-01-03T09:07:33.858Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 3 sessions.
+[2026-01-03T09:08:10.175Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 3 sessions.
+[2026-01-03T09:08:25.951Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 3 sessions.
+[2026-01-03T09:08:32.643Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 3 sessions.
+[2026-01-03T09:08:38.414Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 3 sessions.
+[2026-01-03T09:08:45.998Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 3 sessions.
+[2026-01-03T09:11:55.705Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:11:56.799Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:12:10.495Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:12:11.303Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:12:12.377Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:12:14.487Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:12:15.591Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:16:36.338Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:16:40.094Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:16:41.522Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:16:42.145Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:45:53.727Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:45:54.354Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:45:54.628Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:45:54.840Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:45:55.018Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:46:06.727Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:46:09.926Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:46:18.434Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:48:02.132Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:49:06.515Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:49:08.439Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:49:19.035Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T09:49:36.680Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T10:02:56.996Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T10:02:57.757Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T10:02:58.102Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T10:02:58.366Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T10:02:58.620Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T10:02:58.873Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T10:10:42.654Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T10:11:22.645Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T10:11:24.161Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T10:21:43.634Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T10:21:44.082Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T10:21:44.311Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T10:21:44.928Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T10:21:54.805Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T10:21:58.780Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T10:31:30.518Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T10:31:39.000Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T10:31:46.660Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 7 sessions.
+[2026-01-03T10:33:29.251Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 9 sessions.
+[2026-01-03T10:33:30.592Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 9 sessions.
+[2026-01-03T10:33:36.869Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 9 sessions.
+[2026-01-03T10:33:37.673Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 9 sessions.
+[2026-01-03T10:33:59.315Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 9 sessions.
+[2026-01-03T10:34:02.065Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 9 sessions.
+[2026-01-03T10:34:08.129Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 9 sessions.
+[2026-01-03T10:34:11.497Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 9 sessions.
+[2026-01-03T10:34:25.361Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 9 sessions.
+[2026-01-03T10:35:09.634Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:35:09.821Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:35:09.965Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:35:10.751Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:35:25.656Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:35:27.267Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:35:28.531Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:35:41.419Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:35:42.587Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:35:44.283Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:35:58.331Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:36:08.811Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:36:18.427Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:38:01.961Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:38:04.333Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:38:19.808Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:38:23.500Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:39:14.340Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:39:26.295Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:39:30.655Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:39:31.919Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:49:25.349Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:49:35.775Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:49:59.909Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:50:06.231Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 10 sessions.
+[2026-01-03T10:52:39.679Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 12 sessions.
+[2026-01-03T10:52:46.896Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 12 sessions.
+[2026-01-03T10:56:50.314Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 13 sessions.
+[2026-01-03T10:56:58.402Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 13 sessions.
+[2026-01-03T10:57:09.771Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 13 sessions.
+[2026-01-03T11:12:00.936Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 13 sessions.
+[2026-01-03T11:12:04.120Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 13 sessions.
+[2026-01-03T11:12:06.856Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 13 sessions.
+[2026-01-03T11:12:16.186Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 13 sessions.
+[2026-01-03T11:16:28.678Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 15 sessions.
+[2026-01-03T11:16:29.704Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 15 sessions.
+[2026-01-03T11:18:49.662Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 15 sessions.
+[2026-01-03T11:18:56.470Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 15 sessions.
+[2026-01-03T11:18:57.662Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 15 sessions.
+[2026-01-03T11:18:58.229Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 15 sessions.
+[2026-01-03T11:19:06.314Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 15 sessions.
+[2026-01-03T11:21:41.951Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 15 sessions.
+[2026-01-03T11:21:48.140Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 15 sessions.
+[2026-01-03T11:24:32.748Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T11:24:33.860Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T11:25:49.105Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T11:25:49.398Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T11:25:50.419Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T11:34:37.757Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T11:34:40.651Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T11:54:20.052Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T11:54:20.904Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T11:54:31.013Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T11:54:33.621Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T11:54:34.807Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T11:56:49.918Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T11:56:55.700Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T11:56:55.822Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T11:56:55.980Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T11:56:56.150Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T11:56:56.277Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T11:59:19.926Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T11:59:24.900Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:06:03.844Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:06:11.521Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:06:13.176Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:11:35.460Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:11:35.782Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:11:35.991Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:11:36.156Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:11:36.745Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:31:44.082Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:31:44.461Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:31:44.652Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:31:44.825Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:31:44.975Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:31:45.151Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:31:45.334Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:31:45.502Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:31:45.676Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:31:45.861Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:31:46.043Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:31:46.230Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:31:46.422Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:31:46.546Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:32:07.660Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:32:09.827Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:32:53.725Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:37:34.079Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:37:37.122Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:37:44.547Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:37:50.210Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:37:54.906Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:44:57.408Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:44:59.031Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:49:24.584Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:49:25.720Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:49:29.536Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T12:49:36.603Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:04:29.402Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:04:29.645Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:04:30.439Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:04:32.477Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:44:17.362Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:44:18.045Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:44:18.312Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:44:18.516Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:44:18.715Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:44:20.407Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:45:15.782Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:45:24.728Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:52:12.449Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:52:14.467Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:55:33.120Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:55:33.547Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:55:33.736Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:55:33.977Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:55:34.183Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:55:35.060Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-03T13:56:36.132Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T08:53:17.874Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T08:53:22.265Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T08:56:11.842Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T08:56:13.410Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T09:01:46.064Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T09:01:46.929Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T09:03:52.589Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T09:03:54.215Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T09:07:46.722Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T09:07:48.020Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T09:14:36.210Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T09:14:38.165Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T09:14:52.301Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T09:15:18.367Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T09:15:19.961Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T09:19:02.958Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T09:19:04.405Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T09:25:20.964Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T09:25:22.795Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Error parsing sess_630b9a09-7204-43dd-8a82-9dea73aaa557.json: Unexpected non-whitespace character after JSON at position 1138 (line 44 column 2)
+Found 16 sessions.
+[2026-01-04T09:27:40.786Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T09:27:42.105Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T09:29:48.973Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T09:29:49.614Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T09:33:53.221Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T09:33:57.359Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T09:53:33.351Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T09:53:34.398Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T09:53:50.242Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T09:55:19.002Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:00:09.389Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:00:10.497Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:00:13.352Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:05:56.298Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:05:57.751Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:05:59.202Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:20:27.082Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:20:28.095Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:20:29.906Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:20:32.501Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:21:19.593Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:21:28.176Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:21:30.347Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:21:31.684Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:21:41.036Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:21:42.084Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:54:46.413Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:54:46.604Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:54:46.775Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:54:48.036Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:59:32.944Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:59:33.157Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:59:33.238Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T10:59:34.069Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T11:17:11.128Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T11:17:12.517Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T11:17:22.135Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T11:29:28.695Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T11:29:29.127Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T11:29:29.311Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T11:29:29.495Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T12:13:36.971Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T12:13:42.345Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T12:13:48.150Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 16 sessions.
+[2026-01-04T12:14:05.020Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 15 sessions.
+[2026-01-04T12:14:09.525Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 14 sessions.
+[2026-01-04T12:14:12.750Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 13 sessions.
+[2026-01-04T12:15:12.862Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 12 sessions.
+[2026-01-04T12:15:30.356Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 11 sessions.
+[2026-01-04T12:15:33.949Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 10 sessions.
+[2026-01-04T12:15:38.801Z] Req Teacher: t_e9422c5a-4809-4818-b9da-45258412210f
+Found 10 sessions.
+[2026-01-04T12:16:05.324Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 0 sessions.

@@ -1,0 +1,1145 @@
+{
+  "undefined": {
+    "content_1767434730617": {
+      "id": "content_1767434730617",
+      "subject": "English",
+      "topic": "addition jusque 20 niveau cp",
+      "level": "1",
+      "worksheets": [
+        {
+          "title": "Exercise 1: Simple Addition",
+          "level": 1,
+          "instructions": "Add the numbers together.",
+          "questions": [
+            {
+              "question": "2 + 3 = ?",
+              "answer": "5"
+            },
+            {
+              "question": "1 + 4 = ?",
+              "answer": "5"
+            },
+            {
+              "question": "0 + 7 = ?",
+              "answer": "7"
+            }
+          ]
+        },
+        {
+          "title": "Exercise 2: More Addition",
+          "level": 1,
+          "instructions": "Solve the addition problems below.",
+          "questions": [
+            {
+              "question": "4 + 2 = ?",
+              "answer": "6"
+            },
+            {
+              "question": "5 + 1 = ?",
+              "answer": "6"
+            },
+            {
+              "question": "3 + 3 = ?",
+              "answer": "6"
+            }
+          ]
+        },
+        {
+          "title": "Exercise 3: Fill in the Blanks",
+          "level": 1,
+          "instructions": "Complete the addition sentences.",
+          "questions": [
+            {
+              "question": "3 + __ = 7",
+              "answer": "4"
+            },
+            {
+              "question": "2 + __ = 5",
+              "answer": "3"
+            },
+            {
+              "question": "1 + __ = 6",
+              "answer": "5"
+            }
+          ]
+        },
+        {
+          "title": "Exercise 4: Word Problems",
+          "level": 1,
+          "instructions": "Read and solve the addition problems.",
+          "questions": [
+            {
+              "question": "Sophie has 3 apples and finds 2 more. How many apples does she have? (3 + 2 = ?)",
+              "answer": "5"
+            },
+            {
+              "question": "Tom has 4 balloons, and his friend gives him 3 more. How many balloons does Tom have now? (4 + 3 = ?)",
+              "answer": "7"
+            }
+          ]
+        },
+        {
+          "title": "Exercise 5: Drawing to Add",
+          "level": 1,
+          "instructions": "Draw to illustrate each addition problem.",
+          "questions": [
+            {
+              "question": "Draw 3 stars and add 2 more. How many stars do you have?",
+              "answer": "5"
+            },
+            {
+              "question": "Draw 5 circles and add 1 more. How many circles do you have?",
+              "answer": "6"
+            }
+          ]
+        }
+      ],
+      "workshops": [
+        {
+          "title": "Workshop 1: Addition with Counters",
+          "duration": "30 minutes",
+          "materials": [
+            "Colorful counters",
+            "Worksheets with addition problems"
+          ],
+          "instructions": "Give each student a set of counters. Read each addition problem from the worksheet aloud. Have students use their counters to solve the problems and write down their answers."
+        },
+        {
+          "title": "Workshop 2: Addition Bingo",
+          "duration": "30 minutes",
+          "materials": [
+            "Bingo cards with sums",
+            "Beans or chips for markers"
+          ],
+          "instructions": "Create bingo cards with the sums of simple addition problems. Call out addition problems, and students cover the answer on their cards with beans or chips. The first to get a line shouts 'Bingo!'"
+        },
+        {
+          "title": "Workshop 3: Number Line Jump",
+          "duration": "30 minutes",
+          "materials": [
+            "Number line on the floor",
+            "Blindfolds (optional)"
+          ],
+          "instructions": "Place a number line on the floor. Call out addition problems. Students must jump from one number to the other to find the answer. They can do this blindfolded for an extra challenge!"
+        },
+        {
+          "title": "Workshop 4: Addition Art",
+          "duration": "40 minutes",
+          "materials": [
+            "Colored paper",
+            "Scissors",
+            "Glue",
+            "Markers"
+          ],
+          "instructions": "Have students create a collage using colored paper. They must cut out a certain number of shapes (e.g., stars and circles) to represent an addition problem they create. They then write the addition problem on their artwork."
+        },
+        {
+          "title": "Workshop 5: Addition Storytime",
+          "duration": "30 minutes",
+          "materials": [
+            "Storybooks that include counting and addition",
+            "Paper and crayons"
+          ],
+          "instructions": "Read a storybook that includes addition. After reading, have students draw their favorite part of the story and write an addition problem related to it. Share their stories with the class!"
+        }
+      ],
+      "answerKeys": {
+        "worksheet1": [
+          "5",
+          "5",
+          "7"
+        ],
+        "worksheet2": [
+          "6",
+          "6",
+          "6"
+        ],
+        "worksheet3": [
+          "4",
+          "3",
+          "5"
+        ],
+        "worksheet4": [
+          "5",
+          "7"
+        ],
+        "worksheet5": [
+          "5",
+          "6"
+        ]
+      },
+      "createdAt": "2026-01-03T10:05:30.617Z"
+    },
+    "content_1767434958017": {
+      "id": "content_1767434958017",
+      "subject": "Math",
+      "topic": "addition jusque 20 niveau cp",
+      "level": "5",
+      "worksheets": [
+        {
+          "title": "Exercise 1: Addition Basics",
+          "level": 5,
+          "instructions": "Add the numbers together and write the answer in the box.",
+          "questions": [
+            {
+              "question": "3 + 5 =",
+              "answer": "8"
+            },
+            {
+              "question": "1 + 7 =",
+              "answer": "8"
+            },
+            {
+              "question": "4 + 4 =",
+              "answer": "8"
+            },
+            {
+              "question": "2 + 6 =",
+              "answer": "8"
+            },
+            {
+              "question": "0 + 8 =",
+              "answer": "8"
+            }
+          ]
+        },
+        {
+          "title": "Exercise 2: Number Line Addition",
+          "level": 5,
+          "instructions": "Use the number line to help you find the sum.",
+          "questions": [
+            {
+              "question": "2 + 3 =",
+              "answer": "5"
+            },
+            {
+              "question": "5 + 4 =",
+              "answer": "9"
+            },
+            {
+              "question": "7 + 2 =",
+              "answer": "9"
+            },
+            {
+              "question": "6 + 3 =",
+              "answer": "9"
+            },
+            {
+              "question": "8 + 1 =",
+              "answer": "9"
+            }
+          ]
+        },
+        {
+          "title": "Exercise 3: Word Problems",
+          "level": 5,
+          "instructions": "Read the problem and write the equation, then solve it.",
+          "questions": [
+            {
+              "question": "Sophie has 5 apples and buys 3 more. How many apples does she have now? (5 + 3 = ?)",
+              "answer": "8"
+            },
+            {
+              "question": "There are 2 birds in a tree, and 6 more come. How many birds are there now? (2 + 6 = ?)",
+              "answer": "8"
+            },
+            {
+              "question": "Tom has 4 toy cars and gets 4 more. How many toy cars does he have? (4 + 4 = ?)",
+              "answer": "8"
+            },
+            {
+              "question": "Lucy has 1 balloon and gets 7 more. How many balloons does she have? (1 + 7 = ?)",
+              "answer": "8"
+            },
+            {
+              "question": "There are 0 kids playing outside, and 8 arrive. How many kids are outside? (0 + 8 = ?)",
+              "answer": "8"
+            }
+          ]
+        },
+        {
+          "title": "Exercise 4: Fill in the Blanks",
+          "level": 5,
+          "instructions": "Fill in the blanks with the correct answers.",
+          "questions": [
+            {
+              "question": "6 + ___ = 10",
+              "answer": "4"
+            },
+            {
+              "question": "8 + ___ = 12",
+              "answer": "4"
+            },
+            {
+              "question": "5 + ___ = 9",
+              "answer": "4"
+            },
+            {
+              "question": "3 + ___ = 7",
+              "answer": "4"
+            },
+            {
+              "question": "1 + ___ = 5",
+              "answer": "4"
+            }
+          ]
+        },
+        {
+          "title": "Exercise 5: Matching Pairs",
+          "level": 5,
+          "instructions": "Match the addition problems with their answers.",
+          "questions": [
+            {
+              "question": "4 + 5",
+              "answer": "9"
+            },
+            {
+              "question": "2 + 7",
+              "answer": "9"
+            },
+            {
+              "question": "3 + 6",
+              "answer": "9"
+            },
+            {
+              "question": "1 + 8",
+              "answer": "9"
+            },
+            {
+              "question": "5 + 4",
+              "answer": "9"
+            }
+          ]
+        }
+      ],
+      "workshops": [
+        {
+          "title": "Workshop 1: Addition Bingo",
+          "duration": "30 minutes",
+          "materials": [
+            "Bingo cards with addition problems",
+            "Markers"
+          ],
+          "instructions": "1. Create Bingo cards with addition problems. 2. Call out answers randomly. 3. Students mark the corresponding problem on their card. 4. The first to get a line yells 'Bingo!' and shares their answers."
+        },
+        {
+          "title": "Workshop 2: Math Craft",
+          "duration": "45 minutes",
+          "materials": [
+            "Colored paper",
+            "Scissors",
+            "Glue",
+            "Markers"
+          ],
+          "instructions": "1. Cut out shapes representing numbers (1-10). 2. Create addition problems using the shapes and glue them on a poster. 3. Decorate the poster with drawings or some crafts related to addition."
+        },
+        {
+          "title": "Workshop 3: Addition Relay Race",
+          "duration": "30 minutes",
+          "materials": [
+            "Whiteboard",
+            "Markers",
+            "Stopwatch"
+          ],
+          "instructions": "1. Set up three stations with different addition problems. 2. Students split into teams and race to solve the problems at each station. 3. The team that answers all problems correctly first wins."
+        },
+        {
+          "title": "Workshop 4: Hands-on Addition with Blocks",
+          "duration": "40 minutes",
+          "materials": [
+            "Building blocks (counting blocks)"
+          ],
+          "instructions": "1. Give each student a set of blocks. 2. Call out addition problems. 3. Students build the answer using blocks and share their creations with the class."
+        },
+        {
+          "title": "Workshop 5: Interactive Storytime",
+          "duration": "30 minutes",
+          "materials": [
+            "Addition storybook",
+            "Flashcards"
+          ],
+          "instructions": "1. Read a storybook that incorporates addition problems. 2. Use flashcards to illustrate problems from the story. 3. Engage students by asking them to solve the problems during the reading session."
+        }
+      ],
+      "answerKeys": {
+        "worksheet1": [
+          "8",
+          "8",
+          "8",
+          "8",
+          "8"
+        ],
+        "worksheet2": [
+          "5",
+          "9",
+          "9",
+          "9",
+          "9"
+        ],
+        "worksheet3": [
+          "8",
+          "8",
+          "8",
+          "8",
+          "8"
+        ],
+        "worksheet4": [
+          "4",
+          "4",
+          "4",
+          "4",
+          "4"
+        ],
+        "worksheet5": [
+          "9",
+          "9",
+          "9",
+          "9",
+          "9"
+        ]
+      },
+      "createdAt": "2026-01-03T10:09:18.017Z"
+    },
+    "content_1767435783610": {
+      "id": "content_1767435783610",
+      "subject": "History",
+      "topic": "en francais, sur les saisons au niveau CP",
+      "level": "3",
+      "language": "fr",
+      "worksheets": [
+        {
+          "title": "Les Saisons",
+          "level": 3,
+          "instructions": "Colorie chaque saison en fonction de ses caractéristiques.",
+          "questions": [
+            {
+              "question": "Quelle saison a des fleurs?",
+              "answer": "Printemps"
+            },
+            {
+              "question": "Quelle saison est froide et peut avoir de la neige?",
+              "answer": "Hiver"
+            },
+            {
+              "question": "Dans quelle saison récoltons-nous les fruits?",
+              "answer": "Automne"
+            },
+            {
+              "question": "Quelle saison est chaude et ensoleillée?",
+              "answer": "Été"
+            }
+          ]
+        },
+        {
+          "title": "Associations de Saisons",
+          "level": 3,
+          "instructions": "Relie chaque saison à une image qui la représente.",
+          "questions": [
+            {
+              "question": "Printemps",
+              "answer": "Image de fleurs"
+            },
+            {
+              "question": "Été",
+              "answer": "Image de soleil"
+            },
+            {
+              "question": "Automne",
+              "answer": "Image de feuilles tombantes"
+            },
+            {
+              "question": "Hiver",
+              "answer": "Image de neige"
+            }
+          ]
+        },
+        {
+          "title": "Les Mois de l'Année",
+          "level": 3,
+          "instructions": "Écris le mois qui correspond à chaque saison.",
+          "questions": [
+            {
+              "question": "Quels mois sont en hiver?",
+              "answer": "Décembre, Janvier, Février"
+            },
+            {
+              "question": "Quels mois sont au printemps?",
+              "answer": "Mars, Avril, Mai"
+            },
+            {
+              "question": "Quels mois sont en été?",
+              "answer": "Juin, Juillet, Août"
+            },
+            {
+              "question": "Quels mois sont en automne?",
+              "answer": "Septembre, Octobre, Novembre"
+            }
+          ]
+        },
+        {
+          "title": "Les Activités de Chaque Saison",
+          "level": 3,
+          "instructions": "Écris une activité que tu aimes faire dans chaque saison.",
+          "questions": [
+            {
+              "question": "Que fais-tu en été?",
+              "answer": "Aller à la plage"
+            },
+            {
+              "question": "Que fais-tu en hiver?",
+              "answer": "Faire un bonhomme de neige"
+            },
+            {
+              "question": "Que fais-tu au printemps?",
+              "answer": "Planter des fleurs"
+            },
+            {
+              "question": "Que fais-tu en automne?",
+              "answer": "Ramasser des feuilles"
+            }
+          ]
+        },
+        {
+          "title": "Les Saisons en Images",
+          "level": 3,
+          "instructions": "Dessine une image qui représente ta saison préférée.",
+          "questions": []
+        }
+      ],
+      "workshops": [
+        {
+          "title": "Création de Calendrier Saisonnier",
+          "duration": "30 minutes",
+          "materials": [
+            "Feuilles de papier",
+            "Ciseaux",
+            "Colle",
+            "Marqueurs"
+          ],
+          "instructions": "Chaque élève crée un calendrier avec les quatre saisons et y ajoute des images ou des dessins représentant chaque saison."
+        },
+        {
+          "title": "Chanson des Saisons",
+          "duration": "15 minutes",
+          "materials": [
+            "Paroles de chanson",
+            "Instruments de musique simples"
+          ],
+          "instructions": "Chantez une chanson sur les saisons et utilisez des instruments pour accompagner. Chaque élève peut ajouter un mouvement pour représenter une saison."
+        },
+        {
+          "title": "Jeu de Rôle des Saisons",
+          "duration": "20 minutes",
+          "materials": [
+            "Costumes simples",
+            "Accessoires"
+          ],
+          "instructions": "Les élèves se déguisent en personnages représentant les saisons et doivent expliquer leurs caractéristiques à la classe."
+        },
+        {
+          "title": "Collage des Saisons",
+          "duration": "30 minutes",
+          "materials": [
+            "Magazines",
+            "Ciseaux",
+            "Colle",
+            "Grand papier"
+          ],
+          "instructions": "Les élèves découpent des images dans des magazines pour représenter chaque saison et les collent sur un grand papier."
+        },
+        {
+          "title": "Observation des Changements",
+          "duration": "15 minutes",
+          "materials": [
+            "Carnets de dessin",
+            "Crayons"
+          ],
+          "instructions": "Emmène les élèves à l'extérieur pour observer les changements de la nature en fonction des saisons et dessiner ce qu'ils voient."
+        }
+      ],
+      "answerKeys": {},
+      "createdAt": "2026-01-03T10:23:03.610Z"
+    },
+    "content_1767518122784": {
+      "id": "content_1767518122784",
+      "subject": "Math",
+      "topic": "General",
+      "level": "1",
+      "language": "en",
+      "worksheets": [
+        {
+          "title": "Basic Addition",
+          "level": 1,
+          "instructions": "Solve the addition problems below.",
+          "questions": [
+            {
+              "question": "2 + 3 =",
+              "answer": "5"
+            },
+            {
+              "question": "4 + 1 =",
+              "answer": "5"
+            },
+            {
+              "question": "6 + 2 =",
+              "answer": "8"
+            },
+            {
+              "question": "5 + 5 =",
+              "answer": "10"
+            },
+            {
+              "question": "3 + 7 =",
+              "answer": "10"
+            }
+          ]
+        },
+        {
+          "title": "Basic Subtraction",
+          "level": 1,
+          "instructions": "Solve the subtraction problems below.",
+          "questions": [
+            {
+              "question": "5 - 2 =",
+              "answer": "3"
+            },
+            {
+              "question": "7 - 4 =",
+              "answer": "3"
+            },
+            {
+              "question": "9 - 1 =",
+              "answer": "8"
+            },
+            {
+              "question": "10 - 5 =",
+              "answer": "5"
+            },
+            {
+              "question": "8 - 3 =",
+              "answer": "5"
+            }
+          ]
+        },
+        {
+          "title": "Simple Shapes",
+          "level": 1,
+          "instructions": "Identify the shapes and write their names.",
+          "questions": [
+            {
+              "question": "What shape has 3 sides?",
+              "answer": "Triangle"
+            },
+            {
+              "question": "What shape is round?",
+              "answer": "Circle"
+            },
+            {
+              "question": "What shape has 4 equal sides?",
+              "answer": "Square"
+            },
+            {
+              "question": "What shape has 4 sides but not equal?",
+              "answer": "Rectangle"
+            },
+            {
+              "question": "What shape has 5 sides?",
+              "answer": "Pentagon"
+            }
+          ]
+        },
+        {
+          "title": "Counting Objects",
+          "level": 1,
+          "instructions": "Count the objects and write the number.",
+          "questions": [
+            {
+              "question": "How many apples are there? 🍎🍎🍎",
+              "answer": "3"
+            },
+            {
+              "question": "How many stars are there? ⭐⭐⭐⭐",
+              "answer": "4"
+            },
+            {
+              "question": "How many books are there? 📚📚📚📚📚",
+              "answer": "5"
+            },
+            {
+              "question": "How many ducks are there? 🦆🦆",
+              "answer": "2"
+            },
+            {
+              "question": "How many cars are there? 🚗🚗🚗🚗🚗🚗",
+              "answer": "6"
+            }
+          ]
+        },
+        {
+          "title": "Basic Time",
+          "level": 1,
+          "instructions": "Read the clocks and write the time.",
+          "questions": [
+            {
+              "question": "What time is it when the clock shows 3:00?",
+              "answer": "3 o'clock"
+            },
+            {
+              "question": "What time is it when the clock shows 1:30?",
+              "answer": "1:30"
+            },
+            {
+              "question": "What time is it when the clock shows 5:15?",
+              "answer": "5:15"
+            },
+            {
+              "question": "What time is it when the clock shows 12:00?",
+              "answer": "12 o'clock"
+            },
+            {
+              "question": "What time is it when the clock shows 9:45?",
+              "answer": "9:45"
+            }
+          ]
+        }
+      ],
+      "workshops": [
+        {
+          "title": "Counting Fun",
+          "duration": "15 minutes",
+          "materials": [
+            "Counting blocks",
+            "Number cards"
+          ],
+          "instructions": "Use counting blocks to represent numbers on the number cards. Count the blocks out loud."
+        },
+        {
+          "title": "Shape Hunt",
+          "duration": "20 minutes",
+          "materials": [
+            "Shape cutouts",
+            "Markers"
+          ],
+          "instructions": "Go on a shape hunt around the classroom. Find and color the shape cutouts based on the shapes you see in the classroom."
+        },
+        {
+          "title": "Clock Making",
+          "duration": "30 minutes",
+          "materials": [
+            "Paper plates",
+            "Markers",
+            "Brass fasteners"
+          ],
+          "instructions": "Create your own clock using a paper plate. Draw the numbers and use a brass fastener for the hands."
+        },
+        {
+          "title": "Addition Relay",
+          "duration": "25 minutes",
+          "materials": [
+            "Whiteboard",
+            "Markers",
+            "Timer"
+          ],
+          "instructions": "Split into teams. One member from each team runs to the board to solve an addition problem. The first team to finish wins."
+        },
+        {
+          "title": "Subtraction Stories",
+          "duration": "20 minutes",
+          "materials": [
+            "Story cards",
+            "Pencils"
+          ],
+          "instructions": "Create a simple story involving subtraction using the story cards. Share your story with the class."
+        }
+      ],
+      "answerKeys": {},
+      "createdAt": "2026-01-04T09:15:22.784Z"
+    },
+    "content_1767519021917": {
+      "id": "content_1767519021917",
+      "subject": "Math",
+      "topic": "addition jusque 20 niveau cp",
+      "level": "1",
+      "language": "en",
+      "worksheets": [
+        {
+          "title": "Adding Numbers up to 20",
+          "level": 1,
+          "instructions": "Fill in the blanks to complete the addition.",
+          "questions": [
+            {
+              "question": "3 + 5 = ?",
+              "answer": "8"
+            },
+            {
+              "question": "7 + 2 = ?",
+              "answer": "9"
+            },
+            {
+              "question": "4 + 6 = ?",
+              "answer": "10"
+            },
+            {
+              "question": "1 + 8 = ?",
+              "answer": "9"
+            },
+            {
+              "question": "9 + 1 = ?",
+              "answer": "10"
+            }
+          ]
+        },
+        {
+          "title": "Count and Add",
+          "level": 1,
+          "instructions": "Count the objects and write the addition sentence.",
+          "questions": [
+            {
+              "question": "There are 3 apples and 4 oranges. How many fruits are there in total? (3 + 4 = ?)",
+              "answer": "7"
+            },
+            {
+              "question": "There are 2 cats and 5 dogs. How many animals are there in total? (2 + 5 = ?)",
+              "answer": "7"
+            },
+            {
+              "question": "There are 6 balloons and 3 hats. How many items are there in total? (6 + 3 = ?)",
+              "answer": "9"
+            },
+            {
+              "question": "There are 5 stars and 4 moons. How many celestial bodies are there in total? (5 + 4 = ?)",
+              "answer": "9"
+            },
+            {
+              "question": "There are 1 car and 6 bikes. How many vehicles are there in total? (1 + 6 = ?)",
+              "answer": "7"
+            }
+          ]
+        },
+        {
+          "title": "Fill in the Missing Number",
+          "level": 1,
+          "instructions": "Complete the addition by filling in the missing number.",
+          "questions": [
+            {
+              "question": "5 + __ = 10",
+              "answer": "5"
+            },
+            {
+              "question": "2 + __ = 7",
+              "answer": "5"
+            },
+            {
+              "question": "1 + __ = 6",
+              "answer": "5"
+            },
+            {
+              "question": "__ + 4 = 9",
+              "answer": "5"
+            },
+            {
+              "question": "__ + 3 = 8",
+              "answer": "5"
+            }
+          ]
+        },
+        {
+          "title": "Addition Word Problems",
+          "level": 1,
+          "instructions": "Read the problem and write the addition equation.",
+          "questions": [
+            {
+              "question": "If you have 2 candies and your friend gives you 3 more, how many candies do you have now? (2 + 3 = ?)",
+              "answer": "5"
+            },
+            {
+              "question": "There are 4 birds on a tree and 3 more come. How many birds are there now? (4 + 3 = ?)",
+              "answer": "7"
+            },
+            {
+              "question": "You see 1 fish in a pond and 6 more swim by. How many fish do you see in total? (1 + 6 = ?)",
+              "answer": "7"
+            },
+            {
+              "question": "Your mom baked 5 cookies and your dad baked 4 more. How many cookies are there in total? (5 + 4 = ?)",
+              "answer": "9"
+            },
+            {
+              "question": "If you have 3 toys and you buy 2 more, how many toys do you have? (3 + 2 = ?)",
+              "answer": "5"
+            }
+          ]
+        },
+        {
+          "title": "Match the Addition",
+          "level": 1,
+          "instructions": "Match the addition problems to their answers.",
+          "questions": [
+            {
+              "question": "4 + 4",
+              "answer": "8"
+            },
+            {
+              "question": "2 + 6",
+              "answer": "8"
+            },
+            {
+              "question": "1 + 7",
+              "answer": "8"
+            },
+            {
+              "question": "5 + 3",
+              "answer": "8"
+            },
+            {
+              "question": "3 + 5",
+              "answer": "8"
+            }
+          ]
+        }
+      ],
+      "workshops": [
+        {
+          "title": "Addition with Dice",
+          "duration": "15 minutes",
+          "materials": [
+            "2 dice",
+            "paper",
+            "pencil"
+          ],
+          "instructions": "Roll two dice and add the numbers together. Write the addition sentence and the total. Repeat for 5 rounds."
+        },
+        {
+          "title": "Addition Bingo",
+          "duration": "20 minutes",
+          "materials": [
+            "Bingo cards with sums",
+            "tokens"
+          ],
+          "instructions": "Fill in your Bingo card with answers to addition problems. The teacher will call out addition problems, and you cover the answers on your card."
+        },
+        {
+          "title": "Craft Stick Addition",
+          "duration": "15 minutes",
+          "materials": [
+            "Craft sticks",
+            "markers"
+          ],
+          "instructions": "Write numbers on craft sticks. Draw two sticks and add the numbers together. Write the equation on paper."
+        },
+        {
+          "title": "Addition Relay Race",
+          "duration": "20 minutes",
+          "materials": [
+            "Addition flashcards"
+          ],
+          "instructions": "Split into teams. Each team races to answer addition flashcards correctly. The fastest team wins."
+        },
+        {
+          "title": "Number Line Jump",
+          "duration": "15 minutes",
+          "materials": [
+            "Number line on the floor",
+            "bean bags"
+          ],
+          "instructions": "Jump to the first number, then jump forward to add another number. Count how many jumps you made in total."
+        }
+      ],
+      "answerKeys": {},
+      "createdAt": "2026-01-04T09:30:21.917Z"
+    },
+    "content_1767524936468": {
+      "id": "content_1767524936468",
+      "subject": "Math",
+      "topic": "addition jusque 20 niveau cp",
+      "level": "2",
+      "language": "en",
+      "worksheets": [
+        {
+          "title": "Basic Addition Problems",
+          "level": 2,
+          "instructions": "Solve the following addition problems.",
+          "questions": [
+            {
+              "question": "3 + 4 =",
+              "answer": "7"
+            },
+            {
+              "question": "5 + 2 =",
+              "answer": "7"
+            },
+            {
+              "question": "1 + 8 =",
+              "answer": "9"
+            },
+            {
+              "question": "6 + 3 =",
+              "answer": "9"
+            },
+            {
+              "question": "2 + 5 =",
+              "answer": "7"
+            }
+          ]
+        },
+        {
+          "title": "Fill in the Missing Number",
+          "level": 2,
+          "instructions": "Complete each equation by filling in the missing number.",
+          "questions": [
+            {
+              "question": "___ + 5 = 10",
+              "answer": "5"
+            },
+            {
+              "question": "7 + ___ = 12",
+              "answer": "5"
+            },
+            {
+              "question": "4 + ___ = 9",
+              "answer": "5"
+            },
+            {
+              "question": "___ + 3 = 8",
+              "answer": "5"
+            },
+            {
+              "question": "10 - ___ = 6",
+              "answer": "4"
+            }
+          ]
+        },
+        {
+          "title": "Word Problems",
+          "level": 2,
+          "instructions": "Read the problem and write the addition sentence.",
+          "questions": [
+            {
+              "question": "There are 2 apples and 3 oranges. How many fruits are there in total?",
+              "answer": "5"
+            },
+            {
+              "question": "You have 4 toy cars and your friend gives you 2 more. How many toy cars do you have now?",
+              "answer": "6"
+            },
+            {
+              "question": "A box has 5 candies and you buy 4 more. How many candies do you have?",
+              "answer": "9"
+            },
+            {
+              "question": "You see 3 birds on a tree and 2 more join them. How many birds are there now?",
+              "answer": "5"
+            },
+            {
+              "question": "You read 6 books and then read 2 more. How many books did you read in total?",
+              "answer": "8"
+            }
+          ]
+        },
+        {
+          "title": "Addition with Pictures",
+          "level": 2,
+          "instructions": "Count the pictures and write the addition sentence.",
+          "questions": [
+            {
+              "question": "🌟🌟 + 🌟🌟🌟 = ?",
+              "answer": "5"
+            },
+            {
+              "question": "🍎🍎 + 🍎 = ?",
+              "answer": "3"
+            },
+            {
+              "question": "🐶 + 🐶🐶 = ?",
+              "answer": "3"
+            },
+            {
+              "question": "🚗🚗 + 🚗🚗🚗 = ?",
+              "answer": "5"
+            },
+            {
+              "question": "🎈🎈🎈 + 🎈 = ?",
+              "answer": "4"
+            }
+          ]
+        },
+        {
+          "title": "Adding Using a Number Line",
+          "level": 2,
+          "instructions": "Use the number line to solve the addition problems.",
+          "questions": [
+            {
+              "question": "Where do you land if you start at 2 and jump 3 spaces forward?",
+              "answer": "5"
+            },
+            {
+              "question": "If you start at 1 and jump 4 spaces, where do you end up?",
+              "answer": "5"
+            },
+            {
+              "question": "Start at 0 and jump 6 spaces. What number do you reach?",
+              "answer": "6"
+            },
+            {
+              "question": "From 3, if you jump 2 spaces, what is your new number?",
+              "answer": "5"
+            },
+            {
+              "question": "Jump from 5 to 10. How many spaces did you jump?",
+              "answer": "5"
+            }
+          ]
+        }
+      ],
+      "workshops": [
+        {
+          "title": "Addition with Blocks",
+          "duration": "20 minutes",
+          "materials": [
+            "Colored blocks",
+            "Whiteboard"
+          ],
+          "instructions": "Use colored blocks to represent numbers. Create addition problems by grouping blocks and then writing the corresponding equations on the whiteboard."
+        },
+        {
+          "title": "Addition Bingo",
+          "duration": "30 minutes",
+          "materials": [
+            "Bingo cards with addition problems",
+            "Markers"
+          ],
+          "instructions": "Distribute bingo cards with addition problems. Call out answers, and students mark their cards. The first to complete a line wins."
+        },
+        {
+          "title": "Addition Relay Race",
+          "duration": "15 minutes",
+          "materials": [
+            "Flashcards with addition problems",
+            "Timer"
+          ],
+          "instructions": "Divide students into teams. Each team member must solve an addition problem on a flashcard before passing it to the next member. The first team to finish wins."
+        },
+        {
+          "title": "Interactive Addition Game",
+          "duration": "25 minutes",
+          "materials": [
+            "Interactive whiteboard",
+            "Addition game app"
+          ],
+          "instructions": "Use an interactive whiteboard to play a digital addition game. Students take turns answering questions and can compete for points."
+        },
+        {
+          "title": "Storytime with Addition",
+          "duration": "30 minutes",
+          "materials": [
+            "Storybook with addition themes",
+            "Paper, crayons"
+          ],
+          "instructions": "Read a story that involves addition. Afterward, have students illustrate their favorite part and write an addition problem related to it."
+        }
+      ],
+      "answerKeys": {},
+      "createdAt": "2026-01-04T11:08:56.468Z"
+    }
+  }
+}

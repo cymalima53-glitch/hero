@@ -2,7 +2,7 @@
   "words": [
     {
       "word": "chat",
-      "audio": "assets/audio/chat.mp3",
+      "audio": "",
       "choices": [
         "chat",
         "chien",
@@ -17,18 +17,18 @@
     },
     {
       "word": "chien",
-      "audio": "",
+      "audio": "/data/uploads/audio/1767438694411_sound_baah.m4a",
       "choices": [
         "chien",
         "chat",
         "vache"
       ],
       "id": "w_5878036d-52f6-4e73-9f1e-1c0231d16f86",
-      "image": "https://pixabay.com/get/g426a86e7f1a40cee3970810b3c022b89ec8f47ab839313d4d8050a4b9e212f0a1fcdd2de8f1a218fa759eceea9f28a832e9429fcd0d69c8f33574be8c5f14aae_640.jpg",
+      "image": "https://pixabay.com/get/gf582732f4c1dc7cccd8a44ed475705db1859fc969b96cda3e08d058b957fb0bba0ddfc81ed901a06b5572c4a5ab9c48f9123293fce916a85aa8829c334dd710f_640.jpg",
       "ad_instruction": "",
       "ad_correctSide": "left",
-      "ss_instruction": "",
-      "ss_correctAction": ""
+      "ss_instruction": "chien",
+      "ss_correctAction": "freeze"
     },
     {
       "word": "soleil",
@@ -39,7 +39,7 @@
         "étoile"
       ],
       "id": "w_121b588e-eaf8-47e9-99b2-9a74c5ada38e",
-      "image": "https://pixabay.com/get/g891457b3ad5cd3c3c101b49f3b46d4f53531a164a2f2e4c3041f7ec653eeda53a76c2481a8c1c7123a71a2c6e16274b61b1deb843d18543bc371978eb30c9190_640.jpg",
+      "image": "https://pixabay.com/get/gc6ec37b6fc267ef026a69374e31e508b2731a715a77975bfe81b91d15b56c9e6dc4f1677bbd1c03c8188924875a28a8bd6768102a11ee9b7f41f6eeed0516894_640.jpg",
       "ad_instruction": "",
       "ad_correctSide": "left",
       "ss_instruction": "",
@@ -47,14 +47,40 @@
     },
     {
       "id": "w_8b430e27-dfdb-4483-b662-54f6e00f2942",
-      "word": "ours",
+      "word": "aurore",
+      "choices": [
+        "aurore",
+        "cat",
+        "dog"
+      ],
+      "image": "https://pixabay.com/get/gfafaf9428e8d867f6ba8cbb77ac4fc6d3213dd0ebe2a2156ec7d4a6a849b6b0592c8a8d3d232ef93d8decb65c91bbae4284231fd30669ed7547b8cf6c7d52301_640.jpg",
+      "audio": "/data/uploads/audio/1767438508283_sound_baah.m4a",
+      "ad_instruction": "if you hear A go right",
+      "ad_correctSide": "right",
+      "ss_instruction": "aurore",
+      "ss_correctAction": "freeze"
+    },
+    {
+      "id": "w_cdd832de-07f7-42d9-8813-489301e3df85",
+      "word": "boieng",
       "choices": [],
-      "image": "https://pixabay.com/get/g27ffc2115d205a1568fe7bf2964fc2f327249808821e929e3ed44c4fa89ded5c52bdc2a546674822168a5810e6cd855345c9fe76a9baa620139c9fc1bdeac780_640.jpg",
+      "image": "https://pixabay.com/get/g0b85b1daff79e4e5ab0d404ea762eec400a071075121a143fb4d94a898908688012d5f2f7c86a4bb4d091a193316dad6f05774a036812919aa0886712405e32f_640.jpg",
+      "audio": "/data/uploads/audio/1767439040260_sound_baah.m4a",
+      "ad_instruction": "",
+      "ad_correctSide": "left",
+      "ss_instruction": "boeing",
+      "ss_correctAction": "jump"
+    },
+    {
+      "id": "w_47458419-c599-48a6-bdcb-aceba1113210",
+      "word": "ballon",
+      "choices": [],
+      "image": "https://pixabay.com/get/g76ba53e32c0adebb22b0f276865fa02dd757231bec2915d366619c2e1c39b878670d1d34b76ab556400a1ed198c8dadf3b3b33f800ce5367234cc83e36ac2e30_640.jpg",
       "audio": "",
       "ad_instruction": "",
       "ad_correctSide": "left",
-      "ss_instruction": "",
-      "ss_correctAction": ""
+      "ss_instruction": "ballon",
+      "ss_correctAction": "jump"
     }
   ],
   "gameConfig": {
@@ -64,7 +90,8 @@
         "w_5878036d-52f6-4e73-9f1e-1c0231d16f86",
         "w_121b588e-eaf8-47e9-99b2-9a74c5ada38e",
         "w_f2f0eeb0-55f2-42a9-8025-8392e7eeef0e",
-        "w_26b96185-5156-451a-ae17-a13c71eca86d"
+        "w_26b96185-5156-451a-ae17-a13c71eca86d",
+        "w_8b430e27-dfdb-4483-b662-54f6e00f2942"
       ],
       "actions": {}
     },
@@ -93,6 +120,21 @@
         "w_8b430e27-dfdb-4483-b662-54f6e00f2942"
       ],
       "actions": {}
+    },
+    "simonSquad": {
+      "questions": [
+        "w_5878036d-52f6-4e73-9f1e-1c0231d16f86",
+        "w_cdd832de-07f7-42d9-8813-489301e3df85",
+        "w_47458419-c599-48a6-bdcb-aceba1113210",
+        "w_8b430e27-dfdb-4483-b662-54f6e00f2942"
+      ],
+      "actions": {
+        "w_5878036d-52f6-4e73-9f1e-1c0231d16f86": "freeze",
+        "w_cdd832de-07f7-42d9-8813-489301e3df85": "jump",
+        "w_47458419-c599-48a6-bdcb-aceba1113210": "jump",
+        "w_8b430e27-dfdb-4483-b662-54f6e00f2942": "freeze"
+      }
     }
-  }
+  },
+  "files": {}
 }

@@ -20,8 +20,16 @@ app.use(cors({
 }));
 app.use(cookieParser());
 app.get('/favicon.ico', (req, res) => res.status(204).end());
-app.use(bodyParser.json({ limit: '50mb' }));
-app.use(fileUpload());
+app.use(bodyParser.json({ limit: '100mb' }));
+app.use(bodyParser.urlencoded({ limit: '100mb', extended: true }));
+app.use(fileUpload({
+    limits: {
+        fileSize: 100 * 1024 * 1024, // 100MB limit per file
+    },
+    useTempFiles: false,
+    abortOnLimit: false, // Don't abort on file size limit, just reject the file
+    parseNested: true
+}));
 
 // Serve static files (API logic comes first to catch routes, but static is fine here)
 app.use(express.static(path.join(__dirname, '.')));
@@ -36,6 +44,15 @@ require('./server/sessionRoutes')(app, requireAuth);
 require('./server/studentRoutes')(app, requireAuth);
 require('./server/assignmentRoutes')(app, requireAuth, requireStudentAuth);
 require('./server/contentRoutes')(app, requireAuth);
+
+// Analytics Routes
+require('./server/analyticsRoutes')(app, requireAuth);
+
+// Admin Routes
+require('./server/adminRoutes')(app);
+
+// Content Generator Routes
+require('./server/contentGeneratorRoutes')(app, requireAuth);
 
 const DATA_DIR = path.join(__dirname, 'data');
 const UPLOAD_DIR = path.join(DATA_DIR, 'uploads');
@@ -108,23 +125,35 @@ app.post('/api/upload', requireAuth, async (req, res) => {
 // 5. POST /api/upload/audio (Secured: Teachers only)
 app.post('/api/upload/audio', requireAuth, async (req, res) => {
     try {
+        console.log('Audio upload request received');
+        console.log('Files:', req.files ? Object.keys(req.files) : 'none');
+
         if (!req.files || !req.files.audio) {
+            console.error('No audio file in request');
             return res.status(400).json({ error: 'No audio file uploaded' });
         }
 
         const audioFile = req.files.audio;
+        console.log('Audio file details:', {
+            name: audioFile.name,
+            size: audioFile.size,
+            mimetype: audioFile.mimetype
+        });
+
         const safeName = audioFile.name.replace(/[^a-z0-9.]/gi, '_').toLowerCase();
         const uniqueName = `${Date.now()}_${safeName}`;
         const uploadPath = path.join(AUDIO_DIR, uniqueName);
 
+        console.log('Saving to:', uploadPath);
         await audioFile.mv(uploadPath);
+        console.log('Audio file saved successfully');
 
         const publicUrl = `/data/uploads/audio/${uniqueName}`;
         res.json({ success: true, url: publicUrl });
 
     } catch (err) {
         console.error('Audio Upload failed:', err);
-        res.status(500).json({ error: 'Audio upload failed' });
+        res.status(500).json({ error: 'Audio upload failed', details: err.message });
     }
 });
 

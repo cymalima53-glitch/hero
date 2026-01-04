@@ -1,0 +1,22 @@
+{
+  "id": "sess_c343083a-f17e-469e-aa02-8d4a5bf0ab38",
+  "teacherId": "t_49527818-c91f-4b31-80c9-a7b64a776451",
+  "studentId": "s_807598dd-47f5-4d9a-9555-4db7b0e65c3a",
+  "gameId": "memoryEcho",
+  "lang": "en",
+  "wordIds": [
+    "w_cat",
+    "w_dog",
+    "w_aurore",
+    "w_monkey"
+  ],
+  "assignmentId": "as_18cac1f0-37fb-480c-93e0-9f56c4a7f48f",
+  "status": "active",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 0,
+    "questions": {}
+  },
+  "createdAt": "2026-01-02T13:36:26.481Z"
+}

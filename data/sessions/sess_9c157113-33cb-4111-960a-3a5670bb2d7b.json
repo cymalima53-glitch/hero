@@ -1,0 +1,47 @@
+{
+  "id": "sess_9c157113-33cb-4111-960a-3a5670bb2d7b",
+  "teacherId": "t_e9422c5a-4809-4818-b9da-45258412210f",
+  "studentId": "s_bb8674ab-9a38-4422-baf2-d7981456b474",
+  "gameId": "memoryEcho",
+  "lang": "en",
+  "wordIds": [
+    "w_dog",
+    "w_kamal",
+    "w_cat",
+    "w_monkey"
+  ],
+  "assignmentId": "as_9b25fdb8-77a4-46c2-ba22-514b3346748d",
+  "status": "completed",
+  "analytics": {
+    "attempts": 4,
+    "failuresBeforePass": 0,
+    "timeSpent": 27.506999999999998,
+    "questions": {
+      "w_dog": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_cat": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_monkey": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_kamal": {
+        "wrong_action": 2,
+        "timeout": 0,
+        "correct": false
+      }
+    },
+    "endTime": 1767431362075,
+    "totalTimeSeconds": 30.563,
+    "accuracy": 67,
+    "mistakes": 2
+  },
+  "createdAt": "2026-01-03T09:08:50.131Z"
+}

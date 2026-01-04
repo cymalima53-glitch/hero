@@ -1,22 +1,3 @@
 {
-  "students": [
-    {
-      "id": "s_807598dd-47f5-4d9a-9555-4db7b0e65c3a",
-      "teacherId": "t_49527818-c91f-4b31-80c9-a7b64a776451",
-      "name": "adam",
-      "username": "adam2018",
-      "passwordHash": "$2b$10$Hh8y/aCywK8iVkESpM.EZeaJDevHtaQW7FFNtCt74FNFzPhf0i8sC",
-      "parentEmail": "",
-      "createdAt": "2025-12-29T13:06:03.998Z"
-    },
-    {
-      "id": "s_90bb6772-37a9-4872-97a7-d56787cf7027",
-      "teacherId": "t_79a229e8-f4d5-476e-8ba8-af42413b1a11",
-      "name": "Student A1",
-      "username": "studA1_1767268456776",
-      "passwordHash": "$2b$10$Rcit6slixef.Hg/10xITNuhE94DL4uQUT3gFZ4u/FyMkuMLROZfTK",
-      "parentEmail": "",
-      "createdAt": "2026-01-01T11:54:16.856Z"
-    }
-  ]
+  "students": []
 }

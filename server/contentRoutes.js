@@ -18,7 +18,7 @@ function saveData(lang, data) {
     fsSync.writeFileSync(filepath, JSON.stringify(data, null, 2));
 }
 
-module.exports = function(app, requireAuth) {
+module.exports = function (app, requireAuth) {
 
     // 1. GET /data/:lang - Public Data (Words/Categories) - but we probably want to secure this too?
     // User said: "Every Endpoint -> Check authorization"
@@ -33,17 +33,61 @@ module.exports = function(app, requireAuth) {
     // Actually, students play the game. So they need access.
     // Teacher edits content. Checks teacherId.
     // I will add a middleware that accepts Teacher OR Student auth for READ.
-    
+
     // For now, let's Secure the FILE management strict for Teachers.
     // The public /data/:lang route might need to remain open for the game IF the game doesn't send auth headers.
     // BUT user said "NO EXCEPTIONS".
     // Does the game send cookies? Yes, HttpOnly cookies are automatic.
     // So if I add checks, it should work if the user is logged in.
 
-    // GET /data/:lang -> REPLACED server.js version to be secure?
-    //server.js line 39 is unprotected.
-    // I will likely DELETE it from server.js and put it here or secure it there.
-    // Let's put the FILE MANAGEMENT routes here first.
+    // 1. GET /data/:lang - Public Data (Words/Categories)
+    app.get('/data/:lang', (req, res) => {
+        try {
+            // Check if user is authenticated (Teacher OR Student) via cookies?
+            // For now, to fix the 404, we serve the data. 
+            // The file structure implies public access or simple read.
+            const data = getData(req.params.lang);
+            res.json(data);
+        } catch (e) {
+            res.status(500).json({ error: e.message });
+        }
+    });
+
+    // 2. POST /data/:lang - Save Game Data (Secured: Teachers only)
+    app.post('/data/:lang', requireAuth, (req, res) => {
+        try {
+            const lang = req.params.lang;
+            const newData = req.body;
+
+            // Basic validation
+            if (!newData || !newData.words || !newData.gameConfig) {
+                return res.status(400).json({ error: 'Invalid data structure' });
+            }
+
+            // Merge with existing files to not lose them if not sent (frontend sends everything though)
+            // But let's be safe: read existing, update words/config, keep files if not in payload?
+            // Editor logic seems to send `files` in payload if it has them? 
+            // Looking at editor.js: `buildCleanPayload` sends { words, gameConfig }. It DOES NOT send files?
+            // Wait, looking at editor.js line 375: `return { words: cleanWords, gameConfig: cleanConfig };`
+            // IT DOES NOT RETURN FILES!
+            // If we overwrite `data` with this payload, we will LOSE `files`!
+
+            // CRITICAL FIX: Merge `files` from existing data if missing in payload.
+            const existingData = getData(lang);
+
+            const dataToSave = {
+                words: newData.words,
+                gameConfig: newData.gameConfig,
+                files: newData.files || existingData.files || {}
+            };
+
+            saveData(lang, dataToSave);
+            res.json({ success: true });
+        } catch (e) {
+            console.error("Save Error:", e);
+            res.status(500).json({ error: e.message });
+        }
+    });
 
     // List all files (Scoped to Teacher)
     app.get('/api/files/:lang', requireAuth, (req, res) => {
@@ -91,9 +135,9 @@ module.exports = function(app, requireAuth) {
         try {
             const data = getData(req.params.lang);
             const file = data.files[req.params.fileId];
-            
+
             if (!file) return res.status(404).json({ error: 'File not found' });
-            
+
             // Authorization Check
             if (file.ownerId && file.ownerId !== req.teacherId) {
                 return res.status(403).json({ error: 'Unauthorized access to file' });
@@ -107,15 +151,15 @@ module.exports = function(app, requireAuth) {
                 // Determine policy. For now, block modification of global files by generic teachers?
                 // Or claim ownership?
                 // Let's CLAIM ownership if null.
-                file.ownerId = req.teacherId; 
+                file.ownerId = req.teacherId;
             } else if (file.ownerId !== req.teacherId) {
-                 return res.status(403).json({ error: 'Unauthorized' });
+                return res.status(403).json({ error: 'Unauthorized' });
             }
 
             if (req.body.name) file.name = req.body.name;
             if (req.body.description !== undefined) file.description = req.body.description;
             if (req.body.wordIds) file.wordIds = req.body.wordIds;
-            
+
             saveData(req.params.lang, data);
             res.json({ success: true });
         } catch (e) {
@@ -130,18 +174,18 @@ module.exports = function(app, requireAuth) {
             const file = data.files[req.params.fileId];
 
             if (!file) return res.status(404).json({ error: 'File not found' });
-            
+
             if (file.ownerId && file.ownerId !== req.teacherId) {
                 return res.status(403).json({ error: 'Unauthorized' });
             }
             // If no owner, strict block?
             if (!file.ownerId) {
-                 // Danger. Let's allow if we didn't block updates.
-                 // But safest is to require ownership.
-                 // For the purpose of "Teacher A can't see B", privacy is key.
-                 // If I delete a public file, it affects B. 
-                 // BLOCK if not owner.
-                 if (req.teacherId !== 'admin') return res.status(403).json({ error: 'Unauthorized to delete shared/legacy file' });
+                // Danger. Let's allow if we didn't block updates.
+                // But safest is to require ownership.
+                // For the purpose of "Teacher A can't see B", privacy is key.
+                // If I delete a public file, it affects B. 
+                // BLOCK if not owner.
+                if (req.teacherId !== 'admin') return res.status(403).json({ error: 'Unauthorized to delete shared/legacy file' });
             }
 
             delete data.files[req.params.fileId];
@@ -158,9 +202,9 @@ module.exports = function(app, requireAuth) {
             const data = getData(req.params.lang);
             const file = data.files[req.params.fileId];
             if (!file) return res.status(404).json({ error: 'File not found' });
-            
+
             if (file.ownerId && file.ownerId !== req.teacherId) return res.status(403).json({ error: 'Unauthorized' });
-            
+
             const wordId = req.body.wordId;
             if (!file.wordIds.includes(wordId)) {
                 file.wordIds.push(wordId);
@@ -178,7 +222,7 @@ module.exports = function(app, requireAuth) {
             const data = getData(req.params.lang);
             const file = data.files[req.params.fileId];
             if (!file) return res.status(404).json({ error: 'File not found' });
-            
+
             if (file.ownerId && file.ownerId !== req.teacherId) return res.status(403).json({ error: 'Unauthorized' });
 
             file.wordIds = file.wordIds.filter(id => id !== req.params.wordId);

@@ -8,124 +8,209 @@
     <link rel="stylesheet" href="../dashboard/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap');
+
         body {
             background-color: #f0f4f8;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Outfit', 'Segoe UI', sans-serif;
             background-image: url('dashboard-banner.jpg');
             display: block !important;
             background-size: cover;
-            background-position: center;
+            background-position: center top;
+            /* Prioritize top of image (hero head) */
             background-attachment: fixed;
             overflow-y: auto !important;
-            /* Fix for dashboard/style.css hidden overflow */
+            margin: 0;
         }
 
+        /* Transparent Header with Floating Pills */
         .header {
             background: transparent;
-            padding: 1rem 2rem;
+            /* No full background to avoid cropping head */
+            padding: 1.5rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin: 0 1rem;
+            position: absolute;
+            /* Absolute so it overlaps image without taking space flow */
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
         }
 
         .logo {
             font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary);
+            /* Slightly smaller for pill balance */
+            font-weight: 800;
+            color: #2563eb;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            /* Pill Style */
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px 24px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8px);
+        }
+
+        .logo i {
+            color: #2563eb;
+        }
+
+        /* Logout Pill */
+        button[onclick="logout()"] {
+            background: rgba(255, 255, 255, 0.95) !important;
+            border: none !important;
+            cursor: pointer;
+            font-weight: 800;
+            color: #dc2626 !important;
+            padding: 12px 24px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        button[onclick="logout()"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            background: #ffffff !important;
         }
 
         .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
         }
 
         .section-title {
-            margin-bottom: 2rem;
-            font-size: 1.8rem;
-            color: #333;
+            /* Push down to clear the Hero Image content (Text + Character) */
+            margin-top: 45vh;
+            /* Occupy top half of screen for Hero */
+            margin-bottom: 3rem;
+            font-size: 3rem;
+            color: #000000;
+            font-weight: 900;
+            text-align: center;
+            letter-spacing: -1.5px;
+            position: relative;
+            /* Enhanced Outline/Shadow for "Senior" look */
+            text-shadow:
+                3px 3px 0px #fff,
+                -1px -1px 0 #fff,
+                1px -1px 0 #fff,
+                -1px 1px 0 #fff,
+                1px 1px 0 #fff,
+                0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            padding-bottom: 4rem;
         }
 
         .game-card {
-            background: white;
-            border-radius: 12px;
-            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 2rem;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s;
-            border-bottom: 5px solid #ddd;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
         }
 
         .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(37, 99, 235, 0.15);
+            border-color: #fff;
+            background: rgba(255, 255, 255, 1);
         }
 
         .card-icon {
-            background: #eef2ff;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            width: 80px;
+            height: 80px;
+            border-radius: 24px;
+            /* Squircle */
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem auto;
-            color: var(--primary);
-            font-size: 1.5rem;
+            margin: 0 auto 1.5rem auto;
+            color: #2563eb;
+            font-size: 2rem;
+            box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.5);
         }
 
         .btn-play {
-            background: var(--primary);
+            background: linear-gradient(90deg, #2563eb 0%, #1d4ed8 100%);
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-weight: bold;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 700;
             width: 100%;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
         }
 
         .btn-play:hover {
-            background: var(--primary-dark);
+            background: linear-gradient(90deg, #1d4ed8 0%, #1e40af 100%);
+            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+            transform: translateY(-1px);
         }
 
         .tag {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
             font-weight: bold;
+            margin-top: 0.5rem;
         }
 
         .tag.active {
-            background: #fee2e2;
-            color: #ef4444;
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
         }
 
         .tag.success {
-            background: #dcfce7;
-            color: #22c55e;
+            background: #f0fdf4;
+            color: #16a34a;
+            border: 1px solid #bbf7d0;
         }
 
-        .dashboard-banner {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            display: block;
-            object-fit: cover;
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+                margin-top: 1rem;
+            }
         }
     </style>
 </head>
@@ -134,15 +219,19 @@
 
     <div class="header">
         <div class="logo">
-            <i class="fas fa-book-open"></i> Hello, Player!
+            <i class="fas fa-gamepad"></i> Hello, Student Hero!
         </div>
-        <button onclick="logout()" style="background:none; border:none; cursor:pointer; font-weight:bold; color:#666;">
+        <button onclick="logout()">
             Logout <i class="fas fa-sign-out-alt"></i>
         </button>
     </div>
 
+    <!-- Main Container -->
     <div class="container" id="student-dashboard">
-        <h2 class="section-title">Your Missions 🚀</h2>
+        <!-- Spacer to push content below hero text if needed, handled by margin-top on title -->
+
+        <h2 class="section-title">Your Missions</h2>
+
 
         <div id="assignments-grid" class="games-grid">
             <!-- Loaded via JS -->

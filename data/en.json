@@ -9,7 +9,7 @@
         "cat",
         "monkey"
       ],
-      "image": "https://pixabay.com/get/gc37c79597bb10ae21e591c6a3023918966286565c0882b8105a0c6478d2228fed443cdb8bd7cec92ac3fc8912278adaa8e82bfdf793bf32d54392ed72fdccfa9_640.jpg",
+      "image": "https://pixabay.com/get/g5c0e0595fce9beb6302b072df80f054980255e82fbc69477dd5423cbe7708032988555777fd92faa0394c2d6a4205fda709ca7a80dc1c65a156c11059667c4d5_640.jpg",
       "audio": "/data/uploads/audio/en/w_dog.mp3",
       "ad_instruction": "if u hear D go left",
       "ad_correctSide": "left",
@@ -25,7 +25,7 @@
         "dog",
         "camel"
       ],
-      "image": "https://images.pexels.com/photos/1049692/pexels-photo-1049692.jpeg",
+      "image": "https://pixabay.com/get/gc97938660eab8989847a88041963aa67761a1c2c066812b5e108b619917fbc296a59c9a14822837bb551e63aa4858053eef60b02d9ff5d17f6584b104580b70a_640.jpg",
       "audio": "/data/uploads/audio/en/w_cat.mp3",
       "ad_instruction": "if you hear cat go left",
       "ad_correctSide": "left",
@@ -41,7 +41,7 @@
         "cat",
         "dog"
       ],
-      "image": "https://images.pexels.com/photos/733086/pexels-photo-733086.jpeg",
+      "image": "https://pixabay.com/get/gd3c59bf8dead8d74511a67846cc41cab7bd0a711ac41aa319d756a7f9ac577b521ef44c144fc3c842c91dc041bc99af1d30c849b628952e4f201f3bdeabecb5f_640.jpg",
       "audio": "/data/uploads/audio/en/w_monkey.mp3",
       "ad_instruction": "if u hear M go right",
       "ad_correctSide": "right",
@@ -57,7 +57,7 @@
         "cat",
         "dog"
       ],
-      "image": "https://placehold.co/400x400?text=Aurore",
+      "image": "https://pixabay.com/get/gfafaf9428e8d867f6ba8cbb77ac4fc6d3213dd0ebe2a2156ec7d4a6a849b6b0592c8a8d3d232ef93d8decb65c91bbae4284231fd30669ed7547b8cf6c7d52301_640.jpg",
       "audio": "/data/uploads/audio/en/w_aurore.mp3",
       "ad_instruction": "if you hear A go right",
       "ad_correctSide": "right",
@@ -73,12 +73,12 @@
         "mylo",
         "adm"
       ],
-      "image": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg",
+      "image": "https://pixabay.com/get/g53f9de1cdef6c86d701b70ae1c734797e0249c1d070ca69a9ef29f3f1b01a3f8c431a5c86ccc530f32639866414861114598d2a99fec5d3740e76ae1462dd566_640.jpg",
       "audio": "/data/uploads/audio/en/w_kamal.mp3",
       "ad_instruction": "if you hear K go right",
       "ad_correctSide": "right",
-      "ss_instruction": "",
-      "ss_correctAction": "jump"
+      "ss_instruction": "kamal",
+      "ss_correctAction": "freeze"
     },
     {
       "id": "w_adam",
@@ -89,10 +89,12 @@
         "shwky",
         "goku"
       ],
-      "image": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
+      "image": "https://pixabay.com/get/ged22db4cf7c09655daae520ca2a200adc92ee7bb2839cc7e6d63cdef838d102701f075514293d022c98622af2cd431e3d91e62147b2f1b8eac094d94fc92a19e_640.jpg",
       "audio": "/data/uploads/audio/en/w_adam.mp3",
       "ad_instruction": "if u hear A go right",
-      "ad_correctSide": "right"
+      "ad_correctSide": "right",
+      "ss_instruction": "",
+      "ss_correctAction": ""
     },
     {
       "id": "w_b7dc1171-5761-4632-b8ba-2a5200a7705c",
@@ -170,6 +172,45 @@
       "ad_correctSide": "left",
       "ss_instruction": "",
       "ss_correctAction": ""
+    },
+    {
+      "id": "w_f4352394-f586-49b6-82be-803b2f2eefab",
+      "word": "New Wordfa",
+      "choices": [
+        "adaddada"
+      ],
+      "image": "",
+      "audio": "",
+      "ad_instruction": "",
+      "ad_correctSide": "left",
+      "ss_instruction": "",
+      "ss_correctAction": ""
+    },
+    {
+      "id": "w_4e03df3a-cafd-4311-8e0e-1b8c612b43c6",
+      "word": "sound b",
+      "choices": [
+        "dog",
+        "cat",
+        "monkey"
+      ],
+      "image": "https://pixabay.com/get/g60d0ad67f839c60980cd96dcb60c8e7177df6e2e8d48d0dfddf3de68942faed6f28664ec2af9a45314a151a0a24100ad3b6b5ad60d5ac204b3c095c8e663efae_640.png",
+      "audio": "/data/uploads/audio/1767437115859_sound_baah.m4a",
+      "ad_instruction": "",
+      "ad_correctSide": "left",
+      "ss_instruction": "boeing",
+      "ss_correctAction": "jump"
+    },
+    {
+      "id": "w_4cc6648e-7a76-4f45-8ec3-38eac793976b",
+      "word": "ball",
+      "choices": [],
+      "image": "",
+      "audio": "/data/uploads/audio/1767437952712_sound_baah.m4a",
+      "ad_instruction": "",
+      "ad_correctSide": "left",
+      "ss_instruction": "ball , ballon",
+      "ss_correctAction": "jump"
     }
   ],
   "gameConfig": {
@@ -179,9 +220,7 @@
         "w_cat",
         "w_monkey",
         "w_kamal",
-        "w_aurore",
-        "w_adam",
-        "w_0210b210-2be1-489d-ad87-77e21f4daaf9"
+        "w_aurore"
       ],
       "actions": {}
     },
@@ -251,11 +290,11 @@
     },
     "audioDetective": {
       "questions": [
-        "w_dog",
         "w_cat",
         "w_monkey",
         "w_aurore",
-        "w_b7dc1171-5761-4632-b8ba-2a5200a7705c"
+        "w_b7dc1171-5761-4632-b8ba-2a5200a7705c",
+        "w_4e03df3a-cafd-4311-8e0e-1b8c612b43c6"
       ],
       "actions": {}
     },
@@ -263,9 +302,10 @@
       "questions": [
         "w_cat",
         "w_monkey",
-        "w_aurore",
         "w_1767008923710_jw8ds",
-        "w_dog"
+        "w_dog",
+        "w_kamal",
+        "w_f4352394-f586-49b6-82be-803b2f2eefab"
       ],
       "actions": {},
       "background": "/data/uploads/1767262990007_idle_3.png"
@@ -274,20 +314,18 @@
       "questions": [
         "w_adam",
         "w_b7dc1171-5761-4632-b8ba-2a5200a7705c",
-        "w_cat",
-        "w_dog",
-        "w_monkey",
         "w_kamal",
-        "w_aurore"
+        "w_aurore",
+        "w_4e03df3a-cafd-4311-8e0e-1b8c612b43c6",
+        "w_4cc6648e-7a76-4f45-8ec3-38eac793976b"
       ],
       "actions": {
         "w_adam": "freeze",
         "w_b7dc1171-5761-4632-b8ba-2a5200a7705c": "freeze",
-        "w_cat": "jump",
-        "w_dog": "jump",
-        "w_monkey": "jump",
         "w_kamal": "freeze",
-        "w_aurore": "freeze"
+        "w_aurore": "freeze",
+        "w_4e03df3a-cafd-4311-8e0e-1b8c612b43c6": "jump",
+        "w_4cc6648e-7a76-4f45-8ec3-38eac793976b": "jump"
       }
     },
     "motsMeles": {
@@ -311,5 +349,6 @@
       ],
       "actions": {}
     }
-  }
+  },
+  "files": {}
 }

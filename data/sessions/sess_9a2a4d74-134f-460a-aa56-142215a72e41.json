@@ -1,0 +1,37 @@
+{
+  "id": "sess_9a2a4d74-134f-460a-aa56-142215a72e41",
+  "teacherId": "t_e9422c5a-4809-4818-b9da-45258412210f",
+  "studentId": "s_bb8674ab-9a38-4422-baf2-d7981456b474",
+  "gameId": "soundSwipe",
+  "lang": "en",
+  "wordIds": [
+    "w_adam",
+    "w_monkey",
+    "w_cat",
+    "w_dog"
+  ],
+  "assignmentId": "as_1a1bdf2a-8523-447b-bb54-68264b1722d6",
+  "status": "completed",
+  "analytics": {
+    "attempts": 12,
+    "failuresBeforePass": 0,
+    "timeSpent": 28.990999999999993,
+    "questions": {
+      "w_cat": {
+        "wrong_action": 2,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_dog": {
+        "wrong_action": 2,
+        "timeout": 0,
+        "correct": true
+      }
+    },
+    "endTime": 1767436499471,
+    "totalTimeSeconds": 28.631,
+    "accuracy": 33,
+    "mistakes": 4
+  },
+  "createdAt": "2026-01-03T10:34:29.043Z"
+}

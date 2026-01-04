@@ -529,6 +529,288 @@
       "status": "pending",
       "score": 0,
       "createdAt": "2026-01-01T10:24:12.147Z"
+    },
+    {
+      "id": "as_710a370d-8165-40a0-af66-137023db386a",
+      "teacherId": "t_e9422c5a-4809-4818-b9da-45258412210f",
+      "studentId": "s_7569360f-7d9d-4018-8bc7-7236309ada19",
+      "gameId": "memoryEcho",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "en"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-02T13:16:06.064Z",
+      "duration": 30.105,
+      "accuracy": 67,
+      "mistakes": 2
+    },
+    {
+      "id": "as_1b354e64-2d29-4964-a777-c45ccbc42a6b",
+      "teacherId": "t_e9422c5a-4809-4818-b9da-45258412210f",
+      "studentId": "s_7569360f-7d9d-4018-8bc7-7236309ada19",
+      "gameId": "memoryEcho",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "en"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-02T13:23:52.831Z",
+      "duration": 31.333,
+      "accuracy": 67,
+      "mistakes": 2
+    },
+    {
+      "id": "as_5e94e882-b92d-41ef-accc-07418b8bb86b",
+      "teacherId": "t_21b4b65e-acbd-43da-a9b3-3bf84d89d01c",
+      "studentId": "s_ed8e67f1-2a01-42ef-867b-d678c5966093",
+      "gameId": "game1",
+      "settings": {},
+      "status": "pending",
+      "score": 0,
+      "createdAt": "2026-01-02T13:39:25.027Z"
+    },
+    {
+      "id": "as_2415b117-2866-4c5b-8537-416942430915",
+      "teacherId": "t_3dc66218-3bf0-41ac-9025-ea04a9fb7f2e",
+      "studentId": "s_e4ccbdf7-9480-437b-ace6-0c75a6cc77ca",
+      "gameId": "game1",
+      "settings": {},
+      "status": "pending",
+      "score": 0,
+      "createdAt": "2026-01-02T13:39:36.972Z"
+    },
+    {
+      "id": "as_5b190398-0b7b-415e-9701-a8786a578331",
+      "teacherId": "t_bcddb5f8-f622-44db-9c1c-1fa2de66bc6f",
+      "studentId": "s_49a74478-2636-4bfe-bd31-bc5a7ecca1b7",
+      "gameId": "game1",
+      "settings": {},
+      "status": "pending",
+      "score": 0,
+      "createdAt": "2026-01-02T13:40:09.885Z"
+    },
+    {
+      "id": "as_9b25fdb8-77a4-46c2-ba22-514b3346748d",
+      "teacherId": "t_e9422c5a-4809-4818-b9da-45258412210f",
+      "studentId": "s_bb8674ab-9a38-4422-baf2-d7981456b474",
+      "gameId": "memoryEcho",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "en"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-03T09:08:24.986Z",
+      "duration": 30.563,
+      "accuracy": 67,
+      "mistakes": 2
+    },
+    {
+      "id": "as_9c682ac6-f837-40f4-b623-e90f54b7cebc",
+      "teacherId": "t_e9422c5a-4809-4818-b9da-45258412210f",
+      "studentId": "s_bb8674ab-9a38-4422-baf2-d7981456b474",
+      "gameId": "multipleChoice",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "en"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-03T09:08:31.846Z",
+      "duration": 16.685,
+      "accuracy": 100,
+      "mistakes": 0
+    },
+    {
+      "id": "as_7f14c3ea-966e-45b5-a045-d57851969e79",
+      "teacherId": "t_e9422c5a-4809-4818-b9da-45258412210f",
+      "studentId": "s_7569360f-7d9d-4018-8bc7-7236309ada19",
+      "gameId": "fillBlank",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "en"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-03T09:08:37.613Z",
+      "duration": 11.697,
+      "accuracy": 100,
+      "mistakes": 0
+    },
+    {
+      "id": "as_2478bc6c-c921-49b9-a3c3-95204346dc8a",
+      "teacherId": "t_e9422c5a-4809-4818-b9da-45258412210f",
+      "studentId": "s_7569360f-7d9d-4018-8bc7-7236309ada19",
+      "gameId": "soundSwipe",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "en"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-03T09:08:45.126Z",
+      "duration": 31.419,
+      "accuracy": 36,
+      "mistakes": 7
+    },
+    {
+      "id": "as_15729f02-49a6-4ba3-9a68-3ce07bff571a",
+      "teacherId": "t_e9422c5a-4809-4818-b9da-45258412210f",
+      "studentId": "s_bb8674ab-9a38-4422-baf2-d7981456b474",
+      "gameId": "memoryEcho",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "en"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-03T10:31:38.032Z",
+      "duration": 35.38,
+      "accuracy": 67,
+      "mistakes": 2
+    },
+    {
+      "id": "as_74913843-d992-4ce7-9246-8b0a69d09b4c",
+      "teacherId": "t_e9422c5a-4809-4818-b9da-45258412210f",
+      "studentId": "s_bb8674ab-9a38-4422-baf2-d7981456b474",
+      "gameId": "multipleChoice",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "en"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-03T10:31:45.796Z",
+      "duration": 25.894,
+      "accuracy": 36,
+      "mistakes": 9
+    },
+    {
+      "id": "as_1a1bdf2a-8523-447b-bb54-68264b1722d6",
+      "teacherId": "t_e9422c5a-4809-4818-b9da-45258412210f",
+      "studentId": "s_bb8674ab-9a38-4422-baf2-d7981456b474",
+      "gameId": "soundSwipe",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "en"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-03T10:34:24.434Z",
+      "duration": 28.631,
+      "accuracy": 33,
+      "mistakes": 4
+    },
+    {
+      "id": "as_96b3a97e-b1cd-4d5c-8d5f-926490ef6485",
+      "teacherId": "t_e9422c5a-4809-4818-b9da-45258412210f",
+      "studentId": "s_bb8674ab-9a38-4422-baf2-d7981456b474",
+      "gameId": "simonSquad",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "en",
+        "gameActions": {
+          "w_adam": "freeze",
+          "w_b7dc1171-5761-4632-b8ba-2a5200a7705c": "freeze",
+          "w_kamal": "freeze",
+          "w_aurore": "freeze",
+          "w_4e03df3a-cafd-4311-8e0e-1b8c612b43c6": "jump"
+        }
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-03T10:49:34.659Z",
+      "duration": 42.776,
+      "accuracy": 63,
+      "mistakes": 3
+    },
+    {
+      "id": "as_0670388b-c5a0-4329-9bc5-704fb4969329",
+      "teacherId": "t_e9422c5a-4809-4818-b9da-45258412210f",
+      "studentId": "s_bb8674ab-9a38-4422-baf2-d7981456b474",
+      "gameId": "audioDetective",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "en"
+      },
+      "status": "pending",
+      "score": 0,
+      "createdAt": "2026-01-03T10:50:05.213Z"
+    },
+    {
+      "id": "as_3335d599-8c04-455c-933d-30f25ac3495a",
+      "teacherId": "t_e9422c5a-4809-4818-b9da-45258412210f",
+      "studentId": "s_bb8674ab-9a38-4422-baf2-d7981456b474",
+      "gameId": "simonSquad",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "en",
+        "gameActions": {
+          "w_adam": "freeze",
+          "w_b7dc1171-5761-4632-b8ba-2a5200a7705c": "freeze",
+          "w_kamal": "freeze",
+          "w_aurore": "freeze",
+          "w_4e03df3a-cafd-4311-8e0e-1b8c612b43c6": "jump"
+        }
+      },
+      "status": "pending",
+      "score": 0,
+      "createdAt": "2026-01-03T10:52:46.227Z"
+    },
+    {
+      "id": "as_b2bc4f41-82d3-4097-a682-168c9bdf43bc",
+      "teacherId": "t_e9422c5a-4809-4818-b9da-45258412210f",
+      "studentId": "s_bb8674ab-9a38-4422-baf2-d7981456b474",
+      "gameId": "simonSquad",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "fr"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-03T11:12:15.297Z",
+      "duration": 52.48,
+      "accuracy": 43,
+      "mistakes": 8
+    },
+    {
+      "id": "as_540da870-d9c2-4049-a385-9699f9d7fdf3",
+      "teacherId": "t_e9422c5a-4809-4818-b9da-45258412210f",
+      "studentId": "s_bb8674ab-9a38-4422-baf2-d7981456b474",
+      "gameId": "simonSquad",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "fr",
+        "gameActions": {
+          "w_5878036d-52f6-4e73-9f1e-1c0231d16f86": "freeze",
+          "w_cdd832de-07f7-42d9-8813-489301e3df85": "jump",
+          "w_47458419-c599-48a6-bdcb-aceba1113210": "jump",
+          "w_8b430e27-dfdb-4483-b662-54f6e00f2942": "freeze"
+        }
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-03T11:21:47.208Z",
+      "duration": 42.542,
+      "accuracy": 40,
+      "mistakes": 6
     }
   ]
 }
