@@ -670,3 +670,105 @@ select:focus {
     padding: 0;
     font-size: 0.8rem;
 }
+
+
+/* PRINT STYLES */
+@media print {
+
+    /* Page setup */
+    @page {
+        margin: 0.5in;
+        size: A4;
+    }
+
+    /* HIDE navigation and UI elements */
+    aside,
+    .top-bar,
+    .no-print,
+    button.no-print,
+    .back-btn,
+    .sidebar {
+        display: none !important;
+    }
+
+    /* HIDE assignments section */
+    #view-student-detail #sd-session-list {
+        display: none !important;
+    }
+
+    #view-student-detail .card h3:nth-of-type(1) {
+        display: none !important;
+    }
+
+    /* FORCE SHOW student detail view */
+    #view-student-detail {
+        display: block !important;
+    }
+
+    /* FORCE SHOW performance analytics */
+    #sd-analytics {
+        display: block !important;
+        page-break-inside: avoid;
+    }
+
+    /* FORCE SHOW all content */
+    .card {
+        display: block !important;
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+        padding: 10px !important;
+        margin: 5px 0 !important;
+    }
+
+    /* Full width for main content */
+    main {
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+    }
+
+    /* Clean background */
+    body {
+        background: white;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Optimize spacing */
+    h2 {
+        margin: 5px 0 !important;
+        font-size: 1.2rem !important;
+    }
+
+    h3 {
+        margin: 5px 0 !important;
+        font-size: 1rem !important;
+    }
+
+    p {
+        margin: 2px 0 !important;
+    }
+
+    /* Scale charts to fit */
+    canvas {
+        max-width: 100% !important;
+        max-height: 250px !important;
+    }
+
+    /* Ensure tables print properly */
+    table {
+        page-break-inside: avoid;
+    }
+
+    /* Add page title */
+    #view-analytics::before {
+        content: "Analytics Report";
+        display: block;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #333;
+    }
+}

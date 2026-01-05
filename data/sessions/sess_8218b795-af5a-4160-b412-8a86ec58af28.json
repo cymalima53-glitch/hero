@@ -1,0 +1,47 @@
+{
+  "id": "sess_8218b795-af5a-4160-b412-8a86ec58af28",
+  "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+  "studentId": "s_892cdcc7-b4a4-49eb-8136-06f8cc156186",
+  "gameId": "soundSwipe",
+  "lang": "fr",
+  "wordIds": [
+    "w_88564731-890b-4aa5-8d47-cf3802dc1bb6",
+    "w_829faff8-6727-4d57-861b-c8193b930bba",
+    "w_610abd2f-27bd-4c34-8962-373ca7efd27b",
+    "w_92e3e186-7a74-400a-b82c-5c3bf1dbcb41"
+  ],
+  "assignmentId": "as_3384ee1c-488f-43d0-ae62-202c59bcde1a",
+  "status": "completed",
+  "analytics": {
+    "attempts": 16,
+    "failuresBeforePass": 0,
+    "timeSpent": 76.60000000000001,
+    "questions": {
+      "w_829faff8-6727-4d57-861b-c8193b930bba": {
+        "wrong_action": 4,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_610abd2f-27bd-4c34-8962-373ca7efd27b": {
+        "wrong_action": 2,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_88564731-890b-4aa5-8d47-cf3802dc1bb6": {
+        "wrong_action": 2,
+        "timeout": 0,
+        "correct": false
+      },
+      "w_92e3e186-7a74-400a-b82c-5c3bf1dbcb41": {
+        "wrong_action": 3,
+        "timeout": 0,
+        "correct": true
+      }
+    },
+    "endTime": 1767534334477,
+    "totalTimeSeconds": 53.55,
+    "accuracy": 27,
+    "mistakes": 11
+  },
+  "createdAt": "2026-01-04T13:44:39.435Z"
+}

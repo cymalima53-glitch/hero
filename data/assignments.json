@@ -811,6 +811,173 @@
       "duration": 42.542,
       "accuracy": 40,
       "mistakes": 6
+    },
+    {
+      "id": "as_94a39259-0cc0-42a5-a8c3-8311a35bf306",
+      "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+      "studentId": "s_892cdcc7-b4a4-49eb-8136-06f8cc156186",
+      "gameId": "simonSquad",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "fr",
+        "gameActions": {
+          "w_1767531547021_a0yk5": "jump",
+          "w_1767531630862_d2v5y": "jump",
+          "w_1767531784352_34pur": "jump",
+          "w_1767531855919_r3urc": "freeze"
+        }
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-04T13:09:27.321Z",
+      "duration": 47.444,
+      "accuracy": 80,
+      "mistakes": 1
+    },
+    {
+      "id": "as_820e1e39-f703-43b7-a670-d122cffb4a55",
+      "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+      "studentId": "s_892cdcc7-b4a4-49eb-8136-06f8cc156186",
+      "gameId": "memoryEcho",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "fr"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-04T13:22:28.309Z",
+      "duration": 143.815,
+      "accuracy": 33,
+      "mistakes": 6
+    },
+    {
+      "id": "as_29045160-6259-4294-8a8f-54aaebd6bd49",
+      "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+      "studentId": "s_892cdcc7-b4a4-49eb-8136-06f8cc156186",
+      "gameId": "multipleChoice",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "fr"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-04T13:22:34.932Z",
+      "duration": 17.248,
+      "accuracy": 100,
+      "mistakes": 0
+    },
+    {
+      "id": "as_7716ee25-69d2-4576-b743-74214fe1bcdf",
+      "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+      "studentId": "s_892cdcc7-b4a4-49eb-8136-06f8cc156186",
+      "gameId": "matchPairs",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "fr"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-04T13:22:41.183Z",
+      "duration": 36.216,
+      "accuracy": 60,
+      "mistakes": 2
+    },
+    {
+      "id": "as_11da67a9-e5c2-4f92-ac19-c44260b489ea",
+      "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+      "studentId": "s_892cdcc7-b4a4-49eb-8136-06f8cc156186",
+      "gameId": "soundDrag",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "fr"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-04T13:39:44.983Z",
+      "duration": 53.478,
+      "accuracy": 44,
+      "mistakes": 5
+    },
+    {
+      "id": "as_3384ee1c-488f-43d0-ae62-202c59bcde1a",
+      "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+      "studentId": "s_892cdcc7-b4a4-49eb-8136-06f8cc156186",
+      "gameId": "soundSwipe",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "fr"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-04T13:39:53.204Z",
+      "duration": 53.55,
+      "accuracy": 27,
+      "mistakes": 11
+    },
+    {
+      "id": "as_e7ffe558-0639-4149-9f32-ef0ee29bc3f9",
+      "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+      "studentId": "s_892cdcc7-b4a4-49eb-8136-06f8cc156186",
+      "gameId": "beatClock",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "fr"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-04T13:43:17.792Z",
+      "duration": 46.779,
+      "accuracy": 27,
+      "mistakes": 16
+    },
+    {
+      "id": "as_268abb8a-3032-4997-a554-8a5c7fbe8383",
+      "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+      "studentId": "s_892cdcc7-b4a4-49eb-8136-06f8cc156186",
+      "gameId": "motsCroises",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "fr"
+      },
+      "status": "pending",
+      "score": 0,
+      "createdAt": "2026-01-04T13:52:34.915Z"
+    },
+    {
+      "id": "as_b47e34f5-aacd-4698-9a3a-aca870f4d6b8",
+      "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+      "studentId": "s_892cdcc7-b4a4-49eb-8136-06f8cc156186",
+      "gameId": "soundDrag",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "fr"
+      },
+      "status": "pending",
+      "score": 0,
+      "createdAt": "2026-01-05T08:45:05.985Z"
+    },
+    {
+      "id": "as_8410fe02-a02a-419a-bf88-b1a87194e5d7",
+      "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+      "studentId": "s_892cdcc7-b4a4-49eb-8136-06f8cc156186",
+      "gameId": "memoryEcho",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "fr"
+      },
+      "status": "pending",
+      "score": 0,
+      "createdAt": "2026-01-05T08:48:42.149Z"
     }
   ]
 }

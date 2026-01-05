@@ -1,3 +1,13 @@
 {
-  "students": []
+  "students": [
+    {
+      "id": "s_892cdcc7-b4a4-49eb-8136-06f8cc156186",
+      "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+      "name": "adam",
+      "username": "spider22",
+      "passwordHash": "$2a$10$e.T7SKpw5LQYa5ESIm9VUO4vw0TfHV6fpvtelJwVHW.m2v22Iz3d6",
+      "parentEmail": "",
+      "createdAt": "2026-01-04T12:30:13.756Z"
+    }
+  ]
 }

@@ -8,6 +8,15 @@
       "lastActiveAt": "2026-01-04T12:16:05.268Z",
       "contentGeneratorUses": 0,
       "students": []
+    },
+    {
+      "id": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+      "email": "breogan51@hotmail.com",
+      "passwordHash": "$2a$10$cPXumyOpMUHTO5iFDETIK.NMm6ObTgmSIGKQgk5Q.ZB5jSJrtwAi6",
+      "createdAt": "2026-01-04T12:29:53.841Z",
+      "lastActiveAt": "2026-01-04T12:29:53.841Z",
+      "contentGeneratorUses": 0,
+      "students": []
     }
   ]
 }

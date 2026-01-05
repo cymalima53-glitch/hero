@@ -1,0 +1,27 @@
+{
+  "id": "sess_041d8f42-6122-49bf-ac5c-adbbcfefaa04",
+  "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+  "studentId": "teacher_preview",
+  "gameId": "motsCroises",
+  "wordIds": [
+    "w_75dcc62b-5968-41b2-9bb3-bd840af55fab",
+    "w_5878036d-52f6-4e73-9f1e-1c0231d16f86",
+    "w_121b588e-eaf8-47e9-99b2-9a74c5ada38e",
+    "w_610abd2f-27bd-4c34-8962-373ca7efd27b",
+    "w_829faff8-6727-4d57-861b-c8193b930bba",
+    "w_92e3e186-7a74-400a-b82c-5c3bf1dbcb41",
+    "w_88564731-890b-4aa5-8d47-cf3802dc1bb6"
+  ],
+  "gameActions": {},
+  "lang": "fr",
+  "limit": 10,
+  "createdAt": "2026-01-05T08:20:20.781Z",
+  "status": "active",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 0,
+    "questions": {},
+    "startTime": 1767601222570
+  }
+}

@@ -43,9 +43,16 @@ async function checkAuth() {
     }
 }
 
+
 window.logout = async function () {
     await fetch(`${API_BASE}/api/auth/logout`, { method: 'POST' });
     window.location.href = '../dashboard/login.html';
+}
+
+// Helper function for back navigation from student detail to analytics
+window.showAnalytics = function () {
+    document.querySelectorAll('.app-view').forEach(v => v.classList.add('hidden'));
+    document.getElementById('view-analytics').classList.remove('hidden');
 }
 
 // ========== NAVIGATION ==========

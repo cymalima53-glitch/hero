@@ -81,12 +81,14 @@
 }
 
 #drag-source-container {
-    margin-bottom: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
+    order: -1;
 }
 
 .draggable {

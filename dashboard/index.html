@@ -386,7 +386,10 @@
             <div id="view-analytics" class="app-view hidden"
                 style="margin-top: 0 !important; padding-top: 0 !important;">
                 <div class="card" style="margin-top: 0 !important;">
-                    <h2>Analytics Overview</h2>
+                    <div class="flex-row"
+                        style="justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h2>Analytics Overview</h2>
+                    </div>
                     <div class="table-container">
                         <table id="analytics-table" style="width: 100%; border-collapse: collapse;">
                             <thead>
@@ -405,7 +408,7 @@
 
             <!-- VIEW: STUDENT DETAIL -->
             <div id="view-student-detail" class="app-view hidden">
-                <div class="back-btn" onclick="showView('analytics')"><i class="fas fa-arrow-left"></i> Back to
+                <div class="back-btn" onclick="showAnalytics()"><i class="fas fa-arrow-left"></i> Back to
                     Analytics
                 </div>
                 <div class="card">
@@ -415,6 +418,11 @@
                             <div style="color:var(--text-muted); margin-bottom:1rem;">ID: <code id="sd-id">...</code>
                             </div>
                         </div>
+                        <button class="secondary sm no-print" onclick="window.print()"
+                            style="display: flex; align-items: center; gap: 0.5rem;"
+                            title="Click to open print dialog, then select 'Save as PDF'">
+                            <i class="fas fa-download"></i> Download as PDF
+                        </button>
                     </div>
 
                     <h3>Recent Assignments</h3>

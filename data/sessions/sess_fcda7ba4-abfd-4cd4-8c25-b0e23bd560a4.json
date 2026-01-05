@@ -1,0 +1,38 @@
+{
+  "id": "sess_fcda7ba4-abfd-4cd4-8c25-b0e23bd560a4",
+  "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+  "studentId": "teacher_preview",
+  "gameId": "soundDrag",
+  "wordIds": [
+    "w_1767531630862_d2v5y",
+    "w_1767531547021_a0yk5",
+    "w_1767531784352_34pur",
+    "w_610abd2f-27bd-4c34-8962-373ca7efd27b",
+    "w_829faff8-6727-4d57-861b-c8193b930bba",
+    "w_92e3e186-7a74-400a-b82c-5c3bf1dbcb41",
+    "w_88564731-890b-4aa5-8d47-cf3802dc1bb6"
+  ],
+  "gameActions": {},
+  "lang": "fr",
+  "limit": 10,
+  "createdAt": "2026-01-05T08:45:14.322Z",
+  "status": "active",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 17.774,
+    "questions": {
+      "w_88564731-890b-4aa5-8d47-cf3802dc1bb6": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_92e3e186-7a74-400a-b82c-5c3bf1dbcb41": {
+        "wrong_action": 2,
+        "timeout": 0,
+        "correct": false
+      }
+    },
+    "startTime": 1767602714374
+  }
+}

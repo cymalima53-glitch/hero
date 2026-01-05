@@ -1,0 +1,63 @@
+{
+  "id": "sess_ec56e621-5e9f-4ae2-81e4-c80facc01765",
+  "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+  "studentId": "s_892cdcc7-b4a4-49eb-8136-06f8cc156186",
+  "gameId": "beatClock",
+  "lang": "fr",
+  "wordIds": [
+    "w_829faff8-6727-4d57-861b-c8193b930bba",
+    "w_610abd2f-27bd-4c34-8962-373ca7efd27b",
+    "w_47458419-c599-48a6-bdcb-aceba1113210",
+    "w_cdd832de-07f7-42d9-8813-489301e3df85",
+    "w_8b430e27-dfdb-4483-b662-54f6e00f2942",
+    "w_121b588e-eaf8-47e9-99b2-9a74c5ada38e",
+    "w_c603021e-df9e-43c9-ae7b-d4bd162978f4",
+    "w_92e3e186-7a74-400a-b82c-5c3bf1dbcb41",
+    "w_88564731-890b-4aa5-8d47-cf3802dc1bb6",
+    "w_5878036d-52f6-4e73-9f1e-1c0231d16f86"
+  ],
+  "assignmentId": "as_e7ffe558-0639-4149-9f32-ef0ee29bc3f9",
+  "status": "completed",
+  "analytics": {
+    "attempts": 18,
+    "failuresBeforePass": 0,
+    "timeSpent": 35.949999999999996,
+    "questions": {
+      "w_610abd2f-27bd-4c34-8962-373ca7efd27b": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_121b588e-eaf8-47e9-99b2-9a74c5ada38e": {
+        "wrong_action": 6,
+        "timeout": 0,
+        "correct": false
+      },
+      "w_47458419-c599-48a6-bdcb-aceba1113210": {
+        "wrong_action": 2,
+        "timeout": 0,
+        "correct": false
+      },
+      "w_829faff8-6727-4d57-861b-c8193b930bba": {
+        "wrong_action": 4,
+        "timeout": 0,
+        "correct": false
+      },
+      "w_8b430e27-dfdb-4483-b662-54f6e00f2942": {
+        "wrong_action": 2,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_92e3e186-7a74-400a-b82c-5c3bf1dbcb41": {
+        "wrong_action": 2,
+        "timeout": 0,
+        "correct": false
+      }
+    },
+    "endTime": 1767534390172,
+    "totalTimeSeconds": 46.779,
+    "accuracy": 27,
+    "mistakes": 16
+  },
+  "createdAt": "2026-01-04T13:45:37.466Z"
+}

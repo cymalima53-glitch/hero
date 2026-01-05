@@ -1,0 +1,32 @@
+{
+  "id": "sess_0544e2d8-8b58-4505-86f4-a742f87d4eb1",
+  "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+  "studentId": "teacher_preview",
+  "gameId": "memoryEcho",
+  "wordIds": [
+    "w_f2f0eeb0-55f2-42a9-8025-8392e7eeef0e",
+    "w_26b96185-5156-451a-ae17-a13c71eca86d",
+    "w_610abd2f-27bd-4c34-8962-373ca7efd27b",
+    "w_829faff8-6727-4d57-861b-c8193b930bba",
+    "w_92e3e186-7a74-400a-b82c-5c3bf1dbcb41",
+    "w_88564731-890b-4aa5-8d47-cf3802dc1bb6"
+  ],
+  "gameActions": {},
+  "lang": "fr",
+  "limit": 10,
+  "createdAt": "2026-01-05T08:58:49.813Z",
+  "status": "active",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 28.939999999999998,
+    "questions": {
+      "w_92e3e186-7a74-400a-b82c-5c3bf1dbcb41": {
+        "wrong_action": 2,
+        "timeout": 0,
+        "correct": false
+      }
+    },
+    "startTime": 1767603529858
+  }
+}

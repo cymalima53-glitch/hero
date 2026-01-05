@@ -1,0 +1,37 @@
+{
+  "id": "sess_eb91d966-7425-48b2-8aea-529fec862aa5",
+  "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+  "studentId": "teacher_preview",
+  "gameId": "fillBlank",
+  "wordIds": [
+    "w_c603021e-df9e-43c9-ae7b-d4bd162978f4",
+    "w_1767533582568_gpfg8"
+  ],
+  "gameActions": {},
+  "lang": "fr",
+  "limit": 10,
+  "createdAt": "2026-01-04T13:34:05.249Z",
+  "status": "completed",
+  "analytics": {
+    "attempts": 2,
+    "failuresBeforePass": 0,
+    "timeSpent": 9.547,
+    "questions": {
+      "w_c603021e-df9e-43c9-ae7b-d4bd162978f4": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_1767533582568_gpfg8": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      }
+    },
+    "startTime": 1767533645293,
+    "endTime": 1767533658712,
+    "totalTimeSeconds": 12.551,
+    "accuracy": 100,
+    "mistakes": 0
+  }
+}
