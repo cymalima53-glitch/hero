@@ -1,5 +1,5 @@
 require('dotenv').config();
-const fetch = require('node-fetch');
+
 
 // EmailJS Configuration from .env
 const PUBLIC_KEY = process.env.EMAILJS_PUBLIC_KEY;
