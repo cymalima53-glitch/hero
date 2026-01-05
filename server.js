@@ -63,7 +63,7 @@ fs.mkdir(UPLOAD_DIR, { recursive: true }).catch(console.error);
 fs.mkdir(AUDIO_DIR, { recursive: true }).catch(console.error);
 
 // === SECURE MEDIA ROUTES ===
-const fetch = require('node-fetch');
+
 
 // 3. GET /api/images?q=term (Secured: Teachers only)
 app.get('/api/images', requireAuth, async (req, res) => {
