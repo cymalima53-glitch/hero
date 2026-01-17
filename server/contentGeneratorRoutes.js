@@ -2,7 +2,7 @@ module.exports = function (app, requireAuth) {
     const fs = require('fs');
     const path = require('path');
     const OpenAI = require('openai');
-    const { requireAICredits } = require('./subscriptionMiddleware');
+    // Removed Stripe subscription middleware for FREE deployment
 
     // Initialize OpenAI
     const openai = new OpenAI({
@@ -40,11 +40,14 @@ module.exports = function (app, requireAuth) {
 
     // POST /api/generate-content
     // Generate worksheets and workshops using OpenAI
-    app.post('/api/generate-content', requireAuth, requireAICredits, async (req, res) => {
+    app.post('/api/generate-content', requireAuth, async (req, res) => {
         try {
             const { subject, topic, level, language = 'en' } = req.body;
             const teacherId = req.teacherId;
-            const teacher = req.teacher; // Set by requireAICredits middleware
+
+            // Get teacher info
+            const teachers = getTeachers();
+            const teacher = teachers.find(t => t.id === teacherId);
 
             // Deduct credit (skip for internal free teachers)
             if (teacher.role !== 'internal_free') {
