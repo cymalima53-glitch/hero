@@ -63,8 +63,8 @@ require('./server/adminRoutes')(app);
 // Content Generator Routes
 require('./server/contentGeneratorRoutes')(app, requireAuth);
 
-// Stripe Routes
-require('./server/stripeRoutes')(app, requireAuth);
+// Stripe Routes - Commented out for FREE deployment (will add later)
+// require('./server/stripeRoutes')(app, requireAuth);
 
 const DATA_DIR = path.join(__dirname, 'data');
 const UPLOAD_DIR = path.join(DATA_DIR, 'uploads');
