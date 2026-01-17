@@ -40,20 +40,37 @@ module.exports = function (app, requireAuth) {
     // Does the game send cookies? Yes, HttpOnly cookies are automatic.
     // So if I add checks, it should work if the user is logged in.
 
-    // 1. GET /data/:lang - Public Data (Words/Categories)
-    app.get('/data/:lang', (req, res) => {
+    // 1. GET /data/:lang - Filter by Teacher ID
+    app.get('/data/:lang', requireAuth, (req, res) => {
         try {
-            // Check if user is authenticated (Teacher OR Student) via cookies?
-            // For now, to fix the 404, we serve the data. 
-            // The file structure implies public access or simple read.
             const data = getData(req.params.lang);
-            res.json(data);
+
+            // Get teacher email from session
+            const teachers = require('fs').readFileSync(require('path').join(__dirname, '../data/teachers.json'), 'utf8');
+            const teacherData = JSON.parse(teachers).teachers || [];
+            const teacher = teacherData.find(t => t.id === req.teacherId);
+            const teacherEmail = teacher ? teacher.email : null;
+
+            console.log('[ISOLATION] Teacher email:', teacherEmail);
+            console.log('[ISOLATION] Total words in file:', data.words.length);
+
+            // Filter words by teacherId
+            const filteredWords = data.words.filter(w => w.teacherId === teacherEmail);
+
+            console.log('[ISOLATION] Filtered words for teacher:', filteredWords.length);
+
+            res.json({
+                words: filteredWords,
+                gameConfig: data.gameConfig,
+                files: data.files
+            });
         } catch (e) {
+            console.error('[ISOLATION ERROR]', e);
             res.status(500).json({ error: e.message });
         }
     });
 
-    // 2. POST /data/:lang - Save Game Data (Secured: Teachers only)
+    // 2. POST /data/:lang - Save Game Data with Teacher ID
     app.post('/data/:lang', requireAuth, (req, res) => {
         try {
             const lang = req.params.lang;
@@ -64,19 +81,31 @@ module.exports = function (app, requireAuth) {
                 return res.status(400).json({ error: 'Invalid data structure' });
             }
 
-            // Merge with existing files to not lose them if not sent (frontend sends everything though)
-            // But let's be safe: read existing, update words/config, keep files if not in payload?
-            // Editor logic seems to send `files` in payload if it has them? 
-            // Looking at editor.js: `buildCleanPayload` sends { words, gameConfig }. It DOES NOT send files?
-            // Wait, looking at editor.js line 375: `return { words: cleanWords, gameConfig: cleanConfig };`
-            // IT DOES NOT RETURN FILES!
-            // If we overwrite `data` with this payload, we will LOSE `files`!
+            // Get teacher email
+            const teachers = require('fs').readFileSync(require('path').join(__dirname, '../data/teachers.json'), 'utf8');
+            const teacherData = JSON.parse(teachers).teachers || [];
+            const teacher = teacherData.find(t => t.id === req.teacherId);
+            const teacherEmail = teacher ? teacher.email : null;
 
-            // CRITICAL FIX: Merge `files` from existing data if missing in payload.
+            console.log('[ISOLATION] Saving words for teacher:', teacherEmail);
+            console.log('[ISOLATION] Number of words to save:', newData.words.length);
+
+            // Add teacherId to all words
+            newData.words.forEach(word => {
+                word.teacherId = teacherEmail;
+            });
+
+            // Read existing data
             const existingData = getData(lang);
 
+            // Filter existing words - keep only OTHER teachers' words + new words from current teacher
+            const otherTeachersWords = existingData.words.filter(w => w.teacherId !== teacherEmail);
+            const allWords = [...otherTeachersWords, ...newData.words];
+
+            console.log('[ISOLATION] Total words after merge:', allWords.length);
+
             const dataToSave = {
-                words: newData.words,
+                words: allWords,
                 gameConfig: newData.gameConfig,
                 files: newData.files || existingData.files || {}
             };
@@ -84,7 +113,7 @@ module.exports = function (app, requireAuth) {
             saveData(lang, dataToSave);
             res.json({ success: true });
         } catch (e) {
-            console.error("Save Error:", e);
+            console.error("[ISOLATION] Save Error:", e);
             res.status(500).json({ error: e.message });
         }
     });
