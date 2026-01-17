@@ -5,7 +5,7 @@ const crypto = require('crypto');
 const ASSIGNMENTS_FILE = path.join(__dirname, '../data/assignments.json');
 const STUDENTS_FILE = path.join(__dirname, '../data/students.json');
 
-module.exports = function (app, requireAuth) {
+module.exports = function (app, requireAuth, requireStudentAuth) {
     // Removed Stripe subscription middleware for FREE deployment
 
     // HELPER: Read Assignments
