@@ -1,6 +1,8 @@
 module.exports = function (app, requireAuth) {
     const fs = require('fs');
     const path = require('path');
+    const { requireSubscription } = require('./subscriptionMiddleware');
+
     // OpenAI removed - insights are now rule-based
 
     // Helper: Read sessions data
@@ -38,7 +40,7 @@ module.exports = function (app, requireAuth) {
 
     // GET /api/analytics/student/:studentId
     // Returns aggregated performance data for charts
-    app.get('/api/analytics/student/:studentId', requireAuth, (req, res) => {
+    app.get('/api/analytics/student/:studentId', requireAuth, requireSubscription, (req, res) => {
         try {
             const { studentId } = req.params;
             const sessions = getSessions();
@@ -128,7 +130,7 @@ module.exports = function (app, requireAuth) {
 
     // POST /api/analytics/insights
     // Generate rule-based insights (no AI/API required)
-    app.post('/api/analytics/insights', requireAuth, async (req, res) => {
+    app.post('/api/analytics/insights', requireAuth, requireSubscription, async (req, res) => {
         console.log('=== INSIGHTS REQUEST RECEIVED ===');
 
         try {

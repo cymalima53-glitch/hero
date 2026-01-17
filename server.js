@@ -1,11 +1,16 @@
-const express = require('express');
+// MUST be first - load environment variables before any other imports
 require('dotenv').config();
+
+const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const fs = require('fs').promises;
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const fileUpload = require('express-fileupload');
+
+// Verify Stripe webhook secret is loaded
+console.log('[ENV CHECK] STRIPE_WEBHOOK_SECRET loaded:', process.env.STRIPE_WEBHOOK_SECRET ? '✓ YES' : '✗ NO (MISSING!)');
 
 const app = express();
 const PORT = 3000;
@@ -20,6 +25,10 @@ app.use(cors({
 }));
 app.use(cookieParser());
 app.get('/favicon.ico', (req, res) => res.status(204).end());
+
+// Raw body for Stripe webhooks (must be before bodyParser)
+app.use('/api/stripe/webhook', express.raw({ type: 'application/json' }));
+
 app.use(bodyParser.json({ limit: '100mb' }));
 app.use(bodyParser.urlencoded({ limit: '100mb', extended: true }));
 app.use(fileUpload({
@@ -53,6 +62,9 @@ require('./server/adminRoutes')(app);
 
 // Content Generator Routes
 require('./server/contentGeneratorRoutes')(app, requireAuth);
+
+// Stripe Routes
+require('./server/stripeRoutes')(app, requireAuth);
 
 const DATA_DIR = path.join(__dirname, 'data');
 const UPLOAD_DIR = path.join(DATA_DIR, 'uploads');

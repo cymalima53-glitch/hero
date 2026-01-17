@@ -1,0 +1,62 @@
+{
+  "id": "sess_3ba5ad88-1d77-48a1-aec7-7ce47a72502d",
+  "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+  "studentId": "teacher_preview",
+  "gameId": "simonSquad",
+  "wordIds": [
+    "w_adam",
+    "w_b7dc1171-5761-4632-b8ba-2a5200a7705c",
+    "w_kamal",
+    "w_aurore",
+    "w_monkey",
+    "w_cat",
+    "w_788e3ee9-20c1-422b-a03b-e7e2fec7be81"
+  ],
+  "gameActions": {
+    "w_adam": "freeze",
+    "w_b7dc1171-5761-4632-b8ba-2a5200a7705c": "freeze",
+    "w_kamal": "jump",
+    "w_aurore": "jump"
+  },
+  "lang": "en",
+  "limit": 10,
+  "createdAt": "2026-01-13T10:59:42.015Z",
+  "status": "completed",
+  "analytics": {
+    "attempts": 5,
+    "failuresBeforePass": 0,
+    "timeSpent": 18.193,
+    "questions": {
+      "w_adam": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_aurore": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_monkey": {
+        "wrong_action": 1,
+        "timeout": 0,
+        "correct": false
+      },
+      "w_cat": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_788e3ee9-20c1-422b-a03b-e7e2fec7be81": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      }
+    },
+    "startTime": 1768301987426,
+    "endTime": 1768302017783,
+    "totalTimeSeconds": 30.355,
+    "accuracy": 83,
+    "mistakes": 1
+  }
+}

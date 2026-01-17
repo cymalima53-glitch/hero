@@ -241,6 +241,22 @@ window.deleteStudent = async function (id) {
 
 // ========== ASSIGNMENTS LOGIC ==========
 function setupAssignments() {
+    // Game dropdown change listener to show/hide config panels
+    const gameDropdown = document.getElementById('assign-game');
+    if (gameDropdown) {
+        gameDropdown.addEventListener('change', (e) => {
+            const selectedGame = e.target.value;
+            const audioDetectivePanel = document.getElementById('audio-detective-config-panel');
+
+            // Show/hide Audio Detective config panel
+            if (selectedGame === 'audioDetective') {
+                audioDetectivePanel.classList.remove('hidden');
+            } else {
+                audioDetectivePanel.classList.add('hidden');
+            }
+        });
+    }
+
     document.getElementById('create-session-form').addEventListener('submit', async (e) => {
         e.preventDefault();
         const studentId = document.getElementById('assign-student').value;
@@ -249,6 +265,19 @@ function setupAssignments() {
         const fileId = document.getElementById('assign-file').value;
 
         if (!studentId || !gameId) return alert("Please select student and game");
+
+        // Confirm for Audio Detective
+        if (gameId === 'audioDetective') {
+            const confirmed = confirm(
+                '🎧 Audio Detective Assignment\n\n' +
+                'Make sure you have configured:\n' +
+                '• Instructions for each word\n' +
+                '• Correct side (left/right) for each word\n\n' +
+                'Configure these in Content Editor → Audio Detective.\n\n' +
+                'Continue with assignment?'
+            );
+            if (!confirmed) return;
+        }
 
         // Prepare Settings (Snapshot of config)
         const settings = {
@@ -1000,43 +1029,55 @@ function renderSessionDetail(sessionId) {
     const qContainer = document.getElementById('sess-questions');
     qContainer.innerHTML = '<p>Loading word data...</p>';
 
-    // Fetch Language to map IDs
-    fetch(`/data/${session.lang || 'en'}`)
-        .then(r => r.json())
-        .then(data => {
-            qContainer.innerHTML = '';
-            const questions = session.analytics.questions || {};
-            const qKeys = Object.keys(questions);
+    // Helper function to render questions
+    const renderQuestions = (wordsData) => {
+        qContainer.innerHTML = '';
+        const questions = session.analytics.questions || {};
+        const qKeys = Object.keys(questions);
 
-            if (qKeys.length === 0) {
-                qContainer.innerHTML = '<p class="text-muted">No specific question data logged.</p>';
-                return;
-            }
+        if (qKeys.length === 0) {
+            qContainer.innerHTML = '<p class="text-muted">No specific question data logged.</p>';
+            return;
+        }
 
-            qKeys.forEach(wId => {
-                const stat = questions[wId];
-                const wordObj = data.words.find(w => w.id === wId);
-                const wordText = wordObj ? wordObj.word : wId; // Fallback to ID
-                const isCorrect = stat.correct;
-                const wrongs = stat.wrong || 0;
+        qKeys.forEach(wId => {
+            const stat = questions[wId];
+            const wordObj = wordsData.find(w => w.id === wId);
+            const wordText = wordObj ? wordObj.word : wId; // Fallback to ID
+            const isCorrect = stat.correct;
+            const wrongs = stat.wrong || 0;
 
-                const card = document.createElement('div');
-                card.className = `q-card ${isCorrect ? 'correct' : 'wrong'}`;
-                card.innerHTML = `
-                    <span class="q-word">${wordText}</span>
-                    <div class="q-stats">
-                        ${isCorrect ? '<i class="fas fa-check" style="color:var(--success)"></i> Solved' : '<i class="fas fa-times" style="color:var(--danger)"></i> Unsolved'}
-                        <br>
-                        ${stat.wrong_action !== undefined ? `Wrong Action: ${stat.wrong_action}` : `Mistakes: ${stat.wrong || 0}`}
-                        ${stat.timeout !== undefined ? `<br>Timeout: ${stat.timeout}` : ''}
-                    </div>
-                `;
-                qContainer.appendChild(card);
-            });
-        })
-        .catch(() => {
-            qContainer.innerHTML = '<p style="color:red">Error loading word definitions.</p>';
+            const card = document.createElement('div');
+            card.className = `q-card ${isCorrect ? 'correct' : 'wrong'}`;
+            card.innerHTML = `
+                <span class="q-word">${wordText}</span>
+                <div class="q-stats">
+                    ${isCorrect ? '<i class="fas fa-check" style="color:var(--success)"></i> Solved' : '<i class="fas fa-times" style="color:var(--danger)"></i> Unsolved'}
+                    <br>
+                    ${stat.wrong_action !== undefined ? `Wrong Action: ${stat.wrong_action}` : `Mistakes: ${stat.wrong || 0}`}
+                    ${stat.timeout !== undefined ? `<br>Timeout: ${stat.timeout}` : ''}
+                </div>
+            `;
+            qContainer.appendChild(card);
         });
+    };
+
+    // Use already-loaded state.content.words if language matches, otherwise fetch
+    const sessionLang = session.lang || 'en';
+    if (state.currentLang === sessionLang && state.content.words && state.content.words.length > 0) {
+        renderQuestions(state.content.words);
+    } else {
+        // Fetch Language to map IDs
+        fetch(`${API_BASE}/data/${sessionLang}`)
+            .then(r => r.json())
+            .then(data => {
+                renderQuestions(data.words || []);
+            })
+            .catch((err) => {
+                console.error('Error loading word definitions:', err);
+                qContainer.innerHTML = '<p style="color:red">Error loading word definitions.</p>';
+            });
+    }
 
     // View Switch
     document.querySelectorAll('.app-view').forEach(v => v.classList.add('hidden'));
@@ -1226,11 +1267,10 @@ function setupEditor() {
 
     // Inputs
     // Inputs
-    ['input-word', 'input-choices', 'input-image', 'input-audio', 'input-ad-instruction', 'input-ad-side',
-        'input-ss-instruction', 'input-ss-action'].forEach(id => {
-            const el = document.getElementById(id);
-            if (el) el.addEventListener('input', updateCurrentWord);
-        });
+    ['input-word', 'input-choices', 'input-image', 'input-audio'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('input', updateCurrentWord);
+    });
 
     // Image Search
     document.getElementById('search-img-btn').addEventListener('click', async () => {
@@ -1575,14 +1615,6 @@ function selectWord(idx) {
     document.getElementById('input-image').value = w.image || '';
     document.getElementById('input-audio').value = w.audio || '';
 
-    // Game 11 Fields
-    document.getElementById('input-ad-instruction').value = w.ad_instruction || '';
-    document.getElementById('input-ad-side').value = w.ad_correctSide || 'left';
-
-    // Game 10 Fields (Hero See Hero Do)
-    document.getElementById('input-ss-instruction').value = w.ss_instruction || '';
-    document.getElementById('input-ss-action').value = w.ss_correctAction || 'hands_up';
-
     updateImagePreview(w.image);
     if (window.setAudioPreview) window.setAudioPreview(w.audio);
 }
@@ -1594,14 +1626,6 @@ function updateCurrentWord() {
     w.choices = document.getElementById('input-choices').value.split(',').map(s => s.trim()).filter(s => s);
     w.image = document.getElementById('input-image').value;
     w.audio = document.getElementById('input-audio').value;
-
-    // Game 11
-    w.ad_instruction = document.getElementById('input-ad-instruction').value;
-    w.ad_correctSide = document.getElementById('input-ad-side').value;
-
-    // Game 10
-    w.ss_instruction = document.getElementById('input-ss-instruction').value;
-    w.ss_correctAction = document.getElementById('input-ss-action').value;
 
     updateImagePreview(w.image);
     renderEditorList();
@@ -1751,17 +1775,33 @@ function renderGameConfig(gameId) {
         let extraParams = null;
 
         if (gameId === 'simonSquad') {
-            extraParams = document.createElement('select');
-            extraParams.className = 'sm';
-            extraParams.style.width = 'auto';
-            extraParams.innerHTML = `
-                <option value="freeze">🛑 Freeze</option>
-                <option value="jump">⬆️ Jump</option>
-            `;
-            // STRICT: Default to Freeze. No randomization.
-            extraParams.value = config.actions[w.id] || 'freeze';
-            extraParams.style.display = chk.checked ? 'block' : 'none';
-            extraParams.onchange = () => { config.actions[w.id] = extraParams.value; };
+            extraParams = document.createElement('div');
+            extraParams.className = 'flex-row';
+            extraParams.style.gap = '5px';
+            extraParams.style.marginLeft = '10px';
+
+            // Instruction Input
+            const instrInput = document.createElement('input');
+            instrInput.type = 'text';
+            instrInput.placeholder = 'e.g. if you hear kamal jump';
+            instrInput.className = 'sm';
+            instrInput.style.width = '150px';
+            instrInput.value = w.ss_instruction || ''; // Load from word prop
+            instrInput.onchange = () => { w.ss_instruction = instrInput.value; }; // Save to w.ss_instruction
+
+            // Action Select (Freeze/Jump)
+            const actionSel = document.createElement('select');
+            actionSel.className = 'sm';
+            actionSel.style.width = '80px';
+            actionSel.innerHTML = `<option value="freeze">🛑 Freeze</option><option value="jump">⬆️ Jump</option>`;
+            actionSel.value = config.actions[w.id] || w.ss_correctAction || 'freeze';
+            actionSel.onchange = () => {
+                config.actions[w.id] = actionSel.value;
+                w.ss_correctAction = actionSel.value; // Save to w.ss_correctAction
+            };
+
+            extraParams.append(instrInput, actionSel);
+            extraParams.style.display = chk.checked ? 'flex' : 'none';
         }
 
         else if (gameId === 'audioDetective') {
@@ -1794,20 +1834,15 @@ function renderGameConfig(gameId) {
         chk.onchange = () => {
             if (chk.checked) {
                 config.questions.push(w.id);
-                if (extraParams) extraParams.style.display = (gameId === 'audioDetective') ? 'flex' : 'block';
+                if (extraParams) extraParams.style.display = 'flex';
 
-                // Simon Squad Init
-                if (gameId === 'simonSquad') {
-                    config.actions[w.id] = extraParams.value;
-                }
+                // Hero Freeze Init
+                config.actions[w.id] = actionSel?.value || 'freeze';
             } else {
                 const idx = config.questions.indexOf(w.id);
                 if (idx > -1) config.questions.splice(idx, 1);
                 if (extraParams) extraParams.style.display = 'none';
-
-                if (gameId === 'simonSquad') {
-                    delete config.actions[w.id];
-                }
+                delete config.actions[w.id];
             }
             document.getElementById('game-selected-count').textContent = config.questions.length;
         };
@@ -1847,8 +1882,31 @@ window.resetStudentPassword = async function (id, name) {
 // ========== CONTENT GENERATOR ==========
 let currentGeneratedContent = null;
 
-// Initialize Generate Content button
-document.getElementById('generate-content-btn').addEventListener('click', () => {
+// Initialize Generate Content button with access control
+document.getElementById('generate-content-btn').addEventListener('click', async () => {
+    // Check subscription status before allowing access
+    try {
+        const response = await fetch(`${API_BASE}/api/stripe/subscription-status`, {
+            credentials: 'include'
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+
+            // Check if user has access (either active subscription or trial)
+            if (!data.hasAccess || (!data.subscriptionActive && data.trialDaysRemaining <= 0)) {
+                // Show upgrade prompt
+                if (confirm('🔒 AI Content Generator is a premium feature.\n\nUpgrade to Pro to unlock:\n✓ AI-powered worksheets\n✓ Custom workshop activities\n✓ 100 AI credits per month\n\nGo to pricing page?')) {
+                    window.location.href = '/dashboard/pricing.html';
+                }
+                return;
+            }
+        }
+    } catch (error) {
+        console.error('Failed to check subscription status:', error);
+    }
+
+    // User has access - open the modal
     document.getElementById('generate-modal').classList.remove('hidden');
 });
 
@@ -2129,4 +2187,3 @@ window.downloadContentPDF = async function () {
         alert('Failed to generate PDF. Please try again.');
     }
 };
-

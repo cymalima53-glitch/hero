@@ -1,0 +1,23 @@
+{
+  "id": "sess_200d6935-e29e-4cdd-9aa7-c7612a22b534",
+  "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+  "studentId": "s_892cdcc7-b4a4-49eb-8136-06f8cc156186",
+  "gameId": "motsCroises",
+  "lang": "fr",
+  "wordIds": [
+    "w_88564731-890b-4aa5-8d47-cf3802dc1bb6",
+    "w_8b430e27-dfdb-4483-b662-54f6e00f2942",
+    "w_610abd2f-27bd-4c34-8962-373ca7efd27b",
+    "w_829faff8-6727-4d57-861b-c8193b930bba",
+    "w_92e3e186-7a74-400a-b82c-5c3bf1dbcb41"
+  ],
+  "assignmentId": "as_268abb8a-3032-4997-a554-8a5c7fbe8383",
+  "status": "active",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 0,
+    "questions": {}
+  },
+  "createdAt": "2026-01-13T10:23:12.479Z"
+}

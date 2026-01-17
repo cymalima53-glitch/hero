@@ -19,7 +19,8 @@
     "express-fileupload": "^1.5.2",
     "html2canvas": "^1.4.1",
     "jspdf": "^3.0.4",
-    "openai": "^6.15.0"
+    "openai": "^6.15.0",
+    "stripe": "^20.1.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"

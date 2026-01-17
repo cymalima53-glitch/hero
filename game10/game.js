@@ -1,14 +1,11 @@
-class SimonSquadGame {
+class HeroFreezeGame {
     constructor() {
         this.video = document.getElementById('video');
         this.canvas = document.getElementById('output');
         this.ctx = this.canvas.getContext('2d');
 
         this.detector = null;
-        this.rafId = null;
         this.isModelLoaded = false;
-
-        // Data
         this.sessionId = new URLSearchParams(window.location.search).get('session');
         this.sessionData = null;
         this.rounds = [];
@@ -19,20 +16,21 @@ class SimonSquadGame {
         this.mistakes = 0;
         this.isRoundActive = false;
         this.roundStartTime = 0;
-        this.debounceTimer = 0;
         this.gameStartTime = Date.now();
 
-        // ----------------------------------------------------
-        // HERO FREEZE (Freeze vs Jump) STATE
-        // ----------------------------------------------------
-        this.canDetect = false;             // Only true AFTER audio + 300ms
-        this.lastKeypoints = null;          // For Motion Delta (Freeze)
-        this.hipYHistory = [];              // For Jump Detection
-        this.freezeTimer = 0;               // Time held still
-        this.FREEZE_THRESH_LOW = 2.5;         // Motion < this => Freeze
-        this.FREEZE_DURATION = 800;         // ms to confirm freeze
-        this.JUMP_VELOCITY_THRESH = 15;     // Pixel drop in Y (Move UP)
-        // ----------------------------------------------------
+        // Detection State (CRITICAL: Keep separate from skeleton drawing)
+        this.canDetect = false;
+        this.lastPose = null;
+        this.motionHistory = [];
+        this.freezeCounter = 0;
+        this.jumpDetected = false;
+        this.detectStartTime = 0;  // Track when detection began
+        this.wrongAttempts = 0;  // Track wrong attempts (max 3)
+        this.roundAttemptStartTime = 0;  // Track when attempt started
+
+        // Timers
+        this.audioTimeout = null;
+        this.gameTimeout = null;
 
         // UI
         this.scoreDisplay = document.getElementById('score-display');
@@ -53,11 +51,6 @@ class SimonSquadGame {
 
         const replay = () => {
             if (this.currentRound) {
-                const bg = document.getElementById('speaker-bg');
-                if (bg) {
-                    bg.style.transform = "scale(0.9)";
-                    setTimeout(() => bg.style.transform = "", 200);
-                }
                 this.playAudioSequence(this.currentRound.audio, this.currentRound.instruction);
             }
         };
@@ -75,10 +68,9 @@ class SimonSquadGame {
                 this.sessionData = await res.json();
                 await this.prepareRounds();
             } else {
-                // DEMO MODE (Freeze/Jump)
                 this.rounds = [
-                    { word: "Freeze Test", correctAction: "freeze", audio: "Freeze!", instruction: "Freeze if you hear this!" },
-                    { word: "Jump Test", correctAction: "jump", audio: "Jump!", instruction: "Jump if you hear this!" }
+                    { word: "Freeze", correctAction: "freeze", audio: "Freeze!", instruction: "Freeze!" },
+                    { word: "Jump", correctAction: "jump", audio: "Jump!", instruction: "Jump!" }
                 ];
             }
 
@@ -91,7 +83,6 @@ class SimonSquadGame {
 
             this.isModelLoaded = true;
             document.getElementById('loading-overlay').classList.add('hidden');
-
         } catch (e) {
             alert("Error: " + e.message);
         }
@@ -102,36 +93,19 @@ class SimonSquadGame {
         const lang = this.sessionData.lang || 'en';
         try {
             const res = await fetch(`/data/${lang}`);
-            if (!res.ok) throw new Error(`Data fetch failed: ${res.status}`);
+            if (!res.ok) throw new Error(`Data fetch failed`);
 
             const data = await res.json();
             const allWords = data.words || [];
             const ids = this.sessionData.wordIds || [];
-
-            // Editor saves to config.actions[wordId] -> sessionData.gameActions[wordId]
             const actions = this.sessionData.gameActions || {};
 
             this.rounds = ids.map((id) => {
                 const w = allWords.find(x => x.id === id);
-                if (!w || w.enabled === false) return null; // FILTER (treat undefined as enabled)
+                if (!w || w.enabled === false) return null;
 
-                // Priority: 1. Editor Config 2. 'freeze' default
-                // STRICT: No cycling, no fallback randomness.
                 let action = w.ss_correctAction || actions[id] || 'freeze';
-
-                // Map legacy actions to new safe defaults if old data exists
-                const legacyMap = {
-                    'hands_up': 'freeze',
-                    'knee_up': 'jump',
-                    'one_hand_up': 'jump',
-                    'hands_out': 'freeze'
-                };
-                if (legacyMap[action]) action = legacyMap[action];
-
-                // Ensure valid action
                 if (action !== 'jump') action = 'freeze';
-
-                const instruction = w.ss_instruction || (action === 'freeze' ? "Freeze!" : "Jump!");
 
                 return {
                     id: w.id,
@@ -139,17 +113,9 @@ class SimonSquadGame {
                     image: w.image,
                     audio: w.audio,
                     correctAction: action,
-                    instruction: instruction
+                    instruction: w.ss_instruction || (action === 'freeze' ? "Freeze!" : "Jump!")
                 };
             }).filter(r => r);
-
-            this.rounds = this.rounds.map(r => {
-                if (r.image && !r.image.startsWith('http') && r.image.includes('pixabay')) {
-                    r.image = 'https://' + r.image;
-                }
-                return r;
-            });
-
         } catch (e) {
             console.error(e);
         }
@@ -176,6 +142,18 @@ class SimonSquadGame {
 
             this.gameStartTime = Date.now();
             this.currentRoundIndex = -1;
+
+            // 3-minute session timer - waits for round to finish
+            this.sessionTimeout = setTimeout(() => {
+                console.warn("Session timeout - 3 minutes reached");
+                this.sessionTimeExpired = true;
+                // Show indicator that time is up
+                const instructionEl = document.getElementById('instruction-text');
+                if (instructionEl && this.isRoundActive) {
+                    instructionEl.textContent = "Last word...";
+                }
+            }, 180000);  // 180 seconds = 3 minutes
+
             this.nextRound();
             this.renderLoop();
         } catch (e) {
@@ -184,26 +162,40 @@ class SimonSquadGame {
     }
 
     nextRound() {
+        // Clear all timers
+        if (this.audioTimeout) clearTimeout(this.audioTimeout);
+        if (this.gameTimeout) clearTimeout(this.gameTimeout);
+
         this.currentRoundIndex++;
         if (this.currentRoundIndex >= this.rounds.length) {
             this.endGame();
             return;
         }
 
+        // Check if session time expired - end game after round finishes
+        if (this.sessionTimeExpired === true) {
+            console.log("Session time expired - ending game after round completion");
+            this.endGame();
+            return;
+        }
+
         const round = this.rounds[this.currentRoundIndex];
-        this.isRoundActive = true;
-        this.canDetect = false; // WAIT FOR AUDIO
-        this.roundStartTime = Date.now();
         this.currentRound = round;
+        this.isRoundActive = true;
+        this.canDetect = false;
+        this.roundStartTime = Date.now();
 
-        // RESET STATE
-        this.lastKeypoints = null;
-        this.hipYHistory = [];
-        this.freezeTimer = 0;
-        this.roundTimeoutStart = 0;
+        // Reset detection state
+        this.lastPose = null;
+        this.motionHistory = [];
+        this.freezeCounter = 0;
+        this.jumpDetected = false;
+        this.detectStartTime = 0;  // Track when detection began
+        this.wrongAttempts = 0;  // Reset wrong attempts
+        this.roundAttemptStartTime = 0;
 
-        // UI
-        this.progressText.textContent = `Round ${this.currentRoundIndex + 1}/${this.rounds.length}`;
+        // Update UI
+        this.progressText.textContent = `${this.currentRoundIndex + 1}/${this.rounds.length}`;
         this.scoreDisplay.textContent = `Score: ${this.score}`;
 
         const instructionEl = document.getElementById('instruction-text');
@@ -213,38 +205,60 @@ class SimonSquadGame {
         this.statusTimerEl.textContent = "LISTEN";
         this.statusTimerEl.className = 'wait';
 
-        this.playAudioSequence(round.audio, round.instruction);
+        // Delay audio by 1 second so kids can see the word
+        setTimeout(() => {
+            this.playAudioSequence(round.audio, round.instruction);
+        }, 1000);
     }
 
     playAudioSequence(audioUrl, instructionText) {
         window.speechSynthesis.cancel();
         this.canDetect = false;
 
-        const onComplete = () => {
-            // Give 300ms buffer after audio finishes before starting detection
-            setTimeout(() => {
-                this.canDetect = true;
-                this.statusTimerEl.textContent = "GO!";
-                this.statusTimerEl.className = 'go';
-                // Reset motion history so we don't detect motion *during* audio
-                this.lastKeypoints = null;
-                this.hipYHistory = [];
-                this.freezeTimer = 0;
-                this.roundTimeoutStart = Date.now(); // START 6s TIMER
-            }, 300);
+        const enableDetection = () => {
+            console.log("GO! Detection enabled");
+            this.canDetect = true;
+            this.detectStartTime = Date.now();
+            this.roundAttemptStartTime = Date.now();
+            this.statusTimerEl.textContent = "GO!";
+            this.statusTimerEl.className = 'go';
+            this.freezeCounter = 0;
+            this.jumpDetected = false;
+            this.motionHistory = [];
+            this.lastPose = null;
+
+            // 100 second timeout per word
+            this.gameTimeout = setTimeout(() => {
+                if (this.isRoundActive) this.handleTimeout();
+            }, 100000);
+        };
+
+        // Force GO after 3 seconds (let kids listen fully)
+        this.audioTimeout = setTimeout(() => {
+            console.warn("Audio timeout - forcing GO");
+            enableDetection();
+        }, 3000);
+
+        const onAudioComplete = () => {
+            if (this.audioTimeout) {
+                clearTimeout(this.audioTimeout);
+                this.audioTimeout = null;
+            }
+            setTimeout(enableDetection, 300);
         };
 
         const speakInstruction = () => {
-            if (instructionText) {
-                const localeMap = { 'en': 'en-US', 'fr': 'fr-FR', 'es': 'es-ES' };
-                const u = new SpeechSynthesisUtterance(instructionText);
-                u.lang = localeMap[this.sessionData?.lang] || 'en-US';
-                u.rate = 0.9;
-                u.onend = onComplete;
-                window.speechSynthesis.speak(u);
-            } else {
-                onComplete();
+            if (!instructionText) {
+                onAudioComplete();
+                return;
             }
+
+            const localeMap = { 'en': 'en-US', 'fr': 'fr-FR', 'es': 'es-ES' };
+            const u = new SpeechSynthesisUtterance(instructionText);
+            u.lang = localeMap[this.sessionData?.lang] || 'en-US';
+            u.rate = 0.9;
+            u.onend = onAudioComplete;
+            window.speechSynthesis.speak(u);
         };
 
         if (audioUrl && audioUrl.length > 5) {
@@ -257,20 +271,8 @@ class SimonSquadGame {
                 window.speechSynthesis.speak(u);
             } else {
                 const audio = new Audio(audioUrl);
-                audio.onended = () => speakInstruction();
-                audio.play().catch(e => {
-                    console.warn("Audio fail, fallback TTS", e);
-                    // Fallback to speaking current word if possible
-                    if ('speechSynthesis' in window && this.currentRound?.word) {
-                        const localeMap2 = { 'en': 'en-US', 'fr': 'fr-FR', 'es': 'es-ES' };
-                        const u = new SpeechSynthesisUtterance(this.currentRound.word);
-                        u.lang = localeMap2[this.sessionData?.lang] || 'en-US';
-                        u.onend = () => speakInstruction();
-                        window.speechSynthesis.speak(u);
-                    } else {
-                        speakInstruction();
-                    }
-                });
+                audio.onended = speakInstruction;
+                audio.play().catch(() => speakInstruction());
             }
         } else {
             speakInstruction();
@@ -280,134 +282,149 @@ class SimonSquadGame {
     async renderLoop() {
         if (!this.detector) return;
 
-        // TIMEOUT CHECK
-        if (this.isRoundActive && this.canDetect) {
-            if (Date.now() - this.roundTimeoutStart > 6000) {
-                this.handleTimeout();
-                return; // Stop rendering this frame
+        // ALWAYS draw skeleton first - NEVER skip this
+        try {
+            const poses = await this.detector.estimatePoses(this.video);
+            if (poses && poses.length > 0 && poses[0].keypoints) {
+                this.drawSkeleton(poses[0]);
+
+                // Then detect actions (if round active)
+                if (this.isRoundActive && this.canDetect) {
+                    this.detectAction(poses[0]);
+                }
+
+                this.lastPose = poses[0];
+            } else {
+                this.drawSkeleton({ keypoints: [] });
             }
+        } catch (e) {
+            console.error("RenderLoop error:", e.message);
+            this.drawSkeleton({ keypoints: [] });
         }
 
-        const poses = await this.detector.estimatePoses(this.video);
-        if (poses.length > 0) {
-            this.detectAction(poses[0]);
-            this.drawSkeleton(poses[0]);
-        }
         requestAnimationFrame(() => this.renderLoop());
     }
 
     detectAction(pose) {
-        // 1. SAFETY CHECKS
-        if (!this.isRoundActive || !this.canDetect) return;
+        if (!pose || !pose.keypoints) return;
 
-        const kp = pose.keypoints;
-        const find = (name) => {
-            const p = kp.find(k => k.name === name);
-            // Lower confidence allowed for jump tracking
-            return (p && p.score > 0.3) ? p : null;
-        };
+        try {
+            const kp = pose.keypoints;
 
-        const nose = find('nose');
-        const leftShoulder = find('left_shoulder');
-        const rightShoulder = find('right_shoulder');
-        const leftHip = find('left_hip');
-        const rightHip = find('right_hip');
+            // Get keypoints (MoveNet indices)
+            const nose = this.getKeypoint(kp, 0);
+            const leftShoulder = this.getKeypoint(kp, 5);
+            const rightShoulder = this.getKeypoint(kp, 6);
+            const leftHip = this.getKeypoint(kp, 11);
+            const rightHip = this.getKeypoint(kp, 12);
 
-        // Need Minimal Body Parts
-        if (!nose || !leftShoulder || !rightShoulder) return;
+            if (!nose || !leftShoulder || !rightShoulder) return;
 
-        // -------------------------------------------------------------
-        // DETECT JUMP (Velocity Spike on Hips)
-        // -------------------------------------------------------------
-        let isJumping = false;
-        if (leftHip && rightHip) {
-            const avgY = (leftHip.y + rightHip.y) / 2;
-            this.hipYHistory.push({ y: avgY, time: Date.now() });
-            if (this.hipYHistory.length > 10) this.hipYHistory.shift(); // Keep last ~300ms
+            // ==================================================
+            // DETECT JUMP (High threshold for hip movement)
+            // ==================================================
+            if (leftHip && rightHip && !this.jumpDetected) {
+                const hipY = (leftHip.y + rightHip.y) / 2;
 
-            // Look for recent spike UP (Y decreases)
-            // Current Y significantly LESS than Y 200ms ago
-            if (this.hipYHistory.length >= 5) {
-                const oldY = this.hipYHistory[0].y;
-                const currentY = avgY;
-                const deltaY = oldY - currentY; // Positive if moved UP
+                this.motionHistory.push(hipY);
+                if (this.motionHistory.length > 10) this.motionHistory.shift();
 
-                // Adaptive Threshold based on shoulder width (scale)
-                const scale = Math.abs(leftShoulder.x - rightShoulder.x);
-                const jumpThresh = scale * 0.25; // 25% of shoulder width jump
+                // Need 4 frames for precise jump detection (like freeze precision)
+                if (this.motionHistory.length >= 4) {
+                    const oldHipY = this.motionHistory[0];
+                    const newHipY = hipY;
+                    const hipDelta = oldHipY - newHipY; // Positive = UP
 
-                if (deltaY > jumpThresh) {
-                    isJumping = true;
+                    // Higher threshold (15 pixels) = more precise, less false positives
+                    if (hipDelta > 20) {  // Harder to jump - need bigger movement
+                        console.log("JUMP DETECTED! Delta:", hipDelta);
+                        this.jumpDetected = true;
+
+                        if (this.currentRound.correctAction === 'jump') {
+                            this.handleSuccess();
+                        } else {
+                            this.handleWrongAction("Don't Jump! Freeze!");
+                        }
+                    }
                 }
             }
-        }
 
-        // -------------------------------------------------------------
-        // DETECT FREEZE (Low Motion Delta)
-        // -------------------------------------------------------------
-        let currentMotion = 100; // High default
-        if (this.lastKeypoints) {
-            // Compare Nose + Shoulders (Most stable parts)
-            const dist = (p1, p2) => Math.hypot(p1.x - p2.x, p1.y - p2.y);
-            const d1 = dist(nose, this.lastKeypoints.nose);
-            const d2 = dist(leftShoulder, this.lastKeypoints.leftShoulder);
-            const d3 = dist(rightShoulder, this.lastKeypoints.rightShoulder);
+            // ==================================================
+            // DETECT FREEZE (Low motion for 600ms - easier!)
+            // ==================================================
+            // Only start freeze detection after 200ms of GO! (short grace period)
+            if (!this.jumpDetected && this.lastPose && (Date.now() - this.detectStartTime) > 200) {
+                const motion = this.calcMotion(nose, leftShoulder, rightShoulder,
+                    this.lastPose.keypoints[0],
+                    this.lastPose.keypoints[5],
+                    this.lastPose.keypoints[6]);
 
-            // Average motion in pixels
-            currentMotion = (d1 + d2 + d3) / 3;
-        }
+                // Low motion = freezing (very lenient)
+                if (motion < 5) {  // Harder to freeze - less sensitive
+                    this.freezeCounter += 33;
+                    console.log("Motion:", Math.round(motion), "| Counter:", this.freezeCounter);
 
-        // Update Last Keypoints
-        this.lastKeypoints = {
-            nose: { x: nose.x, y: nose.y },
-            leftShoulder: { x: leftShoulder.x, y: leftShoulder.y },
-            rightShoulder: { x: rightShoulder.x, y: rightShoulder.y }
-        };
+                    if (this.freezeCounter >= 600) {  // Only 600ms needed (was 800ms)
+                        console.log("FREEZE CONFIRMED!");
+                        console.log("Action expected:", this.currentRound.correctAction);
 
-        // -------------------------------------------------------------
-        // EVALUATE
-        // -------------------------------------------------------------
-        const correctAction = this.currentRound.correctAction;
-
-        // 1. DID THEY JUMP? (Priority: Jump overrides Freeze)
-        if (isJumping) {
-            if (correctAction === 'jump') {
-                this.handleSuccess();
-            } else {
-                // REQUIRED FREEZE, BUT JUMPED -> FAIL
-                this.handleFail("Don't Jump! Freeze!");
+                        const action = this.currentRound.correctAction?.toLowerCase() || 'freeze';
+                        if (action === 'freeze') {
+                            this.handleSuccess();
+                        } else {
+                            this.handleWrongAction("Keep Moving!");
+                        }
+                    }
+                } else {
+                    if (this.freezeCounter > 0) console.log("Moving again, resetting freeze");
+                    this.freezeCounter = 0; // Reset if moving
+                }
             }
-            return; // Lock result once jump detected
+        } catch (e) {
+            console.error("detectAction error:", e.message);
         }
+    }
 
-        // 2. ARE THEY FREEZING?
-        if (currentMotion < this.FREEZE_THRESH_LOW) {
-            // Accumulate Freeze Time
-            this.freezeTimer += 33; // Approx 30fps
-        } else {
-            // Reset if moved
-            this.freezeTimer = 0;
-            // If we are supposed to freeze, and we move significantly -> FAIL?
-            // "Motion > HighThreshold -> move_detected"
-            // Let's be lenient. Only fail if they successfully "JUMP" (handled above)
-            // or if they are moving A LOT when they should freeze?
-            // User requirement: "Freezing when MOVE is expected = Fail"
-            // "Moving when FREEZE is expected = Fail"
+    getKeypoint(keypoints, index) {
+        if (!keypoints || !keypoints[index]) return null;
+        const kp = keypoints[index];
+        return (kp.score > 0.3) ? { x: kp.x, y: kp.y, score: kp.score } : null;
+    }
 
-            if (correctAction === 'freeze' && currentMotion > (this.FREEZE_THRESH_LOW * 4)) {
-                // Moving too much!
-                // Wait a bit before failing to allow settling?
-            }
-        }
+    calcMotion(p1, p2, p3, p1_old, p2_old, p3_old) {
+        if (!p1_old || !p2_old || !p3_old) return 100;
 
-        // Check Freeze Success
-        if (this.freezeTimer >= this.FREEZE_DURATION) {
-            if (correctAction === 'freeze') {
-                this.handleSuccess();
-            } else {
-                // MOVED TOO LITTLE -> FAIL
-                this.handleFail("Keep Moving / Jumping!");
-            }
+        const dist = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
+        const d1 = dist(p1, p1_old);
+        const d2 = dist(p2, p2_old);
+        const d3 = dist(p3, p3_old);
+
+        return (d1 + d2 + d3) / 3;
+    }
+
+    drawSkeleton(pose) {
+        try {
+            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            this.ctx.lineWidth = 4;
+            this.ctx.strokeStyle = this.canDetect ? '#00ff00' : '#ffa500';
+
+            if (!pose.keypoints || pose.keypoints.length === 0) return;
+
+            const connections = poseDetection.util.getAdjacentPairs(poseDetection.SupportedModels.MoveNet);
+
+            connections.forEach(([i, j]) => {
+                const kp1 = pose.keypoints[i];
+                const kp2 = pose.keypoints[j];
+
+                if (kp1 && kp2 && kp1.score > 0.3 && kp2.score > 0.3) {
+                    this.ctx.beginPath();
+                    this.ctx.moveTo(kp1.x, kp1.y);
+                    this.ctx.lineTo(kp2.x, kp2.y);
+                    this.ctx.stroke();
+                }
+            });
+        } catch (e) {
+            console.error("drawSkeleton error:", e.message);
         }
     }
 
@@ -415,35 +432,80 @@ class SimonSquadGame {
         if (!this.isRoundActive) return;
         this.isRoundActive = false;
 
-        // Score Logic
         const time = (Date.now() - this.roundStartTime) / 1000;
         this.score += 100;
-        this.showFeedback(`✓ CORRECT!`, 'correct');
+        // Show different messages
+        let msg = 'GOOD!';
+        if (this.currentRound.correctAction === 'freeze') msg = 'FREEZE GOOD!';
+        if (this.currentRound.correctAction === 'jump') msg = 'JUMP GOOD!';
+        this.showFeedback(msg, 'correct');
 
         if (this.sessionId) {
             fetch(`/api/session/${this.sessionId}/track`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ wordId: this.currentRound.id, correct: true, timeSpent: time })
-            });
+            }).catch(console.error);
         }
 
         setTimeout(() => {
             document.getElementById('feedback-message').className = 'hidden';
             this.nextRound();
-        }, 1500);
+        }, 1500);  // Feedback display
+    }
+
+    handleWrongAction(msg) {
+        // BLOCK if already at 3 attempts - prevent 4th, 5th, 6th+ attempts
+        if (this.wrongAttempts >= 3) {
+            console.log("Already 3 attempts reached - blocking further attempts");
+            this.isRoundActive = false;
+            return;  // EXIT - don't process more
+        }
+
+        // Wrong action but keep detecting (don't end round)
+        this.wrongAttempts++;
+        console.log("Wrong attempt", this.wrongAttempts, "of 3");
+
+        // Reset detection flags to allow trying opposite action
+        this.jumpDetected = false;
+        this.freezeCounter = 0;
+
+        this.showFeedback(`✗ ${msg}`, 'wrong');
+
+        // After 3 wrong attempts, end the round
+        if (this.wrongAttempts >= 3) {
+            if (this.sessionId) {
+                fetch(`/api/session/${this.sessionId}/track`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        wordId: this.currentRound.id,
+                        correct: false,
+                        mistakeType: 'wrong_action'
+                    })
+                }).catch(console.error);
+            }
+
+            setTimeout(() => {
+                this.isRoundActive = false;
+                document.getElementById('feedback-message').className = 'hidden';
+                this.nextRound();
+            }, 1500);
+        } else {
+            // Hide message after 1 second and keep detecting
+            setTimeout(() => {
+                document.getElementById('feedback-message').className = 'hidden';
+            }, 1000);
+        }
     }
 
     handleFail(msg) {
         if (!this.isRoundActive) return;
-        // Debounce failures
-        if (Date.now() < this.debounceTimer) return;
-
+        this.isRoundActive = false;
         this.mistakes++;
-        this.showFeedback(`✗ ${msg}`, 'wrong');
-        this.debounceTimer = Date.now() + 1500; // 1.5s penalty delay
 
-        // IMMEDIATE TRACKING (STRICT FIX)
+        this.showFeedback(`✗ ${msg}`, 'wrong');
+
         if (this.sessionId) {
             fetch(`/api/session/${this.sessionId}/track`, {
                 method: 'POST',
@@ -458,20 +520,17 @@ class SimonSquadGame {
 
         setTimeout(() => {
             document.getElementById('feedback-message').className = 'hidden';
-            // Start fresh detection 
-            this.freezeTimer = 0;
-            this.hipYHistory = [];
-        }, 1200);
+            this.nextRound();
+        }, 1500);  // Feedback display
     }
 
     handleTimeout() {
         if (!this.isRoundActive) return;
         this.isRoundActive = false;
-        this.mistakes++; // Count as failure
+        this.mistakes++;
 
-        this.showFeedback("⌛ TOO SLOW!", 'wrong');
+        this.showFeedback("TOO SLOW!", 'wrong');
 
-        // IMMEDIATE TRACKING (TIMEOUT)
         if (this.sessionId) {
             fetch(`/api/session/${this.sessionId}/track`, {
                 method: 'POST',
@@ -484,12 +543,10 @@ class SimonSquadGame {
             }).catch(console.error);
         }
 
-        // Play audio once as reminder, then next
-        // (Simple flow: wait then next)
         setTimeout(() => {
             document.getElementById('feedback-message').className = 'hidden';
             this.nextRound();
-        }, 2000);
+        }, 1500);
     }
 
     showFeedback(text, type) {
@@ -498,33 +555,16 @@ class SimonSquadGame {
         el.className = `show ${type}`;
     }
 
-    drawSkeleton(pose) {
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.lineWidth = 4;
-
-        // Color based on state
-        // If canDetect = true, GREEN. Else RED/ORANGE
-        this.ctx.strokeStyle = this.canDetect ? '#00ff00' : '#ffa500';
-
-        const connections = poseDetection.util.getAdjacentPairs(poseDetection.SupportedModels.MoveNet);
-        connections.forEach(([i, j]) => {
-            const kp1 = pose.keypoints[i];
-            const kp2 = pose.keypoints[j];
-            if (kp1.score > 0.3 && kp2.score > 0.3) {
-                this.ctx.beginPath();
-                this.ctx.moveTo(kp1.x, kp1.y);
-                this.ctx.lineTo(kp2.x, kp2.y);
-                this.ctx.stroke();
-            }
-        });
-    }
-
     async endGame() {
+        // Let audio finish naturally - don't cancel it
+        if (this.audioTimeout) clearTimeout(this.audioTimeout);
+        if (this.gameTimeout) clearTimeout(this.gameTimeout);
+
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         document.getElementById('game-area').classList.add('hidden');
         this.statusTimerEl.classList.add('hidden');
 
-        const duration = this.gameStartTime ? (Date.now() - this.gameStartTime) / 1000 : 0;
+        const duration = (Date.now() - this.gameStartTime) / 1000;
 
         if (this.sessionId) {
             await fetch(`/api/session/${this.sessionId}/complete`, {
@@ -535,10 +575,10 @@ class SimonSquadGame {
                     failuresBeforePass: this.mistakes,
                     duration: duration
                 })
-            });
+            }).catch(console.error);
         }
 
-        let stars = (this.mistakes <= 2) ? 3 : 2;
+        const stars = (this.mistakes <= 2) ? 3 : 2;
         this.rs.show({
             success: true,
             attempts: 1,
@@ -551,5 +591,5 @@ class SimonSquadGame {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-    new SimonSquadGame();
+    new HeroFreezeGame();
 });

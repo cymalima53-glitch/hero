@@ -2,6 +2,7 @@ module.exports = function (app, requireAuth) {
     const fs = require('fs');
     const path = require('path');
     const OpenAI = require('openai');
+    const { requireAICredits } = require('./subscriptionMiddleware');
 
     // Initialize OpenAI
     const openai = new OpenAI({
@@ -9,6 +10,7 @@ module.exports = function (app, requireAuth) {
     });
 
     const LIBRARY_PATH = path.join(__dirname, '../data/contentLibrary.json');
+    const TEACHERS_FILE = path.join(__dirname, '../data/teachers.json');
 
     // Helper: Read content library
     function getLibrary() {
@@ -24,29 +26,45 @@ module.exports = function (app, requireAuth) {
         fs.writeFileSync(LIBRARY_PATH, JSON.stringify(data, null, 2), 'utf8');
     }
 
+    // Helper: Get teachers
+    function getTeachers() {
+        if (!fs.existsSync(TEACHERS_FILE)) return [];
+        const data = JSON.parse(fs.readFileSync(TEACHERS_FILE, 'utf8'));
+        return data.teachers || [];
+    }
+
+    // Helper: Save teachers
+    function saveTeachers(teachers) {
+        fs.writeFileSync(TEACHERS_FILE, JSON.stringify({ teachers }, null, 2));
+    }
+
     // POST /api/generate-content
     // Generate worksheets and workshops using OpenAI
-    app.post('/api/generate-content', requireAuth, async (req, res) => {
+    app.post('/api/generate-content', requireAuth, requireAICredits, async (req, res) => {
         try {
             const { subject, topic, level, language = 'en' } = req.body;
-            const teacherId = req.cookies.teacherAuth; // Use teacher ID from auth
+            const teacherId = req.teacherId;
+            const teacher = req.teacher; // Set by requireAICredits middleware
 
-            // Track usage for admin dashboard
-            const TEACHERS_FILE = path.join(__dirname, '../data/teachers.json');
-            if (fs.existsSync(TEACHERS_FILE)) {
-                try {
-                    const teachersData = JSON.parse(fs.readFileSync(TEACHERS_FILE, 'utf8'));
-                    const teachers = teachersData.teachers || [];
-                    const teacher = teachers.find(t => t.id === teacherId);
-
-                    if (teacher) {
-                        teacher.contentGeneratorUses = (teacher.contentGeneratorUses || 0) + 1;
-                        teacher.lastActiveAt = new Date().toISOString();
-                        fs.writeFileSync(TEACHERS_FILE, JSON.stringify(teachersData, null, 2));
-                    }
-                } catch (trackingError) {
-                    console.error('Error tracking usage:', trackingError);
-                    // Don't fail the request if tracking fails
+            // Deduct credit (skip for internal free teachers)
+            if (teacher.role !== 'internal_free') {
+                const teachers = getTeachers();
+                const teacherIndex = teachers.findIndex(t => t.id === teacherId);
+                if (teacherIndex !== -1) {
+                    teachers[teacherIndex].aiCredits = Math.max(0, (teachers[teacherIndex].aiCredits || 0) - 1);
+                    teachers[teacherIndex].lastActiveAt = new Date().toISOString();
+                    teachers[teacherIndex].contentGeneratorUses = (teachers[teacherIndex].contentGeneratorUses || 0) + 1;
+                    saveTeachers(teachers);
+                    console.log(`[AI] Credit deducted for ${teacher.email}, remaining: ${teachers[teacherIndex].aiCredits}`);
+                }
+            } else {
+                // Track usage for internal free teachers
+                const teachers = getTeachers();
+                const teacherIndex = teachers.findIndex(t => t.id === teacherId);
+                if (teacherIndex !== -1) {
+                    teachers[teacherIndex].lastActiveAt = new Date().toISOString();
+                    teachers[teacherIndex].contentGeneratorUses = (teachers[teacherIndex].contentGeneratorUses || 0) + 1;
+                    saveTeachers(teachers);
                 }
             }
 

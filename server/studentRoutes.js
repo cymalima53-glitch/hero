@@ -6,6 +6,7 @@ const bcrypt = require('bcryptjs');
 const STUDENTS_FILE = path.join(__dirname, '../data/students.json');
 
 module.exports = function (app, requireAuth) {
+    const { requireSubscription } = require('./subscriptionMiddleware');
 
     // HELPER: Read Students
     async function getStudents() {
@@ -23,7 +24,7 @@ module.exports = function (app, requireAuth) {
     }
 
     // GET STUDENTS (For logged-in Teacher)
-    app.get('/api/students', requireAuth, async (req, res) => {
+    app.get('/api/students', requireAuth, requireSubscription, async (req, res) => {
         try {
             const students = await getStudents();
             // Filter: Only show students belonging to this teacher
@@ -38,7 +39,7 @@ module.exports = function (app, requireAuth) {
     });
 
     // CREATE STUDENT
-    app.post('/api/students', requireAuth, async (req, res) => {
+    app.post('/api/students', requireAuth, requireSubscription, async (req, res) => {
         try {
             const { name, username, password, parentEmail } = req.body;
 
@@ -79,7 +80,7 @@ module.exports = function (app, requireAuth) {
     });
 
     // DELETE STUDENT
-    app.delete('/api/students/:id', requireAuth, async (req, res) => {
+    app.delete('/api/students/:id', requireAuth, requireSubscription, async (req, res) => {
         try {
             const studentId = req.params.id;
             let students = await getStudents();
@@ -102,7 +103,7 @@ module.exports = function (app, requireAuth) {
     });
 
     // UPDATE STUDENT (Reset Password)
-    app.put('/api/students/:id', requireAuth, async (req, res) => {
+    app.put('/api/students/:id', requireAuth, requireSubscription, async (req, res) => {
         try {
             const studentId = req.params.id;
             const { password, name, username } = req.body; // Allow updating other fields too if needed

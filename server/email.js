@@ -80,4 +80,14 @@ async function sendResetLink(toEmail, resetLink) {
     });
 }
 
-module.exports = { sendMagicLink, sendResetLink };
+async function sendVerificationEmail(toEmail, verificationLink) {
+    console.log(`[EMAIL] Sending Verification Email to ${toEmail}`);
+    return sendEmail({
+        to_email: toEmail,
+        message: `Verify your email to start your 3-day free trial: ${verificationLink}`,
+        magic_link: verificationLink,
+        verification_link: verificationLink
+    });
+}
+
+module.exports = { sendMagicLink, sendResetLink, sendVerificationEmail };

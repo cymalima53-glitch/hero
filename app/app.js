@@ -1494,17 +1494,33 @@ function renderGameConfig(gameId) {
         let extraParams = null;
 
         if (gameId === 'simonSquad') {
-            extraParams = document.createElement('select');
-            extraParams.className = 'sm';
-            extraParams.style.width = 'auto';
-            extraParams.innerHTML = `
-                <option value="freeze">🛑 Freeze</option>
-                <option value="jump">⬆️ Jump</option>
-            `;
-            // STRICT: Default to Freeze. No randomization.
-            extraParams.value = config.actions[w.id] || 'freeze';
-            extraParams.style.display = chk.checked ? 'block' : 'none';
-            extraParams.onchange = () => { config.actions[w.id] = extraParams.value; };
+            extraParams = document.createElement('div');
+            extraParams.className = 'flex-row';
+            extraParams.style.gap = '5px';
+            extraParams.style.marginLeft = '10px';
+
+            // Instruction Input
+            const instrInput = document.createElement('input');
+            instrInput.type = 'text';
+            instrInput.placeholder = 'e.g. if you hear kamal jump';
+            instrInput.className = 'sm';
+            instrInput.style.width = '150px';
+            instrInput.value = w.ss_instruction || ''; // Load from word prop
+            instrInput.onchange = () => { w.ss_instruction = instrInput.value; }; // Save to w.ss_instruction
+
+            // Action Select (Freeze/Jump)
+            const actionSel = document.createElement('select');
+            actionSel.className = 'sm';
+            actionSel.style.width = '80px';
+            actionSel.innerHTML = `<option value="freeze">🛑 Freeze</option><option value="jump">⬆️ Jump</option>`;
+            actionSel.value = config.actions[w.id] || w.ss_correctAction || 'freeze';
+            actionSel.onchange = () => {
+                config.actions[w.id] = actionSel.value;
+                w.ss_correctAction = actionSel.value; // Save to w.ss_correctAction
+            };
+
+            extraParams.append(instrInput, actionSel);
+            extraParams.style.display = chk.checked ? 'flex' : 'none';
         }
 
         else if (gameId === 'audioDetective') {
