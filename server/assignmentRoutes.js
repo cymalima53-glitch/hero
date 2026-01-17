@@ -5,8 +5,8 @@ const crypto = require('crypto');
 const ASSIGNMENTS_FILE = path.join(__dirname, '../data/assignments.json');
 const STUDENTS_FILE = path.join(__dirname, '../data/students.json');
 
-module.exports = function (app, requireAuth, requireStudentAuth) {
-    const { requireSubscription } = require('./subscriptionMiddleware');
+module.exports = function (app, requireAuth) {
+    // Removed Stripe subscription middleware for FREE deployment
 
     // HELPER: Read Assignments
     async function getAssignments() {
@@ -36,7 +36,7 @@ module.exports = function (app, requireAuth, requireStudentAuth) {
     // === TEACHER ROUTES (Manage Assignments) ===
 
     // GET /api/assignments/teacher - List all assignments created by me
-    app.get('/api/assignments/teacher', requireAuth, requireSubscription, async (req, res) => {
+    app.get('/api/assignments/teacher', requireAuth, async (req, res) => {
         try {
             const assignments = await getAssignments();
             const myAssignments = assignments.filter(a => a.teacherId === req.teacherId);
@@ -47,7 +47,7 @@ module.exports = function (app, requireAuth, requireStudentAuth) {
     });
 
     // POST /api/assignments - Assign Game to Students
-    app.post('/api/assignments', requireAuth, requireSubscription, async (req, res) => {
+    app.post('/api/assignments', requireAuth, async (req, res) => {
         try {
             const { studentIds, gameId, settings } = req.body;
             // studentIds is array of "s_..."
@@ -103,7 +103,7 @@ module.exports = function (app, requireAuth, requireStudentAuth) {
     });
 
     // DELETE /api/assignments/:id - Unassign
-    app.delete('/api/assignments/:id', requireAuth, requireSubscription, async (req, res) => {
+    app.delete('/api/assignments/:id', requireAuth, async (req, res) => {
         try {
             const id = req.params.id;
             console.log(`[DELETE] Attempting to delete assignment ${id} for teacher ${req.teacherId}`);
