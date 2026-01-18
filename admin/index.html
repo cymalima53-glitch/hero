@@ -44,6 +44,138 @@
                 </table>
             </div>
         </div>
+
+        <!-- GENERATOR RATE LIMITS SECTION -->
+        <div class="users-section">
+            <h2>Content Generator Rate Limits</h2>
+            <div class="table-container">
+                <table id="generator-table">
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Uses Today</th>
+                            <th>Total Uses</th>
+                            <th>Last Used</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="generator-tbody">
+                        <tr>
+                            <td colspan="6" class="loading">Loading generator data...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ABUSE MONITORING SECTION -->
+        <div class="users-section">
+            <h2>🚨 Abuse Monitoring</h2>
+            <div class="table-container">
+                <table id="abuse-table">
+                    <thead>
+                        <tr>
+                            <th>Risk</th>
+                            <th>Email</th>
+                            <th>Uses Today</th>
+                            <th>Total Uses</th>
+                            <th>Limit Hits</th>
+                            <th>Last Used</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="abuse-tbody">
+                        <tr>
+                            <td colspan="7" class="loading">Loading abuse report...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- USAGE DETAILS MODAL -->
+    <div id="usage-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeUsageModal()">&times;</span>
+            <h2>Usage Details</h2>
+            <div id="usage-details"></div>
+        </div>
+    </div>
+
+    <style>
+        .badge-unlimited {
+            background: #4caf50;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+
+        .badge-limited {
+            background: #ff9800;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+
+        .badge-blocked {
+            background: #f44336;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+
+        .risk-high {
+            background: #ffebee;
+            color: #c62828;
+            font-weight: bold;
+        }
+
+        .risk-medium {
+            background: #fff3e0;
+            color: #e65100;
+        }
+
+        .risk-normal {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .modal {
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+
+        .close {
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .usage-log-item {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
     </div>
 
     <script src="app.js"></script>

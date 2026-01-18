@@ -49,6 +49,57 @@ module.exports = function (app, requireAuth) {
             const teachers = getTeachers();
             const teacher = teachers.find(t => t.id === teacherId);
 
+            if (!teacher) {
+                return res.status(404).json({ error: 'Teacher not found' });
+            }
+
+            // === RATE LIMITING CHECK ===
+
+            // Initialize tracking fields if missing
+            if (teacher.generatorUsesToday === undefined) {
+                teacher.generatorUsesToday = 0;
+            }
+            if (!teacher.generatorLastResetDate) {
+                teacher.generatorLastResetDate = new Date().toISOString().split('T')[0];
+            }
+            if (teacher.unlimitedGenerator === undefined) {
+                teacher.unlimitedGenerator = false;
+            }
+
+            // Check if new day → reset counter (midnight reset)
+            const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+            if (teacher.generatorLastResetDate !== today) {
+                teacher.generatorUsesToday = 0;
+                teacher.generatorLastResetDate = today;
+            }
+
+            // Check unlimited status (breogan51@hotmail.com gets unlimited)
+            const isUnlimited = teacher.unlimitedGenerator || teacher.email === 'breogan51@hotmail.com';
+
+            if (!isUnlimited) {
+                // Enforce 5/day limit
+                if (teacher.generatorUsesToday >= 5) {
+                    // Track abuse: increment limit hit counter
+                    const teachers = getTeachers();
+                    const teacherIndex = teachers.findIndex(t => t.id === teacherId);
+                    if (teacherIndex !== -1) {
+                        teachers[teacherIndex].generatorLimitHits = (teachers[teacherIndex].generatorLimitHits || 0) + 1;
+                        teachers[teacherIndex].generatorLastLimitHitDate = today;
+                        saveTeachers(teachers);
+                    }
+
+                    return res.status(429).json({
+                        error: 'Daily limit reached',
+                        message: 'You have reached your daily limit of 5 content generations. Come back tomorrow!',
+                        usesToday: 5,
+                        limit: 5,
+                        blockMessage: 'BLOCKED - Admin approval required'
+                    });
+                }
+            }
+
+            // === END RATE LIMITING ===
+
             // Deduct credit (skip for internal free teachers)
             if (teacher.role !== 'internal_free') {
                 const teachers = getTeachers();
@@ -57,6 +108,21 @@ module.exports = function (app, requireAuth) {
                     teachers[teacherIndex].aiCredits = Math.max(0, (teachers[teacherIndex].aiCredits || 0) - 1);
                     teachers[teacherIndex].lastActiveAt = new Date().toISOString();
                     teachers[teacherIndex].contentGeneratorUses = (teachers[teacherIndex].contentGeneratorUses || 0) + 1;
+                    // Increment daily counter
+                    teachers[teacherIndex].generatorUsesToday = (teachers[teacherIndex].generatorUsesToday || 0) + 1;
+                    teachers[teacherIndex].generatorLastResetDate = new Date().toISOString().split('T')[0];
+                    // Abuse tracking
+                    teachers[teacherIndex].generatorTotalUses = (teachers[teacherIndex].generatorTotalUses || 0) + 1;
+                    teachers[teacherIndex].generatorLastUsed = new Date().toISOString();
+                    // Usage log
+                    if (!teachers[teacherIndex].generatorUsageLog) {
+                        teachers[teacherIndex].generatorUsageLog = [];
+                    }
+                    teachers[teacherIndex].generatorUsageLog.push({
+                        date: new Date().toISOString().split('T')[0],
+                        timestamp: new Date().toISOString(),
+                        uses: teachers[teacherIndex].generatorUsesToday
+                    });
                     saveTeachers(teachers);
                     console.log(`[AI] Credit deducted for ${teacher.email}, remaining: ${teachers[teacherIndex].aiCredits}`);
                 }
@@ -67,6 +133,21 @@ module.exports = function (app, requireAuth) {
                 if (teacherIndex !== -1) {
                     teachers[teacherIndex].lastActiveAt = new Date().toISOString();
                     teachers[teacherIndex].contentGeneratorUses = (teachers[teacherIndex].contentGeneratorUses || 0) + 1;
+                    // Increment daily counter
+                    teachers[teacherIndex].generatorUsesToday = (teachers[teacherIndex].generatorUsesToday || 0) + 1;
+                    teachers[teacherIndex].generatorLastResetDate = new Date().toISOString().split('T')[0];
+                    // Abuse tracking
+                    teachers[teacherIndex].generatorTotalUses = (teachers[teacherIndex].generatorTotalUses || 0) + 1;
+                    teachers[teacherIndex].generatorLastUsed = new Date().toISOString();
+                    // Usage log
+                    if (!teachers[teacherIndex].generatorUsageLog) {
+                        teachers[teacherIndex].generatorUsageLog = [];
+                    }
+                    teachers[teacherIndex].generatorUsageLog.push({
+                        date: new Date().toISOString().split('T')[0],
+                        timestamp: new Date().toISOString(),
+                        uses: teachers[teacherIndex].generatorUsesToday
+                    });
                     saveTeachers(teachers);
                 }
             }
