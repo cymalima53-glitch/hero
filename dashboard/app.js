@@ -371,11 +371,9 @@ window.tryGame = async function () {
             multipleChoice: '/game2/index.html',
             matchPairs: '/game3/index.html',
             fillBlank: '/game4/index.html',
-            tapChoice: '/game5/index.html',
             soundSwipe: '/game6/index.html',
             beatClock: '/game7/index.html',
             soundDrag: '/game8/index.html',
-            moveMatch: '/game9/index.html',
             simonSquad: '/game10/index.html',
             audioDetective: '/game11/index.html',
             motsMeles: '/game12/index.html',
@@ -400,11 +398,9 @@ function formatGameName(id) {
         'multipleChoice': 'Multiple Choice',
         'matchPairs': 'Match Pairs',
         'fillBlank': 'Fill Blank',
-        'tapChoice': 'Tap Choice',
         'soundSwipe': 'Sound Swipe',
         'beatClock': 'Beat The Clock',
         'soundDrag': 'Sound Drag',
-        'moveMatch': 'Move & Match',
         'simonSquad': 'Hero Freeze',
         'audioDetective': 'Audio Detective',
         'motsMeles': 'Word Search (Mots Mêlés)',
@@ -419,11 +415,9 @@ function getMagicLink(s) {
         multipleChoice: '/game2/index.html',
         matchPairs: '/game3/index.html',
         fillBlank: '/game4/index.html',
-        tapChoice: '/game5/index.html',
         soundSwipe: '/game6/index.html',
         beatClock: '/game7/index.html',
         soundDrag: '/game8/index.html',
-        moveMatch: '/game9/index.html',
         simonSquad: '/game10/index.html',
         audioDetective: '/game11/index.html',
         motsMeles: '/game12/index.html',
@@ -502,7 +496,7 @@ function renderAssignments() {
         const avgAcc = group.stats.accuracyCount ? Math.round(group.stats.accuracySum / group.stats.accuracyCount) : 0;
 
         // --- SMART SUGGESTION LOGIC ---
-        const hierarchy = ['memoryEcho', 'matchPairs', 'tapChoice', 'fillBlank', 'audioDetective'];
+        const hierarchy = ['memoryEcho', 'matchPairs', 'fillBlank', 'audioDetective'];
 
         let suggestion = null;
         if (group.stats.accuracyCount > 0 && avgAcc >= 80) {

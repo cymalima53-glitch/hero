@@ -121,6 +121,15 @@ class TapGame {
         }
     }
 
+    unlockTTS() {
+        // Unlock TTS on user interaction (iOS/Safari requirement)
+        if (!this.ttsUnlocked && 'speechSynthesis' in window) {
+            const unlock = new SpeechSynthesisUtterance(" ");
+            window.speechSynthesis.speak(unlock);
+            this.ttsUnlocked = true;
+        }
+    }
+
     setHero(state) {
         // Just hook logic for now, no visuals required per instruction
         if (this.hero) {
