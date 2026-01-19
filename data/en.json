@@ -170,18 +170,89 @@
       "ad_correctSide": "left",
       "ss_instruction": "",
       "ss_correctAction": ""
+    },
+    {
+      "id": "w_820c2d74-871b-4f88-b2a3-99e3ecec4596",
+      "enabled": true,
+      "word": "lion eat __ ",
+      "choices": [
+        "meat",
+        "rice",
+        "nuts"
+      ],
+      "image": "https://pixabay.com/get/g800f6cb28a7dd65277b64bc1f20f8a2d849daf1f022971317402bb69c767788f516cba5d38008eb5e5904a7796cf24312152ded518803f117638cba28db72aff_640.png",
+      "audio": "",
+      "teacherId": "breogan51@hotmail.com"
+    },
+    {
+      "id": "w_be5fd2cb-2d16-4fee-ba8b-d27ac79349e5",
+      "enabled": true,
+      "word": "monkey eat___",
+      "choices": [
+        "banna",
+        "berry",
+        "mango"
+      ],
+      "image": "https://pixabay.com/get/g8dd36522b4b42b689af6fd268e3e50efca563332f28ddf3de1933ce869ea5b3c5f99bfff08f61bdecda3a6f9663d27b0a0e96b78afe7e910998f65e9828eb674_640.jpg",
+      "audio": "",
+      "teacherId": "breogan51@hotmail.com"
+    },
+    {
+      "id": "w_14aee5c5-9a8c-4cda-b7f4-e60232af0935",
+      "word": "dog",
+      "image": "https://pixabay.com/get/g332afab3b9f13a4daf8b55806ad66c0b0657a736f6df8f19dd4edfb0ab25424b8e3778517f7482e3b45ca29ddbcf3221919c63bbc15ea4934aabe1ff627360f9_640.jpg",
+      "audio": "",
+      "teacherId": "kamalsolimanahmed@gmail.com",
+      "choices": [
+        "dog",
+        "cat",
+        "monkey"
+      ]
+    },
+    {
+      "id": "w_fbd82117-9c68-4236-b458-0244ed5895ee",
+      "word": "cat",
+      "image": "",
+      "audio": "",
+      "teacherId": "kamalsolimanahmed@gmail.com",
+      "choices": [
+        "cat",
+        "dog",
+        "camel"
+      ]
+    },
+    {
+      "id": "w_ee98ca61-d9e8-4d9f-b4e5-47ceccd90945",
+      "word": "monkey",
+      "image": "https://pixabay.com/get/g610429195a159dfeb1628a23f83976985b5f7c46ca2d9be1633b17e345774231b8e16ac95e3045ac52b0c1041aa45e27bb5f8476e9fe828199ed19c154ffbdd6_640.jpg",
+      "audio": "",
+      "teacherId": "kamalsolimanahmed@gmail.com",
+      "choices": [
+        "monkey",
+        "cat",
+        "dog"
+      ]
+    },
+    {
+      "id": "w_cea8af9d-f8fa-4578-91f6-2d6e2d605911",
+      "word": "lion",
+      "image": "https://pixabay.com/get/g7c3abe78f33b6ada3f6e5a6a75077270de799632caf6328232fcc928ea43ace276a8147fb7ccd697d7360cfb80bdeae2_640.jpg",
+      "audio": "",
+      "teacherId": "kamalsolimanahmed@gmail.com",
+      "choices": [
+        "lion",
+        "monkey",
+        "cat"
+      ]
     }
   ],
   "gameConfig": {
     "multipleChoice": {
       "questions": [
-        "w_dog",
-        "w_cat",
-        "w_monkey",
-        "w_kamal",
-        "w_aurore",
-        "w_adam",
-        "w_0210b210-2be1-489d-ad87-77e21f4daaf9"
+        "w_cea8af9d-f8fa-4578-91f6-2d6e2d605911",
+        "w_14aee5c5-9a8c-4cda-b7f4-e60232af0935",
+        "w_fbd82117-9c68-4236-b458-0244ed5895ee",
+        "w_ee98ca61-d9e8-4d9f-b4e5-47ceccd90945"
       ],
       "actions": {}
     },
@@ -189,8 +260,7 @@
       "questions": [
         "w_cat",
         "w_monkey",
-        "w_dog",
-        "w_aurore"
+        "w_dog"
       ],
       "actions": {}
     },
@@ -205,15 +275,17 @@
       "questions": [
         "w_dog",
         "w_cat",
-        "w_monkey"
-      ]
+        "w_monkey",
+        "w_820c2d74-871b-4f88-b2a3-99e3ecec4596",
+        "w_be5fd2cb-2d16-4fee-ba8b-d27ac79349e5"
+      ],
+      "actions": {}
     },
     "soundSwipe": {
       "questions": [
         "w_dog",
         "w_cat",
-        "w_monkey",
-        "w_adam"
+        "w_monkey"
       ],
       "actions": {}
     },
@@ -221,23 +293,20 @@
       "questions": [
         "w_dog",
         "w_cat",
-        "w_monkey",
-        "w_aurore"
+        "w_monkey"
       ]
     },
     "soundDrag": {
       "questions": [
         "w_dog",
         "w_cat",
-        "w_monkey",
-        "w_kamal"
+        "w_monkey"
       ]
     },
     "moveMatch": {
       "questions": [
         "w_cat",
         "w_monkey",
-        "w_aurore",
         "w_dog"
       ],
       "actions": {}
@@ -254,7 +323,6 @@
         "w_dog",
         "w_cat",
         "w_monkey",
-        "w_aurore",
         "w_b7dc1171-5761-4632-b8ba-2a5200a7705c"
       ],
       "actions": {}
@@ -263,7 +331,6 @@
       "questions": [
         "w_cat",
         "w_monkey",
-        "w_aurore",
         "w_1767008923710_jw8ds",
         "w_dog"
       ],
@@ -272,34 +339,25 @@
     },
     "simonSquad": {
       "questions": [
-        "w_adam",
         "w_b7dc1171-5761-4632-b8ba-2a5200a7705c",
         "w_cat",
         "w_dog",
-        "w_monkey",
-        "w_kamal",
-        "w_aurore"
+        "w_monkey"
       ],
       "actions": {
-        "w_adam": "freeze",
         "w_b7dc1171-5761-4632-b8ba-2a5200a7705c": "freeze",
         "w_cat": "jump",
         "w_dog": "jump",
-        "w_monkey": "jump",
-        "w_kamal": "freeze",
-        "w_aurore": "freeze"
+        "w_monkey": "jump"
       }
     },
     "motsMeles": {
       "questions": [
         "w_dog",
-        "w_kamal",
         "w_cat",
-        "w_adam",
         "w_monkey",
         "w_b7dc1171-5761-4632-b8ba-2a5200a7705c",
-        "w_788e3ee9-20c1-422b-a03b-e7e2fec7be81",
-        "w_aurore"
+        "w_788e3ee9-20c1-422b-a03b-e7e2fec7be81"
       ],
       "actions": {}
     },
@@ -310,6 +368,18 @@
         "w_monkey"
       ],
       "actions": {}
+    }
+  },
+  "files": {
+    "f_1768730578672_5xv8zrvqn": {
+      "id": "f_1768730578672_5xv8zrvqn",
+      "ownerId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+      "name": "aaf",
+      "description": "",
+      "wordIds": [
+        "w_a34e0ff6-e68e-446e-8836-b2f91b94cb00",
+        "w_2b258afe-7d23-463a-8cac-ce07b4396ddd"
+      ]
     }
   }
 }

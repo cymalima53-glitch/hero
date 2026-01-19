@@ -102,8 +102,12 @@ module.exports = function (app, requireAuth) {
                 const allWords = langData.words || [];
                 const validIds = new Set(session.wordIds || []);
 
-                // Filter words that are in the session AND exist in en.json
-                session.words = allWords.filter(w => validIds.has(w.id));
+                // CRITICAL FIX: Filter words that are in the session AND exist in en.json
+                // This ensures deleted words are NEVER returned
+                const hydratedWords = allWords.filter(w => validIds.has(w.id));
+
+                // Double-check: Remove any null/undefined entries
+                session.words = hydratedWords.filter(w => w && w.id && w.word);
 
             } catch (hydrationError) {
                 console.error("Failed to hydrate session words:", hydrationError);

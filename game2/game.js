@@ -67,13 +67,19 @@ class MultipleChoiceGame {
             // Stats
             this.sessionStats = { wrongAttempts: 0 };
 
-            // FILTER: Only include enabled words (treat undefined as enabled)
+            // CRITICAL FIX: Ensure we only use words that ACTUALLY EXIST in current database
+            // Session API already filters deleted words, but double-check here
             let words = sessionData.words || [];
+
+            // Filter out any null/undefined words (deleted from database)
+            words = words.filter(w => w && w.id && w.word);
+
+            // Filter: Only include enabled words (treat undefined as enabled)
             words = words.filter(w => w.enabled !== false);
 
             if (!words.length) {
                 this.words = [];
-                this.startScreen.innerHTML = '<h1>No words enabled</h1>';
+                this.startScreen.innerHTML = '<h1>No words available</h1><p>All words have been deleted or disabled.</p>';
                 this.startScreen.classList.remove('hidden');
                 this.startBtn.style.display = 'none';
                 return;
@@ -158,22 +164,43 @@ class MultipleChoiceGame {
         let options = [];
 
         if (this.currentWord.choices && Array.isArray(this.currentWord.choices) && this.currentWord.choices.length > 0) {
+            // Use custom choices if defined - DON'T PAD, use exactly what's defined
             const rawChoices = [...this.currentWord.choices];
+
+            // CRITICAL FIX: Ensure correct answer is always included
             if (!rawChoices.includes(this.currentWord.word)) {
                 rawChoices.push(this.currentWord.word);
             }
-            options = rawChoices.map(w => ({ word: w }));
+
+            // Remove duplicates - use ONLY the custom choices, no padding
+            const uniqueChoices = [...new Set(rawChoices)];
+
+            options = uniqueChoices.map(w => ({ word: w }));
 
         } else {
+            // Fallback: Generate from all available words
+            // FLEXIBLE CHOICE COUNT: Use as many choices as there are words
+            const numChoices = this.words.length;
+
+            // Start with correct answer
+            options = [this.currentWord];
+
+            // Get other words as distractors
             const otherWords = this.words.filter(w => w.word !== this.currentWord.word);
             otherWords.sort(() => Math.random() - 0.5);
-            const distractors = otherWords.slice(0, 2);
+
+            // Add distractors (numChoices - 1 since we already have correct answer)
+            const distractors = otherWords.slice(0, numChoices - 1);
             options = [this.currentWord, ...distractors];
+
+            // Ensure exactly numChoices options
+            options = options.slice(0, numChoices);
         }
 
         // Shuffle options
         options.sort(() => Math.random() - 0.5);
 
+        // Render buttons
         options.forEach(opt => {
             const btn = document.createElement('div');
             btn.className = 'option-btn';

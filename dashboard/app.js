@@ -1156,6 +1156,17 @@ function setupEditor() {
     const contextSelect = document.getElementById('editor-context-select');
     contextSelect.addEventListener('change', () => {
         const val = contextSelect.value;
+
+        // Show/Hide Fill Blank Instructions
+        const fillBlankBanner = document.getElementById('fillblank-instructions');
+        if (fillBlankBanner) {
+            if (val === 'fillBlank') {
+                fillBlankBanner.classList.remove('hidden');
+            } else {
+                fillBlankBanner.classList.add('hidden');
+            }
+        }
+
         if (val === 'library') {
             document.getElementById('editor-library-area').classList.remove('hidden');
             document.getElementById('editor-game-area').classList.add('hidden');
