@@ -118,7 +118,8 @@ module.exports = function (app) {
             createdAt: new Date().toISOString(),
             lastActiveAt: new Date().toISOString(),
             contentGeneratorUses: 0,
-            students: []
+            students: [],
+            firstLogin: true
         };
 
         // Save
@@ -131,7 +132,7 @@ module.exports = function (app) {
         await saveSessions();
 
         res.cookie('teacher_token', token, { httpOnly: true, maxAge: 86400000 }); // 24h
-        res.json({ success: true, teacher: { id: newTeacher.id, email: newTeacher.email } });
+        res.json({ success: true, teacher: { id: newTeacher.id, email: newTeacher.email, firstLogin: newTeacher.firstLogin } });
     });
 
     // LOGIN
@@ -179,7 +180,7 @@ module.exports = function (app) {
         await saveSessions();
 
         res.cookie('teacher_token', token, { httpOnly: true, maxAge: 86400000 });
-        res.json({ success: true, teacher: { id: teacher.id, email: teacher.email } });
+        res.json({ success: true, teacher: { id: teacher.id, email: teacher.email, firstLogin: teacher.firstLogin || false } });
     });
 
     // ME
@@ -187,7 +188,7 @@ module.exports = function (app) {
         const teachers = await getTeachers();
         const teacher = teachers.find(t => t.id === req.teacherId);
         if (!teacher) return res.status(401).json({ error: 'User not found' });
-        res.json({ teacher: { id: teacher.id, email: teacher.email, name: teacher.name } });
+        res.json({ teacher: { id: teacher.id, email: teacher.email, name: teacher.name, firstLogin: teacher.firstLogin || false } });
     });
 
     // LOGOUT
@@ -198,6 +199,18 @@ module.exports = function (app) {
             saveSessions();
         }
         res.clearCookie('teacher_token');
+        res.json({ success: true });
+    });
+
+    // MARK FIRST LOGIN COMPLETE
+    app.post('/api/auth/mark-first-login-complete', requireAuth, async (req, res) => {
+        const teachers = await getTeachers();
+        const teacher = teachers.find(t => t.id === req.teacherId);
+        if (!teacher) return res.status(401).json({ error: 'User not found' });
+
+        teacher.firstLogin = false;
+        await saveTeachers(teachers);
+
         res.json({ success: true });
     });
 

@@ -38,6 +38,11 @@ async function checkAuth() {
         const data = await res.json();
         state.teacher = data.teacher;
         document.getElementById('teacher-name').textContent = state.teacher.email || 'Teacher';
+
+        // Check if first login
+        if (state.teacher.firstLogin === true) {
+            showWelcomeModal();
+        }
     } catch (e) {
         window.location.href = '../dashboard/login.html';
     }
@@ -2192,3 +2197,51 @@ window.downloadContentPDF = async function () {
         alert('Failed to generate PDF. Please try again.');
     }
 };
+
+// ========== WELCOME MODAL (First Login) ==========
+function showWelcomeModal() {
+    document.getElementById('welcome-modal').classList.remove('hidden');
+}
+
+window.watchTutorials = async function () {
+    // Mark first login as complete
+    await markFirstLoginComplete();
+
+    // Close modal
+    document.getElementById('welcome-modal').classList.add('hidden');
+
+    // Switch to Tutorials tab
+    const tutorialsTab = document.querySelector('[data-view="tutorials"]');
+    if (tutorialsTab) {
+        tutorialsTab.click();
+    }
+};
+
+window.skipWelcome = async function () {
+    // Mark first login as complete
+    await markFirstLoginComplete();
+
+    // Close modal
+    document.getElementById('welcome-modal').classList.add('hidden');
+
+    // Switch to Dashboard tab
+    const dashboardTab = document.querySelector('[data-view="dashboard"]');
+    if (dashboardTab) {
+        dashboardTab.click();
+    }
+};
+
+async function markFirstLoginComplete() {
+    try {
+        await fetch(`${API_BASE}/api/auth/mark-first-login-complete`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        });
+        // Update local state
+        if (state.teacher) {
+            state.teacher.firstLogin = false;
+        }
+    } catch (e) {
+        console.error('Failed to mark first login complete', e);
+    }
+}
