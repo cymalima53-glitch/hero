@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Hero Teacher</title>
+    <link rel="stylesheet" href="pricing.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Choose Your Plan</h1>
+            <p class="tagline">Start with a free trial, upgrade anytime for unlimited access</p>
+        </header>
+
+        <main class="main">
+            <!-- Already Subscribed Message -->
+            <div id="access-granted" class="access-granted hidden">
+                <div class="access-card">
+                    <div class="access-icon">✓</div>
+                    <h2>You're all set!</h2>
+                    <p>Your subscription is active. Enjoy full access to all features.</p>
+                    <div class="btn-group">
+                        <a href="/dashboard/index.html" class="btn btn-primary">Go to Dashboard</a>
+                        <a href="/dashboard/subscription.html" class="btn btn-secondary">Manage Subscription</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div id="pricing-content" class="pricing-content">
+                <div class="pricing-grid">
+                    <!-- Free Trial Plan -->
+                    <div class="pricing-card trial-card">
+                        <div class="plan-badge">Start Here</div>
+                        <div class="plan-header">
+                            <h2 class="plan-name">Free Trial</h2>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount">0</span>
+                                <span class="period">/3 days</span>
+                            </div>
+                            <p class="plan-description">Try all features risk-free</p>
+                        </div>
+
+                        <ul class="features">
+                            <li><span class="check">✓</span> 13 educational games</li>
+                            <li><span class="check">✓</span> Student management</li>
+                            <li><span class="check">✓</span> Game assignments</li>
+                            <li><span class="check">✓</span> Analytics & tracking</li>
+                            <li><span class="check">✓</span> AI content generator</li>
+                            <li><span class="check">✓</span> 100 AI credits</li>
+                        </ul>
+
+                        <button id="subscribe-btn-trial" class="btn btn-secondary" disabled>
+                            <span>Auto-starts with signup</span>
+                        </button>
+
+                        <p class="terms">No credit card required</p>
+                    </div>
+
+                    <!-- Pro Plan -->
+                    <div class="pricing-card pro-card featured">
+                        <div class="plan-badge popular">Most Popular</div>
+                        <div class="plan-header">
+                            <h2 class="plan-name">Pro Plan</h2>
+                            <div class="price">
+                                <span class="currency">$</span>
+                                <span class="amount">10</span>
+                                <span class="period">/month</span>
+                            </div>
+                            <p class="plan-description">Full access, unlimited potential</p>
+                        </div>
+
+                        <ul class="features">
+                            <li><span class="check">✓</span> Everything in Free Trial</li>
+                            <li><span class="check">✓</span> Unlimited students</li>
+                            <li><span class="check">✓</span> Unlimited assignments</li>
+                            <li><span class="check">✓</span> Advanced analytics</li>
+                            <li><span class="check">✓</span> 100 AI credits/month</li>
+                            <li><span class="check">✓</span> Priority support</li>
+                            <li><span class="check">✓</span> Custom content folders</li>
+                        </ul>
+
+                        <button id="subscribe-btn" class="btn btn-primary">
+                            <span id="btn-text">Subscribe Now</span>
+                            <span id="btn-loader" class="loader hidden"></span>
+                        </button>
+
+                        <p class="terms">Cancel anytime. No long-term commitment.</p>
+                    </div>
+                </div>
+
+                <!-- Feature Comparison -->
+                <div class="comparison-section">
+                    <h3>What's Included</h3>
+                    <div class="comparison-table">
+                        <div class="comparison-row header">
+                            <div class="feature-name">Feature</div>
+                            <div class="plan-col">Free Trial</div>
+                            <div class="plan-col">Pro Plan</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="feature-name">All 13 Games</div>
+                            <div class="plan-col"><span class="check-icon">✓</span></div>
+                            <div class="plan-col"><span class="check-icon">✓</span></div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="feature-name">Student Management</div>
+                            <div class="plan-col"><span class="check-icon">✓</span></div>
+                            <div class="plan-col"><span class="check-icon">✓</span></div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="feature-name">Analytics & Reports</div>
+                            <div class="plan-col"><span class="check-icon">✓</span></div>
+                            <div class="plan-col"><span class="check-icon">✓</span></div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="feature-name">AI Content Generator</div>
+                            <div class="plan-col">3 days only</div>
+                            <div class="plan-col"><span class="check-icon">✓</span> Unlimited</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="feature-name">AI Credits</div>
+                            <div class="plan-col">100 total</div>
+                            <div class="plan-col">100/month</div>
+                        </div>
+                        <div class="comparison-row">
+                            <div class="feature-name">Duration</div>
+                            <div class="plan-col">3 days</div>
+                            <div class="plan-col">Ongoing</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="error-message" class="error-message hidden"></div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <a href="/dashboard/index.html" class="back-link">← Back to Dashboard</a>
+        </footer>
+    </div>
+
+    <script src="pricing.js"></script>
+</body>
+
+</html>

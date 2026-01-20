@@ -1,0 +1,22 @@
+{
+  "id": "sess_6a1a8b44-d107-4db6-9081-f8c4bf86078b",
+  "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+  "studentId": "teacher_preview",
+  "gameId": "fillBlank",
+  "wordIds": [
+    "w_dca5dd16-7727-4cf3-a91a-b18c2af2dbf6",
+    "w_e38aac4f-04e5-4e84-b702-d25d2fdefcd1"
+  ],
+  "gameActions": {},
+  "lang": "en",
+  "limit": 10,
+  "createdAt": "2026-01-18T09:55:40.288Z",
+  "status": "active",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 0,
+    "questions": {},
+    "startTime": 1768730140330
+  }
+}

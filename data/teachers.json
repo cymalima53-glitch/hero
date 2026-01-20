@@ -5,9 +5,10 @@
       "email": "kamalsolimanahmed@gmail.com",
       "passwordHash": "$2a$10$YCsqEsnqUCwlRxbaz2D4ueDUSs3lO8jwcP2T3GJlXS/vITdJmj46W",
       "createdAt": "2026-01-04T12:16:05.268Z",
-      "lastActiveAt": "2026-01-04T12:16:05.268Z",
-      "contentGeneratorUses": 0,
-      "students": []
+      "lastActiveAt": "2026-01-18T11:05:26.219Z",
+      "contentGeneratorUses": 1,
+      "students": [],
+      "aiCredits": 0
     },
     {
       "id": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
@@ -20,7 +21,8 @@
       "stripeCustomerId": "cus_TnNH01nVWwpeey",
       "subscriptionActive": false,
       "stripeSubscriptionId": null,
-      "aiCredits": 100
+      "aiCredits": 100,
+      "unlimitedGenerator": true
     },
     {
       "id": "t_cbe4d301-361d-4d36-b9a2-a57ac1c5ad41",
@@ -81,6 +83,43 @@
       "lastActiveAt": "2026-01-17T07:02:18.272Z",
       "contentGeneratorUses": 0,
       "students": []
+    },
+    {
+      "id": "t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7",
+      "email": "shawky@test",
+      "passwordHash": "$2a$10$0DV2sNiurmcRYG5yhtgOouRY4/Hb30SCBZAqH0pO1HdxnoYxXf5XW",
+      "createdAt": "2026-01-20T05:42:26.419Z",
+      "lastActiveAt": "2026-01-20T05:42:26.419Z",
+      "contentGeneratorUses": 0,
+      "students": []
+    },
+    {
+      "id": "t_bb8e8c1f-f392-49df-b8b3-ead77da7e351",
+      "email": "testuser_new1768887850205@example.com",
+      "passwordHash": "$2a$10$PGDNXC4nYC5vuOJtKt0Pe.5lKkB1fMP8R04AZXPqYsvdt8L9tkXLi",
+      "createdAt": "2026-01-20T05:44:10.306Z",
+      "lastActiveAt": "2026-01-20T05:44:10.306Z",
+      "contentGeneratorUses": 0,
+      "students": []
+    },
+    {
+      "id": "t_f16f9975-d8e1-4647-a1c1-4cf9d463b327",
+      "email": "sadasy@test",
+      "passwordHash": "$2a$10$WFXT7vHMN/6xP1EJJs5wlOVsYLflTP4Yi17Pnmq5mBAcP8ce3gANe",
+      "createdAt": "2026-01-20T05:57:21.350Z",
+      "lastActiveAt": "2026-01-20T05:57:21.350Z",
+      "contentGeneratorUses": 0,
+      "students": []
+    },
+    {
+      "id": "t_2bccc967-2c1f-4d0b-8638-683edea80683",
+      "email": "dasda@gmail.cm",
+      "passwordHash": "$2a$10$4gGujB/NUEtZo8xog7/Fl.bKD2OuFm6nHa7QNC2BuqgeyO5DXUZgC",
+      "createdAt": "2026-01-20T08:37:37.675Z",
+      "lastActiveAt": "2026-01-20T08:37:37.675Z",
+      "contentGeneratorUses": 0,
+      "students": [],
+      "firstLogin": false
     }
   ]
 }

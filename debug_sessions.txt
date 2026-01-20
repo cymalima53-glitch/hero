@@ -2315,3 +2315,263 @@ Found 51 sessions.
 Found 51 sessions.
 [2026-01-17T08:49:03.442Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
 Found 0 sessions.
+[2026-01-18T09:48:33.077Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 51 sessions.
+[2026-01-18T09:48:36.200Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 51 sessions.
+[2026-01-18T09:49:35.615Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 51 sessions.
+[2026-01-18T09:50:32.627Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 52 sessions.
+[2026-01-18T09:50:35.409Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 52 sessions.
+[2026-01-18T09:51:25.818Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 53 sessions.
+[2026-01-18T09:55:27.255Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 54 sessions.
+[2026-01-18T09:55:27.403Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 54 sessions.
+[2026-01-18T09:55:27.572Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 54 sessions.
+[2026-01-18T09:55:27.710Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 54 sessions.
+[2026-01-18T09:55:27.859Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 54 sessions.
+[2026-01-18T09:55:35.586Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 54 sessions.
+[2026-01-18T09:55:59.024Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 55 sessions.
+[2026-01-18T10:00:18.314Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 57 sessions.
+[2026-01-18T10:00:18.464Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 57 sessions.
+[2026-01-18T10:00:18.607Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 57 sessions.
+[2026-01-18T10:00:18.739Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 57 sessions.
+[2026-01-18T10:00:36.173Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 57 sessions.
+[2026-01-18T10:02:23.401Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-01-18T10:03:57.254Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-01-18T11:05:11.281Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-01-18T11:05:20.315Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 0 sessions.
+[2026-01-19T09:37:54.036Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 0 sessions.
+[2026-01-19T09:37:56.302Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 0 sessions.
+[2026-01-19T09:37:59.310Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 0 sessions.
+[2026-01-19T09:40:45.312Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 0 sessions.
+[2026-01-19T09:41:47.767Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 1 sessions.
+[2026-01-19T09:46:29.379Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 2 sessions.
+[2026-01-19T09:46:31.794Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 2 sessions.
+[2026-01-19T09:46:33.366Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 2 sessions.
+[2026-01-19T09:46:34.950Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 2 sessions.
+[2026-01-19T09:59:39.833Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 3 sessions.
+[2026-01-19T09:59:40.409Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 3 sessions.
+[2026-01-19T09:59:40.747Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 3 sessions.
+[2026-01-19T10:00:10.498Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 3 sessions.
+[2026-01-19T10:00:12.146Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 3 sessions.
+[2026-01-19T10:00:17.426Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 3 sessions.
+[2026-01-19T10:00:29.563Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 3 sessions.
+[2026-01-19T10:03:23.472Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 4 sessions.
+[2026-01-19T10:03:24.418Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 4 sessions.
+[2026-01-19T10:03:35.172Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 4 sessions.
+[2026-01-19T10:08:14.089Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 5 sessions.
+[2026-01-19T10:08:14.478Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 5 sessions.
+[2026-01-19T10:08:14.780Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 5 sessions.
+[2026-01-19T10:08:15.330Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 5 sessions.
+[2026-01-19T10:08:22.103Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 5 sessions.
+[2026-01-19T10:08:29.539Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 5 sessions.
+[2026-01-19T10:08:29.818Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 5 sessions.
+[2026-01-19T10:08:30.882Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 5 sessions.
+[2026-01-19T10:11:41.928Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 6 sessions.
+[2026-01-19T10:11:43.075Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 6 sessions.
+[2026-01-19T10:13:35.638Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 7 sessions.
+[2026-01-19T10:13:36.049Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 7 sessions.
+[2026-01-19T10:13:36.245Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 7 sessions.
+[2026-01-19T10:13:36.412Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 7 sessions.
+[2026-01-19T10:13:36.590Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 7 sessions.
+[2026-01-19T10:13:36.756Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 7 sessions.
+[2026-01-19T10:13:36.908Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 7 sessions.
+[2026-01-19T10:13:37.528Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 7 sessions.
+[2026-01-19T10:13:51.481Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 7 sessions.
+[2026-01-19T10:14:11.033Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 8 sessions.
+[2026-01-19T10:14:16.000Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 8 sessions.
+[2026-01-19T10:15:44.096Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 9 sessions.
+[2026-01-19T10:15:45.176Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 9 sessions.
+[2026-01-19T10:34:12.558Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 10 sessions.
+[2026-01-19T10:34:13.133Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 10 sessions.
+[2026-01-19T10:39:55.412Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 10 sessions.
+[2026-01-19T10:41:12.178Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 10 sessions.
+[2026-01-19T10:41:17.188Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 10 sessions.
+[2026-01-19T10:41:29.909Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 10 sessions.
+[2026-01-19T10:41:35.365Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 10 sessions.
+[2026-01-19T10:42:40.630Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 11 sessions.
+[2026-01-19T10:42:41.315Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 11 sessions.
+[2026-01-19T11:37:08.089Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 11 sessions.
+[2026-01-19T11:38:02.629Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 11 sessions.
+[2026-01-19T11:38:09.167Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 11 sessions.
+[2026-01-19T11:38:10.796Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 11 sessions.
+[2026-01-19T11:45:31.730Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 11 sessions.
+[2026-01-19T11:45:50.878Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 11 sessions.
+[2026-01-19T11:58:10.873Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 11 sessions.
+[2026-01-19T11:58:11.474Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 11 sessions.
+[2026-01-20T05:12:42.077Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 11 sessions.
+[2026-01-20T05:17:56.358Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 11 sessions.
+[2026-01-20T05:23:09.652Z] Req Teacher: t_5df66c56-2e62-4ef4-a453-db273ae02e33
+Found 11 sessions.
+[2026-01-20T05:42:26.551Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T05:42:38.844Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T05:42:42.068Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T05:42:42.451Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T05:42:42.803Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T05:42:43.355Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T05:42:44.242Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T05:42:45.372Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T05:44:30.270Z] Req Teacher: t_bb8e8c1f-f392-49df-b8b3-ead77da7e351
+Found 0 sessions.
+[2026-01-20T05:44:47.946Z] Req Teacher: t_bb8e8c1f-f392-49df-b8b3-ead77da7e351
+Found 0 sessions.
+[2026-01-20T05:47:18.786Z] Req Teacher: t_bb8e8c1f-f392-49df-b8b3-ead77da7e351
+Found 0 sessions.
+[2026-01-20T05:57:06.680Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T05:57:21.389Z] Req Teacher: t_f16f9975-d8e1-4647-a1c1-4cf9d463b327
+Found 0 sessions.
+[2026-01-20T05:57:25.510Z] Req Teacher: t_f16f9975-d8e1-4647-a1c1-4cf9d463b327
+Found 0 sessions.
+[2026-01-20T05:57:26.069Z] Req Teacher: t_f16f9975-d8e1-4647-a1c1-4cf9d463b327
+Found 0 sessions.
+[2026-01-20T05:57:27.013Z] Req Teacher: t_f16f9975-d8e1-4647-a1c1-4cf9d463b327
+Found 0 sessions.
+[2026-01-20T05:57:27.958Z] Req Teacher: t_f16f9975-d8e1-4647-a1c1-4cf9d463b327
+Found 0 sessions.
+[2026-01-20T05:57:28.313Z] Req Teacher: t_f16f9975-d8e1-4647-a1c1-4cf9d463b327
+Found 0 sessions.
+[2026-01-20T05:57:29.019Z] Req Teacher: t_f16f9975-d8e1-4647-a1c1-4cf9d463b327
+Found 0 sessions.
+[2026-01-20T05:58:12.438Z] Req Teacher: t_21831b8c-c596-4147-b787-a09645cfc8ad
+Found 0 sessions.
+[2026-01-20T06:10:58.063Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T06:50:25.705Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T08:25:22.434Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T08:25:22.891Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T08:25:23.039Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T08:27:51.832Z] Req Teacher: t_bb8e8c1f-f392-49df-b8b3-ead77da7e351
+Found 0 sessions.
+[2026-01-20T08:31:46.731Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T08:31:52.678Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T08:31:54.454Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T08:31:55.870Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T08:31:56.677Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T08:35:52.838Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T08:37:37.893Z] Req Teacher: t_2bccc967-2c1f-4d0b-8638-683edea80683
+Found 0 sessions.
+[2026-01-20T08:37:39.991Z] Req Teacher: t_2bccc967-2c1f-4d0b-8638-683edea80683
+Found 0 sessions.
+[2026-01-20T08:45:35.040Z] Req Teacher: t_2bccc967-2c1f-4d0b-8638-683edea80683
+Found 0 sessions.
+[2026-01-20T08:52:24.558Z] Req Teacher: t_2bccc967-2c1f-4d0b-8638-683edea80683
+Found 0 sessions.
+[2026-01-20T08:52:24.878Z] Req Teacher: t_2bccc967-2c1f-4d0b-8638-683edea80683
+Found 0 sessions.
+[2026-01-20T08:52:25.101Z] Req Teacher: t_2bccc967-2c1f-4d0b-8638-683edea80683
+Found 0 sessions.
+[2026-01-20T08:52:25.285Z] Req Teacher: t_2bccc967-2c1f-4d0b-8638-683edea80683
+Found 0 sessions.
+[2026-01-20T08:52:25.490Z] Req Teacher: t_2bccc967-2c1f-4d0b-8638-683edea80683
+Found 0 sessions.
+[2026-01-20T08:52:25.691Z] Req Teacher: t_2bccc967-2c1f-4d0b-8638-683edea80683
+Found 0 sessions.
+[2026-01-20T09:01:29.176Z] Req Teacher: t_790d31d5-56cb-4fd6-a77d-7f5b04551ac7
+Found 0 sessions.
+[2026-01-20T09:17:55.410Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-01-20T09:18:03.010Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-01-20T09:18:03.813Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-01-20T09:18:04.253Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.

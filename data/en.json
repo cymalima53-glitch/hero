@@ -244,6 +244,18 @@
         "monkey",
         "cat"
       ]
+    },
+    {
+      "id": "w_51d81a3c-1212-4caf-90e4-3e872f619927",
+      "word": "mouse",
+      "choices": [
+        "mouse",
+        "cat",
+        "dog"
+      ],
+      "image": "https://pixabay.com/get/gf27ffb9ba8c0648e232454a58feece8c3cc6ccf69f5df77f4a165bb435142679027c307928b9acf14cd5a3fd8d9c46b2d1f2c39aa75bf965da66561687bbfb7e_640.jpg",
+      "audio": "",
+      "teacherId": "kamalsolimanahmed@gmail.com"
     }
   ],
   "gameConfig": {
@@ -332,7 +344,12 @@
         "w_cat",
         "w_monkey",
         "w_1767008923710_jw8ds",
-        "w_dog"
+        "w_dog",
+        "w_14aee5c5-9a8c-4cda-b7f4-e60232af0935",
+        "w_fbd82117-9c68-4236-b458-0244ed5895ee",
+        "w_ee98ca61-d9e8-4d9f-b4e5-47ceccd90945",
+        "w_51d81a3c-1212-4caf-90e4-3e872f619927",
+        "w_cea8af9d-f8fa-4578-91f6-2d6e2d605911"
       ],
       "actions": {},
       "background": "/data/uploads/1767262990007_idle_3.png"

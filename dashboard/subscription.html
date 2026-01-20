@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Management - Hero Teacher</title>
+    <link rel="stylesheet" href="subscription.css">
+</head>
+
+<body>
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Cancel Confirmation Modal -->
+    <div id="cancel-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
+        <div class="modal-overlay" aria-hidden="true"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <svg class="warning-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+                <h2 id="modal-title">Cancel Subscription</h2>
+            </div>
+
+            <div class="modal-body">
+                <p class="modal-message">
+                    Are you sure you want to cancel your subscription?
+                </p>
+                <div class="modal-details">
+                    <p>Your access will continue until <strong id="modal-end-date">—</strong></p>
+                    <p>You can reactivate anytime before this date.</p>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button id="modal-cancel-btn" class="btn btn-secondary" type="button">
+                    Keep Subscription
+                </button>
+                <button id="modal-confirm-btn" class="btn btn-danger" type="button">
+                    <span class="btn-text">Confirm Cancel</span>
+                    <span class="btn-loader hidden"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="page-header">
+            <div class="header-content">
+                <a href="/dashboard/index.html" class="back-link" aria-label="Back to dashboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Back to Dashboard
+                </a>
+                <h1>Subscription Management</h1>
+                <p class="subtitle">Manage your Hero Teacher subscription and billing</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Loading Skeleton -->
+            <div id="skeleton-loader" class="skeleton-container">
+                <div class="skeleton-card">
+                    <div class="skeleton-header"></div>
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line short"></div>
+                </div>
+                <div class="skeleton-card">
+                    <div class="skeleton-header"></div>
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line short"></div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div id="subscription-content" class="content-grid hidden">
+                <!-- Subscription Status Card -->
+                <div class="card status-card">
+                    <div class="card-header">
+                        <h2>Subscription Status</h2>
+                        <span id="status-badge" class="badge"></span>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="status-info">
+                            <div class="info-item">
+                                <span class="info-label">Plan</span>
+                                <span class="info-value" id="plan-name">Teacher Plan</span>
+                            </div>
+
+                            <div class="info-item" id="next-billing-item">
+                                <span class="info-label">Next Billing Date</span>
+                                <span class="info-value" id="next-billing-date">—</span>
+                            </div>
+
+                            <div class="info-item hidden" id="end-date-item">
+                                <span class="info-label">Access Ends</span>
+                                <span class="info-value warning" id="subscription-end-date">—</span>
+                            </div>
+
+                            <div class="info-item" id="trial-item">
+                                <span class="info-label">Trial Ends</span>
+                                <span class="info-value" id="trial-end-date">—</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Credits Card -->
+                <div class="card credits-card">
+                    <div class="card-header">
+                        <h2>AI Credits</h2>
+                        <span class="credits-count" id="credits-count">—</span>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div id="progress-fill" class="progress-fill" role="progressbar" aria-valuenow="0"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="progress-label" id="progress-label">— of 100 credits remaining</p>
+                        </div>
+
+                        <p class="credits-info">Credits reset monthly with your subscription renewal</p>
+                    </div>
+                </div>
+
+                <!-- Actions Card -->
+                <div class="card actions-card">
+                    <div class="card-header">
+                        <h2>Manage Subscription</h2>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="actions-grid">
+                            <button id="upgrade-btn" class="action-btn hidden" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                                </svg>
+                                <div>
+                                    <h3>Upgrade Plan</h3>
+                                    <p>Get full access to all features</p>
+                                </div>
+                            </button>
+
+                            <button id="cancel-btn" class="action-btn hidden" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                                <div>
+                                    <h3>Cancel Subscription</h3>
+                                    <p>Access continues until period ends</p>
+                                </div>
+                            </button>
+
+                            <div id="cancelled-notice" class="notice-box hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <div>
+                                    <h3>Subscription Cancelled</h3>
+                                    <p id="cancelled-message">Your subscription will end on <strong
+                                            id="cancelled-end-date">—</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty State (No Subscription) -->
+            <div id="empty-state" class="empty-state hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+                </svg>
+                <h2>No Active Subscription</h2>
+                <p>Subscribe to unlock all features and start creating engaging content for your students</p>
+                <a href="/dashboard/pricing.html" class="btn btn-primary">View Plans</a>
+            </div>
+
+            <!-- Error State -->
+            <div id="error-state" class="error-state hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <h2>Unable to Load Subscription</h2>
+                <p id="error-message">Please try again later or contact support if the problem persists</p>
+                <button id="retry-btn" class="btn btn-secondary" type="button">Retry</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="subscription.js"></script>
+</body>
+
+</html>

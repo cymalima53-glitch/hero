@@ -1,0 +1,29 @@
+{
+  "id": "sess_c4f6a38d-f4fc-444a-bbcf-7fcd0a005f84",
+  "teacherId": "t_5df66c56-2e62-4ef4-a453-db273ae02e33",
+  "studentId": "teacher_preview",
+  "gameId": "multipleChoice",
+  "wordIds": [
+    "w_dog",
+    "w_cat",
+    "w_monkey",
+    "w_kamal",
+    "w_aurore",
+    "w_adam",
+    "w_0210b210-2be1-489d-ad87-77e21f4daaf9",
+    "w_14aee5c5-9a8c-4cda-b7f4-e60232af0935",
+    "w_ee98ca61-d9e8-4d9f-b4e5-47ceccd90945",
+    "w_cea8af9d-f8fa-4578-91f6-2d6e2d605911"
+  ],
+  "gameActions": {},
+  "lang": "en",
+  "limit": 10,
+  "createdAt": "2026-01-19T09:41:50.437Z",
+  "status": "pending",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 0,
+    "questions": {}
+  }
+}

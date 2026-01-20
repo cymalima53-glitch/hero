@@ -1,0 +1,48 @@
+{
+  "id": "sess_4316f116-bb97-4638-bf93-379d59dab076",
+  "teacherId": "t_5df66c56-2e62-4ef4-a453-db273ae02e33",
+  "studentId": "teacher_preview",
+  "gameId": "multipleChoice",
+  "wordIds": [
+    "w_cea8af9d-f8fa-4578-91f6-2d6e2d605911",
+    "w_14aee5c5-9a8c-4cda-b7f4-e60232af0935",
+    "w_fbd82117-9c68-4236-b458-0244ed5895ee",
+    "w_ee98ca61-d9e8-4d9f-b4e5-47ceccd90945"
+  ],
+  "gameActions": {},
+  "lang": "en",
+  "limit": 10,
+  "createdAt": "2026-01-19T10:15:51.980Z",
+  "status": "completed",
+  "analytics": {
+    "attempts": 4,
+    "failuresBeforePass": 0,
+    "timeSpent": 9.014,
+    "questions": {
+      "w_14aee5c5-9a8c-4cda-b7f4-e60232af0935": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_cea8af9d-f8fa-4578-91f6-2d6e2d605911": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_ee98ca61-d9e8-4d9f-b4e5-47ceccd90945": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_fbd82117-9c68-4236-b458-0244ed5895ee": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      }
+    },
+    "endTime": 1768817765686,
+    "totalTimeSeconds": 13.031,
+    "accuracy": 100,
+    "mistakes": 0
+  }
+}

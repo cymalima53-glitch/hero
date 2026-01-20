@@ -1063,6 +1063,37 @@
       "duration": 21.786,
       "accuracy": 83,
       "mistakes": 1
+    },
+    {
+      "id": "as_a6de4640-e148-4cfa-ac7e-fff6243dbb4c",
+      "teacherId": "t_5df66c56-2e62-4ef4-a453-db273ae02e33",
+      "studentId": "s_3dcf39ff-b558-43f2-ba84-5080baab3030",
+      "gameId": "multipleChoice",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "en"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-01-19T10:41:34.320Z",
+      "duration": 25.84,
+      "accuracy": 50,
+      "mistakes": 4
+    },
+    {
+      "id": "as_f761ee9f-e0c5-4970-84c7-6186950de4c9",
+      "teacherId": "t_5df66c56-2e62-4ef4-a453-db273ae02e33",
+      "studentId": "s_3dcf39ff-b558-43f2-ba84-5080baab3030",
+      "gameId": "memoryEcho",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "en"
+      },
+      "status": "pending",
+      "score": 0,
+      "createdAt": "2026-01-19T11:45:49.317Z"
     }
   ]
 }

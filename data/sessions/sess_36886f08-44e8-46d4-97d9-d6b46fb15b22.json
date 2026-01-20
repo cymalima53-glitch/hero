@@ -1,0 +1,23 @@
+{
+  "id": "sess_36886f08-44e8-46d4-97d9-d6b46fb15b22",
+  "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+  "studentId": "teacher_preview",
+  "gameId": "tapChoice",
+  "wordIds": [
+    "w_dog",
+    "w_cat",
+    "w_monkey"
+  ],
+  "gameActions": {},
+  "lang": "en",
+  "limit": 10,
+  "createdAt": "2026-01-18T09:49:50.187Z",
+  "status": "active",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 0,
+    "questions": {},
+    "startTime": 1768729790424
+  }
+}

@@ -8,6 +8,15 @@
       "passwordHash": "$2a$10$e.T7SKpw5LQYa5ESIm9VUO4vw0TfHV6fpvtelJwVHW.m2v22Iz3d6",
       "parentEmail": "",
       "createdAt": "2026-01-04T12:30:13.756Z"
+    },
+    {
+      "id": "s_3dcf39ff-b558-43f2-ba84-5080baab3030",
+      "teacherId": "t_5df66c56-2e62-4ef4-a453-db273ae02e33",
+      "name": "tim",
+      "username": "tim",
+      "passwordHash": "$2a$10$ylUYQrHm5258BOE2Qr2/yeec/wxn6XFFI.cBh7pr21pirzwjwNzUO",
+      "parentEmail": "",
+      "createdAt": "2026-01-19T10:41:26.891Z"
     }
   ]
 }

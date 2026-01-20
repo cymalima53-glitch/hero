@@ -1141,5 +1141,197 @@
       "answerKeys": {},
       "createdAt": "2026-01-04T11:08:56.468Z"
     }
+  },
+  "t_5df66c56-2e62-4ef4-a453-db273ae02e33": {
+    "content_1768734346341": {
+      "id": "content_1768734346341",
+      "subject": "Math",
+      "topic": "addition jusque 20 niveau cp",
+      "level": "1",
+      "language": "en",
+      "worksheets": [
+        {
+          "title": "Addition Up to 20 - Worksheet 1",
+          "level": 1,
+          "instructions": "Solve the following addition problems.",
+          "questions": [
+            {
+              "question": "3 + 2 =",
+              "answer": "5"
+            },
+            {
+              "question": "4 + 1 =",
+              "answer": "5"
+            },
+            {
+              "question": "6 + 3 =",
+              "answer": "9"
+            },
+            {
+              "question": "5 + 4 =",
+              "answer": "9"
+            },
+            {
+              "question": "7 + 2 =",
+              "answer": "9"
+            }
+          ]
+        },
+        {
+          "title": "Addition Up to 20 - Worksheet 2",
+          "level": 1,
+          "instructions": "Fill in the blanks with the correct answer.",
+          "questions": [
+            {
+              "question": "1 + ___ = 4",
+              "answer": "3"
+            },
+            {
+              "question": "2 + ___ = 5",
+              "answer": "3"
+            },
+            {
+              "question": "3 + ___ = 6",
+              "answer": "3"
+            },
+            {
+              "question": "4 + ___ = 7",
+              "answer": "3"
+            },
+            {
+              "question": "5 + ___ = 8",
+              "answer": "3"
+            }
+          ]
+        },
+        {
+          "title": "Addition Up to 20 - Worksheet 3",
+          "level": 1,
+          "instructions": "Circle the correct answer.",
+          "questions": [
+            {
+              "question": "2 + 2 = (3 / 4 / 5)",
+              "answer": "4"
+            },
+            {
+              "question": "5 + 1 = (5 / 6 / 7)",
+              "answer": "6"
+            },
+            {
+              "question": "7 + 2 = (8 / 9 / 10)",
+              "answer": "9"
+            },
+            {
+              "question": "1 + 8 = (8 / 9 / 10)",
+              "answer": "9"
+            },
+            {
+              "question": "3 + 6 = (8 / 9 / 10)",
+              "answer": "9"
+            }
+          ]
+        },
+        {
+          "title": "Addition Up to 20 - Worksheet 4",
+          "level": 1,
+          "instructions": "Draw the objects and write the addition.",
+          "questions": [
+            {
+              "question": "Draw 3 apples and 2 bananas. Write the addition.",
+              "answer": "3 + 2 = 5"
+            },
+            {
+              "question": "Draw 4 stars and 1 circle. Write the addition.",
+              "answer": "4 + 1 = 5"
+            },
+            {
+              "question": "Draw 2 birds and 3 balloons. Write the addition.",
+              "answer": "2 + 3 = 5"
+            },
+            {
+              "question": "Draw 5 flowers and 4 leaves. Write the addition.",
+              "answer": "5 + 4 = 9"
+            },
+            {
+              "question": "Draw 1 cat and 7 mice. Write the addition.",
+              "answer": "1 + 7 = 8"
+            }
+          ]
+        },
+        {
+          "title": "Addition Up to 20 - Worksheet 5",
+          "level": 1,
+          "instructions": "Match the addition to its answer.",
+          "questions": [
+            {
+              "question": "2 + 5",
+              "answer": "7"
+            },
+            {
+              "question": "4 + 3",
+              "answer": "7"
+            },
+            {
+              "question": "6 + 2",
+              "answer": "8"
+            },
+            {
+              "question": "1 + 6",
+              "answer": "7"
+            },
+            {
+              "question": "5 + 5",
+              "answer": "10"
+            }
+          ]
+        }
+      ],
+      "workshops": [
+        {
+          "title": "Addition with Objects",
+          "duration": "15 minutes",
+          "materials": [
+            "Counting blocks or small toys"
+          ],
+          "instructions": "Use the blocks or toys to demonstrate addition. Ask the children to add a certain number of objects and count them together."
+        },
+        {
+          "title": "Number Line Jump",
+          "duration": "15 minutes",
+          "materials": [
+            "A number line drawn on the floor"
+          ],
+          "instructions": "Have the children jump to the numbers as they add two numbers together. For example, if adding 3 + 2, they start at 3 and jump 2 spaces to land on 5."
+        },
+        {
+          "title": "Addition Bingo",
+          "duration": "15 minutes",
+          "materials": [
+            "Bingo cards with addition problems",
+            "markers"
+          ],
+          "instructions": "Create Bingo cards with different addition problems. Call out the answers and have the children mark the corresponding problem on their cards."
+        },
+        {
+          "title": "Story Problems in Pairs",
+          "duration": "15 minutes",
+          "materials": [
+            "Story problem cards"
+          ],
+          "instructions": "Give each pair of children a story problem card. They will discuss and solve the addition problem together, then share their answers with the class."
+        },
+        {
+          "title": "Addition Art",
+          "duration": "15 minutes",
+          "materials": [
+            "Paper",
+            "Colored pencils"
+          ],
+          "instructions": "Children will create an art piece where they add different shapes or colors together and write the addition equations that correspond with their artwork."
+        }
+      ],
+      "answerKeys": {},
+      "createdAt": "2026-01-18T11:05:46.341Z"
+    }
   }
 }

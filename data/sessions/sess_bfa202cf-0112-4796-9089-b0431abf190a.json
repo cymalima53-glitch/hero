@@ -1,0 +1,30 @@
+{
+  "id": "sess_bfa202cf-0112-4796-9089-b0431abf190a",
+  "teacherId": "t_5df66c56-2e62-4ef4-a453-db273ae02e33",
+  "studentId": "teacher_preview",
+  "gameId": "multipleChoice",
+  "wordIds": [
+    "w_cea8af9d-f8fa-4578-91f6-2d6e2d605911"
+  ],
+  "gameActions": {},
+  "lang": "en",
+  "limit": 10,
+  "createdAt": "2026-01-19T10:13:54.984Z",
+  "status": "completed",
+  "analytics": {
+    "attempts": 1,
+    "failuresBeforePass": 0,
+    "timeSpent": 4.232,
+    "questions": {
+      "w_cea8af9d-f8fa-4578-91f6-2d6e2d605911": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      }
+    },
+    "endTime": 1768817640988,
+    "totalTimeSeconds": 5.234,
+    "accuracy": 100,
+    "mistakes": 0
+  }
+}

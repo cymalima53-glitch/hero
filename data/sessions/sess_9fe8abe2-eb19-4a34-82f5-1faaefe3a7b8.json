@@ -1,0 +1,35 @@
+{
+  "id": "sess_9fe8abe2-eb19-4a34-82f5-1faaefe3a7b8",
+  "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+  "studentId": "teacher_preview",
+  "gameId": "tapChoice",
+  "wordIds": [
+    "w_dog",
+    "w_cat",
+    "w_monkey",
+    "w_820c2d74-871b-4f88-b2a3-99e3ecec4596",
+    "w_be5fd2cb-2d16-4fee-ba8b-d27ac79349e5"
+  ],
+  "gameActions": {},
+  "lang": "en",
+  "limit": 10,
+  "createdAt": "2026-01-18T09:56:05.267Z",
+  "status": "completed",
+  "analytics": {
+    "attempts": 3,
+    "failuresBeforePass": 2,
+    "timeSpent": 3,
+    "questions": {
+      "w_be5fd2cb-2d16-4fee-ba8b-d27ac79349e5": {
+        "wrong_action": 2,
+        "timeout": 0,
+        "correct": false
+      }
+    },
+    "startTime": 1768730165312,
+    "endTime": 1768730169186,
+    "totalTimeSeconds": 3.083,
+    "accuracy": 33,
+    "mistakes": 2
+  }
+}
