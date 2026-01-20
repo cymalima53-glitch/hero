@@ -47,7 +47,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'data/uploads')));
 
 // === LMS ROUTES ===
 const authRoutes = require('./server/authRoutes')(app);
-const { requireAuth, requireStudentAuth } = authRoutes; // Extract middleware
+const { requireAuth, requireStudentAuth, createTeacherSession } = authRoutes; // Extract middleware & helper
 
 require('./server/sessionRoutes')(app, requireAuth);
 require('./server/studentRoutes')(app, requireAuth);
@@ -58,10 +58,13 @@ require('./server/contentRoutes')(app, requireAuth);
 require('./server/analyticsRoutes')(app, requireAuth);
 
 // Admin Routes
-require('./server/adminRoutes')(app);
+require('./server/adminRoutes')(app, createTeacherSession);
 
 // Content Generator Routes
 require('./server/contentGeneratorRoutes')(app, requireAuth);
+
+// Support Routes
+require('./server/supportRoutes')(app, requireAuth);
 
 // Stripe Routes - Commented out for FREE deployment (will add later)
 // require('./server/stripeRoutes')(app, requireAuth);

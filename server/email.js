@@ -90,4 +90,44 @@ async function sendVerificationEmail(toEmail, verificationLink) {
     });
 }
 
-module.exports = { sendMagicLink, sendResetLink, sendVerificationEmail };
+async function sendSupportEmail(toEmail, subject, body) {
+    console.log(`[SUPPORT] Logging support ticket from ${toEmail}`);
+
+    const fs = require('fs').promises;
+    const path = require('path');
+
+    const supportTicket = {
+        from: toEmail,
+        subject: subject,
+        message: body,
+        timestamp: new Date().toISOString(),
+        status: 'new'
+    };
+
+    // Log to file
+    const logFile = path.join(__dirname, '../data/support_tickets.json');
+
+    let tickets = [];
+    try {
+        const data = await fs.readFile(logFile, 'utf8');
+        tickets = JSON.parse(data);
+    } catch (e) {
+        // File doesn't exist yet, start with empty array
+    }
+
+    tickets.push(supportTicket);
+    await fs.writeFile(logFile, JSON.stringify(tickets, null, 2));
+
+    console.log('[SUPPORT TICKET SAVED]', supportTicket);
+
+    // Also send to your email (optional - you can remove this if you just want file logging)
+    console.log(`\n========== NEW SUPPORT TICKET ==========`);
+    console.log(`From: ${toEmail}`);
+    console.log(`Subject: ${subject}`);
+    console.log(`Message:\n${body}`);
+    console.log(`========================================\n`);
+
+    return { success: true };
+}
+
+module.exports = { sendMagicLink, sendResetLink, sendVerificationEmail, sendSupportEmail };

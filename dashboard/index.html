@@ -26,6 +26,12 @@
             <div class="nav-item" data-view="content"><i class="fas fa-edit"></i> Content Editor</div>
             <div class="nav-item" data-view="assignments"><i class="fas fa-clipboard-list"></i> Assignments</div>
             <div class="nav-item" data-view="analytics"><i class="fas fa-chart-line"></i> Analytics</div>
+            <div class="nav-item" data-view="support">💬 Support</div>
+            <!-- Admin Back Button (Hidden by default) -->
+            <div id="admin-back-btn" class="nav-item"
+                style="display: none; background: #673ab7; color: white; margin-top: auto;">
+                🔙 Back to Admin
+            </div>
         </nav>
     </aside>
 
@@ -500,6 +506,47 @@
                 <div class="card">
                     <h3>Question Breakdown</h3>
                     <div id="sess-questions" class="question-breakdown"></div>
+                </div>
+            </div>
+
+            <!-- VIEW: SUPPORT -->
+            <div id="view-support" class="app-view hidden">
+                <div class="card">
+                    <h2 style="margin-bottom: 0.5rem;">💬 Contact Support</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 2rem;">Have a question or need help? Send us a
+                        message and we'll get back to you soon.</p>
+
+                    <div id="support-success-msg" class="hidden"
+                        style="background: var(--success-bg); color: var(--success-text); padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; border: 1px solid var(--success-text);">
+                        <strong>✅ Thanks! We received your message.</strong><br>
+                        We'll get back to you as soon as possible.
+                    </div>
+
+                    <form id="support-form">
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Your Email</label>
+                            <input type="email" id="support-email" readonly
+                                style="background: var(--bg); cursor: not-allowed;" required>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Subject</label>
+                            <input type="text" id="support-subject" placeholder="Brief description of your issue"
+                                required
+                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px;">
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Message</label>
+                            <textarea id="support-message" rows="6"
+                                placeholder="Please describe your issue or question in detail..." required
+                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; resize: vertical;"></textarea>
+                        </div>
+
+                        <button type="submit" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
 

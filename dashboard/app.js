@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupEditor();
     setupAssignments();
     setupStudents();
+    setupSupport();
+    setupAdminBack(); // Admin impersonation check
 
     // Initial Load
     await Promise.all([loadStudents(), loadSessions(), loadContent(), loadFiles(), loadAssignments()]); // Added loadAssignments
@@ -38,6 +40,12 @@ async function checkAuth() {
         const data = await res.json();
         state.teacher = data.teacher;
         document.getElementById('teacher-name').textContent = state.teacher.email || 'Teacher';
+
+        // Prefill support email
+        const supportEmailInput = document.getElementById('support-email');
+        if (supportEmailInput) {
+            supportEmailInput.value = state.teacher.email || '';
+        }
 
         // Check if first login
         if (state.teacher.firstLogin === true) {
@@ -2243,5 +2251,90 @@ async function markFirstLoginComplete() {
         }
     } catch (e) {
         console.error('Failed to mark first login complete', e);
+    }
+}
+
+// ========== SUPPORT FORM ==========
+function setupSupport() {
+    const supportForm = document.getElementById('support-form');
+    if (!supportForm) return;
+
+    supportForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const email = document.getElementById('support-email').value;
+        const subject = document.getElementById('support-subject').value;
+        const message = document.getElementById('support-message').value;
+        const submitBtn = supportForm.querySelector('button[type="submit"]');
+        const successMsg = document.getElementById('support-success-msg');
+
+        try {
+            // Disable button
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+            // Send support email
+            const res = await fetch(`${API_BASE}/api/support/send`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    from: email,
+                    subject: subject,
+                    message: message
+                })
+            });
+
+            if (!res.ok) throw new Error('Failed to send message');
+
+            // Show success message
+            successMsg.classList.remove('hidden');
+
+            // Reset form
+            document.getElementById('support-subject').value = '';
+            document.getElementById('support-message').value = '';
+
+            // Scroll to top to show success message
+            document.querySelector('#view-support').scrollTop = 0;
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 5000);
+
+        } catch (error) {
+            console.error('Support form error:', error);
+            alert('Failed to send message. Please try again or email us directly at cymalima53@gmail.com');
+        } finally {
+            // Re-enable button
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        }
+    });
+}
+
+// ========== ADMIN BACK BUTTON ==========
+function setupAdminBack() {
+    const isImpersonating = localStorage.getItem('admin_impersonating');
+    const backBtn = document.getElementById('admin-back-btn');
+
+    if (isImpersonating === 'true' && backBtn) {
+        backBtn.style.display = 'block';
+
+        backBtn.addEventListener('click', async () => {
+            if (confirm('Return to Admin Panel?')) {
+                // Clear impersonation flag
+                localStorage.removeItem('admin_impersonating');
+
+                // Optional: Logout of teacher session (good practice)
+                try {
+                    await fetch(`${API_BASE}/api/auth/logout`, { method: 'POST' });
+                } catch (e) {
+                    console.error('Logout failed', e);
+                }
+
+                // Redirect to admin
+                window.location.href = '/admin/index.html';
+            }
+        });
     }
 }

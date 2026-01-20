@@ -73,9 +73,38 @@ function displayUsers(users, total) {
                 >
                     Delete
                 </button>
+                <button 
+                    class="btn-primary"
+                    style="background-color: #673ab7;"
+                    onclick="loginAsTeacher('${escapeHtml(user.email)}')"
+                >
+                    Login As
+                </button>
             </td>
         </tr>
     `).join('');
+}
+
+async function loginAsTeacher(email) {
+    try {
+        const res = await fetch(`/admin/api/login-as/${encodeURIComponent(email)}`, {
+            method: 'POST',
+            headers: {
+                'X-Admin-Password': adminPassword
+            }
+        });
+
+        if (!res.ok) throw new Error('Failed to login as teacher');
+
+        // Set flag for "Back to Admin" button
+        localStorage.setItem('admin_impersonating', 'true');
+
+        // Redirect to dashboard
+        window.location.href = '/dashboard/index.html';
+    } catch (error) {
+        console.error('Error logging in as teacher:', error);
+        alert('Failed to login as teacher');
+    }
 }
 
 async function deleteUser(userId, userName) {
@@ -352,7 +381,110 @@ window.onclick = function (event) {
     }
 }
 
-// Load users on page load
+// === SUPPORT TICKETS FUNCTIONS ===
+
+async function loadSupportTickets() {
+    try {
+        const res = await fetch('/admin/api/support-tickets', {
+            headers: { 'X-Admin-Password': adminPassword }
+        });
+
+        if (!res.ok) throw new Error('Failed to fetch support tickets');
+
+        const data = await res.json();
+        displaySupportTickets(data.tickets);
+    } catch (error) {
+        console.error('Error loading support tickets:', error);
+        document.getElementById('tickets-tbody').innerHTML = `
+            <tr><td colspan="6" class="error-msg">Failed to load support tickets</td></tr>
+        `;
+    }
+}
+
+function displaySupportTickets(tickets) {
+    const tbody = document.getElementById('tickets-tbody');
+
+    if (tickets.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6">No support tickets yet</td></tr>';
+        return;
+    }
+
+    tbody.innerHTML = tickets.map((ticket, index) => {
+        const status = ticket.status || 'new';
+        const statusBadge = status === 'new'
+            ? '<span class="badge-blocked">NEW</span>'
+            : status === 'replied'
+                ? '<span class="badge-limited">REPLIED</span>'
+                : '<span class="badge-unlimited">RESOLVED</span>';
+
+        const timestamp = formatDate(ticket.timestamp);
+        const messagePreview = ticket.message.length > 100
+            ? ticket.message.substring(0, 100) + '...'
+            : ticket.message;
+
+        return `
+            <tr>
+                <td>${statusBadge}</td>
+                <td>${escapeHtml(ticket.from)}</td>
+                <td>${escapeHtml(ticket.subject)}</td>
+                <td title="${escapeHtml(ticket.message)}">${escapeHtml(messagePreview)}</td>
+                <td>${timestamp}</td>
+                <td>
+                    ${status === 'new' ? `<button class="btn-primary" onclick="updateTicketStatus(${index}, 'replied')">Mark Replied</button>` : ''}
+                    ${status !== 'resolved' ? `<button class="btn-secondary" onclick="updateTicketStatus(${index}, 'resolved')">Mark Resolved</button>` : ''}
+                    <button class="btn-danger" onclick="deleteTicket(${index})">Delete</button>
+                </td>
+            </tr>
+        `;
+    }).join('');
+}
+
+async function updateTicketStatus(index, status) {
+    try {
+        const res = await fetch(`/admin/api/support-tickets/${index}/status`, {
+            method: 'POST',
+            headers: {
+                'X-Admin-Password': adminPassword,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ status })
+        });
+
+        if (!res.ok) throw new Error('Failed to update ticket status');
+
+        alert(`Ticket marked as ${status}`);
+        loadSupportTickets();
+    } catch (error) {
+        console.error('Error updating ticket status:', error);
+        alert('Failed to update ticket status');
+    }
+}
+
+async function deleteTicket(index) {
+    if (!confirm('Are you sure you want to delete this support ticket?')) {
+        return;
+    }
+
+    try {
+        const res = await fetch(`/admin/api/support-tickets/${index}`, {
+            method: 'DELETE',
+            headers: {
+                'X-Admin-Password': adminPassword
+            }
+        });
+
+        if (!res.ok) throw new Error('Failed to delete ticket');
+
+        alert('Ticket deleted successfully');
+        loadSupportTickets();
+    } catch (error) {
+        console.error('Error deleting ticket:', error);
+        alert('Failed to delete ticket');
+    }
+}
+
+// Load all data on page load
 loadUsers();
 loadGeneratorLimits();
 loadAbuseReport();
+loadSupportTickets();

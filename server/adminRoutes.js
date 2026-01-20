@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-module.exports = function (app) {
+module.exports = function (app, createTeacherSession) {
     const TEACHERS_FILE = path.join(__dirname, '../data/teachers.json');
     const STUDENTS_FILE = path.join(__dirname, '../data/students.json');
     const DATA_DIR = path.join(__dirname, '../data');
@@ -295,6 +295,123 @@ module.exports = function (app) {
         } catch (error) {
             console.error('Error fetching usage details:', error);
             res.status(500).json({ error: 'Failed to fetch usage details' });
+        }
+    });
+
+    // === SUPPORT TICKETS MANAGEMENT ===
+
+    const SUPPORT_TICKETS_FILE = path.join(__dirname, '../data/support_tickets.json');
+
+    // GET /admin/api/support-tickets - List all support tickets
+    app.get('/admin/api/support-tickets', requireAdminAuth, (req, res) => {
+        try {
+            if (!fs.existsSync(SUPPORT_TICKETS_FILE)) {
+                return res.json({ tickets: [], total: 0 });
+            }
+
+            const tickets = JSON.parse(fs.readFileSync(SUPPORT_TICKETS_FILE, 'utf8'));
+
+            res.json({
+                tickets: tickets || [],
+                total: (tickets || []).length
+            });
+        } catch (error) {
+            console.error('Error fetching support tickets:', error);
+            res.status(500).json({ error: 'Failed to fetch support tickets' });
+        }
+    });
+
+    // POST /admin/api/support-tickets/:index/status - Update ticket status
+    app.post('/admin/api/support-tickets/:index/status', requireAdminAuth, (req, res) => {
+        try {
+            const ticketIndex = parseInt(req.params.index);
+            const { status } = req.body;
+
+            if (!['new', 'replied', 'resolved'].includes(status)) {
+                return res.status(400).json({ error: 'Invalid status' });
+            }
+
+            if (!fs.existsSync(SUPPORT_TICKETS_FILE)) {
+                return res.status(404).json({ error: 'No tickets found' });
+            }
+
+            const tickets = JSON.parse(fs.readFileSync(SUPPORT_TICKETS_FILE, 'utf8'));
+
+            if (ticketIndex < 0 || ticketIndex >= tickets.length) {
+                return res.status(404).json({ error: 'Ticket not found' });
+            }
+
+            tickets[ticketIndex].status = status;
+            tickets[ticketIndex].updatedAt = new Date().toISOString();
+
+            fs.writeFileSync(SUPPORT_TICKETS_FILE, JSON.stringify(tickets, null, 2));
+
+            res.json({ success: true, message: `Ticket marked as ${status}` });
+        } catch (error) {
+            console.error('Error updating ticket status:', error);
+            res.status(500).json({ error: 'Failed to update ticket status' });
+        }
+    });
+
+    // DELETE /admin/api/support-tickets/:index - Delete a support ticket
+    app.delete('/admin/api/support-tickets/:index', requireAdminAuth, (req, res) => {
+        try {
+            const ticketIndex = parseInt(req.params.index);
+
+            if (!fs.existsSync(SUPPORT_TICKETS_FILE)) {
+                return res.status(404).json({ error: 'No tickets found' });
+            }
+
+            const tickets = JSON.parse(fs.readFileSync(SUPPORT_TICKETS_FILE, 'utf8'));
+
+            if (ticketIndex < 0 || ticketIndex >= tickets.length) {
+                return res.status(404).json({ error: 'Ticket not found' });
+            }
+
+            // Remove the ticket
+            tickets.splice(ticketIndex, 1);
+
+            fs.writeFileSync(SUPPORT_TICKETS_FILE, JSON.stringify(tickets, null, 2));
+
+            res.json({ success: true, message: 'Ticket deleted successfully' });
+        } catch (error) {
+            console.error('Error deleting ticket:', error);
+            res.status(500).json({ error: 'Failed to delete ticket' });
+        }
+    });
+
+    // POST /admin/api/login-as/:email - Login as a specific teacher
+    app.post('/admin/api/login-as/:email', requireAdminAuth, async (req, res) => {
+        try {
+            const email = req.params.email;
+
+            // Find teacher
+            if (!fs.existsSync(TEACHERS_FILE)) {
+                return res.status(404).json({ error: 'Teachers file not found' });
+            }
+
+            const data = JSON.parse(fs.readFileSync(TEACHERS_FILE, 'utf8'));
+            const teachers = data.teachers || [];
+            const teacher = teachers.find(t => t.email === email);
+
+            if (!teacher) {
+                return res.status(404).json({ error: 'Teacher not found' });
+            }
+
+            // Create session using the helper passed from authRoutes
+            if (!createTeacherSession) {
+                return res.status(500).json({ error: 'Session creator not configured' });
+            }
+
+            const token = await createTeacherSession(teacher.id);
+
+            // Set cookie
+            res.cookie('teacher_token', token, { httpOnly: true, maxAge: 86400000 });
+
+            res.json({ success: true, message: `Logged in as ${email}` });
+        } catch (error) {
+            console.error('Error logging in as teacher:', error);
+            res.status(500).json({ error: 'Failed to login as teacher' });
         }
     });
 };

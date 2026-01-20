@@ -431,6 +431,14 @@ module.exports = function (app) {
         res.json({ success: true, message: 'Password updated' });
     });
     // STUDENT PASSWORD RESET END
+    // Helper: Create Teacher Session (Exposed for Admin "Login As")
+    async function createTeacherSession(teacherId) {
+        const token = crypto.randomUUID();
+        activeSessions[token] = { type: 'teacher', id: teacherId };
+        await saveSessions();
+        return token;
+    }
+
     // Return middleware for use in other files
-    return { requireAuth, requireStudentAuth };
+    return { requireAuth, requireStudentAuth, createTeacherSession };
 };
