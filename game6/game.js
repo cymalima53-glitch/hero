@@ -1,3 +1,26 @@
+// Universal Touch-Click Handler for iPad/Mobile Compatibility
+function addTouchClick(element, handler) {
+    let touchStarted = false;
+
+    element.addEventListener('click', handler);
+
+    element.addEventListener('touchstart', (e) => {
+        touchStarted = true;
+        e.preventDefault();
+    }, { passive: false });
+
+    element.addEventListener('touchend', (e) => {
+        if (touchStarted) {
+            e.preventDefault();
+            handler(e);
+            touchStarted = false;
+        }
+    }, { passive: false });
+
+    element.addEventListener('touchcancel', () => {
+        touchStarted = false;
+    });
+}
 class SoundSwipeGame {
     constructor() {
         this.words = [];
@@ -43,8 +66,14 @@ class SoundSwipeGame {
     }
 
     bindEvents() {
-        document.getElementById('start-btn').addEventListener('click', () => {
+        console.log('[DEBUG] bindEvents called');
+        const startBtn = document.getElementById('start-btn');
+        console.log('[DEBUG] start-btn element:', startBtn);
+
+        startBtn.addEventListener('click', () => {
+            console.log('[DEBUG] Play button clicked!');
             this.unlockTTS();
+            console.log('[DEBUG] Calling startGame...');
             this.startGame();
         });
 
@@ -53,10 +82,10 @@ class SoundSwipeGame {
         this.hammer.on('panend', (e) => this.handlePanEnd(e));
 
         // CLICK FALLBACKS
-        this.btnNo.addEventListener('click', () => this.animateSwipe('left'));
-        this.btnYes.addEventListener('click', () => this.animateSwipe('right'));
-        this.btnReplay.addEventListener('click', () => this.playCurrentAudio());
-        this.speaker.addEventListener('click', () => this.playCurrentAudio());
+        addTouchClick(this.btnNo, () => this.animateSwipe('left'));
+        addTouchClick(this.btnYes, () => this.animateSwipe('right'));
+        addTouchClick(this.btnReplay, () => this.playCurrentAudio());
+        addTouchClick(this.speaker, () => this.playCurrentAudio());
     }
 
     async loadData() {
@@ -72,7 +101,7 @@ class SoundSwipeGame {
                 await fetch(`/api/session/${sessionId}/start`, { method: 'POST' });
 
                 this.currentLang = session.lang || 'en';
-                const res = await fetch(`/data/${this.currentLang}?t=${Date.now()}`);
+                const res = await fetch(`/data/${this.currentLang}?t=${Date.now()}`, { credentials: 'include' });
                 const data = await res.json();
 
                 const validIds = new Set(session.wordIds);
@@ -82,7 +111,7 @@ class SoundSwipeGame {
             else {
                 this.currentLang = urlParams.get('lang') || 'en';
                 const id = urlParams.get('gameId') || 'soundSwipe';
-                const res = await fetch(`/data/${this.currentLang}?t=${Date.now()}`);
+                const res = await fetch(`/data/${this.currentLang}?t=${Date.now()}`, { credentials: 'include' });
                 const data = await res.json();
 
                 // If config exists use it, else use all
@@ -117,25 +146,26 @@ class SoundSwipeGame {
     }
 
     generateQueue(count) {
-        if (this.words.length < 2) count = this.words.length; // Need at least 2 for mismatches
+        // Step 1: Limit words to 20
+        const gameWords = this.words.slice(0, 20);
+
+        // Step 2: Shuffle them to ensure random order
+        gameWords.sort(() => Math.random() - 0.5);
 
         this.queue = [];
-        for (let i = 0; i < count; i++) {
-            // Pick a Target (Audio)
-            const target = this.words[Math.floor(Math.random() * this.words.length)];
 
+        // Step 3: Create a card for EACH word
+        gameWords.forEach(target => {
             // Coin flip for Match vs Mismatch
-            const isMatch = Math.random() > 0.5;
+            // If only 1 word exists, force match
+            const isMatch = (gameWords.length < 2) ? true : (Math.random() > 0.5);
             let shown = target;
 
-            if (!isMatch && this.words.length > 1) {
+            if (!isMatch) {
                 // Pick different
                 do {
-                    shown = this.words[Math.floor(Math.random() * this.words.length)];
+                    shown = gameWords[Math.floor(Math.random() * gameWords.length)];
                 } while (shown.id === target.id);
-            } else {
-                // Forced match if only 1 word exists, or coin flip said match
-                shown = target;
             }
 
             this.queue.push({
@@ -143,15 +173,20 @@ class SoundSwipeGame {
                 shown: shown,
                 isMatch: (target.id === shown.id)
             });
-        }
+        });
+
+        // Queue is now prepared with exactly gameWords.length items
     }
 
     startGame() {
+        console.log('[DEBUG] startGame called');
+        console.log('[DEBUG] queue length:', this.queue.length);
         this.gameStartTime = Date.now();
         if (this.queue.length === 0) {
             alert("No words available!");
             return;
         }
+        console.log('[DEBUG] Hiding start screen, showing game area');
         document.getElementById('start-screen').classList.add('hidden');
         document.getElementById('game-area').classList.remove('hidden');
 

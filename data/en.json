@@ -1,402 +1,213 @@
 {
   "words": [
     {
-      "id": "w_dog",
-      "enabled": true,
-      "word": "dog",
-      "choices": [
-        "dog",
-        "cat",
-        "monkey"
-      ],
-      "image": "https://pixabay.com/get/gc37c79597bb10ae21e591c6a3023918966286565c0882b8105a0c6478d2228fed443cdb8bd7cec92ac3fc8912278adaa8e82bfdf793bf32d54392ed72fdccfa9_640.jpg",
-      "audio": "/data/uploads/audio/en/w_dog.mp3",
-      "ad_instruction": "if u hear D go left",
-      "ad_correctSide": "left",
-      "ss_instruction": "",
-      "ss_correctAction": "jump"
-    },
-    {
-      "id": "w_cat",
-      "enabled": true,
-      "word": "cat",
-      "choices": [
-        "cat",
-        "dog",
-        "camel"
-      ],
-      "image": "https://images.pexels.com/photos/1049692/pexels-photo-1049692.jpeg",
-      "audio": "/data/uploads/audio/en/w_cat.mp3",
-      "ad_instruction": "if you hear cat go left",
-      "ad_correctSide": "left",
-      "ss_instruction": "",
-      "ss_correctAction": "freeze"
-    },
-    {
-      "id": "w_monkey",
-      "enabled": true,
-      "word": "monkey",
-      "choices": [
-        "monkey",
-        "cat",
-        "dog"
-      ],
-      "image": "https://images.pexels.com/photos/733086/pexels-photo-733086.jpeg",
-      "audio": "/data/uploads/audio/en/w_monkey.mp3",
-      "ad_instruction": "if u hear M go right",
-      "ad_correctSide": "right",
-      "ss_instruction": "if you hear monkey jump",
-      "ss_correctAction": "jump"
-    },
-    {
-      "id": "w_aurore",
-      "enabled": true,
-      "word": "aurore",
-      "choices": [
-        "aurore",
-        "cat",
-        "dog"
-      ],
-      "image": "https://placehold.co/400x400?text=Aurore",
-      "audio": "/data/uploads/audio/en/w_aurore.mp3",
-      "ad_instruction": "if you hear A go right",
-      "ad_correctSide": "right",
-      "ss_instruction": "if you hear aurore jump",
-      "ss_correctAction": "jump"
-    },
-    {
-      "id": "w_kamal",
-      "enabled": true,
+      "id": "w_053dee64-1390-466c-9190-134b96fee8b7",
       "word": "kamal",
       "choices": [
-        "shawky",
-        "mylo",
-        "adm"
+        "kamal",
+        "adam",
+        "aurore"
       ],
-      "image": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg",
-      "audio": "/data/uploads/audio/en/w_kamal.mp3",
-      "ad_instruction": "if you hear K go right",
-      "ad_correctSide": "right",
-      "ss_instruction": "",
-      "ss_correctAction": "jump"
-    },
-    {
-      "id": "w_adam",
-      "enabled": true,
-      "word": "adam",
-      "choices": [
-        "spiderman",
-        "shwky",
-        "goku"
-      ],
-      "image": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
-      "audio": "/data/uploads/audio/en/w_adam.mp3",
-      "ad_instruction": "if u hear A go right",
-      "ad_correctSide": "right"
-    },
-    {
-      "id": "w_b7dc1171-5761-4632-b8ba-2a5200a7705c",
-      "word": "shawky ",
-      "choices": [
-        "shawky",
-        "cat",
-        "monkey"
-      ],
-      "image": "https://pixabay.com/get/g1f937dc0e2ad6ad39f4ec0d16fa07c3e5082952bddd79ab44c2f0cef53dc73b69b15733d2938e6368ce882c7008d1f86481ca9b872c448e4c4e4bb3e638ad297_640.png",
-      "audio": "/data/uploads/audio/en/w_b7dc1171-5761-4632-b8ba-2a5200a7705c.mp3",
-      "ad_instruction": "if you hear shwky",
-      "ad_correctSide": "left",
-      "ss_instruction": "",
-      "ss_correctAction": ""
-    },
-    {
-      "id": "w_788e3ee9-20c1-422b-a03b-e7e2fec7be81",
-      "word": " teacher",
-      "choices": [
-        "new",
-        "old",
-        "crazy"
-      ],
-      "image": "https://pixabay.com/get/ga53af71900dfb6c9b54523b7d72e8a9cffd930790e575e988137c6dcf20498efd6f4a9243fbf06e2dd447c3bc08204043dd8a5dc720c100d52e9ce3a6610dc31_640.jpg",
-      "audio": "",
-      "ad_instruction": "",
-      "ad_correctSide": "left",
-      "ss_instruction": "",
-      "ss_correctAction": ""
-    },
-    {
-      "id": "w_0210b210-2be1-489d-ad87-77e21f4daaf9",
-      "word": "boieng",
-      "choices": [
-        "boeing",
-        "airbus",
-        "md"
-      ],
-      "image": "https://pixabay.com/get/g912ee0e56de9c21e78c7002f536d6f6b5a377fae865cec095d063fc0044115ce0ddd47131605b8365f702e4320f306c5049c80864a79cdb720c7c85a053a6121_640.jpg",
-      "audio": "",
-      "ad_instruction": "if you hear boeing go left",
-      "ad_correctSide": "left",
-      "ss_instruction": "if you hear boeing freeze ",
-      "ss_correctAction": ""
-    },
-    {
-      "id": "w_e38aac4f-04e5-4e84-b702-d25d2fdefcd1",
-      "enabled": true,
-      "word": "the airplane__ flying",
-      "choices": [
-        "is",
-        "are",
-        "u"
-      ],
-      "image": "https://pixabay.com/get/g4ce6e63cb18612133c9be5dcccb3c1c6112cf20fcb0c314e75b760ebc157f060daa507c9b9bb3a53b4f8d03318e1ad6f87186157756c919f47e77777bc7295e6_640.jpg",
-      "audio": "",
-      "ad_instruction": "",
-      "ad_correctSide": "left",
-      "ss_instruction": "",
-      "ss_correctAction": ""
-    },
-    {
-      "id": "w_dca5dd16-7727-4cf3-a91a-b18c2af2dbf6",
-      "enabled": true,
-      "word": "how __ sugar",
-      "choices": [
-        "much",
-        "many",
-        "tomuch"
-      ],
-      "image": "https://pixabay.com/get/g209d5da8a5ca9c1dd26963e4c530a32ecd4f6a3a09235d487c4ff1c013d3a4bd2d94e9f46d40f20e8fa1afb19ec711dc001955f512f53d86b93d671ad841a20b_640.jpg",
-      "audio": "",
-      "ad_instruction": "",
-      "ad_correctSide": "left",
-      "ss_instruction": "",
-      "ss_correctAction": ""
-    },
-    {
-      "id": "w_820c2d74-871b-4f88-b2a3-99e3ecec4596",
-      "enabled": true,
-      "word": "lion eat __ ",
-      "choices": [
-        "meat",
-        "rice",
-        "nuts"
-      ],
-      "image": "https://pixabay.com/get/g800f6cb28a7dd65277b64bc1f20f8a2d849daf1f022971317402bb69c767788f516cba5d38008eb5e5904a7796cf24312152ded518803f117638cba28db72aff_640.png",
+      "image": "https://pixabay.com/get/g843d6254af27767c57956068f48ae9c91425662baba6916be1c6274cab31e8f156891d4794d9839c850b763b92608377439f2e73083bf04fcfa0c35c16f52c4f_640.jpg",
       "audio": "",
       "teacherId": "breogan51@hotmail.com"
     },
     {
-      "id": "w_be5fd2cb-2d16-4fee-ba8b-d27ac79349e5",
-      "enabled": true,
+      "id": "w_4cf1d108-4565-467a-9a48-bc2845ca64bb",
+      "word": "adam",
+      "choices": [
+        "adam",
+        "aurore",
+        "kamal"
+      ],
+      "image": "https://pixabay.com/get/gf9c0609e3df926c3b410980add9ebf04013bdd1248bab4f833739ff9ab3793357a5726a71c828453271d5c983124273573a25cfc7f557b8bd8b87e5e9b0ac67b_640.jpg",
+      "audio": "",
+      "teacherId": "breogan51@hotmail.com"
+    },
+    {
+      "id": "w_7997bcb5-3266-4c16-9660-97cee61d37aa",
+      "word": "aurore",
+      "choices": [
+        "aurore",
+        "adam",
+        "simba"
+      ],
+      "image": "https://pixabay.com/get/g20107c36193f803e73e96e7f44d048ae543c46e0a0f06adc0b3e14774a9dd466e40ba6328c64b52c5c3555c625a447ef6838e1c248515ebc9e4f5c8bcf80e9d7_640.jpg",
+      "audio": "",
+      "teacherId": "breogan51@hotmail.com"
+    },
+    {
+      "id": "w_7cc851c1-7171-49c4-b5f9-302ced182dbd",
       "word": "monkey eat___",
       "choices": [
         "banna",
         "berry",
         "mango"
       ],
-      "image": "https://pixabay.com/get/g8dd36522b4b42b689af6fd268e3e50efca563332f28ddf3de1933ce869ea5b3c5f99bfff08f61bdecda3a6f9663d27b0a0e96b78afe7e910998f65e9828eb674_640.jpg",
+      "image": "https://pixabay.com/get/g608fb7b6518abde7834c672532dc55da91aeecb22c8722edf46119eea46fc4745e2e94eca942f778df5d63363041c3935e6cec939119e04ef930105d322e4076_640.png",
       "audio": "",
       "teacherId": "breogan51@hotmail.com"
     },
     {
-      "id": "w_14aee5c5-9a8c-4cda-b7f4-e60232af0935",
-      "word": "dog",
-      "image": "https://pixabay.com/get/g332afab3b9f13a4daf8b55806ad66c0b0657a736f6df8f19dd4edfb0ab25424b8e3778517f7482e3b45ca29ddbcf3221919c63bbc15ea4934aabe1ff627360f9_640.jpg",
-      "audio": "",
-      "teacherId": "kamalsolimanahmed@gmail.com",
+      "id": "w_fe5e514b-dcb1-4f64-b2ce-5a226304f127",
+      "word": "lion eat __ ",
       "choices": [
-        "dog",
-        "cat",
-        "monkey"
-      ]
+        "meat",
+        "rice",
+        "nuts"
+      ],
+      "image": "https://pixabay.com/get/gcd7fea69e73999380cf15c9d17bf695a17b48e7c9c340f305fa589da996b7fe1f524b554152fb0b1c48b324790e71659073741813c0891da7733e3c1db5261d7_640.jpg",
+      "audio": "",
+      "teacherId": "breogan51@hotmail.com"
     },
     {
-      "id": "w_fbd82117-9c68-4236-b458-0244ed5895ee",
-      "word": "cat",
-      "image": "",
-      "audio": "",
-      "teacherId": "kamalsolimanahmed@gmail.com",
+      "id": "w_227276b6-d7d3-4b5c-834b-e4c26527c05e",
+      "word": "shawky ",
       "choices": [
-        "cat",
-        "dog",
-        "camel"
-      ]
-    },
-    {
-      "id": "w_ee98ca61-d9e8-4d9f-b4e5-47ceccd90945",
-      "word": "monkey",
-      "image": "https://pixabay.com/get/g610429195a159dfeb1628a23f83976985b5f7c46ca2d9be1633b17e345774231b8e16ac95e3045ac52b0c1041aa45e27bb5f8476e9fe828199ed19c154ffbdd6_640.jpg",
-      "audio": "",
-      "teacherId": "kamalsolimanahmed@gmail.com",
-      "choices": [
-        "monkey",
-        "cat",
-        "dog"
-      ]
-    },
-    {
-      "id": "w_cea8af9d-f8fa-4578-91f6-2d6e2d605911",
-      "word": "lion",
-      "image": "https://pixabay.com/get/g7c3abe78f33b6ada3f6e5a6a75077270de799632caf6328232fcc928ea43ace276a8147fb7ccd697d7360cfb80bdeae2_640.jpg",
-      "audio": "",
-      "teacherId": "kamalsolimanahmed@gmail.com",
-      "choices": [
-        "lion",
-        "monkey",
-        "cat"
-      ]
-    },
-    {
-      "id": "w_51d81a3c-1212-4caf-90e4-3e872f619927",
-      "word": "mouse",
-      "choices": [
-        "mouse",
-        "cat",
+        "shawky",
+        "mylo",
         "dog"
       ],
-      "image": "https://pixabay.com/get/gf27ffb9ba8c0648e232454a58feece8c3cc6ccf69f5df77f4a165bb435142679027c307928b9acf14cd5a3fd8d9c46b2d1f2c39aa75bf965da66561687bbfb7e_640.jpg",
+      "image": "https://pixabay.com/get/g49557fd989c179e502bb040aaf503c5895b85c9d99acd2a738eea174cb3c80c04656577c0bf03c5f13aae49d60c84b51db550828cf52e589b0f525e632e55e5a_640.jpg",
       "audio": "",
-      "teacherId": "kamalsolimanahmed@gmail.com"
+      "teacherId": "breogan51@hotmail.com"
+    },
+    {
+      "id": "w_b46d99f8-188b-4a99-b939-1f105ab664ae",
+      "word": "egypt",
+      "choices": [
+        "cairo",
+        "fl",
+        "paris"
+      ],
+      "image": "https://pixabay.com/get/g03b0d55b1089bda4582a6fa1bcaedb7c8160b57bcca6fc6c38ec2b46b443aa3fd6eae748ae7a099197acf18462b1b962d5014452f5a93d9393e3fbfb5b8c5da4_640.jpg",
+      "audio": "",
+      "teacherId": "breogan51@hotmail.com"
+    },
+    {
+      "id": "w_379f4de0-4b7d-4a36-ac1f-35cd26f6f98f",
+      "word": "france",
+      "choices": [
+        "paris",
+        "cairo",
+        "usa"
+      ],
+      "image": "https://pixabay.com/get/g7eba72a30c11d4589697f34ef94f6be84e7ea1963f566e9ddaba26aa741f166e9ed69a4a1f062a8c97f4eae471cad920015f4249b93583280005bcabf444afad_640.jpg",
+      "audio": "",
+      "teacherId": "breogan51@hotmail.com"
+    },
+    {
+      "id": "w_01918cf0-907c-4876-ba30-5cb88a835a58",
+      "word": "florida",
+      "choices": [
+        "miami",
+        "nyc",
+        "sea"
+      ],
+      "image": "https://pixabay.com/get/g2876ca8f6ec6bd7eb197e6066ca33bacf3746e9f885d4b5b7d74f270b4f64e7435afaf877d0b95fc8bee79c53216773817061d31a990efac0226868fa922d6bd_640.jpg",
+      "audio": "",
+      "teacherId": "breogan51@hotmail.com"
+    },
+    {
+      "id": "w_26d830d5-a99d-4b3d-b015-97e186574de7",
+      "word": "neworleans ",
+      "choices": [
+        "neworelans",
+        "chcgo",
+        "florida"
+      ],
+      "image": "",
+      "audio": "",
+      "teacherId": "breogan51@hotmail.com"
+    },
+    {
+      "id": "w_5703cbee-86cc-472d-aa2b-d41e8eebf144",
+      "word": "un chat ",
+      "choices": [],
+      "image": "",
+      "audio": "",
+      "teacherId": "breogan51@hotmail.com"
     }
   ],
   "gameConfig": {
-    "multipleChoice": {
+    "memoryEcho": {
       "questions": [
-        "w_cea8af9d-f8fa-4578-91f6-2d6e2d605911",
-        "w_14aee5c5-9a8c-4cda-b7f4-e60232af0935",
-        "w_fbd82117-9c68-4236-b458-0244ed5895ee",
-        "w_ee98ca61-d9e8-4d9f-b4e5-47ceccd90945"
+        "w_227276b6-d7d3-4b5c-834b-e4c26527c05e",
+        "w_b46d99f8-188b-4a99-b939-1f105ab664ae",
+        "w_379f4de0-4b7d-4a36-ac1f-35cd26f6f98f",
+        "w_01918cf0-907c-4876-ba30-5cb88a835a58",
+        "w_5703cbee-86cc-472d-aa2b-d41e8eebf144"
       ],
       "actions": {}
     },
     "matchPairs": {
       "questions": [
-        "w_cat",
-        "w_monkey",
-        "w_dog"
+        "w_b46d99f8-188b-4a99-b939-1f105ab664ae",
+        "w_379f4de0-4b7d-4a36-ac1f-35cd26f6f98f",
+        "w_01918cf0-907c-4876-ba30-5cb88a835a58",
+        "w_7997bcb5-3266-4c16-9660-97cee61d37aa",
+        "w_4cf1d108-4565-467a-9a48-bc2845ca64bb",
+        "w_053dee64-1390-466c-9190-134b96fee8b7",
+        "w_227276b6-d7d3-4b5c-834b-e4c26527c05e",
+        "w_26d830d5-a99d-4b3d-b015-97e186574de7"
       ],
       "actions": {}
     },
-    "fillBlank": {
+    "multipleChoice": {
       "questions": [
-        "w_dca5dd16-7727-4cf3-a91a-b18c2af2dbf6",
-        "w_e38aac4f-04e5-4e84-b702-d25d2fdefcd1"
-      ],
-      "actions": {}
-    },
-    "tapChoice": {
-      "questions": [
-        "w_dog",
-        "w_cat",
-        "w_monkey",
-        "w_820c2d74-871b-4f88-b2a3-99e3ecec4596",
-        "w_be5fd2cb-2d16-4fee-ba8b-d27ac79349e5"
+        "w_053dee64-1390-466c-9190-134b96fee8b7",
+        "w_4cf1d108-4565-467a-9a48-bc2845ca64bb",
+        "w_7997bcb5-3266-4c16-9660-97cee61d37aa"
       ],
       "actions": {}
     },
     "soundSwipe": {
       "questions": [
-        "w_dog",
-        "w_cat",
-        "w_monkey"
+        "w_b46d99f8-188b-4a99-b939-1f105ab664ae",
+        "w_379f4de0-4b7d-4a36-ac1f-35cd26f6f98f",
+        "w_01918cf0-907c-4876-ba30-5cb88a835a58"
       ],
       "actions": {}
     },
     "beatClock": {
       "questions": [
-        "w_dog",
-        "w_cat",
-        "w_monkey"
-      ]
+        "w_053dee64-1390-466c-9190-134b96fee8b7",
+        "w_4cf1d108-4565-467a-9a48-bc2845ca64bb",
+        "w_7997bcb5-3266-4c16-9660-97cee61d37aa"
+      ],
+      "actions": {}
     },
     "soundDrag": {
       "questions": [
-        "w_dog",
-        "w_cat",
-        "w_monkey"
-      ]
-    },
-    "moveMatch": {
-      "questions": [
-        "w_cat",
-        "w_monkey",
-        "w_dog"
+        "w_053dee64-1390-466c-9190-134b96fee8b7",
+        "w_4cf1d108-4565-467a-9a48-bc2845ca64bb",
+        "w_7997bcb5-3266-4c16-9660-97cee61d37aa"
       ],
       "actions": {}
-    },
-    "poseMatch": {
-      "questions": [
-        "w_dog",
-        "w_cat",
-        "w_monkey"
-      ]
-    },
-    "audioDetective": {
-      "questions": [
-        "w_dog",
-        "w_cat",
-        "w_monkey",
-        "w_b7dc1171-5761-4632-b8ba-2a5200a7705c"
-      ],
-      "actions": {}
-    },
-    "memoryEcho": {
-      "questions": [
-        "w_cat",
-        "w_monkey",
-        "w_1767008923710_jw8ds",
-        "w_dog",
-        "w_14aee5c5-9a8c-4cda-b7f4-e60232af0935",
-        "w_fbd82117-9c68-4236-b458-0244ed5895ee",
-        "w_ee98ca61-d9e8-4d9f-b4e5-47ceccd90945",
-        "w_51d81a3c-1212-4caf-90e4-3e872f619927",
-        "w_cea8af9d-f8fa-4578-91f6-2d6e2d605911"
-      ],
-      "actions": {},
-      "background": "/data/uploads/1767262990007_idle_3.png"
-    },
-    "simonSquad": {
-      "questions": [
-        "w_b7dc1171-5761-4632-b8ba-2a5200a7705c",
-        "w_cat",
-        "w_dog",
-        "w_monkey"
-      ],
-      "actions": {
-        "w_b7dc1171-5761-4632-b8ba-2a5200a7705c": "freeze",
-        "w_cat": "jump",
-        "w_dog": "jump",
-        "w_monkey": "jump"
-      }
     },
     "motsMeles": {
       "questions": [
-        "w_dog",
-        "w_cat",
-        "w_monkey",
-        "w_b7dc1171-5761-4632-b8ba-2a5200a7705c",
-        "w_788e3ee9-20c1-422b-a03b-e7e2fec7be81"
+        "w_053dee64-1390-466c-9190-134b96fee8b7",
+        "w_4cf1d108-4565-467a-9a48-bc2845ca64bb",
+        "w_7997bcb5-3266-4c16-9660-97cee61d37aa",
+        "w_5703cbee-86cc-472d-aa2b-d41e8eebf144"
       ],
       "actions": {}
     },
     "motsCroises": {
       "questions": [
-        "w_dog",
-        "w_cat",
-        "w_monkey"
+        "w_053dee64-1390-466c-9190-134b96fee8b7",
+        "w_4cf1d108-4565-467a-9a48-bc2845ca64bb",
+        "w_7997bcb5-3266-4c16-9660-97cee61d37aa",
+        "w_227276b6-d7d3-4b5c-834b-e4c26527c05e",
+        "w_b46d99f8-188b-4a99-b939-1f105ab664ae",
+        "w_379f4de0-4b7d-4a36-ac1f-35cd26f6f98f",
+        "w_01918cf0-907c-4876-ba30-5cb88a835a58",
+        "w_26d830d5-a99d-4b3d-b015-97e186574de7",
+        "w_5703cbee-86cc-472d-aa2b-d41e8eebf144"
       ],
       "actions": {}
     }
   },
-  "files": {
-    "f_1768730578672_5xv8zrvqn": {
-      "id": "f_1768730578672_5xv8zrvqn",
-      "ownerId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
-      "name": "aaf",
-      "description": "",
-      "wordIds": [
-        "w_a34e0ff6-e68e-446e-8836-b2f91b94cb00",
-        "w_2b258afe-7d23-463a-8cac-ce07b4396ddd"
-      ]
-    }
-  }
+  "files": {}
 }

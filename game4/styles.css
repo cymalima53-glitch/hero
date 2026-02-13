@@ -11,7 +11,8 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffa502 100%);
+    /* Red/Orange */
     display: flex;
     justify-content: center;
     align-items: center;

@@ -22,6 +22,14 @@ if (document.getElementById('login-form')) {
             });
 
             if (res.ok) {
+                const userData = await res.json();
+
+                // Store user data in session and local storage
+                sessionStorage.setItem('userId', userData.id);
+                sessionStorage.setItem('username', userData.username);
+                localStorage.setItem('userId', userData.id);
+                localStorage.setItem('username', userData.username);
+
                 // If local file, use relative path navigation
                 if (isFile) window.location.href = 'index.html';
                 else window.location.href = 'index.html';

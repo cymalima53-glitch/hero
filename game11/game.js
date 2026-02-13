@@ -1,3 +1,26 @@
+// Universal Touch-Click Handler for iPad/Mobile Compatibility
+function addTouchClick(element, handler) {
+    let touchStarted = false;
+    
+    addTouchClick(element, handler);
+    
+    element.addEventListener('touchstart', (e) => {
+        touchStarted = true;
+        e.preventDefault();
+    }, { passive: false });
+    
+    element.addEventListener('touchend', (e) => {
+        if (touchStarted) {
+            e.preventDefault();
+            handler(e);
+            touchStarted = false;
+        }
+    }, { passive: false });
+    
+    element.addEventListener('touchcancel', () => {
+        touchStarted = false;
+    });
+}
 class AudioDetectiveGame {
     constructor() {
         console.log("AudioDetective Constructor");
@@ -124,7 +147,7 @@ class AudioDetectiveGame {
                 await fetch(`/api/session/${this.sessionId}/start`, { method: 'POST' });
 
                 this.currentLang = session.lang || 'en';
-                const res = await fetch(`/data/${this.currentLang}.json?t=${Date.now()}`);
+                const res = await fetch(`/data/${this.currentLang}.json?t=${Date.now(, { credentials: 'include' })}`);
                 const data = await res.json();
 
                 // "questions" in this case are stored in audioDetective section
@@ -152,7 +175,7 @@ class AudioDetectiveGame {
 
             } else {
                 // DEMO MODE
-                const res = await fetch(`/data/${this.currentLang}.json?t=${Date.now()}`);
+                const res = await fetch(`/data/${this.currentLang}.json?t=${Date.now(, { credentials: 'include' })}`);
                 const data = await res.json();
 
                 // Use main words list if audioDetective section is empty or legacy

@@ -1,4 +1,13 @@
 /* Game 8: Sound Drag */
+body {
+    background: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+    /* Teal/Cyan */
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
 #game-area {
     display: flex;
     flex-direction: column;

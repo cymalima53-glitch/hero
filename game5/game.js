@@ -1,3 +1,27 @@
+﻿// Universal Touch-Click Handler for iPad/Mobile Compatibility
+function addTouchClick(element, handler) {
+    let touchStarted = false;
+
+    element.addEventListener('click', handler);
+
+    element.addEventListener('touchstart', (e) => {
+        touchStarted = true;
+        e.preventDefault();
+    }, { passive: false });
+
+    element.addEventListener('touchend', (e) => {
+        if (touchStarted) {
+            e.preventDefault();
+            handler(e);
+            touchStarted = false;
+        }
+    }, { passive: false });
+
+    element.addEventListener('touchcancel', () => {
+        touchStarted = false;
+    });
+}
+
 const GAME_STATE = {
     IDLE: 'idle',
     THINKING: 'thinking',

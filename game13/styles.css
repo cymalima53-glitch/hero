@@ -287,3 +287,44 @@ button:hover {
         font-size: 1rem;
     }
 }
+
+/* Suggestions Box */
+#suggestion-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 0.5rem;
+    background: #e2e8f0;
+    border-radius: 8px;
+    min-height: 40px;
+    max-height: 100px;
+    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.suggestion-item {
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    cursor: pointer;
+    border: 1px solid var(--cell-border);
+    transition: all 0.2s;
+}
+
+.suggestion-item:hover {
+    background: var(--cell-selected);
+    border-color: var(--primary-color);
+}
+
+.suggestion-item.match {
+    background: #dcfce7;
+    color: var(--correct-color);
+    border-color: var(--correct-color);
+}

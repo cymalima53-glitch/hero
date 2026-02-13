@@ -1,3 +1,27 @@
+// Universal Touch-Click Handler for iPad/Mobile Compatibility
+function addTouchClick(element, handler) {
+    let touchStarted = false;
+
+    element.addEventListener('click', handler);
+
+    element.addEventListener('touchstart', (e) => {
+        touchStarted = true;
+        e.preventDefault();
+    }, { passive: false });
+
+    element.addEventListener('touchend', (e) => {
+        if (touchStarted) {
+            e.preventDefault();
+            handler(e);
+            touchStarted = false;
+        }
+    }, { passive: false });
+
+    element.addEventListener('touchcancel', () => {
+        touchStarted = false;
+    });
+}
+
 const GAME_STATE = {
     IDLE: 'idle',
     THINKING: 'thinking',
@@ -43,51 +67,76 @@ class MultipleChoiceGame {
 
     async loadData() {
         try {
-            // STRICT SESSION MODE - NO FALLBACK TO EN.JSON
             const urlParams = new URLSearchParams(window.location.search);
-            this.sessionId = urlParams.get('session');
-            const lang = urlParams.get('lang') || 'en';
-            this.currentLang = lang;
+            const sessionId = urlParams.get('session');
 
-            if (!this.sessionId) {
-                this.startScreen.innerHTML = '<h1>Session ID Required</h1>';
+            // === LMS SESSION BRANCH ===
+            if (sessionId) {
+                console.log('Loading Session:', sessionId);
+                this.sessionId = sessionId;
+
+                // 1. Fetch Session
+                const sessionRes = await fetch(`/api/session/${sessionId}`);
+                if (!sessionRes.ok) throw new Error('Session not found');
+                const session = await sessionRes.json();
+
+                // 2. Emit Start
+                await fetch(`/api/session/${sessionId}/start`, { method: 'POST' });
+                this.sessionId = sessionId;
+
+                // 3. Load Words (from lang file, then filter)
+                const lang = session.lang || 'en';
+                this.currentLang = lang; // Store for TTS
+                const response = await fetch(`/data/${lang}?t=${Date.now()}`, {
+                    credentials: 'include'
+                });
+                const data = await response.json();
+
+                const validIds = new Set(session.wordIds);
+                this.words = data.words.filter(w => validIds.has(w.id));
+
+                // Shuffle
+                this.words.sort(() => Math.random() - 0.5);
+
+                // Initialize Stats
+                this.sessionStats = { wrongAttempts: 0 };
+
                 this.startScreen.classList.remove('hidden');
-                this.startBtn.style.display = 'none';
+                this.startBtn.style.display = 'inline-block';
                 return;
             }
+            // === END LMS SESSION BRANCH ===
 
-            // Load Session
-            const sRes = await fetch(`/api/session/${this.sessionId}`);
-            if (!sRes.ok) throw new Error("Session Not Found");
-            const sessionData = await sRes.json();
+            const lang = urlParams.get('lang') || 'en';
+            this.currentLang = lang;
+            const gameId = urlParams.get('gameId') || 'multipleChoice';
 
-            // Use session's language for TTS pronunciation
-            this.currentLang = sessionData.lang || lang;
+            // Cache-busting added to prevent stale data
+            const response = await fetch(`/data/${lang}?t=${Date.now()}`, {
+                credentials: 'include'
+            });
+            if (!response.ok) throw new Error('Network response was not ok');
+            const data = await response.json();
 
-            // Stats
-            this.sessionStats = { wrongAttempts: 0 };
+            // PURE ID-BASED LOADING
+            const gameConfig = data.gameConfig?.[gameId] || {};
+            const ids = gameConfig.questions || [];
 
-            // CRITICAL FIX: Ensure we only use words that ACTUALLY EXIST in current database
-            // Session API already filters deleted words, but double-check here
-            let words = sessionData.words || [];
+            const questions = ids
+                .map(id => data.words.find(w => w.id === id))
+                .filter(Boolean);
 
-            // Filter out any null/undefined words (deleted from database)
-            words = words.filter(w => w && w.id && w.word);
-
-            // Filter: Only include enabled words (treat undefined as enabled)
-            words = words.filter(w => w.enabled !== false);
-
-            if (!words.length) {
+            if (questions.length === 0) {
                 this.words = [];
-                this.startScreen.innerHTML = '<h1>No words available</h1><p>All words have been deleted or disabled.</p>';
+                this.startScreen.innerHTML = '<h1>No questions to play</h1>';
                 this.startScreen.classList.remove('hidden');
                 this.startBtn.style.display = 'none';
                 return;
             }
 
             // Shuffle
-            words.sort(() => Math.random() - 0.5);
-            this.words = words;
+            questions.sort(() => Math.random() - 0.5);
+            this.words = questions;
 
             // Show start
             this.startScreen.classList.remove('hidden');
@@ -95,7 +144,7 @@ class MultipleChoiceGame {
         } catch (error) {
             console.error('Failed to load data:', error);
             this.words = [];
-            this.startScreen.innerHTML = `<h1>Error: ${error.message}</h1>`;
+            this.startScreen.innerHTML = '<h1>Error loading game</h1>';
         }
     }
 
@@ -205,7 +254,7 @@ class MultipleChoiceGame {
             const btn = document.createElement('div');
             btn.className = 'option-btn';
             btn.textContent = opt.word; // Show Text
-            btn.addEventListener('click', (e) => this.handleOptionClick(btn, opt));
+            addTouchClick(btn, (e) => this.handleOptionClick(btn, opt));
             this.optionsArea.appendChild(btn);
         });
     }

@@ -1,0 +1,71 @@
+{
+  "id": "sess_300a4f1d-09fe-48d0-8dad-1b4f192b858d",
+  "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+  "studentId": "s_30b50ebf-b81f-44c9-9f27-c548ffea980d",
+  "gameId": "multipleChoice",
+  "lang": "en",
+  "wordIds": [
+    "w_373a7cb6-c73b-4ecd-9076-9f40ae01e935",
+    "w_bf4d90ed-29fa-412a-b537-6140d3d27b76",
+    "w_69bb4713-c93f-407a-85ac-cc607e44e43c",
+    "w_cea8af9d-f8fa-4578-91f6-2d6e2d605911",
+    "w_ee98ca61-d9e8-4d9f-b4e5-47ceccd90945",
+    "w_87985639-ac3b-438d-a2ef-910453837bcc",
+    "w_fbd82117-9c68-4236-b458-0244ed5895ee",
+    "w_14aee5c5-9a8c-4cda-b7f4-e60232af0935"
+  ],
+  "assignmentId": "as_7c09b0e1-55a1-452d-9614-af7b330ea4ab",
+  "status": "completed",
+  "analytics": {
+    "attempts": 9,
+    "failuresBeforePass": 1,
+    "timeSpent": 26.531000000000002,
+    "questions": {
+      "w_ee98ca61-d9e8-4d9f-b4e5-47ceccd90945": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_fbd82117-9c68-4236-b458-0244ed5895ee": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_87985639-ac3b-438d-a2ef-910453837bcc": {
+        "wrong_action": 1,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_bf4d90ed-29fa-412a-b537-6140d3d27b76": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_cea8af9d-f8fa-4578-91f6-2d6e2d605911": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_14aee5c5-9a8c-4cda-b7f4-e60232af0935": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_69bb4713-c93f-407a-85ac-cc607e44e43c": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_373a7cb6-c73b-4ecd-9076-9f40ae01e935": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      }
+    },
+    "endTime": 1770715966522,
+    "totalTimeSeconds": 28.77,
+    "accuracy": 89,
+    "mistakes": 1
+  },
+  "createdAt": "2026-02-10T09:32:16.794Z"
+}

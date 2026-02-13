@@ -15,7 +15,9 @@ let state = {
     currentLang: 'en',
     editorIndex: -1,
     currentStudentId: null,
-    assignments: [] // NEW
+    currentStudentId: null,
+    groups: [], // NEW
+    assignMode: 'student' // 'student' or 'group'
 };
 
 // ========== INIT ==========
@@ -25,11 +27,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupEditor();
     setupAssignments();
     setupStudents();
+    setupGroups(); // Groups functionality
     setupSupport();
     setupAdminBack(); // Admin impersonation check
 
     // Initial Load
-    await Promise.all([loadStudents(), loadSessions(), loadContent(), loadFiles(), loadAssignments()]); // Added loadAssignments
+    await Promise.all([loadStudents(), loadGroups(), loadSessions(), loadContent(), loadFiles(), loadAssignments()]); // Added loadGroups
     renderDashboard();
 });
 
@@ -85,7 +88,7 @@ function setupNavigation() {
 
             // Data Refresh & Render
             if (viewId === 'assignments') {
-                await Promise.all([loadSessions(), loadAssignments()]);
+                await Promise.all([loadSessions(), loadAssignments()]); // REMOVED loadContent() to preserve selection
                 renderAssignments();
             }
             if (viewId === 'students') {
@@ -100,8 +103,16 @@ function setupNavigation() {
                 await loadSessions();
                 renderDashboard();
             }
+            if (viewId === 'groups') {
+                await Promise.all([loadGroups(), loadStudents()]);
+                renderGroups();
+            }
         });
+
     });
+
+    // Special Group Navigation (if clicking on group link in sidebar)
+    // (Already handled by generic loop above)
 }
 
 // ========== DATA LOADING ==========
@@ -124,6 +135,59 @@ async function loadAssignments() {
         const json = await res.json();
         state.assignments = json.assignments || [];
     } catch (e) { console.error("Failed to load assignments", e); }
+}
+
+async function loadGroups() {
+    try {
+        const res = await fetch(`${API_BASE}/api/groups`);
+        const json = await res.json();
+        const groups = json.groups || [];
+
+        // Enhance groups with Analytics
+        // We could do this lazily, but for "Quick Stats" on dashboard we need it now.
+        // Parallel fetch for speed
+        const groupsWithStats = await Promise.all(groups.map(async (g) => {
+            try {
+                const aRes = await fetch(`${API_BASE}/api/groups/${g.id}/analytics`);
+                const stats = await aRes.json();
+                return { ...g, stats };
+            } catch (e) {
+                return { ...g, stats: null };
+            }
+        }));
+
+        state.groups = groupsWithStats;
+        renderGroupSelectors();
+    } catch (e) { console.error("Failed to load groups", e); }
+}
+
+
+
+function renderGroupSelectors() {
+    populateGroupResetDropdown(); // Ensure reset dropdown is populated
+    // 1. Add Student Modal Selector
+    const studentGroupSel = document.getElementById('new-student-group');
+    if (studentGroupSel) {
+        studentGroupSel.innerHTML = '<option value="">No Group</option>';
+        state.groups.forEach(g => {
+            const opt = document.createElement('option');
+            opt.value = g.id;
+            opt.textContent = g.name;
+            studentGroupSel.appendChild(opt);
+        });
+    }
+
+    // 2. Assign Selector
+    const assignGroupSel = document.getElementById('assign-group');
+    if (assignGroupSel) {
+        assignGroupSel.innerHTML = '<option value="">Select Group...</option>';
+        state.groups.forEach(g => {
+            const opt = document.createElement('option');
+            opt.value = g.id;
+            opt.textContent = g.name;
+            assignGroupSel.appendChild(opt);
+        });
+    }
 }
 
 async function loadFiles() {
@@ -167,9 +231,11 @@ function renderFileSelectors() {
     }
 }
 
+// ========== DATA LOADING ==========
 async function loadContent() {
     try {
-        const res = await fetch(`${API_BASE}/data/${state.currentLang}`);
+        // CACHE BUSTING: Force fresh load
+        const res = await fetch(`${API_BASE}/data/${state.currentLang}?t=${Date.now()}`);
         const json = await res.json();
         state.content.words = json.words || [];
         state.content.gameConfig = json.gameConfig || {};
@@ -179,6 +245,7 @@ async function loadContent() {
             if (!w.id) w.id = 'w_' + crypto.randomUUID();
         });
 
+        console.log('[LOAD] Content loaded with cache-busting.');
         renderEditorList();
     } catch (e) { console.error(e); }
 }
@@ -198,12 +265,13 @@ function setupStudents() {
         const email = document.getElementById('new-student-email').value;
         const username = document.getElementById('new-student-username').value;
         const password = document.getElementById('new-student-password').value;
+        const groupId = document.getElementById('new-student-group').value; // NEW
 
         try {
             const res = await fetch(`${API_BASE}/api/students`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, username, password, parentEmail: email })
+                body: JSON.stringify({ name, username, password, parentEmail: email, groupId: groupId || undefined })
             });
 
             if (res.ok) {
@@ -228,9 +296,12 @@ function renderStudents() {
     state.students.forEach(s => {
         const tr = document.createElement('tr');
         tr.style.borderBottom = '1px solid var(--border)';
+        const groupName = s.groupId ? (state.groups.find(g => g.id === s.groupId)?.name || 'Unknown Group') : '<span style="color:#ddd">--</span>';
+
         tr.innerHTML = `
             <td style="padding:1rem;"><strong>${s.name}</strong></td>
             <td style="padding:1rem;">${s.parentEmail || '<span style="color:var(--text-muted)">None</span>'}</td>
+            <td style="padding:1rem;">${groupName}</td>
             <td style="padding:1rem;">${s.id}</td>
             <td style="padding:1rem; text-align:right;">
                 <button onclick="resetStudentPassword('${s.id}', '${s.name}')" style="margin-right:5px; font-size: 0.8rem; padding: 4px 8px;" class="primary sm">Reset Pwd</button>
@@ -270,52 +341,144 @@ function setupAssignments() {
         });
     }
 
-    document.getElementById('create-session-form').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const studentId = document.getElementById('assign-student').value;
-        const gameId = document.getElementById('assign-game').value;
-        const limit = document.getElementById('assign-limit').value;
-        const fileId = document.getElementById('assign-file').value;
+    window.toggleAssignTab = function (mode) {
+        state.assignMode = mode;
+        const btnStudent = document.getElementById('tab-assign-student');
+        const btnGroup = document.getElementById('tab-assign-group');
+        const selStudent = document.getElementById('assign-student');
+        const selGroup = document.getElementById('assign-group');
+        const previewDiv = document.getElementById('assign-preview');
 
-        if (!studentId || !gameId) return alert("Please select student and game");
+        if (mode === 'student') {
+            btnStudent.classList.add('active-tab');
+            btnGroup.classList.remove('active-tab');
+            selStudent.classList.remove('hidden');
+            selGroup.classList.add('hidden');
+            selStudent.required = true;
+            selGroup.required = false;
+            if (previewDiv) previewDiv.classList.add('hidden');
+        } else {
+            btnStudent.classList.remove('active-tab');
+            btnGroup.classList.add('active-tab');
+            selStudent.classList.add('hidden');
+            selGroup.classList.remove('hidden');
+            selStudent.required = false;
+            selGroup.required = true;
+            updateGroupPreview();
+        }
+    };
 
-        // Confirm for Audio Detective
-        if (gameId === 'audioDetective') {
-            const confirmed = confirm(
-                '🎧 Audio Detective Assignment\n\n' +
-                'Make sure you have configured:\n' +
-                '• Instructions for each word\n' +
-                '• Correct side (left/right) for each word\n\n' +
-                'Configure these in Content Editor → Audio Detective.\n\n' +
-                'Continue with assignment?'
-            );
-            if (!confirmed) return;
+    // Update preview when group selection changes
+    window.updateGroupPreview = function () {
+        const previewDiv = document.getElementById('assign-preview');
+        const groupSelect = document.getElementById('assign-group');
+
+        if (!previewDiv || !groupSelect) return;
+
+        const groupId = groupSelect.value;
+        if (!groupId) {
+            previewDiv.classList.add('hidden');
+            return;
         }
 
-        // Prepare Settings (Snapshot of config)
-        const settings = {
-            limit: parseInt(limit) || 10,
-            fileId: fileId,
-            lang: state.currentLang,
-            // Capture current game actions for Hero Freeze
-            gameActions: (gameId === 'simonSquad') ? state.content.gameConfig.simonSquad?.actions : undefined
-        };
+        const group = state.groups.find(g => g.id === groupId);
+        if (!group) {
+            previewDiv.classList.add('hidden');
+            return;
+        }
+
+        const studentCount = state.students.filter(s => s.groupId === groupId).length;
+
+        previewDiv.classList.remove('hidden');
+        previewDiv.innerHTML = `
+            <div style="background:var(--bg); padding:0.75rem; border-radius:8px; border:1px solid var(--border); margin-top:0.5rem; font-size:0.9rem;">
+                <i class="fas fa-info-circle" style="color:var(--primary); margin-right:8px;"></i>
+                <strong>Preview:</strong> This will assign to <strong>${studentCount} student${studentCount !== 1 ? 's' : ''}</strong> in "${group.name}"
+            </div>
+        `;
+    };
+
+    // Add event listener to group select
+    const groupSelect = document.getElementById('assign-group');
+    if (groupSelect) {
+        groupSelect.addEventListener('change', updateGroupPreview);
+    }
+
+    document.getElementById('create-session-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // CRITICAL: Prevent duplicate submissions
+        const submitBtn = e.target.querySelector('button[type="submit"]');
+        if (submitBtn.disabled) {
+            console.warn('Form already submitting, ignoring duplicate submission');
+            return;
+        }
+        submitBtn.disabled = true;
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Assigning...';
 
         try {
-            const res = await fetch(`${API_BASE}/api/assignments`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    studentIds: [studentId],
-                    gameId: gameId,
-                    settings: settings
-                })
-            });
+            const studentId = document.getElementById('assign-student').value;
+            const gameId = document.getElementById('assign-game').value;
+            const limit = document.getElementById('assign-limit').value;
+            const fileId = document.getElementById('assign-file').value;
+
+            // ... [validation code] ...
+
+            // Prepare Settings (Snapshot of config)
+            // CRITICAL: Capture word IDs for this assignment (fixes isolation bug)
+            const gameConfig = state.content.gameConfig[gameId] || {};
+            const selectedWordIds = gameConfig.questions || [];
+
+            console.log(`[ASSIGN] Creating Assignment for Game: ${gameId}`);
+            console.log(`[ASSIGN] Captured Word IDs (${selectedWordIds.length}):`, selectedWordIds);
+
+            if (selectedWordIds.length === 0 && !fileId) {
+                if (!confirm("⚠️ Warning: No specific words selected for this game! It will use ALL words. Continue?")) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                    return;
+                }
+            }
+
+            const settings = {
+                limit: parseInt(limit) || 10,
+                fileId: fileId,
+                lang: state.currentLang,
+                wordIds: selectedWordIds,  // ← Store word IDs for isolation
+                // Capture current game actions for Hero Freeze
+                gameActions: (gameId === 'simonSquad') ? state.content.gameConfig.simonSquad?.actions : undefined
+            };
+
+            console.log('[ASSIGN] Settings Payload:', settings);
+
+            let res;
+            if (state.assignMode === 'group') {
+                const groupId = document.getElementById('assign-group').value;
+                res = await fetch(`${API_BASE}/api/groups/${groupId}/assign`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ gameId, settings })
+                });
+            } else {
+                res = await fetch(`${API_BASE}/api/assignments`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        studentIds: [studentId],
+                        gameId: gameId,
+                        settings: settings
+                    })
+                });
+            }
 
             if (res.ok) {
                 const data = await res.json();
-                alert(`Successfully Assigned to Student! 🚀\n(Verify in Student Portal)`);
-                await loadSessions(); // Refresh history (Note: we might want to load 'assignments' history specifically later)
+                const msg = state.assignMode === 'group'
+                    ? `Assigned to Group! (Students: ${data.count})`
+                    : `Successfully Assigned to Student! 🚀`;
+                alert(msg);
+                await loadSessions();
                 renderAssignments();
             } else {
                 alert("Failed to assign.");
@@ -323,6 +486,10 @@ function setupAssignments() {
         } catch (e) {
             console.error(e);
             alert("System Error during assignment.");
+        } finally {
+            // Re-enable button
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
         }
     });
 }
@@ -467,6 +634,10 @@ function renderAssignments() {
     if (!container) return; // Guard
     container.innerHTML = '';
 
+    // Reset Bulk Delete Button
+    const btnBulk = document.getElementById('bulk-delete-btn-portfolios');
+    if (btnBulk) btnBulk.classList.add('hidden');
+
     // Group By Student
     const map = {};
     state.students.forEach(s => map[s.id] = { student: s, assignments: [], stats: { active: 0, completed: 0, accuracySum: 0, accuracyCount: 0 } });
@@ -548,7 +719,10 @@ function renderAssignments() {
                     <div class="student-name">
                         ${group.student.name}
                         <button onclick="event.stopPropagation(); resetStudentPassword('${group.student.id}', '${group.student.name}')" style="margin-left:10px; font-size: 0.75rem; padding: 4px 8px; background: var(--primary); color: white; border: none; border-radius: 4px; cursor: pointer;">
-                            <i class="fas fa-key"></i> Reset
+                            <i class="fas fa-key"></i> Pass
+                        </button>
+                        <button onclick="event.stopPropagation(); resetStudentProgress('${group.student.id}', '${group.student.name}')" style="margin-left:5px; font-size: 0.75rem; padding: 4px 8px; background: var(--danger); color: white; border: none; border-radius: 4px; cursor: pointer;">
+                            <i class="fas fa-undo"></i> Reset
                         </button>
                     </div>
                     <div class="folder-stats">
@@ -640,8 +814,13 @@ window.autoAssignSuggestion = async function (studentId, gameId) {
 function renderAssignmentRow(sess) {
     const gameName = formatGameName(sess.gameId);
     const isDone = sess.status === 'completed';
-    // const badgeClass = isDone ? 'badge-success' : 'badge-warning'; // CSS class mismatch, using inline styles for now or style.css var
-    // Actually app/style.css defines .badge-success? No, it defines vars.
+
+    // Fix: check for existing prefix to avoid double-prefixing
+    // Assignments start with 'as_', Sessions start with 'sess_'
+    let deleteId = sess.id;
+    if (sess.status !== 'completed' && !sess.id.startsWith('as_') && !sess.id.startsWith('sess_')) {
+        deleteId = 'as_' + sess.id;
+    }
 
     let details = '';
     if (isDone) {
@@ -653,6 +832,9 @@ function renderAssignmentRow(sess) {
 
     return `
     <div class="assign-row">
+        <div style="display:flex; align-items:center; margin-right:10px;">
+             <input type="checkbox" class="bulk-chk" data-id="${deleteId}" onclick="event.stopPropagation(); toggleBulkDelete()" style="transform:scale(1.2); cursor:pointer;">
+        </div>
         <div class="assign-info">
             <div class="game-icon" style="width:32px; height:32px; font-size:1rem;"><i class="fas fa-gamepad"></i></div>
             <div>
@@ -662,7 +844,7 @@ function renderAssignmentRow(sess) {
         </div>
         <div style="display:flex; gap:10px; align-items:center;">
              ${details}
-             <button class="sm danger" onclick="deleteSession('${sess.id}')"><i class="fas fa-trash"></i></button>
+             <button class="sm danger" onclick="deleteSession('${deleteId}')"><i class="fas fa-trash"></i></button>
         </div>
     </div>
     `;
@@ -687,25 +869,178 @@ window.deleteSession = async function (id) {
 function renderAnalytics() {
     const tbody = document.querySelector('#analytics-table tbody');
     tbody.innerHTML = '';
-    state.students.forEach(s => {
-        const mySessions = state.sessions.filter(sess => sess.studentId === s.id);
-        const completed = mySessions.filter(sess => sess.status === 'completed');
-        const avg = completed.length ? (completed.reduce((acc, c) => acc + (c.analytics.attempts || 0), 0) / completed.length).toFixed(1) : '-';
-        const fails = mySessions.reduce((acc, c) => acc + (c.analytics.failuresBeforePass || 0), 0);
 
-        const tr = document.createElement('tr');
-        tr.style.cursor = 'pointer';
-        tr.onclick = () => renderStudentDetail(s.id);
-        tr.style.borderBottom = '1px solid var(--border)';
-        tr.innerHTML = `
-            <td style="padding:1rem;"><strong>${s.name}</strong></td>
-            <td style="padding:1rem;">${mySessions.length}</td>
-            <td style="padding:1rem;">${avg}</td>
-            <td style="padding:1rem;">${fails}</td>
-        `;
-        tbody.appendChild(tr);
+    // Organize students by group
+    const groupedStudents = {};
+    const ungroupedStudents = [];
+
+    state.students.forEach(s => {
+        if (s.groupId && state.groups.find(g => g.id === s.groupId)) {
+            if (!groupedStudents[s.groupId]) {
+                groupedStudents[s.groupId] = [];
+            }
+            groupedStudents[s.groupId].push(s);
+        } else {
+            ungroupedStudents.push(s);
+        }
     });
+
+    // Render grouped students
+    Object.keys(groupedStudents).forEach(groupId => {
+        const group = state.groups.find(g => g.id === groupId);
+        if (!group) return;
+
+        const students = groupedStudents[groupId];
+
+        // Group header row
+        const headerTr = document.createElement('tr');
+        headerTr.style.background = 'var(--bg)';
+        headerTr.style.borderTop = '2px solid var(--border)';
+        headerTr.style.borderBottom = '1px solid var(--border)';
+        headerTr.innerHTML = `
+            <td colspan="4" style="padding:1rem; font-weight:700; font-size:1.1rem;">
+                <i class="fas fa-users" style="color:var(--primary); margin-right:8px;"></i>
+                ${group.name}
+                <span style="font-weight:normal; color:var(--text-muted); font-size:0.9rem; margin-left:8px;">
+                    (${students.length} student${students.length !== 1 ? 's' : ''})
+                </span>
+            </td>
+        `;
+        tbody.appendChild(headerTr);
+
+        // Render students in group
+        students.forEach(s => {
+            const tr = renderAnalyticsRow(s);
+            tbody.appendChild(tr);
+        });
+    });
+
+    // Render ungrouped students
+    if (ungroupedStudents.length > 0) {
+        const headerTr = document.createElement('tr');
+        headerTr.style.background = 'var(--bg)';
+        headerTr.style.borderTop = '2px solid var(--border)';
+        headerTr.style.borderBottom = '1px solid var(--border)';
+        headerTr.innerHTML = `
+            <td colspan="4" style="padding:1rem; font-weight:700; font-size:1.1rem; color:var(--text-muted);">
+                <i class="fas fa-user" style="margin-right:8px;"></i>
+                Individual Assignments
+                <span style="font-weight:normal; font-size:0.9rem; margin-left:8px;">
+                    (${ungroupedStudents.length} student${ungroupedStudents.length !== 1 ? 's' : ''})
+                </span>
+            </td>
+        `;
+        tbody.appendChild(headerTr);
+
+        ungroupedStudents.forEach(s => {
+            const tr = renderAnalyticsRow(s);
+            tbody.appendChild(tr);
+        });
+    }
 }
+
+// Helper function to render individual student analytics row
+function renderAnalyticsRow(s) {
+    const mySessions = state.sessions.filter(sess => sess.studentId === s.id);
+    const completed = mySessions.filter(sess => sess.status === 'completed');
+    const avg = completed.length ? (completed.reduce((acc, c) => acc + (c.analytics.attempts || 0), 0) / completed.length).toFixed(1) : '-';
+    const fails = mySessions.reduce((acc, c) => acc + (c.analytics.failuresBeforePass || 0), 0);
+
+    const tr = document.createElement('tr');
+    tr.style.cursor = 'pointer';
+    tr.onclick = () => renderStudentDetail(s.id);
+    tr.style.borderBottom = '1px solid var(--border)';
+    tr.innerHTML = `
+        <td style="padding:1rem;"><strong>${s.name}</strong></td>
+        <td style="padding:1rem;">${mySessions.length}</td>
+        <td style="padding:1rem;">${avg}</td>
+        <td style="padding:1rem;">${fails}</td>
+    `;
+    return tr;
+}
+
+
+// ========== BULK DELETE LOGIC (NEW) ==========
+// ========== BULK DELETE LOGIC (NEW) ==========
+window.toggleBulkDelete = function () {
+    const checked = document.querySelectorAll('.bulk-chk:checked');
+    const count = checked.length;
+
+    // Student Detail Button
+    const btnDetail = document.getElementById('bulk-delete-btn');
+    const countDetail = document.getElementById('bulk-count');
+
+    // Portfolios Button
+    const btnPort = document.getElementById('bulk-delete-btn-portfolios');
+    const countPort = document.getElementById('bulk-count-portfolios');
+
+    if (count > 0) {
+        if (btnDetail) {
+            btnDetail.classList.remove('hidden');
+            if (countDetail) countDetail.textContent = count;
+        }
+        if (btnPort) {
+            btnPort.classList.remove('hidden');
+            if (countPort) countPort.textContent = count;
+        }
+    } else {
+        if (btnDetail) btnDetail.classList.add('hidden');
+        if (btnPort) btnPort.classList.add('hidden');
+    }
+}
+
+window.deleteSelectedItems = async function () {
+    const checked = document.querySelectorAll('.bulk-chk:checked');
+    if (checked.length === 0) return;
+
+    if (!confirm(`Delete ${checked.length} selected items ? This cannot be undone.`)) return;
+
+    // determine active view to know which button to spin
+    const isDetailView = !document.getElementById('view-student-detail').classList.contains('hidden');
+    const btn = isDetailView ? document.getElementById('bulk-delete-btn') : document.getElementById('bulk-delete-btn-portfolios');
+
+    let originalText = '';
+    if (btn) {
+        originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Deleting...';
+        btn.disabled = true;
+    }
+
+    try {
+        const ids = Array.from(checked).map(cb => cb.dataset.id);
+
+        // Process sequentially to avoid overwhelming server or race conditions
+        for (const id of ids) {
+            // Re-use existing deleteSession logic but without confirmation prompt for each
+            const endpoint = id.startsWith('as_') ? '/api/assignments/' + id : '/api/sessions/' + id;
+            await fetch(endpoint, { method: 'DELETE' });
+        }
+
+        // Refresh
+        await Promise.all([loadSessions(), loadAssignments()]);
+
+        if (isDetailView) {
+            renderStudentDetail(state.currentStudentId);
+        } else {
+            renderAssignments();
+        }
+
+    } catch (e) {
+        alert('Error during bulk delete: ' + e.message);
+        // Restore state
+        if (isDetailView) {
+            renderStudentDetail(state.currentStudentId);
+        } else {
+            renderAssignments();
+        }
+    } finally {
+        if (btn) {
+            btn.innerHTML = originalText || '<i class="fas fa-trash"></i> Delete Selected';
+            btn.disabled = false;
+        }
+    }
+}
+
 
 function renderStudentDetail(studentId) {
     state.currentStudentId = studentId;
@@ -715,6 +1050,16 @@ function renderStudentDetail(studentId) {
     // Header
     document.getElementById('sd-name').textContent = student.name;
     document.getElementById('sd-id').textContent = student.id.substring(0, 8) + '...';
+
+    // Reset bulk btn
+    document.getElementById('bulk-delete-btn').classList.add('hidden');
+
+    // Reset Progress Button
+    const resetBtn = document.getElementById('student-reset-btn');
+    if (resetBtn) {
+        resetBtn.style.display = 'flex'; // Show it (flex for icon alignment)
+        resetBtn.onclick = () => resetStudentProgress(studentId, student.name);
+    }
 
     // Session List
     const studSessions = state.sessions.filter(s => s.studentId === studentId);
@@ -729,12 +1074,23 @@ function renderStudentDetail(studentId) {
         listContainer.innerHTML = '';
     }
 
+    if (studSessions.length === 0 && pending.length === 0) {
+        listContainer.innerHTML = '<p class="text-muted">No assignments yet.</p>';
+    }
+
     pending.forEach(a => {
         const card = document.createElement('div');
         card.className = 'session-card';
         card.style.borderLeft = '4px solid var(--warning)';
+
+        // Check if ID already has prefix
+        const delId = a.id.startsWith('as_') ? a.id : `as_${a.id}`;
+
         card.innerHTML = `
-            <div class="session-info">
+            <div style="display:flex; align-items:center; margin-right:1rem;">
+                <input type="checkbox" class="bulk-chk" data-id="${delId}" onclick="event.stopPropagation(); toggleBulkDelete()" style="transform:scale(1.3); cursor:pointer;">
+            </div>
+            <div class="session-info" onclick="/* No action for pending */">
                 <div class="session-title">${formatGameName(a.gameId)}</div>
                 <div class="session-meta">
                     <span style="color:var(--warning)"><i class="fas fa-clock"></i> Pending</span>
@@ -774,14 +1130,17 @@ function renderStudentDetail(studentId) {
         const card = document.createElement('div');
         card.className = 'session-card';
         card.style.borderLeft = `4px solid ${borderColor}`;
-        card.onclick = () => renderSessionDetail(sess.id);
 
-        // Helper
-        const formatGame = (id) => formatGameName(id);
+        // Session ID is just id
+        const delId = sess.id;
 
+        // We wrap the content in a way that clicking the card goes to detail, but checkbox doesn't
         card.innerHTML = `
-            <div class="session-info">
-                <div class="session-title">${formatGame(sess.gameId)}</div>
+            <div style="display:flex; align-items:center; margin-right:1rem;">
+                <input type="checkbox" class="bulk-chk" data-id="${delId}" onclick="event.stopPropagation(); toggleBulkDelete()" style="transform:scale(1.3); cursor:pointer;">
+            </div>
+            <div class="session-info" onclick="renderSessionDetail('${sess.id}')" style="flex:1; cursor:pointer;">
+                <div class="session-title">${formatGameName(sess.gameId)}</div>
                 <div class="session-meta">
                     <span style="color:${statusColor}"><i class="fas ${statusIcon}"></i> ${statusText}</span>
                     <span><i class="fas fa-history"></i> ${attempts} Attempts</span>
@@ -800,6 +1159,7 @@ function renderStudentDetail(studentId) {
     document.querySelectorAll('.app-view').forEach(v => v.classList.add('hidden'));
     document.getElementById('view-student-detail').classList.remove('hidden');
 }
+
 
 // ========== STUDENT ANALYTICS (NEW) ==========
 let progressChart = null;
@@ -847,7 +1207,7 @@ async function renderStudentAnalytics(studentId) {
 
         // Build Analytics UI
         analyticsContainer.innerHTML = `
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+    < div style = "display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;" >
                 <div class="card">
                     <h4 style="margin-bottom: 1rem;">Progress Over Time</h4>
                     <canvas id="progress-chart"></canvas>
@@ -856,12 +1216,12 @@ async function renderStudentAnalytics(studentId) {
                     <h4 style="margin-bottom: 1rem;">Accuracy by Game</h4>
                     <canvas id="accuracy-chart"></canvas>
                 </div>
-            </div>
-            <div class="card" id="ai-insights-panel">
-                <h4 style="margin-bottom: 1rem;"><i class="fas fa-chart-line"></i> Student Performance</h4>
-                <p style="text-align:center; color:var(--text-muted);">Generating insights...</p>
-            </div>
-        `;
+            </div >
+    <div class="card" id="ai-insights-panel">
+        <h4 style="margin-bottom: 1rem;"><i class="fas fa-chart-line"></i> Student Performance</h4>
+        <p style="text-align:center; color:var(--text-muted);">Generating insights...</p>
+    </div>
+`;
 
         // Render Progress Chart (Line)
         const progressCtx = document.getElementById('progress-chart').getContext('2d');
@@ -968,10 +1328,10 @@ async function renderStudentAnalytics(studentId) {
             // Render AI Insights
             const insightsPanel = document.getElementById('ai-insights-panel');
             insightsPanel.innerHTML = `
-                <h4 style="margin-bottom: 1rem;"><i class="fas fa-chart-line"></i> Student Performance</h4>
-                <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; white-space: pre-wrap;">
-${insightsData.insights}
-                </div>
+    < h4 style = "margin-bottom: 1rem;" > <i class="fas fa-chart-line"></i> Student Performance</h4 >
+        <div style="background: #f8f9fa; padding: 1rem; border-radius: 8px; margin-bottom: 1rem; white-space: pre-wrap;">
+            ${insightsData.insights}
+        </div>
                 ${insightsData.recommendations.length > 0 ? `
                     <h5 style="margin-bottom: 0.5rem;">Recommendations</h5>
                     <div style="display: flex; flex-direction: column; gap: 0.5rem;">
@@ -981,13 +1341,14 @@ ${insightsData.insights}
                             </div>
                         `).join('')}
                     </div>
-                ` : ''}
-            `;
+                ` : ''
+                }
+`;
         } else {
             document.getElementById('ai-insights-panel').innerHTML = `
-                <h4 style="margin-bottom: 1rem;"><i class="fas fa-chart-line"></i> Student Performance</h4>
-                <p style="color: var(--danger);">Failed to generate insights. Please try again later.</p>
-            `;
+    < h4 style = "margin-bottom: 1rem;" > <i class="fas fa-chart-line"></i> Student Performance</h4 >
+        <p style="color: var(--danger);">Failed to generate insights. Please try again later.</p>
+`;
         }
 
     } catch (error) {
@@ -1012,7 +1373,7 @@ function renderSessionDetail(sessionId) {
     // Header
     const formatGame = (id) => formatGameName(id);
 
-    document.getElementById('sess-summary-title').textContent = `${formatGame(session.gameId)} - ${student ? student.name : 'Unknown'}`;
+    document.getElementById('sess-summary-title').textContent = `${formatGame(session.gameId)} - ${student ? student.name : 'Unknown'} `;
 
     const timeSec = session.analytics.totalTimeSeconds ? Math.round(session.analytics.totalTimeSeconds) : 0;
     const fails = session.analytics.failuresBeforePass || 0;
@@ -1020,9 +1381,9 @@ function renderSessionDetail(sessionId) {
 
     let summaryText = "";
     if (session.status === 'completed') {
-        const timeStr = timeSec > 60 ? `${Math.floor(timeSec / 60)}m ${timeSec % 60}s` : `${timeSec}s`;
+        const timeStr = timeSec > 60 ? `${Math.floor(timeSec / 60)}m ${timeSec % 60} s` : `${timeSec} s`;
         if (fails === 0) summaryText = `Performance: Perfect! Completed in ${timeStr}.`;
-        else summaryText = `Performance: ${fails} Mistake(s). Completed in ${timeStr}.`;
+        else summaryText = `Performance: ${fails} Mistake(s).Completed in ${timeStr}.`;
     } else {
         summaryText = "In Progress / Abandoned.";
     }
@@ -1055,16 +1416,16 @@ function renderSessionDetail(sessionId) {
             const wrongs = stat.wrong || 0;
 
             const card = document.createElement('div');
-            card.className = `q-card ${isCorrect ? 'correct' : 'wrong'}`;
+            card.className = `q - card ${isCorrect ? 'correct' : 'wrong'} `;
             card.innerHTML = `
-                <span class="q-word">${wordText}</span>
-                <div class="q-stats">
-                    ${isCorrect ? '<i class="fas fa-check" style="color:var(--success)"></i> Solved' : '<i class="fas fa-times" style="color:var(--danger)"></i> Unsolved'}
-                    <br>
-                    ${stat.wrong_action !== undefined ? `Wrong Action: ${stat.wrong_action}` : `Mistakes: ${stat.wrong || 0}`}
-                    ${stat.timeout !== undefined ? `<br>Timeout: ${stat.timeout}` : ''}
-                </div>
-            `;
+    < span class="q-word" > ${wordText}</span >
+        <div class="q-stats">
+            ${isCorrect ? '<i class="fas fa-check" style="color:var(--success)"></i> Solved' : '<i class="fas fa-times" style="color:var(--danger)"></i> Unsolved'}
+            <br>
+                ${stat.wrong_action !== undefined ? `Wrong Action: ${stat.wrong_action}` : `Mistakes: ${stat.wrong || 0}`}
+                ${stat.timeout !== undefined ? `<br>Timeout: ${stat.timeout}` : ''}
+        </div>
+`;
             qContainer.appendChild(card);
         });
     };
@@ -1091,6 +1452,58 @@ function renderSessionDetail(sessionId) {
     document.getElementById('view-session-detail').classList.remove('hidden');
 }
 
+// ========== INDIVIDUAL RESET LOGIC (NEW) ==========
+window.resetStudentProgress = async function (studentId, studentName) {
+    if (!confirm(`Are you sure you want to reset ALL progress for ${studentName}?\n\nThis will clear all scores and set assignments back to "Pending".\n\nThis action cannot be undone.`)) return;
+
+    const btn = document.getElementById('student-reset-btn');
+    let originalText = '';
+    if (btn) {
+        originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Resetting...';
+        btn.disabled = true;
+    }
+
+    try {
+        console.log('[RESET] Sending request for student:', studentId);
+        const res = await fetch(`/api/students/${studentId}/reset`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        console.log('[RESET] Response status:', res.status);
+
+        if (!res.ok) {
+            const errText = await res.text();
+            console.error('[RESET] Error response:', errText);
+            throw new Error("Reset failed. Status: " + res.status);
+        }
+
+        const data = await res.json();
+        console.log('[RESET] Success data:', data);
+        alert(`Successfully reset ${data.count} assignments for ${studentName}.`);
+
+        // Refresh Data
+        console.log('[RESET] Refreshing data...');
+        state.assignments = []; // Clear local state to force UI update
+        state.sessions = [];
+        await Promise.all([loadSessions(), loadAssignments()]);
+        console.log('[RESET] Data refreshed. Re-rendering...');
+
+        renderStudentDetail(studentId);
+        renderAssignments(); // Fix: Update portfolio list
+
+    } catch (e) {
+        console.error(e);
+        alert("Error resetting progress: " + e.message);
+    } finally {
+        if (btn && originalText) {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        }
+    }
+}
+
 // ========== EDITOR MERGED LOGIC ==========
 // ========== EDITOR MERGED LOGIC ==========
 function setupEditor() {
@@ -1098,6 +1511,39 @@ function setupEditor() {
     const fileSel = document.getElementById('editor-file-select');
     const mkBtn = document.getElementById('btn-create-file');
     const delBtn = document.getElementById('btn-delete-file');
+
+    // ========== SAVE LOGIC (ADDED) ==========
+    const saveBtn = document.getElementById('save-btn');
+    if (saveBtn) {
+        saveBtn.addEventListener('click', async () => {
+            const originalText = saveBtn.textContent;
+            saveBtn.innerText = 'Saving...';
+            saveBtn.disabled = true;
+
+            try {
+                if (typeof buildCleanPayload !== 'function') throw new Error("Save function missing");
+
+                const payload = buildCleanPayload();
+                console.log("Saving payload to", state.currentLang, payload);
+
+                const res = await fetch(`${API_BASE}/data/${state.currentLang}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!res.ok) throw new Error("Save failed");
+                alert("Data Saved Successfully!");
+
+            } catch (e) {
+                console.error(e);
+                alert("Error saving data: " + e.message);
+            } finally {
+                saveBtn.innerText = originalText;
+                saveBtn.disabled = false;
+            }
+        });
+    }
 
     // --- LANGUAGE SWITCHER & TTS SYNC ---
     const langSel = document.getElementById('editor-lang-select');
@@ -1115,7 +1561,7 @@ function setupEditor() {
 
             // Reload Data
             await Promise.all([loadContent(), loadFiles()]);
-            alert(`Language switched to ${state.currentLang.toUpperCase()}`);
+            alert(`Language switched to ${state.currentLang.toUpperCase()} `);
         });
     }
 
@@ -1367,6 +1813,9 @@ function setupEditor() {
         };
         reader.readAsDataURL(file);
     });
+
+    // ========== CLEAR SELECTION LOGIC (NEW) ==========
+
 
     // ===========================================
     // DUAL AUDIO SYSTEM LOGIC
@@ -1854,8 +2303,10 @@ function renderGameConfig(gameId) {
                 config.questions.push(w.id);
                 if (extraParams) extraParams.style.display = 'flex';
 
-                // Hero Freeze Init
-                config.actions[w.id] = actionSel?.value || 'freeze';
+                // Hero Freeze Init (only for simonSquad)
+                if (gameId === 'simonSquad' && actionSel) {
+                    config.actions[w.id] = actionSel.value || 'freeze';
+                }
             } else {
                 const idx = config.questions.indexOf(w.id);
                 if (idx > -1) config.questions.splice(idx, 1);
@@ -2324,17 +2775,563 @@ function setupAdminBack() {
             if (confirm('Return to Admin Panel?')) {
                 // Clear impersonation flag
                 localStorage.removeItem('admin_impersonating');
-
-                // Optional: Logout of teacher session (good practice)
-                try {
-                    await fetch(`${API_BASE}/api/auth/logout`, { method: 'POST' });
-                } catch (e) {
-                    console.error('Logout failed', e);
-                }
-
-                // Redirect to admin
                 window.location.href = '/admin/index.html';
             }
         });
     }
 }
+
+// ==========================================
+// GROUP ANALYTICS & DETAIL VIEW
+// ==========================================
+
+window.showGroups = function () {
+    document.querySelectorAll('.app-view').forEach(v => v.classList.add('hidden'));
+    document.getElementById('view-groups').classList.remove('hidden');
+}
+
+window.viewGroupDetail = function (groupId) {
+    const group = state.groups.find(g => g.id === groupId);
+    if (!group) return;
+
+    // 1. Switch View
+    document.querySelectorAll('.app-view').forEach(v => v.classList.add('hidden'));
+    document.getElementById('view-group-detail').classList.remove('hidden');
+
+    const stats = group.stats || { studentCount: 0, completionRate: 0, avgScore: 0, gamePerformance: {} };
+
+    // 2. Render Header
+    const header = document.getElementById('group-detail-header');
+    header.innerHTML = `
+        <div class="flex-row space-between">
+            <div style="display:flex; align-items:center; gap:15px;">
+                <h2><i class="fas fa-users"></i> ${group.name}</h2>
+                <button class="primary sm" onclick="openAddStudentForGroup('${group.id}')">
+                    <i class="fas fa-plus"></i> Add Student
+                </button>
+                <button class="secondary sm" onclick="openAssignForGroup('${group.id}')">
+                    <i class="fas fa-gamepad"></i> Assign Game
+                </button>
+            </div>
+            <div class="flex-row gap-20">
+                <div class="stat-badge">
+                    <span style="font-size:1.5rem; font-weight:bold;">${stats.avgScore}%</span> Avg Score
+                </div>
+                <div class="stat-badge">
+                   <span style="font-size:1.5rem; font-weight:bold;">${stats.completionRate}%</span> Completion
+                </div>
+            </div>
+        </div>
+    `;
+
+    // 3. Render Students Table
+    const tbody = document.querySelector('#group-students-table tbody');
+    tbody.innerHTML = '';
+    const groupStudents = state.students.filter(s => s.groupId === groupId);
+
+    groupStudents.forEach(s => {
+        // Calculate individual stats (simple version)
+        const myAssigns = state.assignments.filter(a => a.studentId === s.id);
+        const completed = myAssigns.filter(a => a.status === 'completed');
+        const rate = myAssigns.length > 0 ? Math.round((completed.length / myAssigns.length) * 100) : 0;
+
+        let totalScore = 0, count = 0;
+        completed.forEach(a => { if (typeof a.score === 'number') { totalScore += a.score; count++; } });
+        const avg = count > 0 ? Math.round(totalScore / count) : 0;
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td style="padding:10px;"><strong>${s.name}</strong></td>
+            <td style="padding:10px;">
+                <div style="width:100px; height:6px; background:#eee; border-radius:3px; overflow:hidden; display:inline-block; vertical-align:middle; margin-right:5px;">
+                    <div style="height:100%; width:${rate}%; background:var(--primary);"></div>
+                </div>
+                ${rate}%
+            </td>
+            <td style="padding:10px;">${avg}%</td>
+            <td style="padding:10px;">
+                ${rate === 100 ? '<span style="color:#4caf50"><i class="fas fa-check"></i> All Done</span>' : '<span style="color:#ff9800">In Progress</span>'}
+            </td>
+        `;
+        tbody.appendChild(tr);
+    });
+
+    if (groupStudents.length === 0) tbody.innerHTML = `<tr><td colspan="4" class="text-muted">No students in group. <a href="#" onclick="openAddStudentForGroup('${group.id}')">Add one now</a></td></tr>`;
+
+    // Helper to open Add Student modal with group pre-selected
+    window.openAddStudentForGroup = function (groupId) {
+        // Switch to Students view
+        document.querySelectorAll('.app-view').forEach(v => v.classList.add('hidden'));
+        document.getElementById('view-students').classList.remove('hidden');
+
+        // Scroll to form
+        const form = document.getElementById('add-student-form');
+        form.scrollIntoView({ behavior: 'smooth' });
+
+        // Pre-select group if the dropdown exists and has this value
+        const groupSelect = document.getElementById('new-student-group');
+        if (groupSelect) {
+            groupSelect.value = groupId;
+            groupSelect.style.border = "2px solid var(--primary)";
+            setTimeout(() => groupSelect.style.border = "", 2000);
+        }
+    }
+
+    // Helper to open Assignment modal with group pre-selected
+    window.openAssignForGroup = function (groupId) {
+        // Switch to Assignments view (or just open modal? "Assignments" usually means the list)
+        // Actually, the "Assign Game" UI is likely in the "Assignments" view or a modal.
+        // Looking at index.html, there is a "view-assignments" which lists assignments, 
+        // AND an "Assign Game" button there which likely opens a form.
+        // Let's assume there is a `modal-assign` or we switch to 'view-assignments' and scroll to form.
+
+        // Check if there is an assignment form visible or a modal
+        const modal = document.getElementById('modal-assign');
+        if (modal) {
+            modal.classList.remove('hidden');
+        } else {
+            // Fallback: switch to assignments view and focus form
+            document.querySelectorAll('.app-view').forEach(v => v.classList.add('hidden'));
+            document.getElementById('view-assignments').classList.remove('hidden');
+        }
+
+        // Logic to pre-select group
+        // First, ensure "Group" tab or radio is selected if it exists
+        // In this app, it seems to be a single Select with Group options?
+        // Let's Update the specific select:
+        const groupSelect = document.getElementById('assign-group');
+        const studentSelect = document.getElementById('assign-student');
+
+        if (groupSelect) {
+            groupSelect.value = groupId;
+            groupSelect.dispatchEvent(new Event('change')); // Trigger any listeners
+
+            // Highlight
+            groupSelect.style.border = "2px solid var(--primary)";
+            setTimeout(() => groupSelect.style.border = "", 2000);
+
+            // If there's a radio to switch between Student/Group, click it?
+            // (Based on my memory of similar apps, but I should check the DOM if I could)
+            // Assuming the select is visible.
+        }
+
+        // Also scroll to it
+        const form = document.getElementById('assign-form');
+        // Note: ID might be different, let's look at index.html view again if needed.
+        // But assuming 'assign-form' exists based on app.js `setupAssignments` (which I saw earlier had `bgElementById('assign-form')` logic implied)
+        if (form) form.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // 4. Render Assignment History
+    const assignList = document.getElementById('group-assignments-list');
+    assignList.innerHTML = '';
+
+    // Get unique games from student assignments
+    const uniqueGameIds = [...new Set(
+        state.assignments
+            .filter(a => groupStudents.some(s => s.id === a.studentId))
+            .map(a => a.gameId)
+    )];
+
+    uniqueGameIds.forEach(gid => {
+        const gameName = formatGameName(gid);
+        // Find rough avg for this game in this group
+        const gameScore = stats.gamePerformance?.[gid] || 0;
+
+        const li = document.createElement('li');
+        li.style.padding = '10px';
+        li.style.borderBottom = '1px solid #eee';
+        li.innerHTML = `
+            <div class="flex-row space-between">
+               <span><strong>${gameName}</strong></span>
+               <span class="badge" style="background:#e3f2fd; color:#1565c0;">${gameScore}% Avg</span>
+            </div>
+        `;
+        assignList.appendChild(li);
+    });
+
+    if (uniqueGameIds.length === 0) assignList.innerHTML = '<li class="text-muted" style="padding:10px;">No assignments found for students in this group.</li>';
+
+    // 5. Render Chart (Simple CSS Bar Chart)
+    const chartContainer = document.getElementById('group-chart-container');
+    chartContainer.innerHTML = '';
+
+    if (Object.keys(stats.gamePerformance || {}).length > 0) {
+        chartContainer.style.display = 'flex';
+        chartContainer.style.alignItems = 'flex-end';
+        chartContainer.style.justifyContent = 'space-around';
+        chartContainer.style.width = '100%';
+        chartContainer.style.padding = '10px';
+        chartContainer.style.gap = '5px';
+
+        Object.keys(stats.gamePerformance).forEach(gid => {
+            const score = stats.gamePerformance[gid];
+            const bar = document.createElement('div');
+            bar.style.flex = '1';
+            bar.style.textAlign = 'center';
+            bar.innerHTML = `
+                <div style="height:${Math.max(score, 5)}%; background:var(--secondary); min-height:1px; border-radius:4px 4px 0 0; position:relative;" title="${formatGameName(gid)}: ${score}%">
+                    <span style="font-size:0.7rem; position:absolute; top:-15px; width:100%; left:0;">${score}</span>
+                </div>
+                <div style="font-size:0.6rem; margin-top:5px; width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${formatGameName(gid).substring(0, 8)}</div>
+            `;
+            chartContainer.appendChild(bar);
+        });
+    } else {
+        chartContainer.innerHTML = '<span class="text-muted">No performance data available.</span>';
+    }
+}
+
+
+// ==========================================
+// GROUPS LOGIC - COMPLETE IMPLEMENTATION
+// ==========================================
+
+// Render Groups List
+function renderGroups() {
+    populateGroupResetDropdown(); // Ensure dropdown is updated whenever groups are rendered
+    const container = document.getElementById('groups-list');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    if (state.groups.length === 0) {
+        container.innerHTML = `
+            <div style="text-align:center; padding:3rem; color:var(--text-muted);">
+                <i class="fas fa-users" style="font-size:3rem; margin-bottom:1rem; opacity:0.3;"></i>
+                <p>No groups yet. Create your first group to organize students!</p>
+            </div>
+        `;
+        return;
+    }
+
+    state.groups.forEach(group => {
+        // Get students in this group
+        const groupStudents = state.students.filter(s => s.groupId === group.id);
+        const studentCount = groupStudents.length;
+        const studentNames = groupStudents.map(s => s.name).join(', ') || 'No students yet';
+
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.marginBottom = '1rem';
+        card.innerHTML = `
+            <div style="display:flex; justify-content:space-between; align-items:start;">
+                <div style="flex:1;">
+                    <h3 style="margin:0 0 0.5rem 0; display:flex; align-items:center; gap:10px;">
+                        <i class="fas fa-users" style="color:var(--primary);"></i>
+                        ${group.name}
+                        <span style="font-size:0.9rem; font-weight:normal; color:var(--text-muted);">
+                            (${studentCount} student${studentCount !== 1 ? 's' : ''})
+                        </span>
+                    </h3>
+                    <div style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">
+                        ${studentCount > 0 ? studentNames : '<em>No students in this group</em>'}
+                    </div>
+                    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                        ${groupStudents.slice(0, 5).map(s => `
+                            <span style="background:var(--bg); padding:4px 10px; border-radius:12px; font-size:0.85rem; border:1px solid var(--border);">
+                                ${s.name}
+                            </span>
+                        `).join('')}
+                        ${studentCount > 5 ? `<span style="color:var(--text-muted); font-size:0.85rem;">+${studentCount - 5} more</span>` : ''}
+                    </div>
+                </div>
+                <div style="display:flex; gap:8px;">
+                    <button class="secondary sm" onclick="editGroup('${group.id}')" title="Edit Group">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                    <button class="danger sm" onclick="deleteGroup('${group.id}')" title="Delete Group">
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+                </div>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+// Edit Group - Opens modal with group data
+window.editGroup = async function (groupId) {
+    const group = state.groups.find(g => g.id === groupId);
+    if (!group) return;
+
+    // Create modal HTML
+    const modal = document.createElement('div');
+    modal.id = 'edit-group-modal';
+    modal.className = 'modal-overlay';
+    modal.innerHTML = `
+        <div class="modal-box" style="max-width:600px;">
+            <div class="modal-header">Edit Group: ${group.name}</div>
+            <form id="edit-group-form">
+                <div style="margin-bottom:1.5rem;">
+                    <label style="display:block; margin-bottom:0.5rem; font-weight:600;">Group Name</label>
+                    <input type="text" id="edit-group-name" value="${group.name}" required
+                        style="width:100%; padding:0.75rem; border:1px solid var(--border); border-radius:8px;">
+                </div>
+
+                <div style="margin-bottom:1.5rem;">
+                    <label style="display:block; margin-bottom:0.5rem; font-weight:600;">Students in Group</label>
+                    <div style="max-height:300px; overflow-y:auto; border:1px solid var(--border); border-radius:8px; padding:1rem; background:var(--bg);">
+                        ${state.students.map(student => `
+                            <label style="display:flex; align-items:center; padding:0.5rem; cursor:pointer; border-radius:4px; margin-bottom:0.25rem;" 
+                                   onmouseover="this.style.background='rgba(108,92,231,0.1)'" 
+                                   onmouseout="this.style.background='transparent'">
+                                <input type="checkbox" 
+                                       class="student-checkbox" 
+                                       value="${student.id}" 
+                                       ${student.groupId === groupId ? 'checked' : ''}
+                                       style="margin-right:10px; width:18px; height:18px; cursor:pointer;">
+                                <span style="flex:1;">${student.name}</span>
+                                <span style="color:var(--text-muted); font-size:0.85rem;">${student.id.substring(0, 8)}...</span>
+                            </label>
+                        `).join('')}
+                        ${state.students.length === 0 ? '<p style="color:var(--text-muted); text-align:center;">No students available. Create students first.</p>' : ''}
+                    </div>
+                </div>
+
+                <div style="display:flex; gap:10px; justify-content:flex-end;">
+                    <button type="button" class="secondary" onclick="closeEditGroupModal()">Cancel</button>
+                    <button type="submit" class="primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    // Handle form submission
+    document.getElementById('edit-group-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const newName = document.getElementById('edit-group-name').value.trim();
+        const selectedStudentIds = Array.from(document.querySelectorAll('.student-checkbox:checked'))
+            .map(cb => cb.value);
+
+        try {
+            // 1. Update group name
+            const updateRes = await fetch(`${API_BASE}/api/groups/${groupId}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: newName })
+            });
+
+            if (!updateRes.ok) throw new Error('Failed to update group name');
+
+            // 2. Update student assignments
+            // Remove students no longer in group
+            const studentsToRemove = state.students.filter(s =>
+                s.groupId === groupId && !selectedStudentIds.includes(s.id)
+            );
+
+            // Add students newly added to group
+            const studentsToAdd = state.students.filter(s =>
+                selectedStudentIds.includes(s.id) && s.groupId !== groupId
+            );
+
+            // Update each student
+            for (const student of studentsToRemove) {
+                await fetch(`${API_BASE}/api/students/${student.id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ ...student, groupId: null })
+                });
+            }
+
+            for (const student of studentsToAdd) {
+                await fetch(`${API_BASE}/api/students/${student.id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ ...student, groupId: groupId })
+                });
+            }
+
+            // Reload data
+            await Promise.all([loadStudents(), loadGroups()]);
+            renderGroups();
+            renderGroupSelectors();
+            closeEditGroupModal();
+            alert('Group updated successfully!');
+
+        } catch (error) {
+            console.error('Error updating group:', error);
+            alert('Failed to update group. Please try again.');
+        }
+    });
+}
+
+
+window.closeEditGroupModal = function () {
+    const modal = document.getElementById('edit-group-modal');
+    if (modal) modal.remove();
+}
+
+// ==========================================
+// GROUP PROGRESS RESET
+// ==========================================
+
+function populateGroupResetDropdown() {
+    const select = document.getElementById('group-reset-select');
+    if (!select) return;
+
+    select.innerHTML = '<option value="">-- Select Group --</option>';
+    if (!state.groups || state.groups.length === 0) return;
+
+    state.groups.forEach(g => {
+        const option = document.createElement('option');
+        option.value = g.id;
+        option.textContent = g.name;
+        select.appendChild(option);
+    });
+}
+
+window.resetGroupProgress = async function () {
+    const select = document.getElementById('group-reset-select');
+    if (!select) return;
+    const groupId = select.value;
+
+    if (!groupId) {
+        alert("Please select a group first.");
+        return;
+    }
+
+    const group = state.groups.find(g => g.id === groupId);
+    const groupName = group ? group.name : 'Unknown Group'; // Fallback
+
+    if (!confirm(`Are you sure you want to reset progress for ${groupName}?\n\nThis will clear all scores and progress. This action cannot be undone.`)) {
+        return;
+    }
+
+    const btn = document.getElementById('btn-group-reset');
+    const originalText = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Resetting...';
+
+    try {
+        const res = await fetch(`/api/groups/${groupId}/reset`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`, // Ensure auth
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!res.ok) {
+            let errorMessage = "Reset failed";
+            try {
+                const err = await res.json();
+                errorMessage = err.error || errorMessage;
+            } catch (e) {
+                errorMessage = `Server request failed (Status ${res.status})`;
+            }
+            throw new Error(errorMessage);
+        }
+
+        const data = await res.json();
+        alert(`Success! Reset progress for ${data.count} assignments.`);
+
+        // Refresh Data
+        location.reload();
+
+    } catch (e) {
+        console.error(e);
+        alert("Error resetting group: " + e.message);
+    } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+    }
+}
+
+
+// Delete Group
+window.deleteGroup = async function (groupId) {
+    const group = state.groups.find(g => g.id === groupId);
+    if (!group) return;
+
+    const groupStudents = state.students.filter(s => s.groupId === groupId);
+    const confirmMsg = groupStudents.length > 0
+        ? `Delete "${group.name}"?\n\nThis will remove ${groupStudents.length} student(s) from the group (students will not be deleted, just ungrouped).\n\nPast assignments will remain.`
+        : `Delete "${group.name}"?`;
+
+    if (!confirm(confirmMsg)) return;
+
+    try {
+        const res = await fetch(`${API_BASE}/api/groups/${groupId}`, {
+            method: 'DELETE'
+        });
+
+        if (!res.ok) throw new Error('Delete failed');
+
+        // Reload data
+        await Promise.all([loadStudents(), loadGroups()]);
+        renderGroups();
+        renderGroupSelectors();
+        alert('Group deleted successfully!');
+
+    } catch (error) {
+        console.error('Error deleting group:', error);
+        alert('Failed to delete group. Please try again.');
+    }
+}
+
+function setupGroups() {
+    const form = document.getElementById('add-group-form');
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const nameInput = document.getElementById('new-group-name');
+        const name = nameInput.value.trim();
+        if (!name) return;
+
+        try {
+            const res = await fetch(`${API_BASE}/api/groups`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name })
+            });
+            const data = await res.json();
+            if (data.success) {
+                await loadGroups();
+                renderGroups();
+                renderGroupSelectors();
+                nameInput.value = '';
+                alert('Group created! Click "Edit" to add students.');
+            } else {
+                alert(data.error || 'Failed to create group');
+            }
+        } catch (e) {
+            console.error(e);
+            alert('Error creating group');
+        }
+    });
+}
+
+
+// ==========================================
+// INITIALIZATION
+// ==========================================
+// NOTE: Main initialization is at the top of the file (line 24)
+// This section is kept for reference but not used
+
+// ========== HELPER: BUILD CLEAN PAYLOAD ==========
+function buildCleanPayload() {
+    // 1. Clean Words
+    const cleanWords = state.content.words.map(w => ({
+        id: w.id,
+        "teacherId": w.teacherId, // Keep teacherId if present
+        word: w.word || '',
+        image: w.image || '',
+        audio: w.audio || '',
+        choices: w.choices || []
+    }));
+
+    // 2. Clean Game Config
+    // Ensure we use the current state.content.gameConfig
+    const cleanConfig = state.content.gameConfig || {};
+
+    return {
+        words: cleanWords,
+        gameConfig: cleanConfig
+    };
+}
+

@@ -1,0 +1,26 @@
+{
+  "id": "sess_e949046a-daab-484c-a50a-f414c63bbc3c",
+  "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+  "studentId": "s_1d9271b9-aac1-4008-abcb-a9901cffbaab",
+  "gameId": "matchPairs",
+  "lang": "en",
+  "wordIds": [
+    "w_227276b6-d7d3-4b5c-834b-e4c26527c05e",
+    "w_b46d99f8-188b-4a99-b939-1f105ab664ae",
+    "w_7997bcb5-3266-4c16-9660-97cee61d37aa",
+    "w_379f4de0-4b7d-4a36-ac1f-35cd26f6f98f",
+    "w_4cf1d108-4565-467a-9a48-bc2845ca64bb",
+    "w_01918cf0-907c-4876-ba30-5cb88a835a58",
+    "w_053dee64-1390-466c-9190-134b96fee8b7",
+    "w_26d830d5-a99d-4b3d-b015-97e186574de7"
+  ],
+  "assignmentId": "as_ba84c453-cec9-4118-9a4d-77a6d5c869af",
+  "status": "active",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 0,
+    "questions": {}
+  },
+  "createdAt": "2026-02-13T00:24:40.588Z"
+}

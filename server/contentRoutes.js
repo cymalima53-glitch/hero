@@ -18,7 +18,7 @@ function saveData(lang, data) {
     fsSync.writeFileSync(filepath, JSON.stringify(data, null, 2));
 }
 
-module.exports = function (app, requireAuth) {
+module.exports = function (app, requireAuth, requireAnyAuth) {
 
     // 1. GET /data/:lang - Public Data (Words/Categories) - but we probably want to secure this too?
     // User said: "Every Endpoint -> Check authorization"
@@ -40,12 +40,22 @@ module.exports = function (app, requireAuth) {
     // Does the game send cookies? Yes, HttpOnly cookies are automatic.
     // So if I add checks, it should work if the user is logged in.
 
-    // 1. GET /data/:lang - Filter by Teacher ID
-    app.get('/data/:lang', requireAuth, (req, res) => {
+    // 1. GET /data/:lang - Accept BOTH Teacher and Student Auth
+    app.get('/data/:lang', requireAnyAuth, (req, res) => {
         try {
             const data = getData(req.params.lang);
 
-            // Get teacher email from session
+            // If student, return ALL words (students need access to all content for games)
+            if (req.userType === 'student') {
+                console.log('[DATA ACCESS] Student accessing data:', req.studentId);
+                return res.json({
+                    words: data.words,
+                    gameConfig: data.gameConfig,
+                    files: data.files
+                });
+            }
+
+            // If teacher, filter by teacherId
             const teachers = require('fs').readFileSync(require('path').join(__dirname, '../data/teachers.json'), 'utf8');
             const teacherData = JSON.parse(teachers).teachers || [];
             const teacher = teacherData.find(t => t.id === req.teacherId);

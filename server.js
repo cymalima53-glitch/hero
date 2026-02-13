@@ -47,12 +47,12 @@ app.use('/uploads', express.static(path.join(__dirname, 'data/uploads')));
 
 // === LMS ROUTES ===
 const authRoutes = require('./server/authRoutes')(app);
-const { requireAuth, requireStudentAuth, createTeacherSession } = authRoutes; // Extract middleware & helper
+const { requireAuth, requireStudentAuth, requireAnyAuth, createTeacherSession } = authRoutes; // Extract middleware & helper
 
 require('./server/sessionRoutes')(app, requireAuth);
 require('./server/studentRoutes')(app, requireAuth);
 require('./server/assignmentRoutes')(app, requireAuth, requireStudentAuth);
-require('./server/contentRoutes')(app, requireAuth);
+require('./server/contentRoutes')(app, requireAuth, requireAnyAuth);
 
 // Analytics Routes
 require('./server/analyticsRoutes')(app, requireAuth);
@@ -62,6 +62,9 @@ require('./server/adminRoutes')(app, createTeacherSession);
 
 // Content Generator Routes
 require('./server/contentGeneratorRoutes')(app, requireAuth);
+
+// Group Routes
+require('./server/groupRoutes')(app, requireAuth);
 
 // Support Routes
 require('./server/supportRoutes')(app, requireAuth);

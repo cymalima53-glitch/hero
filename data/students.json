@@ -5,9 +5,10 @@
       "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
       "name": "adam",
       "username": "spider22",
-      "passwordHash": "$2a$10$e.T7SKpw5LQYa5ESIm9VUO4vw0TfHV6fpvtelJwVHW.m2v22Iz3d6",
+      "passwordHash": "$2a$10$ZkNP1Ef22BmIqHlAZudLlugvrqwsejA6CBIKB7.tZ/72vU54waZpO",
       "parentEmail": "",
-      "createdAt": "2026-01-04T12:30:13.756Z"
+      "createdAt": "2026-01-04T12:30:13.756Z",
+      "groupId": "grp_a566c5cd-3bd1-4292-bf1b-dd8f14a2f9dc"
     },
     {
       "id": "s_3dcf39ff-b558-43f2-ba84-5080baab3030",
@@ -17,6 +18,16 @@
       "passwordHash": "$2a$10$ylUYQrHm5258BOE2Qr2/yeec/wxn6XFFI.cBh7pr21pirzwjwNzUO",
       "parentEmail": "",
       "createdAt": "2026-01-19T10:41:26.891Z"
+    },
+    {
+      "id": "s_1d9271b9-aac1-4008-abcb-a9901cffbaab",
+      "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+      "name": "kamal12",
+      "username": "kamal12",
+      "passwordHash": "$2a$10$73L/uJQZlxu5VDkPYWhOee/yGej7JV5TVcaUeRD2A3bNp9vn20cZK",
+      "parentEmail": "",
+      "groupId": "grp_a566c5cd-3bd1-4292-bf1b-dd8f14a2f9dc",
+      "createdAt": "2026-02-11T11:30:50.962Z"
     }
   ]
 }

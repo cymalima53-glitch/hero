@@ -7,7 +7,8 @@ body {
     margin: 0;
     font-family: 'Fredoka', sans-serif;
     /* Kid friendly font */
-    background: #e0f7fa;
+    background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    /* Orange/Yellow */
     /* Light cyan */
     color: #333;
     display: flex;

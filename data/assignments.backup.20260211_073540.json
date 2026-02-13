@@ -1,0 +1,76 @@
+{
+  "assignments": [
+    {
+      "id": "as_ab4e46b4-0b19-46e1-b780-85b6127ebf0d",
+      "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+      "studentId": "s_1d9271b9-aac1-4008-abcb-a9901cffbaab",
+      "gameId": "memoryEcho",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "en"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-02-11T11:46:23.302Z",
+      "fromGroupAssignmentId": "ga_9d4f0571-5a8e-4468-8a43-4c670cfa379b",
+      "duration": 27.158,
+      "accuracy": 100,
+      "mistakes": 0
+    },
+    {
+      "id": "as_bb1145c8-2e49-4529-a950-9f433a0a63e3",
+      "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+      "studentId": "s_1d9271b9-aac1-4008-abcb-a9901cffbaab",
+      "gameId": "soundSwipe",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "en"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-02-11T11:46:44.634Z",
+      "fromGroupAssignmentId": "ga_652608cf-d3f9-4988-9b6d-3e137232bfce",
+      "duration": 144.083,
+      "accuracy": 60,
+      "mistakes": 2
+    },
+    {
+      "id": "as_9d8a8d00-7074-4ae6-bfd0-fbe0a393e66f",
+      "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+      "studentId": "s_1d9271b9-aac1-4008-abcb-a9901cffbaab",
+      "gameId": "beatClock",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "en"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-02-11T11:46:50.421Z",
+      "fromGroupAssignmentId": "ga_053aadc7-2a9d-4c4e-9d7c-eef6c5d23907",
+      "duration": 39.083,
+      "accuracy": 23,
+      "mistakes": 10
+    },
+    {
+      "id": "as_0d6e7cbf-bc50-4fad-b5a0-4333cd138618",
+      "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+      "studentId": "s_1d9271b9-aac1-4008-abcb-a9901cffbaab",
+      "gameId": "soundDrag",
+      "settings": {
+        "limit": 10,
+        "fileId": "",
+        "lang": "en"
+      },
+      "status": "completed",
+      "score": 0,
+      "createdAt": "2026-02-11T12:24:34.431Z",
+      "fromGroupAssignmentId": "ga_7bf7b65f-2fab-4ea6-b3f6-67e80a9b694b",
+      "duration": 45.882,
+      "accuracy": 60,
+      "mistakes": 2
+    }
+  ]
+}

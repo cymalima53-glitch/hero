@@ -1,3 +1,26 @@
+// Universal Touch-Click Handler for iPad/Mobile Compatibility
+function addTouchClick(element, handler) {
+    let touchStarted = false;
+
+    element.addEventListener('click', handler);
+
+    element.addEventListener('touchstart', (e) => {
+        touchStarted = true;
+        e.preventDefault();
+    }, { passive: false });
+
+    element.addEventListener('touchend', (e) => {
+        if (touchStarted) {
+            e.preventDefault();
+            handler(e);
+            touchStarted = false;
+        }
+    }, { passive: false });
+
+    element.addEventListener('touchcancel', () => {
+        touchStarted = false;
+    });
+}
 const GAME_STATE = {
     IDLE: 'idle',
     THINKING: 'thinking',
@@ -189,13 +212,9 @@ class MatchPairsGame {
         this.isLocked = false;
         this.startTime = Date.now();
 
-        // Pick 6 random words (for 12 cards)
+        // Pick up to 20 random words (for 40 cards max)
         // Shuffle words and slice
-        const gameWords = [...this.words].sort(() => Math.random() - 0.5).slice(0, 6);
-
-        // Save for win condition check
-        // We know we create 2 cards per word
-        const deckSize = gameWords.length * 2;
+        const gameWords = [...this.words].sort(() => Math.random() - 0.5).slice(0, 20);
 
         // Create pairs
         let deck = [];

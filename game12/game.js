@@ -1,3 +1,26 @@
+// Universal Touch-Click Handler for iPad/Mobile Compatibility
+function addTouchClick(element, handler) {
+    let touchStarted = false;
+
+
+
+    element.addEventListener('touchstart', (e) => {
+        touchStarted = true;
+        e.preventDefault();
+    }, { passive: false });
+
+    element.addEventListener('touchend', (e) => {
+        if (touchStarted) {
+            e.preventDefault();
+            handler(e);
+            touchStarted = false;
+        }
+    }, { passive: false });
+
+    element.addEventListener('touchcancel', () => {
+        touchStarted = false;
+    });
+}
 /**
  * Game 12: Mots Mêlés (Word Search)
  * Classic word search with tap/drag selection and image/audio clues
@@ -30,6 +53,7 @@ class WordSearchGame {
         this.timeLeftEl = document.getElementById('time-left');
         this.wordsFoundEl = document.getElementById('words-found');
         this.wordsTotalEl = document.getElementById('words-total');
+        this.selectionPreview = document.getElementById('selection-preview');
 
         // Result Screen
         this.rs = new ResultScreen({
@@ -40,7 +64,7 @@ class WordSearchGame {
 
         // Events
         document.getElementById('start-btn').addEventListener('click', () => this.startGame());
-        this.audioBtn.addEventListener('click', () => this.playCurrentClue());
+        addTouchClick(this.audioBtn, () => this.playCurrentClue());
 
         this.init();
     }
@@ -75,17 +99,19 @@ class WordSearchGame {
                 return;
             }
 
-            // Limit and prepare words (uppercase, only letters, single words)
-            words = words.slice(0, 8).map(w => {
-                // Take only the first word if there are spaces
-                const singleWord = w.word.split(/[\s_]+/)[0] || w.word;
-                // Convert to uppercase and keep only letters
-                const clean = singleWord.toUpperCase().replace(/[^A-ZÀÂÄÉÈÊËÏÎÔÙÛÜÇ]/g, '');
+            // Process ALL words first to find valid ones
+            words = words.map(w => {
+                // UPDATE: Do NOT split by space. Keep the full phrase but remove spaces for grid.
+                // "un chat" -> "UNCHAT" in grid, but "un chat" in list
+                const clean = w.word.toUpperCase().replace(/[^A-ZÀÂÄÉÈÊËÏÎÔÙÛÜÇ]/g, '');
                 return {
                     ...w,
                     cleanWord: clean
                 };
-            }).filter(w => w.cleanWord.length >= 2 && w.cleanWord.length <= 12);
+            }).filter(w => w.cleanWord.length >= 2 && w.cleanWord.length <= 15); // Increased max length to 15
+
+            // Then take up to 15
+            words = words.slice(0, 15);
 
             this.words = words;
             this.startScreen.classList.remove('hidden');
@@ -106,8 +132,14 @@ class WordSearchGame {
         }
 
         // Calculate grid size
+        // Calculate grid size
         const maxWordLen = Math.max(...this.words.map(w => w.cleanWord.length));
-        this.gridSize = Math.max(8, Math.min(15, maxWordLen + 3));
+        const totalChars = this.words.reduce((acc, w) => acc + w.cleanWord.length, 0);
+        // Ensure enough space for 15 words. Approx 2x chars for density.
+        const minDim = Math.ceil(Math.sqrt(totalChars * 2.5));
+        this.gridSize = Math.max(10, minDim, maxWordLen + 2);
+        // Cap strictly at 15 if needed, but for 15 words we might need 12-14 size.
+        if (this.gridSize > 18) this.gridSize = 18; // Hard cap to prevent tiny cells
 
         // Generate grid
         this.generateGrid();
@@ -252,7 +284,7 @@ class WordSearchGame {
             tag.textContent = pw.wordData.word;
             tag.dataset.word = pw.wordData.cleanWord;
 
-            tag.addEventListener('click', () => this.showClue(pw.wordData));
+            addTouchClick(tag, () => this.showClue(pw.wordData));
 
             this.wordList.appendChild(tag);
         }
@@ -357,6 +389,15 @@ class WordSearchGame {
             );
             if (elem) elem.classList.add('selecting');
         }
+
+        // AUTOCOMPLETE PREVIEW
+        if (this.selectionPreview) {
+            const selectedWord = this.selectionCells.map(c =>
+                this.grid[c.row][c.col]
+            ).join('');
+            this.selectionPreview.textContent = selectedWord;
+            this.selectionPreview.classList.add('visible');
+        }
     }
 
     onCellUp() {
@@ -392,6 +433,11 @@ class WordSearchGame {
             c.classList.remove('selecting')
         );
         this.selectionCells = [];
+
+        if (this.selectionPreview) {
+            this.selectionPreview.textContent = '';
+            this.selectionPreview.classList.remove('visible');
+        }
     }
 
     foundWord(placedWord) {

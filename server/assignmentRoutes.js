@@ -167,17 +167,30 @@ module.exports = function (app, requireAuth, requireStudentAuth) {
             // 2. Filter Words
             let pool = allWords;
 
-            const fileId = assignment.settings?.fileId;
-            if (fileId && files[fileId]) {
-                const fileWordIds = new Set(files[fileId].wordIds || []);
-                pool = pool.filter(w => fileWordIds.has(w.id));
+            // PRIORITY 1: Use assignment's stored word IDs (NEW - fixes isolation bug)
+            if (assignment.settings?.wordIds && assignment.settings.wordIds.length > 0) {
+                const allowedIds = new Set(assignment.settings.wordIds);
+                pool = pool.filter(w => allowedIds.has(w.id));
+                console.log(`[ASSIGNMENT ${assignmentId}] Using ${pool.length} words from assignment.settings.wordIds`);
+                console.log(`[ASSIGNMENT ${assignmentId}] Word IDs: ${assignment.settings.wordIds.join(', ')}`);
+                console.log(`[ASSIGNMENT ${assignmentId}] Words: ${pool.map(w => w.word).join(', ')}`);
             }
+            // PRIORITY 2: Use file filter + gameConfig (FALLBACK - backward compatibility)
+            else {
+                const fileId = assignment.settings?.fileId;
+                if (fileId && files[fileId]) {
+                    const fileWordIds = new Set(files[fileId].wordIds || []);
+                    pool = pool.filter(w => fileWordIds.has(w.id));
+                }
 
-            // Game Config Filter
-            const specificConfig = gameConfig[assignment.gameId];
-            if (specificConfig && specificConfig.questions && Array.isArray(specificConfig.questions)) {
-                const allowedQuestions = new Set(specificConfig.questions);
-                pool = pool.filter(w => allowedQuestions.has(w.id));
+                // Game Config Filter
+                const specificConfig = gameConfig[assignment.gameId];
+                if (specificConfig && specificConfig.questions && Array.isArray(specificConfig.questions)) {
+                    const allowedQuestions = new Set(specificConfig.questions);
+                    pool = pool.filter(w => allowedQuestions.has(w.id));
+                }
+                console.log(`[ASSIGNMENT ${assignmentId}] Using ${pool.length} words from gameConfig (fallback)`);
+                console.log(`[ASSIGNMENT ${assignmentId}] Words: ${pool.map(w => w.word).join(', ')}`);
             }
 
             // 3. Shuffle & Limit

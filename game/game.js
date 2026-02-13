@@ -1,3 +1,27 @@
+// Universal Touch-Click Handler for iPad/Mobile Compatibility
+function addTouchClick(element, handler) {
+    let touchStarted = false;
+
+    element.addEventListener('click', handler);
+
+    element.addEventListener('touchstart', (e) => {
+        touchStarted = true;
+        e.preventDefault();
+    }, { passive: false });
+
+    element.addEventListener('touchend', (e) => {
+        if (touchStarted) {
+            e.preventDefault();
+            handler(e);
+            touchStarted = false;
+        }
+    }, { passive: false });
+
+    element.addEventListener('touchcancel', () => {
+        touchStarted = false;
+    });
+}
+
 const GAME_STATE = {
     IDLE: 'idle',
     THINKING: 'thinking',
@@ -64,7 +88,9 @@ class MemoryEchoGame {
                 // 3. Load Words (from lang file, then filter)
                 const lang = session.lang || 'en';
                 this.currentLang = lang; // Store for TTS
-                const response = await fetch(`/data/${lang}?t=${Date.now()}`);
+                const response = await fetch(`/data/${lang}?t=${Date.now()}`, {
+                    credentials: 'include'
+                });
                 const data = await response.json();
 
                 const validIds = new Set(session.wordIds);
@@ -111,7 +137,9 @@ class MemoryEchoGame {
             const gameId = urlParams.get('gameId') || 'memoryEcho';
 
             // Cache-busting added to prevent stale data
-            const response = await fetch(`/data/${lang}?t=${Date.now()}`);
+            const response = await fetch(`/data/${lang}?t=${Date.now()}`, {
+                credentials: 'include'
+            });
             if (!response.ok) throw new Error('Network response was not ok');
             const data = await response.json();
 
@@ -278,7 +306,7 @@ class MemoryEchoGame {
             tile.dataset.letter = letter;
             tile.dataset.index = index; // Unique ID for this tile instance
 
-            tile.addEventListener('click', () => this.handleTileClick(tile, letter));
+            addTouchClick(tile, () => this.handleTileClick(tile, letter));
             this.tilesArea.appendChild(tile);
         });
     }

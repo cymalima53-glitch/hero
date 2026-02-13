@@ -1,3 +1,26 @@
+// Universal Touch-Click Handler for iPad/Mobile Compatibility
+function addTouchClick(element, handler) {
+    let touchStarted = false;
+
+    element.addEventListener('click', handler);
+
+    element.addEventListener('touchstart', (e) => {
+        touchStarted = true;
+        e.preventDefault();
+    }, { passive: false });
+
+    element.addEventListener('touchend', (e) => {
+        if (touchStarted) {
+            e.preventDefault();
+            handler(e);
+            touchStarted = false;
+        }
+    }, { passive: false });
+
+    element.addEventListener('touchcancel', () => {
+        touchStarted = false;
+    });
+}
 class SoundDragGame {
     constructor() {
         this.words = [];
@@ -82,7 +105,7 @@ class SoundDragGame {
                 await fetch(`/api/session/${sessionId}/start`, { method: 'POST' });
 
                 this.currentLang = session.lang || 'en';
-                const res = await fetch(`/data/${this.currentLang}?t=${Date.now()}`);
+                const res = await fetch(`/data/${this.currentLang}?t=${Date.now()}`, { credentials: 'include' });
                 const data = await res.json();
 
                 const validIds = new Set(session.wordIds);
@@ -90,7 +113,7 @@ class SoundDragGame {
             } else {
                 this.currentLang = urlParams.get('lang') || 'en';
                 const id = urlParams.get('gameId') || 'soundDrag';
-                const res = await fetch(`/data/${this.currentLang}?t=${Date.now()}`);
+                const res = await fetch(`/data/${this.currentLang}?t=${Date.now()}`, { credentials: 'include' });
                 const data = await res.json();
 
                 // Config or Empty

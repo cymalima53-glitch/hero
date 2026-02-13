@@ -12,14 +12,14 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
+    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    /* Mint/Blue */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     overflow: hidden;
     color: var(--text-color);
-    background-image: none !important;
 }
 
 #game-container {

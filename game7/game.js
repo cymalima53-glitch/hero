@@ -1,3 +1,26 @@
+// Universal Touch-Click Handler for iPad/Mobile Compatibility
+function addTouchClick(element, handler) {
+    let touchStarted = false;
+
+    element.addEventListener('click', handler);
+
+    element.addEventListener('touchstart', (e) => {
+        touchStarted = true;
+        e.preventDefault();
+    }, { passive: false });
+
+    element.addEventListener('touchend', (e) => {
+        if (touchStarted) {
+            e.preventDefault();
+            handler(e);
+            touchStarted = false;
+        }
+    }, { passive: false });
+
+    element.addEventListener('touchcancel', () => {
+        touchStarted = false;
+    });
+}
 class BeatTheClockGame {
     constructor() {
         this.words = [];
@@ -41,7 +64,7 @@ class BeatTheClockGame {
             this.unlockTTS();
             this.startGame();
         });
-        this.audioBtn.addEventListener('click', () => this.playCurrentAudio());
+        addTouchClick(this.audioBtn, () => this.playCurrentAudio());
     }
 
     async loadData() {
@@ -58,7 +81,7 @@ class BeatTheClockGame {
                 await fetch(`/api/session/${sessionId}/start`, { method: 'POST' });
 
                 this.currentLang = session.lang || 'en';
-                const res = await fetch(`/data/${this.currentLang}?t=${Date.now()}`);
+                const res = await fetch(`/data/${this.currentLang}?t=${Date.now()}`, { credentials: 'include' });
                 const data = await res.json();
 
                 const validIds = new Set(session.wordIds);
@@ -66,7 +89,7 @@ class BeatTheClockGame {
             } else {
                 this.currentLang = urlParams.get('lang') || 'en';
                 const id = urlParams.get('gameId') || 'beatClock';
-                const res = await fetch(`/data/${this.currentLang}?t=${Date.now()}`);
+                const res = await fetch(`/data/${this.currentLang}?t=${Date.now()}`, { credentials: 'include' });
                 const data = await res.json();
 
                 // Config or Empty
@@ -162,7 +185,7 @@ class BeatTheClockGame {
             img.src = choice.image || 'https://placehold.co/150';
             div.appendChild(img);
 
-            div.addEventListener('click', () => this.handleChoice(choice, div));
+            addTouchClick(div, () => this.handleChoice(choice, div));
             this.grid.appendChild(div);
         });
     }

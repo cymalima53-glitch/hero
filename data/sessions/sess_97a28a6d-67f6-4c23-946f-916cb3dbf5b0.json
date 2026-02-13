@@ -1,0 +1,21 @@
+{
+  "id": "sess_97a28a6d-67f6-4c23-946f-916cb3dbf5b0",
+  "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+  "studentId": "s_7018c146-87d9-40bf-b1ec-03267dd14c6c",
+  "gameId": "beatClock",
+  "lang": "en",
+  "wordIds": [
+    "w_053dee64-1390-466c-9190-134b96fee8b7",
+    "w_7997bcb5-3266-4c16-9660-97cee61d37aa",
+    "w_4cf1d108-4565-467a-9a48-bc2845ca64bb"
+  ],
+  "assignmentId": "as_1d4a45c4-771e-4ecc-aa92-2f1d6f105223",
+  "status": "active",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 0,
+    "questions": {}
+  },
+  "createdAt": "2026-02-11T10:52:50.923Z"
+}

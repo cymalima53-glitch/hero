@@ -1,0 +1,21 @@
+{
+  "id": "sess_a72536ce-b267-4085-80ff-e84a0fa03542",
+  "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+  "studentId": "s_7018c146-87d9-40bf-b1ec-03267dd14c6c",
+  "gameId": "soundDrag",
+  "lang": "en",
+  "wordIds": [
+    "w_7997bcb5-3266-4c16-9660-97cee61d37aa",
+    "w_4cf1d108-4565-467a-9a48-bc2845ca64bb",
+    "w_053dee64-1390-466c-9190-134b96fee8b7"
+  ],
+  "assignmentId": "as_427e390d-024c-453e-875d-3a2ee123a786",
+  "status": "active",
+  "analytics": {
+    "attempts": 0,
+    "failuresBeforePass": 0,
+    "timeSpent": 0,
+    "questions": {}
+  },
+  "createdAt": "2026-02-11T10:57:33.256Z"
+}

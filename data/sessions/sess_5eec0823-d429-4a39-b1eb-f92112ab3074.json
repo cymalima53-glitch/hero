@@ -1,0 +1,41 @@
+{
+  "id": "sess_5eec0823-d429-4a39-b1eb-f92112ab3074",
+  "teacherId": "t_9e4252d4-04f3-493b-8513-5de2dd480a74",
+  "studentId": "s_7018c146-87d9-40bf-b1ec-03267dd14c6c",
+  "gameId": "beatClock",
+  "lang": "en",
+  "wordIds": [
+    "w_053dee64-1390-466c-9190-134b96fee8b7",
+    "w_4cf1d108-4565-467a-9a48-bc2845ca64bb",
+    "w_7997bcb5-3266-4c16-9660-97cee61d37aa"
+  ],
+  "assignmentId": "as_296c2b14-7dad-4721-9094-522084492645",
+  "status": "completed",
+  "analytics": {
+    "attempts": 13,
+    "failuresBeforePass": 0,
+    "timeSpent": 35,
+    "questions": {
+      "w_7997bcb5-3266-4c16-9660-97cee61d37aa": {
+        "wrong_action": 4,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_4cf1d108-4565-467a-9a48-bc2845ca64bb": {
+        "wrong_action": 2,
+        "timeout": 0,
+        "correct": true
+      },
+      "w_053dee64-1390-466c-9190-134b96fee8b7": {
+        "wrong_action": 0,
+        "timeout": 0,
+        "correct": true
+      }
+    },
+    "endTime": 1770802962981,
+    "totalTimeSeconds": 51.211,
+    "accuracy": 33,
+    "mistakes": 6
+  },
+  "createdAt": "2026-02-11T09:41:50.236Z"
+}

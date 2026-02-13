@@ -473,6 +473,28 @@ function toggleWordInGame(gameId, wordId, isChecked) {
     selectedCount.textContent = questions.length;
 }
 
+// ========== CLEAR SELECTION ==========
+const clearSelectionBtn = document.getElementById('clear-selection-btn');
+if (clearSelectionBtn) {
+    clearSelectionBtn.addEventListener('click', () => {
+        const gameId = activeTab;
+        if (!data.gameConfig[gameId]) return;
+
+        if (confirm(`Clear all selected words for ${GAME_NAMES[gameId]}?`)) {
+            // Clear array
+            data.gameConfig[gameId].questions = [];
+
+            // Uncheck all boxes
+            document.querySelectorAll('#game-word-list input[type="checkbox"]').forEach(cb => {
+                cb.checked = false;
+            });
+
+            // Update count
+            selectedCount.textContent = '0';
+        }
+    });
+}
+
 // ========== IMAGE SEARCH ==========
 searchImgBtn.addEventListener('click', async () => {
     const term = imageSearchTerm.value.trim();

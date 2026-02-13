@@ -23,6 +23,7 @@
             <div class="nav-item active" data-view="tutorials">📚 Tutorials</div>
             <div class="nav-item" data-view="dashboard"><i class="fas fa-home"></i> Dashboard</div>
             <div class="nav-item" data-view="students"><i class="fas fa-user-graduate"></i> Students</div>
+            <div class="nav-item" data-view="groups"><i class="fas fa-users"></i> Groups</div>
             <div class="nav-item" data-view="content"><i class="fas fa-edit"></i> Content Editor</div>
             <div class="nav-item" data-view="assignments"><i class="fas fa-clipboard-list"></i> Assignments</div>
             <div class="nav-item" data-view="analytics"><i class="fas fa-chart-line"></i> Analytics</div>
@@ -111,6 +112,10 @@
                             style="min-width: 150px;" />
                         <input type="email" id="new-student-email" placeholder="Parent Email (Opt)"
                             style="min-width: 200px;" />
+                        <select id="new-student-group"
+                            style="min-width: 150px; padding: 10px; border-radius: 8px; border: 1px solid var(--border);">
+                            <option value="">No Group</option>
+                        </select>
                         <button type="submit"><i class="fas fa-plus"></i> Add</button>
                     </form>
 
@@ -125,6 +130,21 @@
                         </thead>
                         <tbody></tbody>
                     </table>
+                </div>
+            </div>
+
+            <!-- VIEW: GROUPS (NEW) -->
+            <div id="view-groups" class="app-view hidden">
+                <div class="card">
+                    <h2>Manage Groups</h2>
+                    <form id="add-group-form" class="flex-row" style="margin-bottom: 2rem;">
+                        <input type="text" id="new-group-name" placeholder="Group Name (e.g., Class A)" required
+                            style="flex: 1;" />
+                        <button type="submit"><i class="fas fa-plus"></i> Create Group</button>
+                    </form>
+                    <div id="groups-list">
+                        <!-- Groups rendered here -->
+                    </div>
                 </div>
             </div>
 
@@ -302,9 +322,11 @@
                         </form>
                     </div>
 
-                    <!-- Game Config Area -->
                     <div id="editor-game-area" class="card hidden" style="flex:1;">
-                        <h3 id="game-config-title">Game Settings</h3>
+                        <div class="flex-row" style="justify-content: space-between; align-items: center;">
+                            <h3 id="game-config-title">Game Settings</h3>
+
+                        </div>
 
                         <!-- FILL BLANK INSTRUCTION BANNER -->
                         <div id="fillblank-instructions" class="hidden"
@@ -344,10 +366,21 @@
                     <form id="create-session-form">
                         <div class="flex-row" style="flex-wrap: wrap;">
                             <div style="flex: 1; min-width: 200px;">
-                                <label>Student</label>
-                                <select id="assign-student" required>
+                                <label>Assign To</label>
+                                <div class="flex-row" style="margin-bottom: 0.5rem; gap:10px;">
+                                    <button type="button" class="sm secondary active-tab" id="tab-assign-student"
+                                        onclick="toggleAssignTab('student')">Individual</button>
+                                    <button type="button" class="sm secondary" id="tab-assign-group"
+                                        onclick="toggleAssignTab('group')">Group</button>
+                                </div>
+
+                                <select id="assign-student" class="assign-selector" required>
                                     <option value="">Select Student...</option>
                                 </select>
+                                <select id="assign-group" class="assign-selector hidden">
+                                    <option value="">Select Group...</option>
+                                </select>
+                                <div id="assign-preview" class="hidden"></div>
                             </div>
                             <!-- NEW: File Source -->
                             <div style="flex: 1; min-width: 200px;">
@@ -405,11 +438,36 @@
                 </div>
 
 
+                <!-- GROUP ACTIONS (NEW) -->
+                <div class="card mb-2" style="background:#fff3e0; border-left: 5px solid #ff9800; margin-bottom: 1rem;">
+                    <h3 style="margin-top:0; font-size: 1.1rem; color: #e65100;">⚠️ Group Actions</h3>
+                    <div class="flex-row" style="gap:10px; align-items:center; flex-wrap: wrap;">
+                        <label><strong>Reset Progress:</strong></label>
+                        <select id="group-reset-select" style="min-width: 150px; padding: 5px;">
+                            <option value="">-- Select Group --</option>
+                        </select>
+                        <button id="btn-group-reset" class="danger" onclick="resetGroupProgress()">
+                            <i class="fas fa-undo"></i> Reset Group Progress
+                        </button>
+                    </div>
+                    <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 0; margin-top: 5px;">
+                        Clears scores and sets status to "Pending" for all students in the group. Assignments remain
+                        visible.
+                    </p>
+                </div>
+
                 <div class="card">
                     <div class="flex-row" style="justify-content:space-between; align-items:center;">
                         <h3>Student Portfolios</h3>
-                        <div class="text-muted" style="font-size: 0.9rem;">
-                            <span id="total-active">0</span> Active &bull; <span id="total-completed">0</span> Completed
+                        <div data-flex="row" style="display:flex; gap:10px; align-items:center;">
+                            <button id="bulk-delete-btn-portfolios" class="danger sm hidden"
+                                onclick="deleteSelectedItems()" style="margin-right: 1rem;">
+                                <i class="fas fa-trash"></i> Delete Selected (<span id="bulk-count-portfolios">0</span>)
+                            </button>
+                            <div class="text-muted" style="font-size: 0.9rem;">
+                                <span id="total-active">0</span> Active &bull; <span id="total-completed">0</span>
+                                Completed
+                            </div>
                         </div>
                     </div>
                     <!-- Folder Container -->
@@ -458,6 +516,14 @@
                             <div style="color:var(--text-muted); margin-bottom:1rem;">ID: <code id="sd-id">...</code>
                             </div>
                         </div>
+                        <button id="bulk-delete-btn" class="danger sm hidden" onclick="deleteSelectedItems()"
+                            style="margin-right: 1rem;">
+                            <i class="fas fa-trash"></i> Delete Selected (<span id="bulk-count">0</span>)
+                        </button>
+                        <button id="student-reset-btn" class="danger sm outline"
+                            style="margin-right: 1rem; display: none;">
+                            <i class="fas fa-undo"></i> Reset Progress
+                        </button>
                         <button class="secondary sm no-print" onclick="window.print()"
                             style="display: flex; align-items: center; gap: 0.5rem;"
                             title="Click to open print dialog, then select 'Save as PDF'">
@@ -671,7 +737,7 @@
             }, true);
         });
     </script>
-    <script src="app.js?v=7"></script>
+    <script src="app.js?v=8"></script>
 </body>
 
 </html>

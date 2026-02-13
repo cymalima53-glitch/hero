@@ -95,6 +95,52 @@ async function requireStudentAuth(req, res, next) {
     next();
 }
 
+// Middleware: Accept EITHER Teacher OR Student Auth (for game data access)
+async function requireAnyAuth(req, res, next) {
+    // Try teacher token first
+    let token = req.cookies?.teacher_token;
+    if (!token && req.headers.cookie) {
+        const cookies = req.headers.cookie.split(';').reduce((acc, c) => {
+            const [k, v] = c.trim().split('=');
+            acc[k] = v;
+            return acc;
+        }, {});
+        token = cookies.teacher_token;
+    }
+
+    if (token && activeSessions[token]) {
+        const session = activeSessions[token];
+        if (typeof session === 'string') {
+            req.teacherId = session;
+            req.userType = 'teacher';
+        } else if (session.type === 'teacher') {
+            req.teacherId = session.id;
+            req.userType = 'teacher';
+        }
+        return next();
+    }
+
+    // Try student token
+    token = req.cookies?.student_token;
+    if (!token && req.headers.cookie) {
+        const cookies = req.headers.cookie.split(';').reduce((acc, c) => {
+            const [k, v] = c.trim().split('=');
+            acc[k] = v;
+            return acc;
+        }, {});
+        token = cookies.student_token;
+    }
+
+    if (token && activeSessions[token] && activeSessions[token].type === 'student') {
+        req.studentId = activeSessions[token].id;
+        req.userType = 'student';
+        return next();
+    }
+
+    // No valid token found
+    return res.status(401).json({ error: 'Unauthorized' });
+}
+
 module.exports = function (app) {
 
     // REGISTER
@@ -440,5 +486,5 @@ module.exports = function (app) {
     }
 
     // Return middleware for use in other files
-    return { requireAuth, requireStudentAuth, createTeacherSession };
+    return { requireAuth, requireStudentAuth, requireAnyAuth, createTeacherSession };
 };

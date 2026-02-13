@@ -120,6 +120,96 @@
       "contentGeneratorUses": 0,
       "students": [],
       "firstLogin": false
+    },
+    {
+      "id": "t_edc3aa70-4e6f-4fb8-b6a8-9bfaf17175c9",
+      "email": "test@teacher.com",
+      "passwordHash": "$2a$10$pcgGkO73ZYs38v/Ou9esxeWYFXwKKmdG6e19KUpfxwaNWnEvyr6u.",
+      "createdAt": "2026-02-09T11:42:37.862Z",
+      "lastActiveAt": "2026-02-09T11:42:37.862Z",
+      "contentGeneratorUses": 0,
+      "students": [],
+      "firstLogin": true
+    },
+    {
+      "id": "t_91b76e47-b4b8-41dd-9dc5-40b60358ecb1",
+      "email": "test_1770637487105@teacher.com",
+      "passwordHash": "$2a$10$X8UVuJKHunpJdP.PVSZr.eYQKsFRaGvEthjejm/cLX9ZpHdZkGqtC",
+      "createdAt": "2026-02-09T11:44:47.214Z",
+      "lastActiveAt": "2026-02-09T11:44:47.214Z",
+      "contentGeneratorUses": 0,
+      "students": [],
+      "firstLogin": true
+    },
+    {
+      "id": "t_6bfe99ef-141f-49f4-b417-148f9662ee17",
+      "email": "test_1770637507960@teacher.com",
+      "passwordHash": "$2a$10$S5EkWZQ5Ic/qyE6OaWBARuL.Bvjv6NwSV2/vOhv2D/ypiakxCLUEm",
+      "createdAt": "2026-02-09T11:45:08.040Z",
+      "lastActiveAt": "2026-02-09T11:45:08.040Z",
+      "contentGeneratorUses": 0,
+      "students": [],
+      "firstLogin": true
+    },
+    {
+      "id": "t_0244bd3e-4a30-4cf2-a625-adf1ec04c1d6",
+      "email": "test_1770639955976@teacher.com",
+      "passwordHash": "$2a$10$ZQ2z5ZWAGgp0r87uNjeInO3a6qYRZ9ZKC8zJelpBrAzU7kKPZbbem",
+      "createdAt": "2026-02-09T12:25:56.187Z",
+      "lastActiveAt": "2026-02-09T12:25:56.187Z",
+      "contentGeneratorUses": 0,
+      "students": [],
+      "firstLogin": true
+    },
+    {
+      "id": "t_3bfbc785-5ee7-45f8-a206-1f7a2e13628e",
+      "email": "test_1770640094748@teacher.com",
+      "passwordHash": "$2a$10$uC9zI993BC0J5jdESx5YQeG5ZXGBGSEPZbUnVZopKAQEgzo1bU0J.",
+      "createdAt": "2026-02-09T12:28:14.992Z",
+      "lastActiveAt": "2026-02-09T12:28:14.992Z",
+      "contentGeneratorUses": 0,
+      "students": [],
+      "firstLogin": true
+    },
+    {
+      "id": "t_cfe925bd-6069-4575-88a0-2ef8f367de93",
+      "email": "test_1770640143815@teacher.com",
+      "passwordHash": "$2a$10$32.DNQPxsaXK2M/8Lw72iOCUUVK30B3eEixVCI35Qq37yBlNrTIui",
+      "createdAt": "2026-02-09T12:29:03.922Z",
+      "lastActiveAt": "2026-02-09T12:29:03.922Z",
+      "contentGeneratorUses": 0,
+      "students": [],
+      "firstLogin": true
+    },
+    {
+      "id": "t_17f01e8f-b749-40cc-8388-7e89e1a8791e",
+      "email": "test_1770640287629@teacher.com",
+      "passwordHash": "$2a$10$bzp9nuqswWagXlaqv09vl.WiiURTDUynOht9qWt6A4L89asGgJs7S",
+      "createdAt": "2026-02-09T12:31:27.852Z",
+      "lastActiveAt": "2026-02-09T12:31:27.852Z",
+      "contentGeneratorUses": 0,
+      "students": [],
+      "firstLogin": true
+    },
+    {
+      "id": "t_c9f88deb-f389-4426-ab98-ae19854de245",
+      "email": "test_1770640309443@teacher.com",
+      "passwordHash": "$2a$10$CAk0RoR4UIXTrF0Iu0oXnuMfw2PX.dl/5RL7dw0KwWo3fJy47bto2",
+      "createdAt": "2026-02-09T12:31:49.553Z",
+      "lastActiveAt": "2026-02-09T12:31:49.553Z",
+      "contentGeneratorUses": 0,
+      "students": [],
+      "firstLogin": true
+    },
+    {
+      "id": "t_b4f167e9-8831-4f2e-8814-b799969e485f",
+      "email": "test_1770707948150@teacher.com",
+      "passwordHash": "$2a$10$tpL3FD12STKzYSHyIXRgb..ewtUKWtCWBUodM2p3QmQDS4jrpfY1u",
+      "createdAt": "2026-02-10T07:19:08.270Z",
+      "lastActiveAt": "2026-02-10T07:19:08.270Z",
+      "contentGeneratorUses": 0,
+      "students": [],
+      "firstLogin": true
     }
   ]
 }

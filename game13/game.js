@@ -1,3 +1,26 @@
+// Universal Touch-Click Handler for iPad/Mobile Compatibility
+function addTouchClick(element, handler) {
+    let touchStarted = false;
+
+    element.addEventListener('click', handler);
+
+    element.addEventListener('touchstart', (e) => {
+        touchStarted = true;
+        e.preventDefault();
+    }, { passive: false });
+
+    element.addEventListener('touchend', (e) => {
+        if (touchStarted) {
+            e.preventDefault();
+            handler(e);
+            touchStarted = false;
+        }
+    }, { passive: false });
+
+    element.addEventListener('touchcancel', () => {
+        touchStarted = false;
+    });
+}
 /**
  * Game 13: Mots Croisés (Crossword)
  * Classic crossword with text/image/audio clues
@@ -32,6 +55,7 @@ class CrosswordGame {
         this.timeLeftEl = document.getElementById('time-left');
         this.wordsDoneEl = document.getElementById('words-done');
         this.wordsTotalEl = document.getElementById('words-total');
+        this.suggestionBox = document.getElementById('suggestion-box');
 
         // Result Screen
         this.rs = new ResultScreen({
@@ -42,11 +66,11 @@ class CrosswordGame {
 
         // Events
         document.getElementById('start-btn').addEventListener('click', () => this.startGame());
-        this.audioBtn.addEventListener('click', () => this.playAudio());
+        addTouchClick(this.audioBtn, () => this.playAudio());
 
         // Keyboard events
         document.querySelectorAll('#keyboard button').forEach(btn => {
-            btn.addEventListener('click', () => this.onKeyPress(btn.dataset.key));
+            addTouchClick(btn, () => this.onKeyPress(btn.dataset.key));
         });
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Backspace') this.onKeyPress('⌫');
@@ -68,6 +92,28 @@ class CrosswordGame {
             this.currentLang = lang;
 
             if (!this.sessionId) {
+                // If checking gameId for preview mode
+                const gameId = urlParams.get('gameId');
+                if (gameId) {
+                    // 2. OPEN MODE
+                    this.currentLang = urlParams.get('lang') || 'en';
+                    const res = await fetch(`/data/${this.currentLang}?t=${Date.now()}`);
+                    const data = await res.json();
+
+                    // If config exists use it, else use all
+                    const ids = data.gameConfig?.[gameId]?.questions || [];
+                    let words = [];
+                    if (ids.length > 0) {
+                        words = data.words.filter(w => ids.includes(w.id));
+                    } else {
+                        // If no config, maybe empty or all? Let's default to empty to be safe or grab random?
+                        // For preview, let's grab random 20 if none selected
+                        words = data.words.slice(0, 20);
+                    }
+                    this.processWords(words);
+                    return;
+                }
+
                 this.startScreen.innerHTML = '<h1>Session Required</h1>';
                 return;
             }
@@ -78,23 +124,22 @@ class CrosswordGame {
 
             this.currentLang = sessionData.lang || lang;
 
-            let words = sessionData.words || [];
-            words = words.filter(w => w.enabled !== false && w.word && w.word.length >= 2);
+            let words = sessionData.wordIds ? [] : (sessionData.words || []);
+            // If wordIds exists, we need to fetch data/lang to get word objects if they aren't in sessionData
+            // Actually sessionData usually has words populated if using the right endpoint, but let's check.
+            // The old code assumed sessionData.words.
+            // If not, we might need to fetch /data/lang.
+            // Let's stick to what was there: sessionData.words
 
-            if (!words.length) {
-                this.startScreen.innerHTML = '<h1>No words available</h1>';
-                return;
+            if (!words.length && sessionData.wordIds) {
+                // Fetch words if only IDs
+                const res = await fetch(`/data/${this.currentLang}?t=${Date.now()}`);
+                const data = await res.json();
+                const validIds = new Set(sessionData.wordIds);
+                words = data.words.filter(w => validIds.has(w.id));
             }
 
-            // Prepare words
-            this.words = words.slice(0, 8).map(w => ({
-                ...w,
-                cleanWord: w.word.toUpperCase().replace(/[^A-ZÀÂÄÉÈÊËÏÎÔÙÛÜÇ]/g, ''),
-                // Determine clue type: text > image > audio
-                clueType: w.clueType || (w.textClue ? 'text' : (w.image ? 'image' : 'audio'))
-            })).filter(w => w.cleanWord.length >= 2);
-
-            this.startScreen.classList.remove('hidden');
+            this.processWords(words);
 
         } catch (error) {
             console.error('Failed to load data:', error);
@@ -102,7 +147,32 @@ class CrosswordGame {
         }
     }
 
+    processWords(words) {
+        words = words.filter(w => w.enabled !== false && w.word && w.word.length >= 2);
+
+        if (!words.length) {
+            this.startScreen.innerHTML = '<h1>No words available</h1>';
+            return;
+        }
+
+        // Prepare words
+        this.words = words.slice(0, 20).map(w => ({
+            ...w,
+            cleanWord: w.word.toUpperCase().replace(/[^A-ZÀÂÄÉÈÊËÏÎÔÙÛÜÇ]/g, ''),
+            clueType: w.clueType || (w.textClue ? 'text' : (w.image ? 'image' : 'audio'))
+        })).filter(w => w.cleanWord.length >= 2);
+
+        if (this.words.length === 0) {
+            this.startScreen.innerHTML = '<h1>No valid words available</h1>';
+            return;
+        }
+
+        this.startScreen.classList.remove('hidden');
+    }
+
     startGame() {
+        if (!this.words || this.words.length === 0) return;
+
         this.startScreen.classList.add('hidden');
         this.gameScreen.classList.remove('hidden');
 
@@ -111,6 +181,12 @@ class CrosswordGame {
         }
 
         this.generateCrossword();
+        if (this.placedWords.length === 0) {
+            this.gameScreen.classList.add('hidden');
+            this.startScreen.classList.remove('hidden');
+            this.startScreen.innerHTML = '<h1>Could not generate crossword</h1>';
+            return;
+        }
         this.renderGrid();
 
         this.wordsTotalEl.textContent = this.placedWords.length;
@@ -134,7 +210,7 @@ class CrosswordGame {
 
         // Simple crossword generation: place words one by one
         // Start with largest grid possible, then find bounds later
-        const MAX = 20;
+        const MAX = 60; // Increased for 20 words
         const tempGrid = Array(MAX).fill(null).map(() => Array(MAX).fill(null));
         const center = Math.floor(MAX / 2);
 
@@ -179,12 +255,15 @@ class CrosswordGame {
                     const lastCell = lastWord.cells[lastWord.cells.length - 1];
                     const newRow = lastCell.row + 2;
 
-                    if (this.canPlaceInTemp(tempGrid, word, newRow, center - Math.floor(word.length / 2), 0, 1)) {
+                    // Ensure we don't go out of bounds
+                    if (newRow < MAX && this.canPlaceInTemp(tempGrid, word, newRow, center - Math.floor(word.length / 2), 0, 1)) {
                         this.placeWordInTemp(tempGrid, wordData, newRow, center - Math.floor(word.length / 2), 0, 1, i + 1);
                     }
                 }
             }
         }
+
+        if (this.placedWords.length === 0) return;
 
         // Find bounds and create final grid
         let minRow = MAX, maxRow = 0, minCol = MAX, maxCol = 0;
@@ -205,6 +284,8 @@ class CrosswordGame {
 
         this.gridHeight = maxRow - minRow + 1;
         this.gridWidth = maxCol - minCol + 1;
+
+        if (this.gridHeight <= 0 || this.gridWidth <= 0) return; // Safety check
 
         // Create final grid with offset
         this.grid = Array(this.gridHeight).fill(null).map(() =>
@@ -315,7 +396,7 @@ class CrosswordGame {
                         numSpan.textContent = data.number;
                         cell.appendChild(numSpan);
                     }
-                    cell.addEventListener('click', () => this.onCellClick(r, c));
+                    addTouchClick(cell, () => this.onCellClick(r, c));
                 } else {
                     cell.classList.add('blocked');
                 }
@@ -381,6 +462,7 @@ class CrosswordGame {
 
         // Show clue
         this.showClue(word);
+        this.updateSuggestions();
     }
 
     showClue(word) {
@@ -426,6 +508,7 @@ class CrosswordGame {
             // Backspace
             cellData.userInput = '';
             this.updateCellDisplay(row, col);
+            this.updateSuggestions();
             this.moveToPrev();
         } else {
             // Letter input
@@ -448,6 +531,7 @@ class CrosswordGame {
                 }
             }
 
+            this.updateSuggestions();
             this.checkWordComplete();
             this.moveToNext();
         }
@@ -611,6 +695,86 @@ class CrosswordGame {
             window.speechSynthesis.speak(u);
         }
     }
+
+
+    updateSuggestions() {
+        if (!this.suggestionBox) return;
+
+        if (!this.selectedWord || this.selectedWord.completed) {
+            this.suggestionBox.innerHTML = '';
+            this.suggestionBox.classList.add('hidden');
+            return;
+        }
+
+        // Build pattern
+        let pattern = '';
+        for (const cell of this.selectedWord.cells) {
+            const val = this.grid[cell.row][cell.col].userInput;
+            pattern += val ? val : '.';
+        }
+
+        // If empty, maybe don't show? Or show all matching length?
+        // User said "Initial were just letters typed".
+        // Let's show all matching length if empty.
+
+        const regex = new RegExp(`^${pattern}$`);
+
+        // Filter words (limit 5)
+        const matches = this.words.filter(w =>
+            w.cleanWord.length === pattern.length &&
+            regex.test(w.cleanWord)
+        ).slice(0, 5);
+
+        if (matches.length === 0) {
+            this.suggestionBox.innerHTML = '';
+            this.suggestionBox.classList.add('hidden');
+            return;
+        }
+
+        this.suggestionBox.classList.remove('hidden');
+        this.suggestionBox.innerHTML = matches.map(w => `
+            <div class="suggestion-item${w.cleanWord === this.selectedWord.cleanWord ? ' match' : ''}" 
+                 onclick="window.game.fillFromSuggestion('${w.cleanWord}')">
+                ${w.cleanWord}
+            </div>
+        `).join('');
+    }
+
+    fillFromSuggestion(wordStr) {
+        if (!this.selectedWord) return;
+
+        for (let i = 0; i < this.selectedWord.cells.length; i++) {
+            const c = this.selectedWord.cells[i];
+            const letter = wordStr[i];
+
+            // Only fill if empty or different? No, force fill (autocorrect)
+            this.grid[c.row][c.col].userInput = letter;
+            this.updateCellDisplay(c.row, c.col);
+
+            // Trigger validation
+            const cell = document.querySelector(`.cw-cell[data-row="${c.row}"][data-col="${c.col}"]`);
+            if (cell) {
+                if (letter === this.grid[c.row][c.col].letter) {
+                    cell.classList.remove('wrong');
+                    cell.classList.add('correct');
+                } else {
+                    cell.classList.remove('correct');
+                    cell.classList.add('wrong');
+
+                    // Count error if it wasn't wrong before? 
+                    // This counts as a "try".
+                    if (this.sessionId) {
+                        const wid = this.selectedWord.id;
+                        this.wordWrongCounts[wid] = (this.wordWrongCounts[wid] || 0) + 1;
+                        this.sessionStats.wrongAttempts++;
+                    }
+                }
+            }
+        }
+
+        this.checkWordComplete();
+        this.updateSuggestions();
+    }
 }
 
-document.addEventListener('DOMContentLoaded', () => new CrosswordGame());
+document.addEventListener('DOMContentLoaded', () => { window.game = new CrosswordGame(); });

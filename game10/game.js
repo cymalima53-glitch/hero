@@ -1,3 +1,26 @@
+// Universal Touch-Click Handler for iPad/Mobile Compatibility
+function addTouchClick(element, handler) {
+    let touchStarted = false;
+    
+    addTouchClick(element, handler);
+    
+    element.addEventListener('touchstart', (e) => {
+        touchStarted = true;
+        e.preventDefault();
+    }, { passive: false });
+    
+    element.addEventListener('touchend', (e) => {
+        if (touchStarted) {
+            e.preventDefault();
+            handler(e);
+            touchStarted = false;
+        }
+    }, { passive: false });
+    
+    element.addEventListener('touchcancel', () => {
+        touchStarted = false;
+    });
+}
 class HeroFreezeGame {
     constructor() {
         this.video = document.getElementById('video');
@@ -56,10 +79,10 @@ class HeroFreezeGame {
         };
 
         const spkBg = document.getElementById('speaker-bg');
-        if (spkBg) spkBg.addEventListener('click', replay);
+        if (spkBg) addTouchClick(spkBg, replay);
 
         const rplHint = document.getElementById('replay-hint');
-        if (rplHint) rplHint.addEventListener('click', replay);
+        if (rplHint) addTouchClick(rplHint, replay);
 
         try {
             if (this.sessionId) {
@@ -92,7 +115,7 @@ class HeroFreezeGame {
         if (!this.sessionData) return;
         const lang = this.sessionData.lang || 'en';
         try {
-            const res = await fetch(`/data/${lang}`);
+            const res = await fetch(`/data/${lang}`, { credentials: 'include' }`);
             if (!res.ok) throw new Error(`Data fetch failed`);
 
             const data = await res.json();

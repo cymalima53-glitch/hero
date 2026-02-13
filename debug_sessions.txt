@@ -2575,3 +2575,1311 @@ Found 58 sessions.
 Found 58 sessions.
 [2026-01-20T09:18:04.253Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
 Found 58 sessions.
+[2026-02-09T11:56:13.514Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:56:15.434Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:56:22.886Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:56:29.974Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:56:56.780Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:56:58.412Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:56:59.349Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:56:59.996Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:57:58.595Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:57:59.307Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:58:00.235Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:58:02.388Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:58:04.067Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:58:05.531Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:58:08.699Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:58:27.204Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:58:27.425Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:58:27.891Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:58:28.347Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:58:28.732Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:58:29.068Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:58:29.369Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:58:29.586Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:58:29.736Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:58:47.307Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:58:52.125Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:58:55.058Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T11:58:57.826Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:01:07.187Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:01:07.829Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:01:08.039Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:01:08.203Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:01:08.378Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:01:55.406Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:02:01.092Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:02:06.381Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:02:18.933Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:02:54.753Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:02:57.709Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:02:58.746Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:03:04.210Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:03:22.592Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:38:20.049Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:38:27.480Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:38:31.244Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:38:34.101Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:38:35.652Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:38:37.238Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:38:47.453Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:38:48.973Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:38:51.484Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:38:52.348Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:38:54.532Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:39:15.045Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:39:20.179Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:45:27.732Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:45:33.019Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:45:48.330Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:45:48.900Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:45:52.375Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:45:55.945Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:46:29.746Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:46:32.155Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:46:32.730Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:48:12.215Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:48:21.039Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:49:39.695Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:49:40.256Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:49:40.765Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:49:44.947Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:58:32.940Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:58:39.505Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:59:00.553Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-09T12:59:01.626Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:50:05.515Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:50:26.062Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:50:33.437Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:50:36.713Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:53:37.097Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:53:37.855Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:53:38.107Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:53:38.339Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:53:39.434Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:53:41.027Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:53:41.618Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:53:42.226Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:53:42.806Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:53:43.243Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:54:19.264Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:54:19.887Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:54:20.166Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:54:20.501Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:54:20.688Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:54:20.812Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:56:01.353Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:56:01.892Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:56:02.567Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:56:02.779Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:56:03.116Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:56:24.407Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:56:24.549Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:56:39.357Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:56:39.619Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:56:39.852Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:56:40.034Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:56:40.209Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:56:40.379Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:56:40.554Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:56:47.206Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:56:49.004Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:56:50.501Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:56:51.925Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:58:18.052Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:58:24.788Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T08:58:41.171Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:00:46.078Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:02:36.180Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:03:01.539Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:04:20.194Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:04:23.122Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:04:23.473Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:04:27.033Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:04:31.938Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:04:37.169Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:04:39.497Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:17:42.334Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:18:08.429Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:18:13.253Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:19:20.384Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:20:32.984Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:28:14.359Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:28:16.647Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:28:17.695Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:28:19.032Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:28:57.871Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:29:10.696Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:29:14.008Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:29:18.831Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:29:23.256Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 58 sessions.
+[2026-02-10T09:32:51.237Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 62 sessions.
+[2026-02-10T09:32:53.184Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 62 sessions.
+[2026-02-10T09:43:56.316Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 62 sessions.
+[2026-02-10T10:38:12.078Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 62 sessions.
+[2026-02-10T10:54:21.747Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 62 sessions.
+[2026-02-10T10:54:33.861Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 62 sessions.
+[2026-02-10T10:54:44.259Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 62 sessions.
+[2026-02-10T11:00:40.675Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 62 sessions.
+[2026-02-10T11:21:10.961Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 62 sessions.
+[2026-02-10T11:57:07.139Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 62 sessions.
+[2026-02-10T11:58:57.735Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 62 sessions.
+[2026-02-10T11:59:05.331Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 62 sessions.
+[2026-02-10T11:59:14.383Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 62 sessions.
+[2026-02-10T11:59:49.955Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 62 sessions.
+[2026-02-10T11:59:55.503Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 62 sessions.
+[2026-02-10T12:00:05.945Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 61 sessions.
+[2026-02-10T12:00:08.502Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 60 sessions.
+[2026-02-10T12:32:22.130Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 63 sessions.
+[2026-02-10T12:35:01.421Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 63 sessions.
+[2026-02-10T12:35:09.746Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 62 sessions.
+[2026-02-10T12:35:12.954Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 61 sessions.
+[2026-02-10T12:35:17.738Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 60 sessions.
+[2026-02-10T12:36:13.258Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 60 sessions.
+[2026-02-10T12:36:14.281Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 60 sessions.
+[2026-02-10T12:36:18.884Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 60 sessions.
+[2026-02-10T12:36:20.304Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 60 sessions.
+[2026-02-10T12:36:26.153Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 60 sessions.
+[2026-02-10T12:36:29.019Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 60 sessions.
+[2026-02-10T12:36:32.091Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 60 sessions.
+[2026-02-10T12:46:07.349Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 61 sessions.
+[2026-02-10T12:46:45.160Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 61 sessions.
+[2026-02-10T12:46:56.688Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 61 sessions.
+[2026-02-10T12:47:52.118Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 62 sessions.
+[2026-02-10T12:48:02.727Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 62 sessions.
+[2026-02-10T12:48:12.411Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 62 sessions.
+[2026-02-10T13:23:01.102Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 67 sessions.
+[2026-02-10T13:23:08.833Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 66 sessions.
+[2026-02-10T13:23:12.080Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 65 sessions.
+[2026-02-10T13:23:15.830Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 64 sessions.
+[2026-02-10T13:23:18.959Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 63 sessions.
+[2026-02-10T13:23:21.905Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 63 sessions.
+[2026-02-10T13:23:25.288Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 63 sessions.
+[2026-02-10T13:23:28.168Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 63 sessions.
+[2026-02-10T13:23:30.744Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 63 sessions.
+[2026-02-10T13:23:33.743Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 63 sessions.
+[2026-02-10T13:23:36.492Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 63 sessions.
+[2026-02-10T13:23:39.086Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 63 sessions.
+[2026-02-10T13:23:41.719Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 63 sessions.
+[2026-02-11T09:06:57.553Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 63 sessions.
+[2026-02-11T09:07:04.038Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 63 sessions.
+[2026-02-11T09:07:35.939Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 63 sessions.
+[2026-02-11T09:08:46.832Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 64 sessions.
+[2026-02-11T09:09:10.337Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 63 sessions.
+[2026-02-11T09:09:25.457Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 63 sessions.
+[2026-02-11T09:09:38.499Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 63 sessions.
+[2026-02-11T09:09:42.307Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 63 sessions.
+[2026-02-11T09:09:48.244Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 63 sessions.
+[2026-02-11T09:19:04.060Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 66 sessions.
+[2026-02-11T09:19:08.503Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 66 sessions.
+[2026-02-11T09:19:30.005Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 67 sessions.
+[2026-02-11T09:19:34.355Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 67 sessions.
+[2026-02-11T09:19:35.407Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 67 sessions.
+[2026-02-11T09:19:42.759Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 67 sessions.
+[2026-02-11T09:31:07.485Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 67 sessions.
+[2026-02-11T09:31:17.224Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 67 sessions.
+[2026-02-11T09:32:05.870Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 68 sessions.
+[2026-02-11T09:32:22.741Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 68 sessions.
+[2026-02-11T09:32:26.968Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 68 sessions.
+[2026-02-11T09:33:42.497Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 70 sessions.
+[2026-02-11T09:33:47.331Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 70 sessions.
+[2026-02-11T09:40:09.485Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 73 sessions.
+[2026-02-11T09:41:36.828Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 73 sessions.
+[2026-02-11T09:41:37.440Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 73 sessions.
+[2026-02-11T09:41:40.661Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 73 sessions.
+[2026-02-11T09:43:08.276Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 75 sessions.
+[2026-02-11T09:49:55.138Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 75 sessions.
+[2026-02-11T09:50:06.104Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 74 sessions.
+[2026-02-11T09:50:11.143Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 73 sessions.
+[2026-02-11T09:50:15.766Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 72 sessions.
+[2026-02-11T09:50:16.965Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 72 sessions.
+[2026-02-11T09:50:18.937Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 72 sessions.
+[2026-02-11T09:50:27.827Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 72 sessions.
+[2026-02-11T09:56:11.596Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 72 sessions.
+[2026-02-11T09:56:19.220Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 71 sessions.
+[2026-02-11T09:56:23.087Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 70 sessions.
+[2026-02-11T09:58:07.248Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 73 sessions.
+[2026-02-11T09:58:13.611Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 73 sessions.
+[2026-02-11T10:40:53.745Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T10:41:36.330Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T10:41:44.653Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T10:49:35.969Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-11T10:50:13.210Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-11T10:50:24.723Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T10:50:29.279Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-11T10:50:33.096Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-11T10:50:36.711Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T10:50:40.638Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T10:50:47.103Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 83 sessions.
+[2026-02-11T10:50:51.597Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 82 sessions.
+[2026-02-11T10:50:59.918Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 81 sessions.
+[2026-02-11T10:51:04.445Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 80 sessions.
+[2026-02-11T10:51:10.293Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 79 sessions.
+[2026-02-11T10:51:16.479Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 78 sessions.
+[2026-02-11T10:51:19.870Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 77 sessions.
+[2026-02-11T10:51:23.046Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 76 sessions.
+[2026-02-11T10:51:26.086Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 75 sessions.
+[2026-02-11T10:51:29.039Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 74 sessions.
+[2026-02-11T10:51:31.821Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 73 sessions.
+[2026-02-11T10:51:35.273Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 72 sessions.
+[2026-02-11T10:51:38.594Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 71 sessions.
+[2026-02-11T10:51:45.766Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 70 sessions.
+[2026-02-11T10:51:48.985Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 69 sessions.
+[2026-02-11T10:51:53.957Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 69 sessions.
+[2026-02-11T10:51:57.422Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 69 sessions.
+[2026-02-11T10:52:01.444Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 69 sessions.
+[2026-02-11T10:52:04.934Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 69 sessions.
+[2026-02-11T10:52:08.498Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 69 sessions.
+[2026-02-11T10:52:11.969Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 69 sessions.
+[2026-02-11T10:52:29.330Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 69 sessions.
+[2026-02-11T10:52:32.811Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 69 sessions.
+[2026-02-11T10:52:36.562Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 69 sessions.
+[2026-02-11T11:27:52.978Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 75 sessions.
+[2026-02-11T11:28:01.529Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 75 sessions.
+[2026-02-11T11:28:09.656Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 75 sessions.
+[2026-02-11T11:28:45.553Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 75 sessions.
+[2026-02-11T11:28:59.578Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 75 sessions.
+[2026-02-11T11:29:02.730Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 75 sessions.
+[2026-02-11T11:29:08.955Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 75 sessions.
+[2026-02-11T11:30:17.639Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 77 sessions.
+[2026-02-11T11:30:22.718Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 77 sessions.
+[2026-02-11T11:30:26.070Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 77 sessions.
+[2026-02-11T11:30:34.759Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 77 sessions.
+[2026-02-11T11:31:09.102Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 77 sessions.
+[2026-02-11T11:31:16.528Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 77 sessions.
+[2026-02-11T11:46:08.263Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 77 sessions.
+[2026-02-11T11:46:09.628Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 77 sessions.
+[2026-02-11T11:46:24.678Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 77 sessions.
+[2026-02-11T11:46:32.513Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 77 sessions.
+[2026-02-11T11:46:35.348Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 77 sessions.
+[2026-02-11T11:46:45.598Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 77 sessions.
+[2026-02-11T11:46:51.374Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 77 sessions.
+[2026-02-11T11:46:52.415Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 77 sessions.
+[2026-02-11T11:46:53.707Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 77 sessions.
+[2026-02-11T12:24:35.537Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T12:27:22.652Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T12:27:30.355Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T12:44:44.573Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T12:44:45.038Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T12:44:45.197Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T12:44:45.647Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T12:44:45.974Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T12:46:45.895Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T12:46:51.047Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T12:47:19.574Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T12:47:27.796Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T12:47:40.465Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T12:47:44.096Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T12:48:02.247Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T12:52:31.416Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-11T12:52:42.469Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-11T12:52:46.639Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-11T13:14:15.177Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T13:14:19.379Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-11T13:14:22.091Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-11T13:14:24.890Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-11T13:14:27.664Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-11T13:14:34.089Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-11T13:14:37.547Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-11T13:14:49.274Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-11T13:14:53.019Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-11T13:15:15.337Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T13:15:19.397Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T13:15:19.551Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T13:15:19.792Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T13:15:20.199Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T13:15:20.391Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T13:15:23.589Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T13:15:24.069Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T13:15:25.757Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T13:15:34.592Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T13:15:41.568Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T13:15:52.080Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T13:15:52.705Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T13:15:53.723Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T13:15:54.363Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T13:15:55.513Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T13:15:57.638Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T13:16:10.410Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T13:19:08.034Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-11T20:57:55.209Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-11T20:58:10.288Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-11T20:58:14.921Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T20:58:17.934Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-11T20:58:21.182Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-11T20:58:24.759Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T20:58:28.496Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T20:59:00.420Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T20:59:18.605Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T20:59:27.634Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T20:59:30.375Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T20:59:31.467Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T20:59:39.022Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T20:59:42.417Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T20:59:46.213Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T20:59:50.189Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T20:59:54.312Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:00:10.057Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:00:17.260Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:00:18.552Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:00:19.817Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:00:36.216Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:00:40.352Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:00:48.615Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:09:45.164Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-11T21:10:06.019Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-11T21:10:23.534Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-11T21:10:49.487Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-11T21:11:03.118Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-11T21:11:59.973Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T21:12:04.373Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T21:12:10.252Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T21:31:36.184Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T21:31:37.295Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T21:31:38.174Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T21:31:43.953Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T21:31:54.217Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-11T21:31:57.513Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-11T21:32:00.467Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T21:32:03.722Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:32:27.876Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:32:40.371Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:33:05.911Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:33:15.846Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:39:45.713Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T21:39:53.411Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T21:40:04.610Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T21:40:19.066Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T21:40:25.985Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T21:40:45.425Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T21:40:51.055Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T21:46:50.472Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-11T21:46:53.694Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-11T21:46:56.523Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T21:46:58.859Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T21:47:00.443Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-11T21:47:03.906Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-11T21:47:07.124Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-11T21:47:09.595Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T21:47:12.197Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:47:15.590Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:47:18.607Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:47:21.091Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:48:07.504Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:48:14.350Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:48:31.426Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:48:47.313Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:51:05.796Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-11T21:51:33.856Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-11T21:55:22.825Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-11T21:55:26.571Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-11T21:55:29.046Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:55:32.497Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:55:35.964Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:55:36.350Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:55:36.639Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:55:36.826Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:55:36.978Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:55:37.679Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:56:27.993Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:56:34.831Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:56:52.983Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:56:57.853Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-11T21:57:05.710Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T01:13:21.783Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-12T05:22:39.129Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-12T05:22:44.711Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-12T05:22:47.834Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-12T05:22:51.065Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:22:54.424Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:22:58.103Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:23:02.307Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:25:07.130Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:25:12.504Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:25:44.808Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:26:23.774Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:26:37.273Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:26:57.711Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:27:05.729Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:27:47.762Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-12T05:27:49.848Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-12T05:27:51.684Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 86 sessions.
+[2026-02-12T05:27:55.394Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 85 sessions.
+[2026-02-12T05:27:58.711Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:28:02.343Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:28:09.535Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:28:24.956Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:28:27.167Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:28:42.358Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:30:13.350Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:30:59.246Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:38:17.027Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:38:17.405Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:38:17.574Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:38:18.473Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:38:30.329Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:38:37.065Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:38:39.121Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:38:46.994Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:39:00.329Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:39:04.874Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 84 sessions.
+[2026-02-12T05:40:44.582Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-12T05:40:45.844Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-12T05:40:58.413Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-12T05:41:06.002Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-12T05:41:28.947Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-12T05:41:30.113Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-12T05:41:46.290Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-12T05:41:56.187Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-12T05:42:06.651Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-12T05:42:07.913Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-12T05:42:37.382Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-12T05:42:44.338Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-12T05:42:58.713Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-12T05:43:06.521Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-12T05:44:07.001Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T05:44:14.002Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T05:44:32.887Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T05:44:36.729Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T05:44:39.239Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 88 sessions.
+[2026-02-12T05:44:43.673Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-12T05:44:46.770Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-12T05:44:50.240Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-12T05:44:52.095Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-12T05:45:05.570Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-12T05:45:14.731Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-12T05:45:32.098Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-12T05:45:36.572Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-12T05:46:35.090Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T05:46:35.390Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T05:46:35.643Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T05:46:35.784Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T05:46:35.957Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T05:46:36.100Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T05:46:36.617Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T05:46:44.186Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T05:46:50.874Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T05:47:39.312Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T05:47:47.730Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T05:48:10.961Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T05:48:25.905Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T05:49:27.281Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T05:49:29.327Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T05:49:30.560Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T05:49:37.150Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T05:50:06.610Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T09:52:35.100Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T09:52:39.621Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T09:52:41.139Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T09:52:44.506Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T09:52:45.283Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T09:52:47.147Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T09:52:48.011Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T09:53:29.436Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T09:53:43.245Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T09:53:55.818Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T09:54:03.426Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T09:56:16.676Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 92 sessions.
+[2026-02-12T09:56:23.101Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 92 sessions.
+[2026-02-12T10:01:36.636Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 95 sessions.
+[2026-02-12T10:01:58.983Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 95 sessions.
+[2026-02-12T10:02:03.893Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 95 sessions.
+[2026-02-12T10:38:02.691Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T10:38:03.938Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T10:38:06.411Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T10:38:19.266Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T10:38:24.369Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T10:38:46.418Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T10:38:51.846Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T10:38:58.213Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T10:39:11.806Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T10:39:14.334Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T10:52:10.449Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T10:52:11.934Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T10:53:24.508Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T10:53:26.176Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T11:08:49.339Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T11:08:50.198Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T11:09:12.165Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T11:10:33.238Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T11:10:33.862Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T11:23:24.342Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T11:23:38.601Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T11:23:53.885Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 96 sessions.
+[2026-02-12T11:30:16.653Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 98 sessions.
+[2026-02-12T11:31:52.251Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 98 sessions.
+[2026-02-12T11:32:01.185Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 98 sessions.
+[2026-02-12T11:36:24.683Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 99 sessions.
+[2026-02-12T11:36:26.162Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 99 sessions.
+[2026-02-12T11:36:41.266Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 98 sessions.
+[2026-02-12T11:43:49.580Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 98 sessions.
+[2026-02-12T11:43:50.980Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 98 sessions.
+[2026-02-12T11:44:16.654Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 97 sessions.
+[2026-02-12T11:47:32.365Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 97 sessions.
+[2026-02-12T11:47:33.354Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 97 sessions.
+[2026-02-12T11:48:01.907Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 93 sessions.
+[2026-02-12T11:48:13.776Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T12:02:50.185Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T12:03:15.272Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T12:03:24.267Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T12:03:40.234Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T12:03:41.926Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T12:03:55.297Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T12:04:18.904Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T12:04:20.508Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T12:04:21.470Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T12:04:25.251Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T12:04:26.597Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T12:04:26.949Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T12:04:27.561Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T12:33:04.966Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T12:33:37.195Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T12:33:43.691Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T12:33:44.253Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T12:33:59.548Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T12:34:26.847Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 89 sessions.
+[2026-02-12T12:46:12.162Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T12:46:13.777Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T12:46:20.995Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T12:46:25.276Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T12:46:33.498Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T12:46:37.763Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 90 sessions.
+[2026-02-12T12:47:26.218Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 94 sessions.
+[2026-02-12T12:47:28.296Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 94 sessions.
+[2026-02-12T12:47:29.345Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 94 sessions.
+[2026-02-12T12:47:42.563Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T13:18:17.389Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T13:18:18.100Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T13:18:19.188Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T13:20:32.639Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T13:21:05.827Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T13:21:39.700Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T13:21:55.281Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:15:48.979Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:15:55.891Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:16:05.856Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:16:07.134Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:16:38.822Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:16:49.160Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:16:50.277Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:16:50.676Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:16:52.740Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:16:53.886Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:17:23.256Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:17:48.957Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:17:59.620Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:28:35.167Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:28:36.891Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:34:05.252Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:34:09.402Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:42:33.167Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:42:35.040Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:48:16.671Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:48:17.908Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:48:18.402Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:48:18.987Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:48:25.730Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:48:27.640Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:48:28.972Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:48:35.124Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:53:00.273Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:53:18.535Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:53:19.777Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:53:21.209Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:53:26.787Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:53:28.328Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:53:33.447Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:53:34.713Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:54:04.347Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:54:05.618Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:54:07.104Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:54:18.849Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:54:27.842Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:54:29.012Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:54:31.082Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:56:08.273Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:56:10.374Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:56:28.495Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:56:36.041Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:58:25.302Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:58:31.985Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-12T23:58:36.371Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 91 sessions.
+[2026-02-13T00:00:35.024Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 94 sessions.
+[2026-02-13T00:07:17.746Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 94 sessions.
+[2026-02-13T00:07:20.045Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 94 sessions.
+[2026-02-13T00:07:27.723Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 94 sessions.
+[2026-02-13T00:07:29.984Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 94 sessions.
+[2026-02-13T00:07:30.549Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 94 sessions.
+[2026-02-13T00:07:39.443Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 94 sessions.
+[2026-02-13T00:07:44.149Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 94 sessions.
+[2026-02-13T00:08:59.128Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 94 sessions.
+[2026-02-13T00:09:00.787Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 94 sessions.
+[2026-02-13T00:09:02.605Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 94 sessions.
+[2026-02-13T00:09:03.707Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 94 sessions.
+[2026-02-13T00:09:08.577Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 94 sessions.
+[2026-02-13T00:09:45.889Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 94 sessions.
+[2026-02-13T00:09:47.206Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 94 sessions.
+[2026-02-13T00:09:49.895Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 94 sessions.
+[2026-02-13T00:09:54.706Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-13T00:09:56.016Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 87 sessions.
+[2026-02-13T00:10:03.549Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 69 sessions.
+[2026-02-13T00:10:04.727Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 69 sessions.
+[2026-02-13T00:10:12.474Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 69 sessions.
+[2026-02-13T00:10:14.284Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 69 sessions.
+[2026-02-13T00:24:21.051Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 69 sessions.
+[2026-02-13T00:24:27.938Z] Req Teacher: t_9e4252d4-04f3-493b-8513-5de2dd480a74
+Found 69 sessions.
